@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">DO_AN_CS3</string>
+    <string name="update_new">MỚI CẬP NHẬT</string>
+    <string name="important">QUAN TRỌNG</string>
+    <string name="document">TÀI LIỆU</string>
+    <string name="title_activity_job">JobActivity</string>
+    <string name="Addjob">AddjobActivity</string>
+    <string name="personnal">PersonnalActivity</string>
+    <string name="setting">SettingActivity</string>
+    <string name="warning">WarningActivity</string>
+    <string name="editAccount">EditAccountActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+
+    <string name="lorem_ipsum">
+
+    </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="newjob">VIỆC MỚI</string>
+    <string name="pendingjob">ĐANG THỰC HIỆN</string>
+    <string name="processingjob">CHỜ DUYỆT</string>
+    <string name="complete">HOÀN THÀNH</string>
+    <string name="pause">TẠM DỪNG</string>
+    <string name="title_activity_personnal">PersonnalActivity</string>
+    <string name="listpersonnal">NHÂN SỰ</string>
+    <string name="listDepartment">CÁC BỘ PHẬN</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="expiring_soon">SẮP HẾT HẠN</string>
+    <string name="late">TRỄ HẠN</string>
+
+
+</resources>

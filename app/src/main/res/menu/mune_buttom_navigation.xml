@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item android:id="@+id/home"
+    android:title="Trang Chủ"
+    android:icon="@drawable/icon_home"/>
+
+    <item android:id="@+id/job"
+        android:title="Công Việc"
+        android:icon="@drawable/icon_jod"/>
+
+    <item android:id="@+id/add_job"
+        android:title="Thêm"
+        android:icon="@drawable/baseline_add_circle_outline_24"/>
+
+    <item android:id="@+id/personnal"
+        android:title="Nhân Sự"
+        android:icon="@drawable/icon_personnal"/>
+
+    <item android:id="@+id/setting"
+        android:title="Cài Đặt"
+        android:icon="@drawable/icon_setting"/>
+</menu>

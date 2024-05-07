@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DO_AN_CS3"
+        tools:targetApi="31">
+        <activity
+            android:name=".View.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".View.JobActivity"
+            android:exported="false"
+            android:label="@string/title_activity_job"
+            android:theme="@style/Theme.DO_AN_CS3" />
+        <activity
+            android:name=".View.AddJobActivity"
+            android:exported="false"
+            android:label="@string/Addjob"
+            android:theme="@style/Theme.DO_AN_CS3" />
+        <activity
+            android:name=".View.PersonnalActivity"
+            android:exported="false"
+            android:label="@string/personnal"
+            android:theme="@style/Theme.DO_AN_CS3" />
+        <activity
+            android:name=".View.SettingActivity"
+            android:exported="false"
+            android:label="@string/setting"
+            android:theme="@style/Theme.DO_AN_CS3" />
+        <activity
+            android:name=".View.WarningActivity"
+            android:exported="false"
+            android:label="@string/warning"
+            android:theme="@style/Theme.DO_AN_CS3"></activity>
+        <activity
+            android:name=".View.EditAccountActivity"
+            android:exported="false"
+            android:label="@string/editAccount"
+            android:theme="@style/Theme.DO_AN_CS3"></activity>
+
+    </application>
+
+</manifest>
