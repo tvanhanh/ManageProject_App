@@ -1,6 +1,5 @@
 package com.example.do_an_cs3.Ardapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

@@ -1,11 +1,9 @@
 package com.example.do_an_cs3.View;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +12,7 @@ import com.example.do_an_cs3.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class SettingActivity extends AppCompatActivity {
-    private EditText editTextAccount;
-    @SuppressLint("WrongViewCast")
+    private TextView editTextAccount;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
@@ -27,12 +24,9 @@ public class SettingActivity extends AppCompatActivity {
 
         // sử tài khoản
         editTextAccount = findViewById(R.id.editaccount);
-        editTextAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SettingActivity.this,EditAccountActivity.class);
-                startActivity(intent);
-            }
+        editTextAccount.setOnClickListener(v -> {
+            Intent intent = new Intent(SettingActivity.this,EditAccountActivity.class);
+            startActivity(intent);
         });
 
         // Thiết lập nghe sự kiện cho BottomNavigationView
