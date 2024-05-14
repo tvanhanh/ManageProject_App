@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
@@ -22,6 +24,7 @@ public class PersonnalActivity extends AppCompatActivity {
     private ActivityPersonnalBinding binding;
     private TabLayout mtablayout;
     private ViewPager mviewPager;
+    private Button buttoncomback;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -93,6 +96,13 @@ public class PersonnalActivity extends AppCompatActivity {
                     startActivity(perIntent);
                 }
                 return true;
+            }
+        });
+        buttoncomback = findViewById(R.id.buttonComback);
+        buttoncomback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
