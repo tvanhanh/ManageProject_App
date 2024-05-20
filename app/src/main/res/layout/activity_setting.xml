@@ -18,11 +18,12 @@
 
         <!-- Nút "Quay lại" -->
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/baseline_arrow_back_24"
+            android:id="@+id/buttonComback"
+            android:layout_width="47dp"
+            android:layout_height="39dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp"
+            android:background="@drawable/baseline_arrow_back_24" />
 
         <!-- Logo -->
         <TextView
@@ -211,7 +212,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Tông tin đơn vị"
+                    android:drawableLeft="@drawable/housse"
+                    android:text="   Thông tin đơn vị"
                     android:textSize="18dp" />
 
                 <TextView
@@ -219,7 +221,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Thẻ phân loại công việc"
+                    android:drawableLeft="@drawable/card"
+                    android:text="   Thẻ phân loại công việc"
                     android:textSize="18dp" />
 
                 <TextView
@@ -227,7 +230,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Báo cáo thống kê"
+                    android:drawableLeft="@drawable/report2"
+                    android:text="   Báo cáo thống kê"
                     android:textSize="18dp" />
 
                 <TextView
@@ -235,7 +239,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Hoạt động gần đây"
+                    android:drawableLeft="@drawable/clock4"
+                    android:text="   Hoạt động gần đây"
                     android:textSize="18dp" />
 
                 <TextView
@@ -243,7 +248,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Gói dịch vụ"
+                    android:drawableLeft="@drawable/creditcard"
+                    android:text="   Gói dịch vụ"
                     android:textSize="18dp" />
 
                 <TextView
@@ -251,7 +257,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Giải mã dữ liệu"
+                    android:drawableLeft="@drawable/code"
+                    android:text="   Giải mã dữ liệu"
                     android:textSize="18dp" />
 
                 <TextView
@@ -259,7 +266,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Chia sẽ NONO đến bạn bè đồng nghiệp ngay"
+                    android:background="@color/print"
+                    android:drawableLeft="@drawable/share"
+                    android:drawablePadding="5dp"
+                    android:text="   Chia sẽ NONO đến bạn bè đồng nghiệp ngay"
                     android:textSize="18dp" />
 
                 <TextView
@@ -267,15 +277,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Quyền truy cập"
+                    android:drawableLeft="@drawable/key"
+                    android:text="   Quyền truy cập"
                     android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/intru"
-                    android:layout_width="383dp"
-                    android:layout_height="109dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Giới thiệu"
+                    android:drawableLeft="@drawable/lightbulb"
+                    android:text="   Giới thiệu"
                     android:textSize="18dp" />
 
                 <TextView
@@ -283,7 +295,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Đánh giá"
+                    android:drawableLeft="@drawable/star"
+                    android:text="   Đánh giá"
                     android:textSize="18dp" />
 
                 <TextView
@@ -291,7 +304,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Tài liệu hướng dẫn"
+                    android:drawableLeft="@drawable/anser"
+                    android:text="   Tài liệu hướng dẫn"
                     android:textSize="18dp" />
 
                 <TextView
@@ -299,7 +313,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="video hướng dẫn"
+                    android:drawableLeft="@drawable/youtube"
+                    android:text="   video hướng dẫn"
                     android:textSize="18dp" />
 
                 <TextView
@@ -307,7 +322,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Đăng xuất"
+                    android:drawableLeft="@drawable/logout"
+                    android:text="   Đăng xuất"
                     android:textColor="@color/red"
                     android:textSize="18dp" />
 

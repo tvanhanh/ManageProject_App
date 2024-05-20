@@ -3,9 +3,10 @@ package com.example.do_an_cs3.View;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.do_an_cs3.R;
@@ -13,6 +14,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class SettingActivity extends AppCompatActivity {
     private TextView editTextAccount;
+    private TextView changepass;
+    private TextView statistic;
+    private Button comback;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
@@ -21,24 +25,39 @@ public class SettingActivity extends AppCompatActivity {
         MenuItem settingMenuItem = bottomNavigationView.getMenu().findItem(R.id.setting);
         settingMenuItem.setChecked(true);
 
-
+// comback
+        comback = findViewById(R.id.buttonComback);
+        comback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         // sử tài khoản
         editTextAccount = findViewById(R.id.editaccount);
         editTextAccount.setOnClickListener(v -> {
             Intent intent = new Intent(SettingActivity.this,EditAccountActivity.class);
             startActivity(intent);
         });
-
-        // Thiết lập nghe sự kiện cho BottomNavigationView
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        //đổi mật khẩu
+        changepass = findViewById(R.id.chanepass);
+        changepass.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int itemId = item.getItemId();
-                Intent homeIntent = new Intent(SettingActivity.this, MainActivity.class);
-                startActivity(homeIntent);
-                return true;
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingActivity.this, ChangePassActivity.class);
+                startActivity(intent);
             }
         });
+        //báo cáo thống kê
+        statistic = findViewById(R.id.statistic);
+        statistic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingActivity.this,ReportActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // Tìm và gán MenuItem tương ứng với "home"
         MenuItem homeMenuItem = bottomNavigationView.getMenu().findItem(R.id.home);
         // Thiết lập nghe sự kiện khi menu "home" được chọn
@@ -80,7 +99,7 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
         MenuItem perMenuItem = bottomNavigationView.getMenu().findItem(R.id.personnal);
-        // Thiết lập nghe sự kiện khi menu "home" được chọn
+        // Thiết lập nghe sự kiện khi menu "personal" được chọn
         perMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {

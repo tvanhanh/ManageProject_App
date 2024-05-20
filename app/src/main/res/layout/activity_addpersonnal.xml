@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.JobActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/buttonComback"
+            android:layout_width="53dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Mời Nhân Sự"
+            android:textSize="22dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/buttondatejob"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/clock"
+                android:text="." />
+            <Button
+                android:id="@+id/buttonHome"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/icon_home"
+                android:text="." />
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/butonThenext"
+        android:layout_width="412dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/white"
+        android:drawableTop="@drawable/save"
+        android:text="LƯU LẠI"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="269dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Mời qua email"
+            android:textColor="@color/print"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Chọn phòng ban"
+            android:textColor="@color/print"
+            android:textSize="18dp" />
+
+        <LinearLayout
+            android:layout_width="336dp"
+            android:layout_height="56dp"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_deparment"
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="167dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Email nhân sự"
+            android:textColor="@color/print"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/editTextgmail"
+            android:layout_width="344dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/dennham"
+            android:ems="10"
+            android:hint="staff1@gmail.com"
+            android:inputType="text" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

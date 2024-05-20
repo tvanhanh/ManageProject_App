@@ -27,8 +27,8 @@ public class JobActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job);
-ntabLayout = findViewById(R.id.tabLayout);
-nviewpager = findViewById(R.id.viewpager);
+        ntabLayout = findViewById(R.id.tabLayout);
+        nviewpager = findViewById(R.id.viewpager);
         ViewPagerAdapterJob viewPagerAdapter = new ViewPagerAdapterJob(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         nviewpager.setAdapter(viewPagerAdapter);
         ntabLayout.setupWithViewPager(nviewpager);

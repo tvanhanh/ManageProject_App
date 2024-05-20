@@ -7,7 +7,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -48,36 +47,65 @@ public class MainActivity extends AppCompatActivity {
             mTablayout.setupWithViewPager(mViewPager);
 
 
-            bottomNavigationView = findViewById(R.id.bottomnavigation);
-           // bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-               bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        int itemId = item.getItemId();
-                        if (itemId == R.id.home) {
-                            Intent homeIntent = new Intent(MainActivity.this, MainActivity.class);
-                            startActivity(homeIntent);
-                            return true;
-                        } else if (itemId == R.id.job) {
-                            Intent jobIntent = new Intent(MainActivity.this, JobActivity.class);
-                            startActivity(jobIntent);
-                            return true;
-                        } else if (itemId == R.id.add_job) {
-                            Intent addJobIntent = new Intent(MainActivity.this, AddJobActivity.class);
-                            startActivity(addJobIntent);
-                            return true;
-                        } else if (itemId == R.id.personnal) {
-                            Intent personalIntent = new Intent(MainActivity.this, PersonnalActivity.class);
-                            startActivity(personalIntent);
-                            return true;
-                        } else if (itemId == R.id.setting) {
-                            Intent settingIntent = new Intent(MainActivity.this, SettingActivity.class);
-                            startActivity(settingIntent);
-                            return true;
-                        }
-                        return false;
+            BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigation);
+            MenuItem homeMenuItem = bottomNavigationView.getMenu().findItem(R.id.home);
+            homeMenuItem.setChecked(true);
+
+
+            // Tìm và gán MenuItem tương ứng với "job"
+            MenuItem JobMenuItem = bottomNavigationView.getMenu().findItem(R.id.job);
+
+            // Thiết lập nghe sự kiện khi menu "home" được chọn
+            JobMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    // Nếu đang ở trong JobActivity, chuyển đến MainActivity
+                    if (MainActivity.this instanceof MainActivity) {
+                        Intent jobIntent = new Intent(MainActivity.this,JobActivity.class);
+                        startActivity(jobIntent);
                     }
-                });
+                    return true;
+                }
+            });
+            MenuItem settingMenuItem = bottomNavigationView.getMenu().findItem(R.id.setting);
+            // Thiết lập nghe sự kiện khi menu "home" được chọn
+            settingMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    // Nếu đang ở trong JobActivity, chuyển đến settingActivity
+                    if (MainActivity.this instanceof MainActivity) {
+                        Intent jobIntent = new Intent(MainActivity.this, SettingActivity.class);
+                        startActivity(jobIntent);
+                    }
+                    return true;
+                }
+            });
+            MenuItem addiobMenuItem = bottomNavigationView.getMenu().findItem(R.id.add_job);
+            // Thiết lập nghe sự kiện khi menu "home" được chọn
+            addiobMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    // Nếu đang ở trong JobActivity, chuyển đến AddJobActivity
+                    if (MainActivity.this instanceof MainActivity) {
+                        Intent addjobIntent = new Intent(MainActivity.this, AddJobActivity.class);
+                        startActivity(addjobIntent);
+                    }
+                    return true;
+                }
+            });
+            MenuItem perMenuItem = bottomNavigationView.getMenu().findItem(R.id.personnal);
+            // Thiết lập nghe sự kiện khi menu "home" được chọn
+            perMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    // Nếu đang ở trong JobActivity, chuyển đến AddJobActivity
+                    if (MainActivity.this instanceof MainActivity) {
+                        Intent perIntent = new Intent(MainActivity.this, PersonnalActivity.class);
+                        startActivity(perIntent);
+                    }
+                    return true;
+                }
+            });
 
             rcv_deparment = findViewById(R.id.rcv_deparment);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);

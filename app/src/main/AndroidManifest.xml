@@ -52,6 +52,27 @@
             android:exported="false"
             android:label="@string/editAccount"
             android:theme="@style/Theme.DO_AN_CS3"></activity>
+        <activity
+            android:name=".View.ChangePassActivity"
+            android:exported="false"
+            android:label="@string/changepass"
+            android:theme="@style/Theme.DO_AN_CS3"></activity>
+        <activity
+            android:name=".View.ReportActivity"
+            android:exported="false"
+            android:label="@string/report"
+            android:theme="@style/Theme.DO_AN_CS3"></activity>
+        <activity
+            android:name=".View.AddPersonnalActivity"
+            android:exported="false"
+            android:label="AddPersonnalActivity"
+            android:theme="@style/Theme.DO_AN_CS3"></activity>
+        <activity
+            android:name=".View.AddDeparmentsActivity"
+            android:exported="false"
+            android:label="AddDeparmentsActivity"
+            android:theme="@style/Theme.DO_AN_CS3"></activity>
+
 
     </application>
 

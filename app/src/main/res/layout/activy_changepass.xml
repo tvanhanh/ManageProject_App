@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.EditAccountActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/comeback"
+            android:layout_width="40dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Đổi Mật Khẩu"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttondatejob"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/clock"
+                android:text="." />
+
+            <Button
+                android:id="@+id/buttonHome"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/icon_home"
+                android:text="." />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextOldpass"
+                    android:layout_width="424dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:ems="10"
+                    android:hint="MẬT KHẨU CŨ"
+                    android:inputType="text" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextnewpass"
+                    android:layout_width="424dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:ems="10"
+                    android:hint="MẬT KHẨU MỚI" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextConfirmpass"
+                    android:layout_width="424dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:ems="10"
+                    android:hint="XÁC NHẬN MẬT KHẨU" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/print"
+        android:text="ĐỔI MẬT KHẨU"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
