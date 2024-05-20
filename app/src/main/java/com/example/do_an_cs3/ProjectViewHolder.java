@@ -7,19 +7,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ProjectViewHolder extends RecyclerView.ViewHolder {
-    public TextView tvPercent, tvEmail, tvProjectName, tvDescriptionProject,
+    public TextView tvPercent, tvNamePerson, tvProjectName, tvDescriptionProject,
             tvProjectDeadline, tvProjectCreationTime, tvProjectStatus, tvProjectDepartment;
 
     public ProjectViewHolder(@NonNull View itemView) {
         super(itemView);
-        tvPercent = itemView.findViewById(R.id.tvPercent);
-        tvEmail = itemView.findViewById(R.id.tvEmail);
+        //tvPercent = itemView.findViewById(R.id.tvPercent);
+        tvNamePerson = itemView.findViewById(R.id.tvPersonCreation);
         tvProjectName = itemView.findViewById(R.id.tvProjectName);
-        tvDescriptionProject = itemView.findViewById(R.id.tvDescriptionProject);
+     //   tvDescriptionProject = itemView.findViewById(R.id.tvDescriptionProject);
         tvProjectDeadline = itemView.findViewById(R.id.tvProjectDeadline);
         tvProjectCreationTime = itemView.findViewById(R.id.tvProjectCreationTime);
         tvProjectStatus = itemView.findViewById(R.id.tvProjectStatus);
-        tvProjectDepartment = itemView.findViewById(R.id.tvDepartment);
+      //  tvProjectDepartment = itemView.findViewById(R.id.tvProjectDepartment);
     }
 }
-

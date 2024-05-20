@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.do_an_cs3.Ardapter.ViewPagerAdapterJob;
+import com.example.do_an_cs3.Adapter.ViewPagerAdapterJob;
 import com.example.do_an_cs3.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;

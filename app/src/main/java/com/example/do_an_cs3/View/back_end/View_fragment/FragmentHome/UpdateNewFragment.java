@@ -5,21 +5,46 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.core.os.BuildCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.do_an_cs3.Adapter.ProjectAdapter;
+import com.example.do_an_cs3.Database.DatabaseManager;
 import com.example.do_an_cs3.R;
+import com.example.do_an_cs3.Model.Project;
 
-import java.util.Locale;
+import java.util.List;
 
 public class UpdateNewFragment extends Fragment {
-    public UpdateNewFragment(){
 
+    private RecyclerView rcv_project;
+    private ProjectAdapter project_adapter;
+    private DatabaseManager dbManager;
+    private List<Project> projects;
+
+    public UpdateNewFragment() {
+        // Required empty public constructor
     }
+
     @Override
-    public View onCreateView (LayoutInflater inflater, ViewGroup cotainner, Bundle saveInstanceState){
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_updatenew, container, false);
 
-        return inflater.inflate(R.layout.fragment_updatenew,cotainner,false);
+        // Initialize RecyclerView
+        rcv_project = view.findViewById(R.id.rcv_project);
+        rcv_project.setHasFixedSize(true);
 
+        // Set up the adapter
+        dbManager = new DatabaseManager(requireContext());
+        projects = dbManager.getAllProjects();
+        project_adapter = new ProjectAdapter(projects, requireContext());
+
+        // Set up RecyclerView
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false);
+        rcv_project.setLayoutManager(linearLayoutManager);
+        rcv_project.setAdapter(project_adapter);
+        return view;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.do_an_cs3.Ardapter;
+package com.example.do_an_cs3.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,13 +6,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.do_an_cs3.View.back_end.View_fragment.FragmentHome.DocumentsFragment;
-import com.example.do_an_cs3.View.back_end.View_fragment.FragmentHome.ImportantFragment;
+import com.example.do_an_cs3.View.back_end.View_fragment.FragmentPersonnal.ListDeparmentFragment;
+import com.example.do_an_cs3.View.back_end.View_fragment.FragmentPersonnal.ListPersonnalFragment;
 import com.example.do_an_cs3.View.back_end.View_fragment.FragmentHome.UpdateNewFragment;
 
-public class ViewPagerAdapter extends FragmentPagerAdapter {
-    public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
-        super(fm, behavior);
+public class ViewPagerAdapter2 extends FragmentPagerAdapter {
+    public ViewPagerAdapter2(@NonNull FragmentManager fm, int behaviorResumeOnlyCurrentFragment) {
+        super(fm);
     }
 
     @NonNull
@@ -20,11 +20,10 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new UpdateNewFragment();
+                return new ListPersonnalFragment();
             case 1:
-                return new ImportantFragment();
-            case 2:
-                return new DocumentsFragment();
+                return new ListDeparmentFragment();
+
             default:
                 return new UpdateNewFragment();
         }
@@ -32,25 +31,20 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 2;
     }
-
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
         String title = "";
         switch (position) {
             case 0:
-                title = "CẬP NHẬT MỚI";
+                title = "NHÂN SỰ";
                 break;
             case 1:
-                title = "QUAN TRỌNG";
-                break;
-            case 2:
-                title = "TÀI LIỆU";
+                title = "CÁC BỘ PHẬN";
                 break;
         }
         return title;
     }
-
 }

@@ -1,4 +1,4 @@
-package com.example.do_an_cs3.Ardapter;
+package com.example.do_an_cs3.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

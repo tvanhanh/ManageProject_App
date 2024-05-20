@@ -50,6 +50,7 @@ public class DatabaseManager {
         long id = db.insert("Users", null, values);
         return id;
     }
+
     // Phương thức kiểm tra định dạng email
     private boolean isValidEmail(String email) {
         String emailPattern = "[a-zA-Z0-9._-]+@gmail\\.com";
@@ -77,6 +78,7 @@ public class DatabaseManager {
             return false;
         }
     }
+
     public long addProject(String name, String description, String deadline) {
         try {
             // Định dạng deadline thành định dạng của kiểu dữ liệu DATETIME trong SQLite
@@ -102,30 +104,46 @@ public class DatabaseManager {
             return -1; // Trả về giá trị -1 để biểu thị rằng có lỗi xảy ra
         }
     }
+
     @SuppressLint("Range")
     public List<Project> getAllProjects() {
-
         List<Project> projectList = new ArrayList<>();
-        SQLiteDatabase db = this.dbhelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM Projects", null);
-        if (cursor.moveToFirst()) {
-            do {
-                int id = cursor.getInt(cursor.getColumnIndex("project_id"));
-                String name = cursor.getString(cursor.getColumnIndex("project_name"));
-                String description = cursor.getString(cursor.getColumnIndex("project_description"));
-                String deadline = cursor.getString(cursor.getColumnIndex("deadline"));
-                String creationTime = cursor.getString(cursor.getColumnIndex("creation_time"));
-                int percentCompleted = cursor.getInt(cursor.getColumnIndex("percent_completed"));
-                int views = cursor.getInt(cursor.getColumnIndex("views"));
-                String email = cursor.getString(cursor.getColumnIndex("email"));
-                String status = cursor.getString(cursor.getColumnIndex("status"));
-                String department = cursor.getString(cursor.getColumnIndex("department"));
-                Project project = new Project(id ,name, description, deadline, creationTime, views, percentCompleted, email, status, department);
-                projectList.add(project);
-            } while (cursor.moveToNext());
+        SQLiteDatabase db = null;
+        Cursor cursor = null;
+        try {
+            db = this.dbhelper.getReadableDatabase();
+            cursor = db.rawQuery("SELECT * FROM Projects", null);
+            if (cursor.moveToFirst()) {
+                do {
+                    int id = cursor.getInt(cursor.getColumnIndex("project_id"));
+                    String name = cursor.getString(cursor.getColumnIndex("project_name"));
+                    String description = cursor.getString(cursor.getColumnIndex("project_description"));
+                    String deadline = cursor.getString(cursor.getColumnIndex("deadline"));
+                    String creationTime = cursor.getString(cursor.getColumnIndex("creation_time"));
+                    String status = cursor.getString(cursor.getColumnIndex("status"));
+                    int views = cursor.getInt(cursor.getColumnIndex("views"));
+                    int percentCompleted = cursor.getInt(cursor.getColumnIndex("percent_complete"));
+                    String email = cursor.getString(cursor.getColumnIndex("email"));
+                    String department = cursor.getString(cursor.getColumnIndex("department_id"));
+                    if (department == null) {
+                        department = ""; // hoặc bất kỳ giá trị mặc định nào bạn muốn
+                    }
+
+                    Project project = new Project(id, name, description, deadline, creationTime, views, percentCompleted, email, status, department);
+                    projectList.add(project);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Log lỗi hoặc xử lý ngoại lệ tại đây
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            if (db != null) {
+                db.close();
+            }
         }
-        cursor.close();
         return projectList;
     }
-
 }

@@ -1,54 +1,112 @@
-<!-- item_task.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="10dp">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_user"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/hanh" />
 
-    <TextView
-        android:id="@+id/tvEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email" />
-    <TextView
-        android:id="@+id/tvPercent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phần trăm" />
+        <TextView
+            android:id="@+id/tvProjectStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_toRightOf="@id/img_user"
+            android:text="Trạng thái" />
 
-    <TextView
-        android:id="@+id/tvProjectName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tên dự án" />
+        <TextView
+            android:id="@+id/tvProjectName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProjectStatus"
+            android:layout_alignStart="@id/tvProjectStatus"
+            android:text="Tên dự án" />
 
-    <TextView
-        android:id="@+id/tvDescriptionProject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mô tả" />
+        <TextView
+            android:id="@+id/tvProjectDeadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="31dp"
+            android:layout_marginRight="30dp"
+            android:layout_toRightOf="@id/tvProjectStatus"
+            android:text="Thời hạn công việc" />
 
-    <TextView
-        android:id="@+id/tvProjectDeadline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Thời hạn công việc" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/tvProjectName"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="#CCCCCC"
+            android:layout_marginStart="85dp"/>
 
-    <TextView
-        android:id="@+id/tvProjectCreationTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Thời gian tạo" />
+        <TextView
+            android:id="@+id/tvProjectCreationTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProjectDeadline"
+            android:layout_alignStart="@id/tvProjectDeadline"
+            android:layout_marginStart="-95dp"
+            android:layout_marginTop="31dp"
+            android:text="Thời gian tạo" />
 
-    <TextView
-        android:id="@+id/tvProjectStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Trạng thái" />
-    <TextView
-        android:id="@+id/tvDepartment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phòng " />
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvPersonCreation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProjectDeadline"
+            android:layout_alignStart="@id/tvProjectDeadline"
+            android:layout_marginStart="95dp"
+            android:layout_marginTop="31dp"
+            android:text="Người tạo" />
+
+        <CheckBox
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/tvProjectDeadline"
+            android:layout_alignStart="@id/tvProjectDeadline"
+            android:layout_marginStart="-140dp"
+            android:layout_marginTop="54dp" />
+
+        <TextView
+            android:id="@+id/NameTaskNewUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProjectDeadline"
+            android:layout_alignStart="@id/tvProjectDeadline"
+            android:layout_marginStart="-94dp"
+            android:layout_marginTop="62dp"
+            android:text="TaskName" />
+
+        <TextView
+            android:id="@+id/NamePersonOfTaskUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProjectDeadline"
+            android:layout_alignStart="@id/tvProjectDeadline"
+            android:layout_marginStart="-94dp"
+            android:layout_marginTop="84dp"
+            android:text="NamePerson" />
+
+        <TextView
+            android:id="@+id/TimeUpdateTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProjectDeadline"
+            android:layout_alignStart="@id/tvProjectDeadline"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="83dp"
+            android:text="vài giây trước" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

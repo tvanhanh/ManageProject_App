@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.do_an_cs3.Ardapter.ViewPagerAdapter2;
+import com.example.do_an_cs3.Adapter.ViewPagerAdapter2;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.databinding.ActivityPersonnalBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
