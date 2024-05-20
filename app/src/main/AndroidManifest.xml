@@ -72,8 +72,17 @@
             android:exported="false"
             android:label="AddDeparmentsActivity"
             android:theme="@style/Theme.DO_AN_CS3"></activity>
-
-
+        <activity
+            android:name=".View.LoginActivity"
+            android:exported="false"
+            android:label="LoginActivity"
+            android:theme="@style/Theme.DO_AN_CS3"
+            />
+        <activity
+            android:name=".View.RegisterActivity"
+            android:exported="false"
+            android:label="@string/personnal"
+            android:theme="@style/Theme.DO_AN_CS3"/>
     </application>
 
 </manifest>

@@ -1,0 +1,54 @@
+<!-- item_task.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email" />
+    <TextView
+        android:id="@+id/tvPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phần trăm" />
+
+    <TextView
+        android:id="@+id/tvProjectName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên dự án" />
+
+    <TextView
+        android:id="@+id/tvDescriptionProject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mô tả" />
+
+    <TextView
+        android:id="@+id/tvProjectDeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thời hạn công việc" />
+
+    <TextView
+        android:id="@+id/tvProjectCreationTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thời gian tạo" />
+
+    <TextView
+        android:id="@+id/tvProjectStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trạng thái" />
+    <TextView
+        android:id="@+id/tvDepartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phòng " />
+</LinearLayout>

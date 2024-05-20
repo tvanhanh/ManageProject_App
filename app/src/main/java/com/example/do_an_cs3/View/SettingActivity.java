@@ -17,6 +17,7 @@ public class SettingActivity extends AppCompatActivity {
     private TextView changepass;
     private TextView statistic;
     private Button comback;
+    private TextView logout;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
@@ -25,6 +26,16 @@ public class SettingActivity extends AppCompatActivity {
         MenuItem settingMenuItem = bottomNavigationView.getMenu().findItem(R.id.setting);
         settingMenuItem.setChecked(true);
 
+
+        logout = findViewById(R.id.logout);
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 // comback
         comback = findViewById(R.id.buttonComback);
         comback.setOnClickListener(new View.OnClickListener() {
@@ -112,5 +123,6 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
     }
+
 
     }

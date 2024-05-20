@@ -9,4 +9,5 @@
     <color name="grey">#DDDDDD</color>
     <color name="red">#CC0000</color>
     <color name="WhiteSmoke">#F5F5F5</color>
+    <color name="gray">#CCC</color>
 </resources>

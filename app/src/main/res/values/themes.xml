@@ -5,7 +5,16 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+
+
+    <dimen name="size10dp">10dp</dimen>
+    <dimen name="size20dp">20dp</dimen>
+    <dimen name="activity_horizotal_magin">16dp</dimen>
+    <dimen name="activity_vertical_magin">16dp</dimen>
+
     <style name="Theme.DO_AN_CS3" parent="Base.Theme.DO_AN_CS3" />
+
+
 
 
 </resources>
