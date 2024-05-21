@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizotal_magin"
     android:paddingTop="@dimen/activity_vertical_magin"
     android:paddingBottom="@dimen/activity_vertical_magin"
-    tools:context=".View.LoginActivity">
+    tools:context=".View.Users.LoginActivity">
 
 
     <TextView

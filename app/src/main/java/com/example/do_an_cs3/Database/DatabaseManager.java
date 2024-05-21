@@ -12,9 +12,15 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.do_an_cs3.Model.Project;
-import com.example.do_an_cs3.View.ChooseRoleActivity;
+import com.example.do_an_cs3.Model.User;
+import com.example.do_an_cs3.View.Users.ChooseRoleActivity;
 import com.example.do_an_cs3.View.MainActivity;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,9 +29,21 @@ public class DatabaseManager {
     private Database dbhelper;
     private SQLiteDatabase db;
 
+    private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private static final int CODE_LENGTH = 8;
+    private static final SecureRandom RANDOM = new SecureRandom();
+
     public DatabaseManager(Context context) {
         dbhelper = new Database(context);
         db = dbhelper.getWritableDatabase();
+    }
+    public static String generateReferralCode() {
+        StringBuilder referralCode = new StringBuilder(CODE_LENGTH);
+        for (int i = 0; i < CODE_LENGTH; i++) {
+            int index = RANDOM.nextInt(CHARACTERS.length());
+            referralCode.append(CHARACTERS.charAt(index));
+        }
+        return referralCode.toString();
     }
 
     public long addUser(String email, String password) {
@@ -46,14 +64,91 @@ public class DatabaseManager {
             return -3; // hoặc một giá trị khác biểu thị lỗi
         }
         cursor.close();
+
+        String referralCode = generateReferralCode();
+
+
+
         // Nếu email hợp lệ và không tồn tại trong cơ sở dữ liệu, thêm mới người dùng vào cơ sở dữ liệu
         ContentValues values = new ContentValues();
+
         values.put("email", email);
         values.put("password", password);
+        values.put("referral_code", referralCode);
+
         long id = db.insert("Users", null, values);
         return id;
     }
+    public void saveUserWithAvatar( String userName, String phoneNumber,
+                                   String address, String avatarFilePath) {
+        ContentValues values = new ContentValues();
 
+        values.put("username", userName);
+        values.put("phone_number", phoneNumber);
+        values.put("address", address);
+        // Chuyển đổi ảnh từ file path thành byte array
+        byte[] avatarData = getBytesFromImage(avatarFilePath);
+        if (avatarData != null) {
+            values.put("avatar", avatarData);
+        }
+        long result = db.insert("Users", null, values);
+        if (result == -1) {
+            Log.e("DatabaseHelper", "Failed to insert user");
+        } else {
+            Log.i("DatabaseHelper", "User inserted successfully");
+        }
+        db.close();
+    }
+    private byte[] getBytesFromImage(String imagePath) {
+        try {
+            File imageFile = new File(imagePath);
+            FileInputStream fis = new FileInputStream(imageFile);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                baos.write(buffer, 0, bytesRead);
+            }
+            fis.close();
+            return baos.toByteArray();
+        } catch (IOException e) {
+            Log.e("DatabaseHelper", "Failed to convert image to byte array", e);
+            return null;
+        }
+    }
+    @SuppressLint("Range")
+    private User getInfor(){
+        User user = new User();
+        SQLiteDatabase db = null;
+        Cursor cursor = null;
+        try {
+            db = this.dbhelper.getReadableDatabase();
+            cursor = db.rawQuery("SELECT * FROM Users", null);
+            if (cursor.moveToFirst()) {
+                do {
+                    String userName = cursor.getString(cursor.getColumnIndex("username"));
+                    String phoneNumber = cursor.getString(cursor.getColumnIndex("phone_number"));
+                    String address= cursor.getString(cursor.getColumnIndex("address"));
+                    String referralCode = cursor.getString(cursor.getColumnIndex("referral_code"));
+                    String avatar = cursor.getString(cursor.getColumnIndex("avatar_url"));
+                    int deparment= cursor.getInt(cursor.getColumnIndex("department_id"));
+                    String role = cursor.getString(cursor.getColumnIndex("role"));
+                    user = new User ( userName,  phoneNumber,  address, referralCode, avatar,  deparment,  role);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Log lỗi hoặc xử lý ngoại lệ tại đây
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return user;
+    }
     // Phương thức kiểm tra định dạng email
     private boolean isValidEmail(String email) {
         String emailPattern = "[a-zA-Z0-9._-]+@gmail\\.com";
@@ -97,11 +192,12 @@ public class DatabaseManager {
         }
     }
 
-    public boolean updateUserRole(String email, String newRole) {
+    public boolean updateUserRole(String email, String newRole, String department) {
         try {
             // Tạo một đối tượng ContentValues để chứa dữ liệu cần cập nhật
             ContentValues values = new ContentValues();
             values.put("role", newRole);
+            values.put("department_id", department);
 
             // Tạo điều kiện để xác định người dùng cần cập nhật vai trò
             String selection = "email=?";
@@ -120,7 +216,7 @@ public class DatabaseManager {
             }
         } catch (Exception e) {
             // Xử lý lỗi và thông báo cho người dùng (nếu cần)
-            Log.e("Update Role Error", "Error updating role: " + e.getMessage());
+            Log.e("Update Role and Department Error ", "Error updating role: " + e.getMessage());
             return false; // Trả về false nếu có lỗi xảy ra
         }
     }

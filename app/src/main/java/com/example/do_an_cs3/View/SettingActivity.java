@@ -10,6 +10,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.do_an_cs3.R;
+import com.example.do_an_cs3.View.Job.AddJobActivity;
+import com.example.do_an_cs3.View.Job.JobActivity;
+import com.example.do_an_cs3.View.Users.ChangePassActivity;
+import com.example.do_an_cs3.View.Users.EditAccountActivity;
+import com.example.do_an_cs3.View.Users.LoginActivity;
+import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class SettingActivity extends AppCompatActivity {
@@ -47,7 +53,7 @@ public class SettingActivity extends AppCompatActivity {
         // sử tài khoản
         editTextAccount = findViewById(R.id.editaccount);
         editTextAccount.setOnClickListener(v -> {
-            Intent intent = new Intent(SettingActivity.this,EditAccountActivity.class);
+            Intent intent = new Intent(SettingActivity.this, EditAccountActivity.class);
             startActivity(intent);
         });
         //đổi mật khẩu

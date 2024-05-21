@@ -10,9 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.do_an_cs3.Model.Project;
-import com.example.do_an_cs3.ProjectViewHolder;
+import com.example.do_an_cs3.View.Projects.ProjectViewHolder;
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.View.DetailProjectActivity;
+import com.example.do_an_cs3.View.Projects.DetailProjectActivity;
 
 import java.util.List;
 

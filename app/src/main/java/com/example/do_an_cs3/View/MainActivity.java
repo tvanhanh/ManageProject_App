@@ -17,6 +17,9 @@ import com.example.do_an_cs3.Adapter.DeparmentAdapter;
 import com.example.do_an_cs3.Adapter.ViewPagerAdapter;
 import com.example.do_an_cs3.Model.Deparments;
 import com.example.do_an_cs3.R;
+import com.example.do_an_cs3.View.Job.AddJobActivity;
+import com.example.do_an_cs3.View.Job.JobActivity;
+import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 public boolean onMenuItemClick(MenuItem item) {
                     // Nếu đang ở trong JobActivity, chuyển đến MainActivity
                     if (MainActivity.this instanceof MainActivity) {
-                        Intent jobIntent = new Intent(MainActivity.this,JobActivity.class);
+                        Intent jobIntent = new Intent(MainActivity.this, JobActivity.class);
                         startActivity(jobIntent);
                     }
                     return true;

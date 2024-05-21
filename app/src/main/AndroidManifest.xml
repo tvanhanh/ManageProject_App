@@ -13,10 +13,13 @@
         android:theme="@style/Theme.DO_AN_CS3"
         tools:targetApi="31">
         <activity
-            android:name=".View.DetailProjectActivity"
+            android:name=".View.Users.AddInfor"
             android:exported="false" />
         <activity
-            android:name=".View.ChooseRoleActivity"
+            android:name=".View.Projects.DetailProjectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.Users.ChooseRoleActivity"
             android:exported="false" />
         <activity
             android:name=".View.MainActivity"
@@ -28,17 +31,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".View.JobActivity"
+            android:name=".View.Job.JobActivity"
             android:exported="false"
             android:label="@string/title_activity_job"
             android:theme="@style/Theme.DO_AN_CS3" />
         <activity
-            android:name=".View.AddJobActivity"
+            android:name=".View.Job.AddJobActivity"
             android:exported="false"
             android:label="@string/Addjob"
             android:theme="@style/Theme.DO_AN_CS3" />
         <activity
-            android:name=".View.PersonnalActivity"
+            android:name=".View.Users.PersonnalActivity"
             android:exported="false"
             android:label="@string/personnal"
             android:theme="@style/Theme.DO_AN_CS3" />
@@ -53,12 +56,12 @@
             android:label="@string/warning"
             android:theme="@style/Theme.DO_AN_CS3" />
         <activity
-            android:name=".View.EditAccountActivity"
+            android:name=".View.Users.EditAccountActivity"
             android:exported="false"
             android:label="@string/editAccount"
             android:theme="@style/Theme.DO_AN_CS3" />
         <activity
-            android:name=".View.ChangePassActivity"
+            android:name=".View.Users.ChangePassActivity"
             android:exported="false"
             android:label="@string/changepass"
             android:theme="@style/Theme.DO_AN_CS3" />
@@ -68,22 +71,22 @@
             android:label="@string/report"
             android:theme="@style/Theme.DO_AN_CS3" />
         <activity
-            android:name=".View.AddPersonnalActivity"
+            android:name=".View.Users.AddPersonnalActivity"
             android:exported="false"
             android:label="AddPersonnalActivity"
             android:theme="@style/Theme.DO_AN_CS3" />
         <activity
-            android:name=".View.AddDeparmentsActivity"
+            android:name=".View.Departments.AddDeparmentsActivity"
             android:exported="false"
             android:label="AddDeparmentsActivity"
             android:theme="@style/Theme.DO_AN_CS3" />
         <activity
-            android:name=".View.LoginActivity"
+            android:name=".View.Users.LoginActivity"
             android:exported="false"
             android:label="LoginActivity"
             android:theme="@style/Theme.DO_AN_CS3" />
         <activity
-            android:name=".View.RegisterActivity"
+            android:name=".View.Users.RegisterActivity"
             android:exported="false"
             android:label="@string/personnal"
             android:theme="@style/Theme.DO_AN_CS3" />

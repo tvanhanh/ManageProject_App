@@ -176,7 +176,7 @@ public class Database extends SQLiteOpenHelper {
                     "phone_number TEXT, " +
                     "address TEXT, " +
                     "referral_code TEXT, " +
-                    "avatar_url TEXT, " +
+                    "avatar_url BLOB, " +
                     "department_id INTEGER," +
                     "role TEXT, " +  // Bỏ giá trị mặc định cho role
                     "FOREIGN KEY(department_id) REFERENCES Departments(department_id)" +

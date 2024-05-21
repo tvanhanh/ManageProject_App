@@ -10,7 +10,7 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.View.AddPersonnalActivity;
+import com.example.do_an_cs3.View.Users.AddPersonnalActivity;
 
 /**
  * A simple {@link Fragment} subclass.
