@@ -1,6 +1,7 @@
 package com.example.do_an_cs3.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.ProjectViewHolder;
 import com.example.do_an_cs3.R;
+import com.example.do_an_cs3.View.DetailProjectActivity;
 
 import java.util.List;
 
@@ -50,9 +52,21 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
           //  holder.tvProjectCreationTime.setText(project.getCreationTime());
             holder.tvProjectStatus.setText(project.getStatus());
            // holder.tvProjectDepartment.setText(project.getDepartment());
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, DetailProjectActivity.class);
+                    intent.putExtra("projectCreationTime", project.getCreationTime());
+                    intent.putExtra("projectEmail", project.getEmail());
+                    intent.putExtra("projectName", project.getName());
+                    intent.putExtra("projectDeadline", project.getDeadline());
+                    intent.putExtra("projectStatus", project.getStatus());
+                    mContext.startActivity(intent);
+                }
+            });
         }
     }
-
     @Override
     public int getItemCount() {
         if(projectList != null){

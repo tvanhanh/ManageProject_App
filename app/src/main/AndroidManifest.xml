@@ -13,6 +13,12 @@
         android:theme="@style/Theme.DO_AN_CS3"
         tools:targetApi="31">
         <activity
+            android:name=".View.DetailProjectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.ChooseRoleActivity"
+            android:exported="false" />
+        <activity
             android:name=".View.MainActivity"
             android:exported="true">
             <intent-filter>
@@ -45,44 +51,42 @@
             android:name=".View.WarningActivity"
             android:exported="false"
             android:label="@string/warning"
-            android:theme="@style/Theme.DO_AN_CS3"></activity>
-
+            android:theme="@style/Theme.DO_AN_CS3" />
         <activity
             android:name=".View.EditAccountActivity"
             android:exported="false"
             android:label="@string/editAccount"
-            android:theme="@style/Theme.DO_AN_CS3"></activity>
+            android:theme="@style/Theme.DO_AN_CS3" />
         <activity
             android:name=".View.ChangePassActivity"
             android:exported="false"
             android:label="@string/changepass"
-            android:theme="@style/Theme.DO_AN_CS3"></activity>
+            android:theme="@style/Theme.DO_AN_CS3" />
         <activity
             android:name=".View.ReportActivity"
             android:exported="false"
             android:label="@string/report"
-            android:theme="@style/Theme.DO_AN_CS3"></activity>
+            android:theme="@style/Theme.DO_AN_CS3" />
         <activity
             android:name=".View.AddPersonnalActivity"
             android:exported="false"
             android:label="AddPersonnalActivity"
-            android:theme="@style/Theme.DO_AN_CS3"></activity>
+            android:theme="@style/Theme.DO_AN_CS3" />
         <activity
             android:name=".View.AddDeparmentsActivity"
             android:exported="false"
             android:label="AddDeparmentsActivity"
-            android:theme="@style/Theme.DO_AN_CS3"></activity>
+            android:theme="@style/Theme.DO_AN_CS3" />
         <activity
             android:name=".View.LoginActivity"
             android:exported="false"
             android:label="LoginActivity"
-            android:theme="@style/Theme.DO_AN_CS3"
-            />
+            android:theme="@style/Theme.DO_AN_CS3" />
         <activity
             android:name=".View.RegisterActivity"
             android:exported="false"
             android:label="@string/personnal"
-            android:theme="@style/Theme.DO_AN_CS3"/>
+            android:theme="@style/Theme.DO_AN_CS3" />
     </application>
 
 </manifest>
