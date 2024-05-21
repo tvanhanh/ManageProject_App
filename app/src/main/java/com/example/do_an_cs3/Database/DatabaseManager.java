@@ -5,12 +5,14 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.example.do_an_cs3.Model.Project;
+import com.example.do_an_cs3.View.ChooseRoleActivity;
 import com.example.do_an_cs3.View.MainActivity;
 
 import java.util.ArrayList;
@@ -25,13 +27,14 @@ public class DatabaseManager {
         dbhelper = new Database(context);
         db = dbhelper.getWritableDatabase();
     }
+
     public long addUser(String email, String password) {
         // Kiểm tra email có đúng định dạng "@gmail.com"
         if (!isValidEmail(email)) {
             return -1; // hoặc một giá trị khác biểu thị lỗi
         }
         // Kiểm tra mật khẩu có đúng độ dài 6 ký tự không
-        if (password.length() != 6) {
+        if (password.length() <= 6) {
             return -2; // hoặc một giá trị khác biểu thị lỗi
         }
 
@@ -57,25 +60,68 @@ public class DatabaseManager {
         return email.matches(emailPattern);
     }
 
-    // Phương thức đăng nhập
+    @SuppressLint("Range") // Phương thức đăng nhập
     public boolean login(String email, String password, Activity activity) {
-        String[] columns = {"email"};
+        String[] columns = {"email", "role"};
         String selection = "email=? AND password=?";
         String[] selectionArgs = {email, password};
 
         Cursor cursor = db.query("Users", columns, selection, selectionArgs, null, null, null);
         int count = cursor.getCount();
-        cursor.close();
 
         if (count > 0) {
-            // Nếu đăng nhập thành công, chuyển sang MainActivity
-            Intent intent = new Intent(activity, MainActivity.class);
-            activity.startActivity(intent);
+            cursor.moveToFirst();
+            String role = cursor.getString(cursor.getColumnIndex("role"));
+            cursor.close(); // Close the cursor after retrieving the data
+            // Lưu email của người dùng vào SharedPreferences
+            SharedPreferences sharedPreferences = activity.getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("user_email", email);
+            editor.apply();
+            if (role == null || role.isEmpty()) {
+                // If role is empty, display a different view
+                Intent intent = new Intent(activity, ChooseRoleActivity.class); // Assuming ChooseRoleActivity is the activity you want to show
+                activity.startActivity(intent);
+            } else {
+                // If login is successful and role is not empty, go to MainActivity
+                Intent intent = new Intent(activity, MainActivity.class);
+                activity.startActivity(intent);
+            }
+
             // Ẩn LoginActivity
             activity.finish();
             return true;
         } else {
+            cursor.close(); // Ensure the cursor is closed if count is 0
             return false;
+        }
+    }
+
+    public boolean updateUserRole(String email, String newRole) {
+        try {
+            // Tạo một đối tượng ContentValues để chứa dữ liệu cần cập nhật
+            ContentValues values = new ContentValues();
+            values.put("role", newRole);
+
+            // Tạo điều kiện để xác định người dùng cần cập nhật vai trò
+            String selection = "email=?";
+            String[] selectionArgs = {email};
+
+            // Thực hiện cập nhật dữ liệu trong cơ sở dữ liệu
+            int rowsAffected = db.update("Users", values, selection, selectionArgs);
+
+            // Kiểm tra xem có dòng nào được cập nhật không
+            if (rowsAffected > 0) {
+                // Trả về true nếu cập nhật thành công
+                return true;
+            } else {
+                // Trả về false nếu không có dòng nào được cập nhật
+                return false;
+            }
+        } catch (Exception e) {
+            // Xử lý lỗi và thông báo cho người dùng (nếu cần)
+            Log.e("Update Role Error", "Error updating role: " + e.getMessage());
+            return false; // Trả về false nếu có lỗi xảy ra
         }
     }
 

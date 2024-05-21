@@ -10,7 +10,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "ManageProject";
 
     // Phiên bản cơ sở dữ liệu
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Constructor
     public Database(Context context) {
@@ -20,8 +20,6 @@ public class Database extends SQLiteOpenHelper {
     // Phương thức onCreate để tạo cơ sở dữ liệu
     @Override
     public void onCreate(SQLiteDatabase db) {
-
-
         // Tạo bảng Users
         String createTableUsers = "CREATE TABLE Users (" +
                 "email TEXT PRIMARY KEY NOT NULL, " +
@@ -32,17 +30,19 @@ public class Database extends SQLiteOpenHelper {
                 "referral_code TEXT, " +
                 "avatar_url TEXT, " +
                 "department_id INTEGER," +
-                "role TEXT DEFAULT 'employee', " +
+                "role TEXT, " +
                 "FOREIGN KEY(department_id) REFERENCES Departments(department_id)" +
                 ")";
         db.execSQL(createTableUsers);
 
+        // Các bảng khác
+        // Tạo bảng Projects
         String createTableProjects = "CREATE TABLE Projects (" +
                 "project_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "project_name TEXT, " +
                 "project_description TEXT, " +
                 "deadline TEXT, " +
-                "creation_time TEXT,"+
+                "creation_time TEXT," +
                 "status TEXT, " +
                 "views INTEGER ,"+
                 "percent_complete INTEGER ,"+
@@ -118,7 +118,7 @@ public class Database extends SQLiteOpenHelper {
                 ")";
         db.execSQL(createTableProject_Tag);
 
-        // Tạo bảng Task_Participants  saa
+        // Tạo bảng Task_Participants
         String createTableTaskParticipants = "CREATE TABLE Task_Participants (" +
                 "task_id INTEGER, " +
                 "email TEXT, " +
@@ -127,6 +127,7 @@ public class Database extends SQLiteOpenHelper {
                 "FOREIGN KEY(email) REFERENCES Users(email)" +
                 ")";
         db.execSQL(createTableTaskParticipants);
+
         // Tạo bảng Project_Participants
         String createTableProject_Participants = "CREATE TABLE Project_Participants (" +
                 "project_id INTEGER, " +
@@ -137,6 +138,7 @@ public class Database extends SQLiteOpenHelper {
                 ")";
         db.execSQL(createTableProject_Participants);
 
+        // Tạo bảng Notification
         String createTableNotification = "CREATE TABLE Notification (" +
                 "notificationID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "content TEXT, " +
@@ -148,6 +150,7 @@ public class Database extends SQLiteOpenHelper {
                 ")";
         db.execSQL(createTableNotification);
 
+        // Tạo bảng Attachments
         String createTableAttachments = "CREATE TABLE Attachments (" +
                 "attachment_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "project_id INTEGER, " +
@@ -164,21 +167,40 @@ public class Database extends SQLiteOpenHelper {
     // Phương thức onUpgrade để nâng cấp cơ sở dữ liệu
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS Users");
-        db.execSQL("DROP TABLE IF EXISTS Projects");
-        db.execSQL("DROP TABLE IF EXISTS Tasks");
-        db.execSQL("DROP TABLE IF EXISTS Departments");
-        db.execSQL("DROP TABLE IF EXISTS Discussions");
-        db.execSQL("DROP TABLE IF EXISTS Evaluation");
-        db.execSQL("DROP TABLE IF EXISTS Performance");
-        db.execSQL("DROP TABLE IF EXISTS Project_Tag");
-        db.execSQL("DROP TABLE IF EXISTS Task_Participants");
-        db.execSQL("DROP TABLE IF EXISTS Notification");
-        db.execSQL("DROP TABLE IF EXISTS Attachments");
-        onCreate(db);
+        if (oldVersion < 2) {
+            // Tạo bảng tạm thời
+            String createTempTableUsers = "CREATE TABLE Users_temp (" +
+                    "email TEXT PRIMARY KEY NOT NULL, " +
+                    "username TEXT, " +
+                    "password TEXT NOT NULL, " +
+                    "phone_number TEXT, " +
+                    "address TEXT, " +
+                    "referral_code TEXT, " +
+                    "avatar_url TEXT, " +
+                    "department_id INTEGER," +
+                    "role TEXT, " +  // Bỏ giá trị mặc định cho role
+                    "FOREIGN KEY(department_id) REFERENCES Departments(department_id)" +
+                    ")";
+            db.execSQL(createTempTableUsers);
+
+            // Sao chép dữ liệu từ bảng cũ sang bảng tạm thời
+            String copyDataToTempTable = "INSERT INTO Users_temp (email, username, password, phone_number, address, referral_code, avatar_url, department_id, role) " +
+                    "SELECT email, username, password, phone_number, address, referral_code, avatar_url, department_id, role FROM Users";
+            db.execSQL(copyDataToTempTable);
+
+            // Xóa bảng cũ
+            String dropOldTable = "DROP TABLE Users";
+            db.execSQL(dropOldTable);
+
+            // Đổi tên bảng tạm thời thành tên bảng cũ
+            String renameTempTable = "ALTER TABLE Users_temp RENAME TO Users";
+            db.execSQL(renameTempTable);
+        }
+
+        // Nếu có thêm các thay đổi khác cho phiên bản mới hơn, thêm vào đây
     }
-    public SQLiteDatabase open(){
-        return  this.getWritableDatabase();
+
+    public SQLiteDatabase open() {
+        return this.getWritableDatabase();
     }
 }
-

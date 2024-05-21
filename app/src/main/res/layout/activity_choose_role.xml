@@ -53,6 +53,7 @@
 
         <!-- Đăng Ký Tổ Chức Mới -->
         <LinearLayout
+            android:id="@+id/lnLeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -86,6 +87,7 @@
 
         <!-- Nhập ID Tổ Chức -->
         <LinearLayout
+            android:id="@+id/lnIdOrg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -119,6 +121,7 @@
 
         <!-- Quét QR Code Tổ Chức -->
         <LinearLayout
+            android:id="@+id/lnQRcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -162,6 +165,7 @@
             android:gravity="center"
             android:paddingBottom="24dp" />
         <LinearLayout
+            android:id="@+id/lnPersonally"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
