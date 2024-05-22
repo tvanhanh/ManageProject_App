@@ -135,7 +135,7 @@
                     android:layout_marginTop="12dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="Name" />
+                    android:hint="Tên" />
             </LinearLayout>
 
             <LinearLayout
@@ -161,7 +161,7 @@
                     android:layout_marginTop="12dp"
                     android:ems="10"
                     android:inputType="phone"
-                    android:text="phone" />
+                    android:hint="điện thoại" />
             </LinearLayout>
 
 
@@ -188,6 +188,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="12dp"
                     android:ems="10"
+                    android:hint="Địa chỉ"
                     android:inputType="textPostalAddress" />
             </LinearLayout>
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Job.JobActivity">
+    tools:context=".View.Job.JobActivity"
+    >
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -90,7 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/dennham"
+        android:background="@color/butomnavication"
         app:itemIconTint="@color/costom_color_navigation"
         app:itemTextColor="@color/costom_color_navigation"
         app:layout_constraintBottom_toBottomOf="parent"

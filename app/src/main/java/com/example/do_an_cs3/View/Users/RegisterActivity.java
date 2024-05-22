@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -18,7 +19,7 @@ import com.example.do_an_cs3.Database.DatabaseManager;
 import com.example.do_an_cs3.R;
 
 public class RegisterActivity extends AppCompatActivity {
-    private Button loginButton;
+    private TextView textLogin;
     private Button registerButton;
     private EditText addTextEmail;
     private EditText addTextPassword;
@@ -45,8 +46,8 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-        loginButton = findViewById(R.id.btnLoginRegisterPage);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        textLogin = findViewById(R.id.textLogin);
+        textLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);

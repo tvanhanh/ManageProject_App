@@ -9,43 +9,53 @@
     android:paddingRight="@dimen/activity_horizotal_magin"
     android:paddingTop="@dimen/activity_vertical_magin"
     android:paddingBottom="@dimen/activity_vertical_magin"
+    android:background="@drawable/background"
     tools:context=".View.Users.LoginActivity">
 
 
     <TextView
         android:id="@+id/textLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="155dp"
         android:layout_height="wrap_content"
-        android:text="@string/textLogin"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:padding="20dp"/>
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="82dp"
+        android:padding="20dp"
+        android:text="LOGIN"
+        android:textColor="@color/red"
+        android:textSize="25dp" />
 
     <LinearLayout
         android:id="@+id/lnFrameLogin"
-        android:layout_width="381dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="283dp"
         android:layout_below="@id/textLogin"
-        android:layout_marginTop="60dp"
+        android:layout_alignParentEnd="true"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="47dp"
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/loginEditTextEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="351dp"
+            android:layout_height="48dp"
             android:layout_margin="@dimen/size10dp"
             android:background="@color/white"
-            android:drawableLeft="@drawable/email"
+            android:drawableLeft="@drawable/gmail1"
             android:drawablePadding="@dimen/size10dp"
             android:hint="@string/hintEmail"
             android:padding="@dimen/size10dp"
             android:singleLine="true"
+            android:textColor="@color/black"
             android:textColorHint="@color/gray" />
 
         <EditText
             android:id="@+id/loginEditTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="351dp"
+            android:layout_height="48dp"
             android:layout_margin="@dimen/size10dp"
             android:background="@color/white"
             android:drawableLeft="@drawable/password"
@@ -55,12 +65,48 @@
             android:singleLine="true"
             android:textColorHint="@color/gray" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textforgotpass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Forget password"
+                android:textColor="@color/print" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="120dp"
+                android:layout_weight="1"
+                android:textColor="@color/print"
+                android:text="show password" />
+
+
+        </LinearLayout>
+
+
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/size20dp"
             android:text="@string/btnLogin" />
+
+        <TextView
+            android:id="@+id/newAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/red"
+            android:text="To Register New Account" />
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -69,27 +115,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lnFrameLogin"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp">
-
-        <Button
-            android:id="@+id/btnForgetPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
-            android:text="@string/btnForgetPassword"
-            android:textAlignment="center"/>
-
-        <Button
-            android:id="@+id/btnRegisterNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"
-            android:text="@string/textRegisterNew"
-            android:textAlignment="center"
-            />
-    </LinearLayout>
+        android:layout_marginTop="20dp"/>
 
 </RelativeLayout>

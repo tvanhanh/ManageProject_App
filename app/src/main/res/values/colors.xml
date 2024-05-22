@@ -10,4 +10,6 @@
     <color name="red">#CC0000</color>
     <color name="WhiteSmoke">#F5F5F5</color>
     <color name="gray">#CCC</color>
+    <color name="butomnavication">#CAF4FF</color>
+    <color name="viewpager">#FFF9D0</color>
 </resources>

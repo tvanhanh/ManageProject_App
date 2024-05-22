@@ -79,7 +79,7 @@
         android:id="@+id/bottomnavigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/dennham"
+        android:background="@color/butomnavication"
         android:layout_marginBottom="-5dp"
         app:itemIconTint="@color/costom_color_navigation"
         app:itemTextColor="@color/costom_color_navigation"

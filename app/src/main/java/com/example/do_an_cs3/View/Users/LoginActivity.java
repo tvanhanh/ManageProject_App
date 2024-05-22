@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -19,10 +20,10 @@ import com.example.do_an_cs3.R;
 
 public class LoginActivity extends AppCompatActivity {
     private Button LoginButton;
-    private Button RegisterButton;
     private DatabaseManager dbManager;
 
     private EditText loginTextEmail;
+    private TextView newAccount;
     private EditText loginTextPassword;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -49,8 +50,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        RegisterButton = findViewById(R.id.btnRegisterNew);
-        RegisterButton.setOnClickListener(new View.OnClickListener() {
+        newAccount = findViewById(R.id.newAccount);
+        newAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);

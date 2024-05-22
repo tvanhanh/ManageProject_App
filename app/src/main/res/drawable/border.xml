@@ -8,5 +8,6 @@
         android:top="4dp"
         android:right="4dp"
         android:bottom="4dp" />
-    <corners android:radius="4dp"/> <!-- Bo tròn các góc của viền -->
+    <corners android:radius="4dp"/>
+    <!-- Bo tròn các góc của viền -->
 </shape>
