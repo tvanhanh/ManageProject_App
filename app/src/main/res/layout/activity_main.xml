@@ -138,15 +138,11 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/accountButton"
-                android:layout_width="81dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/round_button"
-                android:onClick="onClickMethod"
-                android:padding="16dp"
-                android:text="Tên Tài Khoản" />
-
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageViewMain"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/hanh" />
         </LinearLayout>
 
         <!-- Layout dạng dọc chứa TextView -->
@@ -156,7 +152,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/userName"
                 android:layout_width="209dp"
                 android:layout_height="36dp"
                 android:text="Tên tài khoản"
@@ -164,6 +160,7 @@
                 android:textSize="18dp" />
 
             <TextView
+                android:id="@+id/position"
                 android:layout_width="212dp"
                 android:layout_height="37dp"
                 android:text="tên đơn vị"

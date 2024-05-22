@@ -1,11 +1,19 @@
 package com.example.do_an_cs3.View;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
@@ -15,10 +23,14 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.do_an_cs3.Adapter.DeparmentAdapter;
 import com.example.do_an_cs3.Adapter.ViewPagerAdapter;
+import com.example.do_an_cs3.Database.Database;
+import com.example.do_an_cs3.Database.DatabaseManager;
 import com.example.do_an_cs3.Model.Deparments;
+import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.Job.AddJobActivity;
 import com.example.do_an_cs3.View.Job.JobActivity;
+import com.example.do_an_cs3.View.Users.AddProfileActivity;
 import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -26,124 +38,148 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
-        private TabLayout mTablayout;
-        private ViewPager mViewPager;
-        private BottomNavigationView bottomNavigationView;
-        private RecyclerView rcv_deparment;
-        private DeparmentAdapter deparmentAdapter;
-        private Button WarningButton;
-       // private Piechar pieChart;
+    private TabLayout mTablayout;
+    private ViewPager mViewPager;
+    private BottomNavigationView bottomNavigationView;
+    private RecyclerView rcv_deparment;
+    private DeparmentAdapter deparmentAdapter;
+    private Button WarningButton;
+    private CircleImageView circleImageView;
+    private TextView tvUserName;
+    private TextView tvPosision;
+    private Database dbhelper;
+    private DatabaseManager dbManager;
 
-        @SuppressLint("MissingInflatedId")
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-
-            mTablayout = findViewById(R.id.tab_layout);
-            mViewPager = findViewById(R.id.viewpager_2);
-
-            ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-            mViewPager.setAdapter(viewPagerAdapter);
-            mTablayout.setupWithViewPager(mViewPager);
-
-
-            BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigation);
-            MenuItem homeMenuItem = bottomNavigationView.getMenu().findItem(R.id.home);
-            homeMenuItem.setChecked(true);
-
-
-            // Tìm và gán MenuItem tương ứng với "job"
-            MenuItem JobMenuItem = bottomNavigationView.getMenu().findItem(R.id.job);
-
-            // Thiết lập nghe sự kiện khi menu "home" được chọn
-            JobMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem item) {
-                    // Nếu đang ở trong JobActivity, chuyển đến MainActivity
-                    if (MainActivity.this instanceof MainActivity) {
-                        Intent jobIntent = new Intent(MainActivity.this, JobActivity.class);
-                        startActivity(jobIntent);
-                    }
-                    return true;
-                }
-            });
-            MenuItem settingMenuItem = bottomNavigationView.getMenu().findItem(R.id.setting);
-            // Thiết lập nghe sự kiện khi menu "home" được chọn
-            settingMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem item) {
-                    // Nếu đang ở trong JobActivity, chuyển đến settingActivity
-                    if (MainActivity.this instanceof MainActivity) {
-                        Intent jobIntent = new Intent(MainActivity.this, SettingActivity.class);
-                        startActivity(jobIntent);
-                    }
-                    return true;
-                }
-            });
-            MenuItem addiobMenuItem = bottomNavigationView.getMenu().findItem(R.id.add_job);
-            // Thiết lập nghe sự kiện khi menu "home" được chọn
-            addiobMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem item) {
-                    // Nếu đang ở trong JobActivity, chuyển đến AddJobActivity
-                    if (MainActivity.this instanceof MainActivity) {
-                        Intent addjobIntent = new Intent(MainActivity.this, AddJobActivity.class);
-                        startActivity(addjobIntent);
-                    }
-                    return true;
-                }
-            });
-            MenuItem perMenuItem = bottomNavigationView.getMenu().findItem(R.id.personnal);
-            // Thiết lập nghe sự kiện khi menu "home" được chọn
-            perMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem item) {
-                    // Nếu đang ở trong JobActivity, chuyển đến AddJobActivity
-                    if (MainActivity.this instanceof MainActivity) {
-                        Intent perIntent = new Intent(MainActivity.this, PersonnalActivity.class);
-                        startActivity(perIntent);
-                    }
-                    return true;
-                }
-            });
-
-            rcv_deparment = findViewById(R.id.rcv_deparment);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
-            rcv_deparment.setLayoutManager(linearLayoutManager);
-
-            // Khởi tạo dữ liệu giả định
-            List<Deparments> deparmentsList = createDummyData();
-
-            // Khởi tạo và thiết lập adapter
-            deparmentAdapter = new DeparmentAdapter(deparmentsList);
-            rcv_deparment.setAdapter(deparmentAdapter);
-
-            // button warning
-            WarningButton = findViewById(R.id.buttonWarning);
-            WarningButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this,WarningActivity.class);
-                    startActivity(intent);
-                }
-            });
-
-        }
-
-        // Phương thức giả lập dữ liệu
-        private List<Deparments> createDummyData() {
-            List<Deparments> dummyData = new ArrayList<>();
-            dummyData.add(new Deparments("Department 1", "50%", "10%"));
-            dummyData.add(new Deparments("Department 2", "60%", "20%"));
-            dummyData.add(new Deparments("Department 3", "70%", "30%"));
-            return dummyData;
-        }
+    public String getCurrentUserEmail() {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        return sharedPreferences.getString("user_email", null);
+    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
 
 
+        dbhelper = new Database(this);
+        dbManager = new DatabaseManager(this);
+        mTablayout = findViewById(R.id.tab_layout);
+        mViewPager = findViewById(R.id.viewpager_2);
 
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        mViewPager.setAdapter(viewPagerAdapter);
+        mTablayout.setupWithViewPager(mViewPager);
+
+        tvUserName = findViewById(R.id.userName);
+        tvPosision = findViewById(R.id.position);
+        circleImageView = findViewById(R.id.circleImageViewMain);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigation);
+        MenuItem homeMenuItem = bottomNavigationView.getMenu().findItem(R.id.home);
+        homeMenuItem.setChecked(true);
+
+        MenuItem jobMenuItem = bottomNavigationView.getMenu().findItem(R.id.job);
+        jobMenuItem.setOnMenuItemClickListener(item -> {
+            Intent jobIntent = new Intent(MainActivity.this, JobActivity.class);
+            startActivity(jobIntent);
+            return true;
+        });
+
+        MenuItem settingMenuItem = bottomNavigationView.getMenu().findItem(R.id.setting);
+        settingMenuItem.setOnMenuItemClickListener(item -> {
+            Intent settingIntent = new Intent(MainActivity.this, SettingActivity.class);
+            startActivity(settingIntent);
+            return true;
+        });
+
+        MenuItem addJobMenuItem = bottomNavigationView.getMenu().findItem(R.id.add_job);
+        addJobMenuItem.setOnMenuItemClickListener(item -> {
+            Intent addJobIntent = new Intent(MainActivity.this, AddJobActivity.class);
+            startActivity(addJobIntent);
+            return true;
+        });
+
+        MenuItem perMenuItem = bottomNavigationView.getMenu().findItem(R.id.personnal);
+        perMenuItem.setOnMenuItemClickListener(item -> {
+            Intent perIntent = new Intent(MainActivity.this, PersonnalActivity.class);
+            startActivity(perIntent);
+            return true;
+        });
+
+        rcv_deparment = findViewById(R.id.rcv_deparment);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+        rcv_deparment.setLayoutManager(linearLayoutManager);
+
+        List<Deparments> deparmentsList = createDummyData();
+        deparmentAdapter = new DeparmentAdapter(deparmentsList);
+        rcv_deparment.setAdapter(deparmentAdapter);
+
+        WarningButton = findViewById(R.id.buttonWarning);
+        WarningButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, WarningActivity.class);
+            startActivity(intent);
+        });
+
+        displayUserInfo();
     }
 
+    private void displayUserInfo() {
+        User user = dbManager.getUserInfo(getCurrentUserEmail());
+
+        if (user != null) {
+            tvUserName.setText(user.getUserName());
+            tvPosision.setText(user.getRole());
+
+            if (user.getAvatar() != null) {
+                byte[] avatarBytes = Base64.decode(user.getAvatar(), Base64.DEFAULT);
+                Bitmap avatarBitmap = BitmapFactory.decodeByteArray(avatarBytes, 0, avatarBytes.length);
+                circleImageView.setImageBitmap(avatarBitmap);
+            }
+        }
+    }
+
+    private List<Deparments> createDummyData() {
+        List<Deparments> dummyData = new ArrayList<>();
+        dummyData.add(new Deparments("Department 1", "50%", "10%"));
+        dummyData.add(new Deparments("Department 2", "60%", "20%"));
+        dummyData.add(new Deparments("Department 3", "70%", "30%"));
+        return dummyData;
+    }
+
+//    @SuppressLint("Range")
+//    private User getUserInfo() {
+//        User user = new User();
+//        SQLiteDatabase db = null;
+//        Cursor cursor = null;
+//        try {
+//            db = dbhelper.getReadableDatabase();
+//            cursor = db.rawQuery("SELECT * FROM Users", null);
+//            if (cursor.moveToFirst()) {
+//                String userName = cursor.getString(cursor.getColumnIndex("username"));
+//                String phoneNumber = cursor.getString(cursor.getColumnIndex("phone_number"));
+//                String address = cursor.getString(cursor.getColumnIndex("address"));
+//                String referralCode = cursor.getString(cursor.getColumnIndex("referral_code"));
+//                byte[] avatarBytes = cursor.getBlob(cursor.getColumnIndex("avatar_url"));
+//                int department = cursor.getInt(cursor.getColumnIndex("department_id"));
+//                String role = cursor.getString(cursor.getColumnIndex("role"));
+//
+//                String avatar = (avatarBytes != null) ? Base64.encodeToString(avatarBytes, Base64.DEFAULT) : null;
+//
+//                user = new User(userName, phoneNumber, address, referralCode, avatar, department, role);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            if (cursor != null) {
+//                cursor.close();
+//            }
+//            if (db != null) {
+//                db.close();
+//            }
+//        }
+//        return user;
+//    }
+}

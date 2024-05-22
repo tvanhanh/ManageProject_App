@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
+import android.util.Base64;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -19,7 +21,9 @@ import com.example.do_an_cs3.View.MainActivity;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +41,7 @@ public class DatabaseManager {
         dbhelper = new Database(context);
         db = dbhelper.getWritableDatabase();
     }
+
     public static String generateReferralCode() {
         StringBuilder referralCode = new StringBuilder(CODE_LENGTH);
         for (int i = 0; i < CODE_LENGTH; i++) {
@@ -68,7 +73,6 @@ public class DatabaseManager {
         String referralCode = generateReferralCode();
 
 
-
         // Nếu email hợp lệ và không tồn tại trong cơ sở dữ liệu, thêm mới người dùng vào cơ sở dữ liệu
         ContentValues values = new ContentValues();
 
@@ -79,62 +83,78 @@ public class DatabaseManager {
         long id = db.insert("Users", null, values);
         return id;
     }
-    public void saveUserWithAvatar( String userName, String phoneNumber,
-                                   String address, String avatarFilePath) {
-        ContentValues values = new ContentValues();
 
-        values.put("username", userName);
-        values.put("phone_number", phoneNumber);
-        values.put("address", address);
-        // Chuyển đổi ảnh từ file path thành byte array
-        byte[] avatarData = getBytesFromImage(avatarFilePath);
-        if (avatarData != null) {
-            values.put("avatar", avatarData);
-        }
-        long result = db.insert("Users", null, values);
-        if (result == -1) {
-            Log.e("DatabaseHelper", "Failed to insert user");
-        } else {
-            Log.i("DatabaseHelper", "User inserted successfully");
-        }
-        db.close();
-    }
-    private byte[] getBytesFromImage(String imagePath) {
-        try {
-            File imageFile = new File(imagePath);
-            FileInputStream fis = new FileInputStream(imageFile);
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            byte[] buffer = new byte[1024];
-            int bytesRead;
-            while ((bytesRead = fis.read(buffer)) != -1) {
-                baos.write(buffer, 0, bytesRead);
-            }
-            fis.close();
-            return baos.toByteArray();
-        } catch (IOException e) {
-            Log.e("DatabaseHelper", "Failed to convert image to byte array", e);
-            return null;
-        }
-    }
+
+    //    private byte[] getBytesFromImage(String imagePath) {
+//        try {
+//            File imageFile = new File(imagePath);
+//            FileInputStream fis = new FileInputStream(imageFile);
+//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//            byte[] buffer = new byte[1024];
+//            int bytesRead;
+//            while ((bytesRead = fis.read(buffer)) != -1) {
+//                baos.write(buffer, 0, bytesRead);
+//            }
+//            fis.close();
+//            return baos.toByteArray();
+//        } catch (IOException e) {
+//            Log.e("DatabaseHelper", "Failed to convert image to byte array", e);
+//            return null;
+//        }
+//    }
+//    public byte[] getBytesFromImage(String filePath) {
+//        FileInputStream fis = null;
+//        ByteArrayOutputStream baos = null;
+//        try {
+//            fis = new FileInputStream(filePath);
+//            baos = new ByteArrayOutputStream();
+//            byte[] buffer = new byte[1024];
+//            int bytesRead;
+//            while ((bytesRead = fis.read(buffer)) != -1) {
+//                baos.write(buffer, 0, bytesRead);
+//            }
+//            return baos.toByteArray();
+//        } catch (FileNotFoundException e) {
+//            Log.e("DatabaseHelper", "File not found", e);
+//        } catch (IOException e) {
+//            Log.e("DatabaseHelper", "Failed to read file", e);
+//        } finally {
+//            try {
+//                if (fis != null) {
+//                    fis.close();
+//                }
+//                if (baos != null) {
+//                    baos.close();
+//                }
+//            } catch (IOException e) {
+//                Log.e("DatabaseHelper", "Failed to close streams", e);
+//            }
+//        }
+//        return null;
+//    }
     @SuppressLint("Range")
-    private User getInfor(){
-        User user = new User();
+    public User getUserInfo(String email) {
+        User user = null; // Khởi tạo user là null để kiểm tra sau
         SQLiteDatabase db = null;
         Cursor cursor = null;
         try {
             db = this.dbhelper.getReadableDatabase();
-            cursor = db.rawQuery("SELECT * FROM Users", null);
+            // Sử dụng câu lệnh SQL với điều kiện email
+            cursor = db.rawQuery("SELECT * FROM Users WHERE email = ?", new String[]{email});
             if (cursor.moveToFirst()) {
-                do {
-                    String userName = cursor.getString(cursor.getColumnIndex("username"));
-                    String phoneNumber = cursor.getString(cursor.getColumnIndex("phone_number"));
-                    String address= cursor.getString(cursor.getColumnIndex("address"));
-                    String referralCode = cursor.getString(cursor.getColumnIndex("referral_code"));
-                    String avatar = cursor.getString(cursor.getColumnIndex("avatar_url"));
-                    int deparment= cursor.getInt(cursor.getColumnIndex("department_id"));
-                    String role = cursor.getString(cursor.getColumnIndex("role"));
-                    user = new User ( userName,  phoneNumber,  address, referralCode, avatar,  deparment,  role);
-                } while (cursor.moveToNext());
+                // Lấy thông tin người dùng từ cursor
+                String userName = cursor.getString(cursor.getColumnIndex("username"));
+                String phoneNumber = cursor.getString(cursor.getColumnIndex("phone_number"));
+                String address = cursor.getString(cursor.getColumnIndex("address"));
+                String referralCode = cursor.getString(cursor.getColumnIndex("referral_code"));
+                byte[] avatarBytes = cursor.getBlob(cursor.getColumnIndex("avatar_url"));
+                int department = cursor.getInt(cursor.getColumnIndex("department_id"));
+                String role = cursor.getString(cursor.getColumnIndex("role"));
+
+                // Chuyển đổi byte array thành String
+                String avatar = (avatarBytes != null) ? Base64.encodeToString(avatarBytes, Base64.DEFAULT) : null;
+
+                user = new User(userName, phoneNumber, address, referralCode, avatar, department, role);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -149,6 +169,8 @@ public class DatabaseManager {
         }
         return user;
     }
+
+
     // Phương thức kiểm tra định dạng email
     private boolean isValidEmail(String email) {
         String emailPattern = "[a-zA-Z0-9._-]+@gmail\\.com";
@@ -288,4 +310,5 @@ public class DatabaseManager {
         }
         return projectList;
     }
+
 }

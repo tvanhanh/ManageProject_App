@@ -10,7 +10,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "ManageProject";
 
     // Phiên bản cơ sở dữ liệu
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     // Constructor
     public Database(Context context) {
@@ -28,7 +28,7 @@ public class Database extends SQLiteOpenHelper {
                 "phone_number TEXT, " +
                 "address TEXT, " +
                 "referral_code TEXT, " +
-                "avatar_url TEXT, " +
+                "avatar_url BLOB, " +
                 "department_id INTEGER," +
                 "role TEXT, " +
                 "FOREIGN KEY(department_id) REFERENCES Departments(department_id)" +
@@ -167,7 +167,7 @@ public class Database extends SQLiteOpenHelper {
     // Phương thức onUpgrade để nâng cấp cơ sở dữ liệu
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (oldVersion < 2) {
+        if (oldVersion < 3) {
             // Tạo bảng tạm thời
             String createTempTableUsers = "CREATE TABLE Users_temp (" +
                     "email TEXT PRIMARY KEY NOT NULL, " +
