@@ -69,7 +69,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="182dp"
+        android:layout_marginBottom="205dp"
         android:orientation="vertical">
 
         <!-- Nội dung của mỗi item RecyclerView -->
@@ -129,11 +129,25 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
+            <!-- Left LinearLayout with weight 6 for the chart -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:background="@color/yelo">
+                <com.anychart.AnyChartView
+                    android:id="@+id/anyChartView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+            </LinearLayout>
+
+            <!-- Right LinearLayout with weight 4 for the legend -->
 
         </LinearLayout>
-
-
     </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -176,6 +190,7 @@
                 android:text="tên đơn vị"
                 android:textSize="18dp" />
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
