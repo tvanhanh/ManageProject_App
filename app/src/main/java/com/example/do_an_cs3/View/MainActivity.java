@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                 .position("right")
                 .itemsLayout("vertical")
                 .align("center");
-
+        pie.background().fill("#E8DFCA"); // Đổi màu nền thành màu trắng (#FFFFFF)
         anyChartView.setChart(pie);
     }
     private void displayUserInfo() {

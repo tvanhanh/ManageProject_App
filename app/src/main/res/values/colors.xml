@@ -12,5 +12,10 @@
     <color name="gray">#CCC</color>
     <color name="butomnavication">#CAF4FF</color>
     <color name="viewpager">#FFF9D0</color>
-    <color name="buttonXanhDam">#FF00AAFF</color>
+    <color name="buttonXanhDam">#343BC6</color>
+    <color name="listDepartment">#A0EFC7</color>
+    <color name="xanhla">#A1DD70</color>
+    <color name="orange">#FEB941</color>
+    <color name="donhat">#FF5580</color>
+    <color name="xanhduong">#5AB2FF</color>
 </resources>

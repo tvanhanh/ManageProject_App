@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.do_an_cs3.app-mergeDebugResources-44:/values-w1240dp-v13/values-w1240dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\nhutl\\AndroidStudioProjects\\DO_AN_CS\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,61",
+                        "endColumns": "42,42",
+                        "endOffsets": "55,99"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,98",
+                        "endColumns": "42,42",
+                        "endOffsets": "93,136"
+                    }
+                }
+            ]
+        }
+    ]
+}

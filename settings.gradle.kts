@@ -10,10 +10,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url = uri("https://jitpack.io") }
+        maven("https://jitpack.io")
     }
 }
 
 rootProject.name = "DO_AN_CS3"
 include(":app")
- 
