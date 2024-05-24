@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizotal_magin"
+    android:paddingRight="@dimen/activity_horizotal_magin"
+    android:paddingTop="@dimen/activity_vertical_magin"
+    android:paddingBottom="@dimen/activity_vertical_magin"
+    tools:context=".View.Users.RegisterActivity">
+
+
+
+    <TextView
+        android:id="@+id/textRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textRegister"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp"
+        android:padding="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/lnFrameRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="200dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size10dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/gmail1"
+            android:drawablePadding="@dimen/size10dp"
+            android:hint="@string/hintEmail"
+            android:padding="@dimen/size10dp"
+            android:singleLine="true"
+            android:textColorHint="@color/gray" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size10dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/password"
+            android:drawablePadding="@dimen/size10dp"
+            android:hint="@string/hintPassword"
+            android:padding="@dimen/size10dp"
+            android:singleLine="true"
+            android:textColorHint="@color/gray" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size20dp"
+            android:text="@string/btnRegister" />
+        <TextView
+            android:id="@+id/textLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Login by Account" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

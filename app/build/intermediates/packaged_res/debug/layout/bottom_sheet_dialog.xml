@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Các chức năng chia sẻ công việc, xác nhận hoàn thành, tạm dừng, từ chối xin việc -->
+    <Button
+        android:id="@+id/btnShareTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Chia sẻ công việc"
+        android:padding="8dp"
+        android:textSize="16sp" />
+<!--    android:drawableLeft="@drawable/ic_share"-->
+
+    <Button
+        android:id="@+id/btnConfirmComplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Xác nhận hoàn thành"
+        android:padding="8dp"
+        android:textSize="16sp" />
+<!--    android:drawableLeft="@drawable/ic_confirm"-->
+    <Button
+        android:id="@+id/btnPause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Tạm dừng"
+        android:padding="8dp"
+        android:textSize="16sp" />
+<!--    android:drawableLeft="@drawable/ic_pause"-->
+
+    <Button
+        android:id="@+id/btnReject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Từ chối xin việc"
+        android:padding="8dp"
+        android:textSize="16sp" />
+<!--    android:drawableLeft="@drawable/ic_reject"-->
+    <!-- Ba nút ngang: Xóa việc, Sửa/Gia hạn, Lịch sử -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="16dp">
+
+        <Button
+            android:id="@+id/btnDeleteTask"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="Xóa việc"
+            android:textSize="16sp"
+            android:padding="8dp" />
+<!--        android:drawableTop="@drawable/ic_delete"-->
+
+        <Button
+            android:id="@+id/btnEditExtend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="Sửa/Gia hạn"
+            android:textSize="16sp"
+            android:padding="8dp" />
+        <!--            android:drawableTop="@drawable/ic_edit"-->
+
+        <Button
+            android:id="@+id/btnHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Lịch sử"
+            android:textSize="16sp"
+            android:padding="8dp" />
+<!--            android:drawableTop="@drawable/ic_history"-->
+
+    </LinearLayout>
+</LinearLayout>
