@@ -4,9 +4,11 @@
     <color name="black">#FF000000</color>
     <color name="blu">#7FFF00</color>
     <color name="butomnavication">#CAF4FF</color>
+    <color name="buttonXanhDam">#343BC6</color>
     <color name="dennham">#CCCCCC</color>
     <color name="gray">#CCC</color>
     <color name="grey">#DDDDDD</color>
+    <color name="listDepartment">#A0EFC7</color>
     <color name="print">#FF66CC</color>
     <color name="red">#CC0000</color>
     <color name="viewpager">#FFF9D0</color>

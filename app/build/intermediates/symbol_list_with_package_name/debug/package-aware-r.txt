@@ -1415,6 +1415,7 @@ color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
 color butomnavication
+color buttonXanhDam
 color button_material_dark
 color button_material_light
 color cardview_dark_background
@@ -1473,6 +1474,7 @@ color gray
 color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color listDepartment
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -3293,6 +3295,7 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
+id anyChartView
 id arc
 id asConfigured
 id async
@@ -3837,6 +3840,7 @@ id viewpager
 id viewpager_2
 id visible
 id visible_removing_fragment_view_tag
+id web_view
 id west
 id withText
 id with_icon
@@ -3963,16 +3967,16 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_infor
 layout activity_adddeparments
-layout activity_addjob
 layout activity_addpersonnal
+layout activity_addproject
 layout activity_choose_role
 layout activity_detail_project
 layout activity_edit_account
-layout activity_job
 layout activity_login
 layout activity_main
 layout activity_personnal
 layout activity_plash
+layout activity_project
 layout activity_register
 layout activity_report
 layout activity_setting
@@ -4071,6 +4075,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout view_anychart
 menu mune_buttom_navigation
 mipmap ic_launcher
 mipmap ic_launcher_round

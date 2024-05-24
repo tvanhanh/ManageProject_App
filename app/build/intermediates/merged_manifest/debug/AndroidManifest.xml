@@ -19,6 +19,7 @@
     <uses-permission android:name="com.example.do_an_cs3.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
+        android:name="androidx.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -61,12 +62,12 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.do_an_cs3.View.Job.JobActivity"
+            android:name="com.example.do_an_cs3.View.Job.ProjectActivity"
             android:exported="false"
             android:label="@string/title_activity_job"
             android:theme="@style/Theme.DO_AN_CS3" />
         <activity
-            android:name="com.example.do_an_cs3.View.Job.AddJobActivity"
+            android:name="com.example.do_an_cs3.View.Job.AddProjectActivity"
             android:exported="false"
             android:label="@string/Addjob"
             android:theme="@style/Theme.DO_AN_CS3" />

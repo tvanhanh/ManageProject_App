@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.do_an_cs3.app-mergeDebugResources-43:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "com.example.do_an_cs3.app-mergeDebugResources-44:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\nhutl\\.gradle\\caches\\transforms-3\\cae0069d1585611eb98b1d4f16fa8d6e\\transformed\\appcompat-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\nhutl\\.gradle\\caches\\transforms-3\\0cc58336eee0550850dee7ad7eb9a9ee\\transformed\\appcompat-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\nhutl\\.gradle\\caches\\transforms-3\\0b1b1a158da0668ca4bdcd3e34d70499\\transformed\\material-1.11.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\nhutl\\.gradle\\caches\\transforms-3\\fca63faf14e3c19556a647de5838948d\\transformed\\material-1.11.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",

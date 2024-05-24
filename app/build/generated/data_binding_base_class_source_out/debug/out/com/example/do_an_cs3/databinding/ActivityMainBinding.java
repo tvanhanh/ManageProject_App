@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import androidx.viewpager.widget.ViewPager;
+import com.anychart.AnyChartView;
 import com.example.do_an_cs3.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -25,6 +26,9 @@ import java.lang.String;
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   private final RelativeLayout rootView;
+
+  @NonNull
+  public final AnyChartView anyChartView;
 
   @NonNull
   public final BottomNavigationView bottomnavigation;
@@ -74,7 +78,7 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final ViewPager viewpager2;
 
-  private ActivityMainBinding(@NonNull RelativeLayout rootView,
+  private ActivityMainBinding(@NonNull RelativeLayout rootView, @NonNull AnyChartView anyChartView,
       @NonNull BottomNavigationView bottomnavigation, @NonNull Button buttonDate,
       @NonNull Button buttonSeacrh, @NonNull Button buttonWarning,
       @NonNull CircleImageView circleImageViewMain, @NonNull LinearLayout linearLayout,
@@ -83,6 +87,7 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull TextView textView2, @NonNull TextView userName, @NonNull ViewPager viewpager,
       @NonNull ViewPager viewpager2) {
     this.rootView = rootView;
+    this.anyChartView = anyChartView;
     this.bottomnavigation = bottomnavigation;
     this.buttonDate = buttonDate;
     this.buttonSeacrh = buttonSeacrh;
@@ -128,6 +133,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.anyChartView;
+      AnyChartView anyChartView = ViewBindings.findChildViewById(rootView, id);
+      if (anyChartView == null) {
+        break missingId;
+      }
+
       id = R.id.bottomnavigation;
       BottomNavigationView bottomnavigation = ViewBindings.findChildViewById(rootView, id);
       if (bottomnavigation == null) {
@@ -224,9 +235,10 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((RelativeLayout) rootView, bottomnavigation, buttonDate,
-          buttonSeacrh, buttonWarning, circleImageViewMain, linearLayout, logo, position,
-          rcvDeparment, tabLayout, text, textView, textView2, userName, viewpager, viewpager2);
+      return new ActivityMainBinding((RelativeLayout) rootView, anyChartView, bottomnavigation,
+          buttonDate, buttonSeacrh, buttonWarning, circleImageViewMain, linearLayout, logo,
+          position, rcvDeparment, tabLayout, text, textView, textView2, userName, viewpager,
+          viewpager2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

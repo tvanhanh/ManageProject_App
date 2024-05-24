@@ -3,7 +3,7 @@
     android:layout_width="190dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="8dp"
+
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
     android:padding="20dp"
@@ -11,10 +11,13 @@
     >
 
     <LinearLayout
+        app:cardCornerRadius="20dp"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/print"
+        android:background="@color/listDepartment"
+        android:layout_marginLeft="5dp"
+
        >
 
         <TextView
@@ -41,7 +44,6 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="Hoàn thành 1 việc" />
-
 
     </LinearLayout>
 

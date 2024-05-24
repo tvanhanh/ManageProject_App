@@ -6,9 +6,19 @@
     tools:context=".View.back_end.View_fragment.FragmentJob.CompleteFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/complete" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/complete" />
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>
