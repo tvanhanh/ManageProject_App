@@ -1,17 +1,13 @@
 package com.example.do_an_cs3.View;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -21,6 +17,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.ValueDataEntry;
+import com.anychart.charts.Pie;
 import com.example.do_an_cs3.Adapter.DeparmentAdapter;
 import com.example.do_an_cs3.Adapter.ViewPagerAdapter;
 import com.example.do_an_cs3.Database.Database;
@@ -28,9 +29,8 @@ import com.example.do_an_cs3.Database.DatabaseManager;
 import com.example.do_an_cs3.Model.Deparments;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.View.Job.AddJobActivity;
-import com.example.do_an_cs3.View.Job.JobActivity;
-import com.example.do_an_cs3.View.Users.AddProfileActivity;
+import com.example.do_an_cs3.View.Job.AddProjectActivity;
+import com.example.do_an_cs3.View.Job.ProjectActivity;
 import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -52,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvPosision;
     private Database dbhelper;
     private DatabaseManager dbManager;
+    private AnyChartView anyChartView;
+
+    private String[] statusTask = {"Dự án mới", "Đang thực hiện", "Chờ duyệt", "Hoàn thành", "Tạm dừng"};
+    private int quantityTasks[] = {3,7,4,4,1};
 
     public String getCurrentUserEmail() {
         SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
@@ -62,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        anyChartView = findViewById(R.id.anyChartView);
 
         dbhelper = new Database(this);
         dbManager = new DatabaseManager(this);
@@ -83,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
         MenuItem jobMenuItem = bottomNavigationView.getMenu().findItem(R.id.job);
         jobMenuItem.setOnMenuItemClickListener(item -> {
-            Intent jobIntent = new Intent(MainActivity.this, JobActivity.class);
+            Intent jobIntent = new Intent(MainActivity.this, ProjectActivity.class);
             startActivity(jobIntent);
             return true;
         });
@@ -97,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
         MenuItem addJobMenuItem = bottomNavigationView.getMenu().findItem(R.id.add_job);
         addJobMenuItem.setOnMenuItemClickListener(item -> {
-            Intent addJobIntent = new Intent(MainActivity.this, AddJobActivity.class);
+            Intent addJobIntent = new Intent(MainActivity.this, AddProjectActivity.class);
             startActivity(addJobIntent);
             return true;
         });
@@ -122,17 +126,32 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, WarningActivity.class);
             startActivity(intent);
         });
-
+        setupChartView();
         displayUserInfo();
     }
 
+    private void setupChartView() {
+        Pie pie = AnyChart.pie();
+        List<DataEntry> dataEntries = new ArrayList<>();
+
+        for (int i = 0; i < statusTask.length; i++) {
+            String quatityTask = String.valueOf(quantityTasks[i]);
+            dataEntries.add(new ValueDataEntry( quatityTask +" "+ statusTask[i], quantityTasks[i]));
+        }
+        pie.data(dataEntries);
+        pie.legend()
+                .position("right")
+                .itemsLayout("vertical")
+                .align("center");
+
+        anyChartView.setChart(pie);
+    }
     private void displayUserInfo() {
         User user = dbManager.getUserInfo(getCurrentUserEmail());
 
         if (user != null) {
             tvUserName.setText(user.getUserName());
             tvPosision.setText(user.getRole());
-
             if (user.getAvatar() != null) {
                 byte[] avatarBytes = Base64.decode(user.getAvatar(), Base64.DEFAULT);
                 Bitmap avatarBitmap = BitmapFactory.decodeByteArray(avatarBytes, 0, avatarBytes.length);

@@ -14,8 +14,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.do_an_cs3.Adapter.ViewPagerAdapter2;
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.View.Job.AddJobActivity;
-import com.example.do_an_cs3.View.Job.JobActivity;
+import com.example.do_an_cs3.View.Job.AddProjectActivity;
+import com.example.do_an_cs3.View.Job.ProjectActivity;
 import com.example.do_an_cs3.View.MainActivity;
 import com.example.do_an_cs3.View.SettingActivity;
 import com.example.do_an_cs3.databinding.ActivityPersonnalBinding;
@@ -70,7 +70,7 @@ public class PersonnalActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 // Nếu đang ở trong JobActivity, chuyển đến JobActivity
                 if (PersonnalActivity.this instanceof PersonnalActivity) {
-                    Intent jobIntent = new Intent(PersonnalActivity.this, JobActivity.class);
+                    Intent jobIntent = new Intent(PersonnalActivity.this, ProjectActivity.class);
                     startActivity(jobIntent);
                 }
                 return true;
@@ -83,7 +83,7 @@ public class PersonnalActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 // Nếu đang ở trong JobActivity, chuyển đến AddJobActivity
                 if (PersonnalActivity.this instanceof PersonnalActivity) {
-                    Intent addjobIntent = new Intent(PersonnalActivity.this, AddJobActivity.class);
+                    Intent addjobIntent = new Intent(PersonnalActivity.this, AddProjectActivity.class);
                     startActivity(addjobIntent);
                 }
                 return true;
