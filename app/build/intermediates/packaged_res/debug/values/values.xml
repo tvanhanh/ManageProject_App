@@ -63,7 +63,7 @@
     <string name="warning">WarningActivity</string>
     <style name="Base.Theme.DO_AN_CS3" parent="Theme.Material3.DayNight.NoActionBar">
         
-        
+        <item name="colorPrimary">@color/xanhduong</item>
     </style>
     <style name="Theme.DO_AN_CS3" parent="Base.Theme.DO_AN_CS3"/>
 </resources>
