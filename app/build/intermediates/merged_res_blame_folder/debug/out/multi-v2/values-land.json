@@ -4,24 +4,7 @@
             "outputFile": "com.example.do_an_cs3.app-mergeDebugResources-44:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\nhutl\\AndroidStudioProjects\\DO_AN_CS\\app\\src\\main\\res\\values-land\\dimens.xml",
-                    "from": {
-                        "startLines": "1,2",
-                        "startColumns": "4,4",
-                        "startOffsets": "17,60",
-                        "endColumns": "41,42",
-                        "endOffsets": "54,98"
-                    },
-                    "to": {
-                        "startLines": "5,24",
-                        "startColumns": "4,4",
-                        "startOffsets": "264,1613",
-                        "endColumns": "41,42",
-                        "endOffsets": "301,1651"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\nhutl\\.gradle\\caches\\transforms-3\\0cc58336eee0550850dee7ad7eb9a9ee\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\PC ASUS\\.gradle\\caches\\transforms-3\\0cc58336eee0550850dee7ad7eb9a9ee\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -31,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\nhutl\\.gradle\\caches\\transforms-3\\fca63faf14e3c19556a647de5838948d\\transformed\\material-1.11.0\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\PC ASUS\\.gradle\\caches\\transforms-3\\fca63faf14e3c19556a647de5838948d\\transformed\\material-1.11.0\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,26,35,40",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -47,6 +30,23 @@
                         "endLines": "6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,30,39,44,47",
                         "endColumns": "74,73,72,69,71,69,64,66,69,71,68,68,81,89,75,67,66,77,64,66,10,10,10,10",
                         "endOffsets": "376,450,523,593,665,735,800,867,937,1009,1078,1147,1229,1319,1395,1463,1530,1608,1716,1783,1955,2524,2793,3021"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\PC ASUS\\AndroidStudioProjects\\DO_AN_CS3_1\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,60",
+                        "endColumns": "41,42",
+                        "endOffsets": "54,98"
+                    },
+                    "to": {
+                        "startLines": "5,24",
+                        "startColumns": "4,4",
+                        "startOffsets": "264,1613",
+                        "endColumns": "41,42",
+                        "endOffsets": "301,1651"
                     }
                 }
             ]

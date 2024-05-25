@@ -9,13 +9,17 @@ color butomnavication
 color buttonXanhDam
 color costom_color_navigation
 color dennham
+color donhat
 color gray
 color grey
 color listDepartment
+color orange
 color print
 color red
 color viewpager
 color white
+color xanhduong
+color xanhla
 color yelo
 dimen activity_horizotal_magin
 dimen activity_vertical_magin

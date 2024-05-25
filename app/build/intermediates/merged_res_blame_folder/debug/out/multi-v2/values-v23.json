@@ -4,7 +4,7 @@
             "outputFile": "com.example.do_an_cs3.app-mergeDebugResources-44:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\nhutl\\.gradle\\caches\\transforms-3\\0cc58336eee0550850dee7ad7eb9a9ee\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\PC ASUS\\.gradle\\caches\\transforms-3\\0cc58336eee0550850dee7ad7eb9a9ee\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\nhutl\\.gradle\\caches\\transforms-3\\fca63faf14e3c19556a647de5838948d\\transformed\\material-1.11.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\PC ASUS\\.gradle\\caches\\transforms-3\\fca63faf14e3c19556a647de5838948d\\transformed\\material-1.11.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,19,22,25,28,32",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -34,26 +34,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\nhutl\\.gradle\\caches\\transforms-3\\cec6354e01c58f9940e1a52d6e06c82e\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "200"
-                    },
-                    "to": {
-                        "startLines": "50",
-                        "startColumns": "4",
-                        "startOffsets": "3232",
-                        "endLines": "52",
-                        "endColumns": "12",
-                        "endOffsets": "3377"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\nhutl\\AndroidStudioProjects\\DO_AN_CS\\app\\src\\main\\res\\values-v23\\themes.xml",
+                    "source": "C:\\Users\\PC ASUS\\AndroidStudioProjects\\DO_AN_CS3_1\\app\\src\\main\\res\\values-v23\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -69,6 +50,25 @@
                         "endLines": "58",
                         "endColumns": "12",
                         "endOffsets": "3700"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\PC ASUS\\.gradle\\caches\\transforms-3\\cec6354e01c58f9940e1a52d6e06c82e\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "50",
+                        "startColumns": "4",
+                        "startOffsets": "3232",
+                        "endLines": "52",
+                        "endColumns": "12",
+                        "endOffsets": "3377"
                     }
                 }
             ]

@@ -6,13 +6,17 @@
     <color name="butomnavication">#CAF4FF</color>
     <color name="buttonXanhDam">#343BC6</color>
     <color name="dennham">#CCCCCC</color>
+    <color name="donhat">#FF5580</color>
     <color name="gray">#CCC</color>
     <color name="grey">#DDDDDD</color>
     <color name="listDepartment">#A0EFC7</color>
+    <color name="orange">#FEB941</color>
     <color name="print">#FF66CC</color>
     <color name="red">#CC0000</color>
     <color name="viewpager">#FFF9D0</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="xanhduong">#5AB2FF</color>
+    <color name="xanhla">#A1DD70</color>
     <color name="yelo">#E8DFCA</color>
     <dimen name="activity_horizotal_magin">16dp</dimen>
     <dimen name="activity_vertical_magin">16dp</dimen>
@@ -59,7 +63,7 @@
     <string name="warning">WarningActivity</string>
     <style name="Base.Theme.DO_AN_CS3" parent="Theme.Material3.DayNight.NoActionBar">
         
-        
+        <item name="colorPrimary">@color/xanhduong</item>
     </style>
     <style name="Theme.DO_AN_CS3" parent="Base.Theme.DO_AN_CS3"/>
 </resources>
