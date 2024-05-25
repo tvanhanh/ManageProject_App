@@ -104,7 +104,9 @@ id action_SecondFragment_to_FirstFragment
 id add_job
 id anyChartView
 id bottomnavigation
+id btnAddDiscussion
 id btnConfirmComplete
+id btnDelete
 id btnDeleteTask
 id btnEditExtend
 id btnHistory
@@ -112,6 +114,7 @@ id btnLogin
 id btnPause
 id btnRegister
 id btnReject
+id btnReply
 id btnSave
 id btnShareTask
 id btnViewMore
@@ -134,10 +137,13 @@ id chanepass
 id checkBox
 id chucvu
 id circleImageView
+id circleImageViewComment
 id circleImageViewMain
+id circleImageViewWork
 id comeback
 id deleteAccount
 id deparment_name
+id discussionContainer
 id editAddNameProject
 id editTextAddress
 id editTextAddressAdd

@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,6 +29,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class AddProjectActivity extends AppCompatActivity {
@@ -70,17 +73,27 @@ public class AddProjectActivity extends AppCompatActivity {
         nameProject = findViewById(R.id.editAddNameProject);
         descriptionProject = findViewById(R.id.textInputEditTextDescription);
         deadlineTime = findViewById(R.id.textViewDate);
+        Date currentCreation = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy, HH:mm");
+
+        // Chuyển đổi thời gian hiện tại thành chuỗi định dạng
 
         nextButton = findViewById(R.id.butonThenext);
         nextButton.setOnClickListener(v -> {
             String name = nameProject.getText().toString();
             String description = descriptionProject.getText().toString();
             String deadline = deadlineTime.getText().toString();
+            String creationTime = dateFormat.format(currentCreation);
+            String status = "Đang thực hiện";
+            int views = 0;
+            float percent_complete = 0;
+            String email = getCurrentUserEmail();
+            int department = 0;
 
             if (name.isEmpty() || description.isEmpty() || deadline.isEmpty()) {
                 Toast.makeText(this, "Vui lòng kiểm tra lại thông tin", Toast.LENGTH_SHORT).show();
             } else {
-                long insertedId = dbManager.addProject(name, description, deadline);
+                long insertedId = dbManager.addProject(name, description, deadline,creationTime, status,views,percent_complete,email,department);
                 if (insertedId != -1) {
                     Toast.makeText(this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
                     finish();
@@ -164,5 +177,9 @@ public class AddProjectActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    public String getCurrentUserEmail() {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        return sharedPreferences.getString("user_email", null);
     }
 }

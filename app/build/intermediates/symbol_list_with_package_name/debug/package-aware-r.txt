@@ -3319,7 +3319,9 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnAddDiscussion
 id btnConfirmComplete
+id btnDelete
 id btnDeleteTask
 id btnEditExtend
 id btnHistory
@@ -3327,6 +3329,7 @@ id btnLogin
 id btnPause
 id btnRegister
 id btnReject
+id btnReply
 id btnSave
 id btnShareTask
 id btnViewMore
@@ -3365,7 +3368,9 @@ id checked
 id chronometer
 id chucvu
 id circleImageView
+id circleImageViewComment
 id circleImageViewMain
+id circleImageViewWork
 id circle_center
 id clear_text
 id clip_horizontal
@@ -3411,6 +3416,7 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
+id discussionContainer
 id disjoint
 id dragAnticlockwise
 id dragClockwise

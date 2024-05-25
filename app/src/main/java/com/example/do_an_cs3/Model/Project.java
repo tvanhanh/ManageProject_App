@@ -29,7 +29,7 @@ public class Project {
     private int percentCompleted;
     private String email;
     private String status;
-    private String department;
+    private int department;
 
     // Constructors
 
@@ -51,7 +51,7 @@ public class Project {
         this.percentCompleted = percentCompleted;
     }
 
-    public Project(int id, String name, String description, String deadline, String creationTime, int views, int percentCompleted, String email, String status, String department) {
+    public Project(int id, String name, String description, String deadline, String creationTime, int views, int percentCompleted, String email, String status, int department) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -109,11 +109,11 @@ public class Project {
         this.status = status;
     }
 
-    public String getDepartment() {
+    public int getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(int department) {
         this.department = department;
     }
 }

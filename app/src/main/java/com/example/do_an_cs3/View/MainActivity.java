@@ -23,7 +23,7 @@ import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
 import com.anychart.charts.Pie;
 import com.example.do_an_cs3.Adapter.DeparmentAdapter;
-import com.example.do_an_cs3.Adapter.ViewPagerAdapter;
+import com.example.do_an_cs3.Adapter.ViewPagerAdapterHome;
 import com.example.do_an_cs3.Database.Database;
 import com.example.do_an_cs3.Database.DatabaseManager;
 import com.example.do_an_cs3.Model.Deparments;
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         mTablayout = findViewById(R.id.tab_layout);
         mViewPager = findViewById(R.id.viewpager_2);
 
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        ViewPagerAdapterHome viewPagerAdapter = new ViewPagerAdapterHome(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         mViewPager.setAdapter(viewPagerAdapter);
         mTablayout.setupWithViewPager(mViewPager);
 

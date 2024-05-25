@@ -3318,7 +3318,9 @@ int id bounce 0x7f09006b
 int id bounceBoth 0x7f09006c
 int id bounceEnd 0x7f09006d
 int id bounceStart 0x7f09006e
+int id btnAddDiscussion 0x7f090286
 int id btnConfirmComplete 0x7f09006f
+int id btnDelete 0x7f090287
 int id btnDeleteTask 0x7f090070
 int id btnEditExtend 0x7f090071
 int id btnHistory 0x7f090072
@@ -3326,6 +3328,7 @@ int id btnLogin 0x7f090073
 int id btnPause 0x7f090074
 int id btnRegister 0x7f090075
 int id btnReject 0x7f090076
+int id btnReply 0x7f090288
 int id btnSave 0x7f090077
 int id btnShareTask 0x7f090078
 int id btnViewMore 0x7f090079
@@ -3364,7 +3367,9 @@ int id checked 0x7f090099
 int id chronometer 0x7f09009a
 int id chucvu 0x7f09009b
 int id circleImageView 0x7f09009c
+int id circleImageViewComment 0x7f09028a
 int id circleImageViewMain 0x7f09009d
+int id circleImageViewWork 0x7f09028b
 int id circle_center 0x7f09009e
 int id clear_text 0x7f09009f
 int id clip_horizontal 0x7f0900a0
@@ -3410,6 +3415,7 @@ int id disableHome 0x7f0900c7
 int id disableIntraAutoTransition 0x7f0900c8
 int id disablePostScroll 0x7f0900c9
 int id disableScroll 0x7f0900ca
+int id discussionContainer 0x7f090289
 int id disjoint 0x7f0900cb
 int id dragAnticlockwise 0x7f0900cc
 int id dragClockwise 0x7f0900cd

@@ -34,7 +34,7 @@ public class UpdateNewFragment extends Fragment {
 
         // Initialize RecyclerView
         rcv_project = view.findViewById(R.id.rcv_project);
-        rcv_project.setHasFixedSize(true);
+       // rcv_project.setHasFixedSize(true);
 
         // Set up the adapter
         dbManager = new DatabaseManager(requireContext());
