@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:2:1-112:12
-INJECTED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:2:1-112:12
-INJECTED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:2:1-112:12
-INJECTED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:2:1-112:12
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:2:1-105:12
+INJECTED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:2:1-105:12
+INJECTED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:2:1-105:12
+INJECTED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:2:1-105:12
 MERGED from [androidx.databinding:viewbinding:8.2.1] C:\Users\nhutl\.gradle\caches\transforms-3\d8e2b50a3b8b883d93d1c6e9c560316e\transformed\jetified-viewbinding-8.2.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\nhutl\.gradle\caches\transforms-3\c560cd5cd522e192f0fddc0f9c0f2a31\transformed\navigation-common-2.7.7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\nhutl\.gradle\caches\transforms-3\02abcfc40c6e795f7908a7b438b104ed\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:17:1-22:12
@@ -86,8 +86,8 @@ ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidMan
 	android:name
 		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:7:22-79
 application
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:8:5-110:19
-INJECTED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:8:5-110:19
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:8:5-103:19
+INJECTED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:8:5-103:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\nhutl\.gradle\caches\transforms-3\fca63faf14e3c19556a647de5838948d\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\nhutl\.gradle\caches\transforms-3\fca63faf14e3c19556a647de5838948d\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\nhutl\.gradle\caches\transforms-3\8da6363c192d327e2e1e241fbc6e86cc\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -153,153 +153,147 @@ ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidMan
 	android:name
 		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:27:13-58
 activity#com.example.do_an_cs3.View.splash
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:29:9-40:20
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:29:9-36:20
 	android:exported
 		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:31:13-36
 	android:name
 		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:30:13-40
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:32:13-36:29
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:32:13-35:29
 action#android.intent.action.MAIN
 ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:33:17-69
 	android:name
 		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:35:17-77
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:35:27-74
-meta-data#android.app.Activity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:37:13-39:36
-	android:value
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:39:17-33
-	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:38:17-52
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:34:27-74
 activity#com.example.do_an_cs3.View.MainActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:41:9-47:20
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:37:9-40:20
+	android:exported
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:39:13-37
+	android:name
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:38:13-46
+activity#com.example.do_an_cs3.View.Job.ProjectActivity
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:41:9-46:15
+	android:label
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:44:13-55
 	android:exported
 		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:43:13-37
-	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:42:13-46
-activity#com.example.do_an_cs3.View.Job.ProjectActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:48:9-53:15
-	android:label
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:51:13-55
-	android:exported
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:50:13-37
 	android:theme
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:52:13-51
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:45:13-51
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:49:13-53
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:42:13-53
 activity#com.example.do_an_cs3.View.Job.AddProjectActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:54:9-58:54
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:47:9-51:54
 	android:label
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:57:13-43
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:50:13-43
 	android:exported
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:56:13-37
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:49:13-37
 	android:theme
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:58:13-51
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:51:13-51
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:55:13-56
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:48:13-56
 activity#com.example.do_an_cs3.View.Users.PersonnalActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:59:9-63:54
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:52:9-56:54
 	android:label
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:62:13-46
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:55:13-46
 	android:exported
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:61:13-37
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:54:13-37
 	android:theme
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:63:13-51
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:56:13-51
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:60:13-57
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:53:13-57
 activity#com.example.do_an_cs3.View.SettingActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:64:9-68:54
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:57:9-61:54
 	android:label
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:67:13-44
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:60:13-44
 	android:exported
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:66:13-37
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:59:13-37
 	android:theme
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:68:13-51
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:61:13-51
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:65:13-49
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:58:13-49
 activity#com.example.do_an_cs3.View.WarningActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:69:9-73:54
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:62:9-66:54
 	android:label
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:72:13-44
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:65:13-44
 	android:exported
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:71:13-37
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:64:13-37
 	android:theme
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:73:13-51
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:66:13-51
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:70:13-49
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:63:13-49
 activity#com.example.do_an_cs3.View.Users.EditAccountActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:74:9-78:54
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:67:9-71:54
 	android:label
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:77:13-48
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:70:13-48
 	android:exported
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:76:13-37
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:69:13-37
 	android:theme
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:78:13-51
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:71:13-51
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:75:13-59
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:68:13-59
 activity#com.example.do_an_cs3.View.Users.ChangePassActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:79:9-83:54
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:72:9-76:54
 	android:label
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:82:13-47
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:75:13-47
 	android:exported
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:81:13-37
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:74:13-37
 	android:theme
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:83:13-51
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:76:13-51
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:80:13-58
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:73:13-58
 activity#com.example.do_an_cs3.View.ReportActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:84:9-88:54
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:77:9-81:54
 	android:label
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:87:13-43
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:80:13-43
 	android:exported
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:86:13-37
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:79:13-37
 	android:theme
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:88:13-51
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:81:13-51
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:85:13-48
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:78:13-48
 activity#com.example.do_an_cs3.View.Users.AddPersonnalActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:89:9-93:54
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:82:9-86:54
 	android:label
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:92:13-49
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:85:13-49
 	android:exported
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:91:13-37
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:84:13-37
 	android:theme
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:93:13-51
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:86:13-51
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:90:13-60
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:83:13-60
 activity#com.example.do_an_cs3.View.Departments.AddDeparmentsActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:94:9-98:54
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:87:9-91:54
 	android:label
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:97:13-50
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:90:13-50
 	android:exported
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:96:13-37
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:89:13-37
 	android:theme
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:98:13-51
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:91:13-51
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:95:13-67
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:88:13-67
 activity#com.example.do_an_cs3.View.Users.LoginActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:99:9-103:54
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:92:9-96:54
 	android:label
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:102:13-42
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:95:13-42
 	android:exported
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:101:13-37
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:94:13-37
 	android:theme
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:103:13-51
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:96:13-51
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:100:13-53
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:93:13-53
 activity#com.example.do_an_cs3.View.Users.RegisterActivity
-ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:104:9-108:54
+ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:97:9-101:54
 	android:label
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:107:13-46
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:100:13-46
 	android:exported
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:106:13-37
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:99:13-37
 	android:theme
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:108:13-51
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:101:13-51
 	android:name
-		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:105:13-56
+		ADDED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml:98:13-56
 uses-sdk
 INJECTED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\AndroidManifest.xml

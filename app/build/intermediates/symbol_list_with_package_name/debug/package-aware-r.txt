@@ -1466,6 +1466,7 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color donhat
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
@@ -2128,6 +2129,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color orange
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2154,6 +2156,8 @@ color tooltip_background_dark
 color tooltip_background_light
 color viewpager
 color white
+color xanhduong
+color xanhla
 color yelo
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -3517,7 +3521,6 @@ id liner1
 id liner2
 id listMode
 id list_item
-id lnForgetPasswordAndRegister
 id lnFrameLogin
 id lnFrameRegister
 id lnIdOrg

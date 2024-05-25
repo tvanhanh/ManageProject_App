@@ -36,9 +36,9 @@
 
 
     <string name="hintEmail">Email</string>
-    <string name="hintPassword">Password</string>
+    <string name="hintPassword">Mật khẩu</string>
     <string name="btnRegister">Register</string>
-    <string name="textRegister">Register</string>
+    <string name="textRegister">TẠO TÀI KHOẢN</string>
     <string name="textRegisterNew">Register New</string>
     <string name="btnLogin">Login</string>
     <string name="textLogin">Login</string>

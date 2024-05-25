@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -26,6 +27,9 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final Button btnRegister;
 
   @NonNull
+  public final CheckBox checkBox;
+
+  @NonNull
   public final EditText editTextEmail;
 
   @NonNull
@@ -44,11 +48,12 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final TextView textRegister;
 
   private ActivityRegisterBinding(@NonNull RelativeLayout rootView, @NonNull Button btnRegister,
-      @NonNull EditText editTextEmail, @NonNull EditText editTextPassword,
-      @NonNull LinearLayout lnFrameRegister, @NonNull RelativeLayout main,
-      @NonNull TextView textLogin, @NonNull TextView textRegister) {
+      @NonNull CheckBox checkBox, @NonNull EditText editTextEmail,
+      @NonNull EditText editTextPassword, @NonNull LinearLayout lnFrameRegister,
+      @NonNull RelativeLayout main, @NonNull TextView textLogin, @NonNull TextView textRegister) {
     this.rootView = rootView;
     this.btnRegister = btnRegister;
+    this.checkBox = checkBox;
     this.editTextEmail = editTextEmail;
     this.editTextPassword = editTextPassword;
     this.lnFrameRegister = lnFrameRegister;
@@ -90,6 +95,12 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.checkBox;
+      CheckBox checkBox = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox == null) {
+        break missingId;
+      }
+
       id = R.id.editTextEmail;
       EditText editTextEmail = ViewBindings.findChildViewById(rootView, id);
       if (editTextEmail == null) {
@@ -122,8 +133,8 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRegisterBinding((RelativeLayout) rootView, btnRegister, editTextEmail,
-          editTextPassword, lnFrameRegister, main, textLogin, textRegister);
+      return new ActivityRegisterBinding((RelativeLayout) rootView, btnRegister, checkBox,
+          editTextEmail, editTextPassword, lnFrameRegister, main, textLogin, textRegister);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

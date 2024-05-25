@@ -1,146 +1,134 @@
 [
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_warning.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_warning.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_edit_account.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_edit_account.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_newjob.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_newjob.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_newjob.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_newjob.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_project.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_project.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_choose_role.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_choose_role.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_late.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_late.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_addpersonnal.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_addpersonnal.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_list_personnal.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_list_personnal.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_addproject.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_addproject.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_expiring_soon.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_expiring_soon.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_processing_job.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_processing_job.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_login.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_login.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_personnal.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_personnal.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_setting.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_setting.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_pause.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_pause.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_report.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_report.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_list_personnal.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_list_personnal.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_addpersonnal.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_addpersonnal.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activy_changepass.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activy_changepass.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_personnal.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_personnal.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_add_infor.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_add_infor.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_important.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_important.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_detail_project.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_detail_project.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_complete.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_complete.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_list_deparment.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_list_deparment.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_processing_job.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_processing_job.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_personnal.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_personnal.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_addproject.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_addproject.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_login.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_adddeparments.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_adddeparments.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_adddeparments.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_adddeparments.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\item_project.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\item_project.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/bottom_sheet_dialog.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/bottom_sheet_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\item_department.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\item_department.xml"
-    },
-    {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_personnal.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_personnal.xml"
-    },
-    {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_pause.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_pause.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_main.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_main.xml"
     },
     {
         "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_important.xml",
         "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_important.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_register.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_register.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/item_project.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/item_project.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_add_infor.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_add_infor.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/item_department.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/item_department.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_main.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_warning.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_warning.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_choose_role.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_choose_role.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_register.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_register.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\bottom_sheet_dialog.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\bottom_sheet_dialog.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_updatenew.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_updatenew.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_detail_project.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_detail_project.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_complete.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_complete.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_edit_account.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_edit_account.xml"
-    },
-    {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activy_changepass.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activy_changepass.xml"
-    },
-    {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_documents.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_documents.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_late.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_late.xml"
     },
     {
         "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_expiring_soon.xml",
         "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_expiring_soon.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_plash.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_plash.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_setting.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_setting.xml"
+    },
+    {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_report.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_report.xml"
     },
     {
         "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_documents.xml",
         "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_documents.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_updatenew.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_updatenew.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_plash.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_plash.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_pending_job.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_pending_job.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_project.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_project.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_list_deparment.xml",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_list_deparment.xml"
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/fragment_pending_job.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/fragment_pending_job.xml"
     }
 ]

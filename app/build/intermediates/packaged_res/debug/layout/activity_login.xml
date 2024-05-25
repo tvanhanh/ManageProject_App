@@ -9,40 +9,56 @@
     android:paddingRight="@dimen/activity_horizotal_magin"
     android:paddingTop="@dimen/activity_vertical_magin"
     android:paddingBottom="@dimen/activity_vertical_magin"
-    android:background="@drawable/background"
     tools:context=".View.Users.LoginActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <TextView
         android:id="@+id/textLogin"
-        android:layout_width="155dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="82dp"
-        android:padding="20dp"
-        android:text="LOGIN"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/apptext"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Đăng Nhập"
         android:textColor="@color/red"
         android:textSize="25dp" />
 
+    <ImageView
+        android:layout_width="54dp"
+        android:layout_height="22dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/logo">
+
+    </ImageView>
+
     <LinearLayout
         android:id="@+id/lnFrameLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="283dp"
-        android:layout_below="@id/textLogin"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/gray"
         android:layout_alignParentEnd="true"
-
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="47dp"
+        android:layout_marginLeft="0dp"
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/loginEditTextEmail"
-            android:layout_width="351dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_margin="@dimen/size10dp"
+            android:layout_marginStart="@dimen/size10dp"
+            android:layout_marginTop="@dimen/size10dp"
+            android:layout_marginEnd="@dimen/size10dp"
+            android:layout_marginBottom="@dimen/size10dp"
             android:background="@color/white"
             android:drawableLeft="@drawable/gmail1"
             android:drawablePadding="@dimen/size10dp"
@@ -54,13 +70,17 @@
 
         <EditText
             android:id="@+id/loginEditTextPassword"
-            android:layout_width="351dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_margin="@dimen/size10dp"
+            android:layout_marginStart="@dimen/size10dp"
+            android:layout_marginTop="@dimen/size10dp"
+            android:layout_marginEnd="@dimen/size10dp"
+            android:layout_marginBottom="@dimen/size10dp"
             android:background="@color/white"
             android:drawableLeft="@drawable/password"
             android:drawablePadding="@dimen/size10dp"
-            android:hint="@string/hintPassword"
+            android:hint="mật khẩu"
             android:padding="@dimen/size10dp"
             android:singleLine="true"
             android:textColorHint="@color/gray" />
@@ -84,9 +104,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="120dp"
                 android:layout_weight="1"
-                android:textColor="@color/print"
-                android:text="show password" />
-
+                android:text="show password"
+                android:textColor="@color/print" />
 
         </LinearLayout>
 
@@ -95,7 +114,9 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/size20dp"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/donhat"
             android:text="@string/btnLogin" />
 
         <TextView
@@ -103,18 +124,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="@color/red"
-            android:text="To Register New Account" />
+            android:layout_marginTop="40dp"
+            android:text="To Register New Account"
+            android:textColor="@color/red" />
 
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/lnForgetPasswordAndRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lnFrameLogin"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"/>
+</LinearLayout>
+
 
 </RelativeLayout>
