@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="blu">#7FFF00</color>
+    <color name="xanhlaChụoi">#7FFF00</color>
     <color name="dennham">#CCCCCC</color>
     <color name="print">#FF66CC</color>
     <color name="yelo">#E8DFCA</color>

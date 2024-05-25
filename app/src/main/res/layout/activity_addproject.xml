@@ -126,7 +126,7 @@
         android:backgroundTint="@color/buttonXanhDam"
         android:drawablePadding="8dp"
         android:text="+ Thêm Thời Hạn"
-        android:textColor="@color/blu"
+        android:textColor="@color/xanhlaChụoi"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -140,7 +140,7 @@
         android:backgroundTint="@color/buttonXanhDam"
         android:drawablePadding="8dp"
         android:text="+ Người thực hiện"
-        android:textColor="@color/blu"
+        android:textColor="@color/xanhlaChụoi"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
