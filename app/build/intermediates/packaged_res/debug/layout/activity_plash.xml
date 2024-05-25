@@ -26,7 +26,7 @@
         android:background="@drawable/logo1"
         android:fontFamily="@font/apptext"
         android:gravity="center"
-        android:text="."
+
         android:textColor="@color/black"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"

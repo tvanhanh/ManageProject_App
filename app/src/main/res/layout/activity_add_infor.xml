@@ -80,17 +80,18 @@
                 android:orientation="horizontal"
                 android:id="@+id/lnImageViewAdd"
                 >
-
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/circleImageView"
-                    android:layout_width="113dp"
-                    android:layout_height="93dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="110dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/circle_background"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/hanh" />
+                android:id="@+id/circleImageView"
+                android:layout_width="113dp"
+                android:layout_height="93dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/circle_background"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hanh" />
+
+
 
                 <TextView
                     android:id="@+id/deleteAccount"

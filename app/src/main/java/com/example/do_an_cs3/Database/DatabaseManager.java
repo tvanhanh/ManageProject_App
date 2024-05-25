@@ -243,20 +243,19 @@ public class DatabaseManager {
         }
     }
 
-    public long addProject(String name, String description, String deadline) {
+    public long addProject(String name, String description, String deadline,String creationTime, String status, int views ,float percent_complete, String email, int department) {
         try {
-            // Định dạng deadline thành định dạng của kiểu dữ liệu DATETIME trong SQLite
-//            DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("'Thứ' E, dd 'tháng' MM yyyy, HH:mm");
-//            LocalDateTime localDateTime = LocalDateTime.parse(deadline, inputFormatter);
-//            DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//            String formattedDeadline = outputFormatter.format(localDateTime);
-
             // Tạo một đối tượng ContentValues để chứa dữ liệu cần chèn vào cơ sở dữ liệu
             ContentValues values = new ContentValues();
             values.put("project_name", name);
             values.put("project_description", description);
             values.put("deadline", deadline); // Chèn chuỗi định dạng Deadline vào cột Deadline
-
+            values.put("creation_time", creationTime);
+            values.put("status", status);
+            values.put("views", views);
+            values.put("percent_complete",percent_complete);
+            values.put("email", email);
+            values.put("department_id", department  );
             // Thực hiện chèn dữ liệu vào bảng "Projects" của cơ sở dữ liệu
             long id = db.insert("Projects", null, values);
 
@@ -288,12 +287,11 @@ public class DatabaseManager {
                     int views = cursor.getInt(cursor.getColumnIndex("views"));
                     int percentCompleted = cursor.getInt(cursor.getColumnIndex("percent_complete"));
                     String email = cursor.getString(cursor.getColumnIndex("email"));
-                    String department = cursor.getString(cursor.getColumnIndex("department_id"));
-                    if (department == null) {
-                        department = ""; // hoặc bất kỳ giá trị mặc định nào bạn muốn
-                    }
-
-                    Project project = new Project(id, name, description, deadline, creationTime, views, percentCompleted, email, status, department);
+//                    int department = cursor.getInt(cursor.getColumnIndex("department_id"));
+//                    if (cursor.isNull(department)) {
+//                        department = 1; // hoặc bất kỳ giá trị mặc định nào bạn muốn
+//                    }
+                    Project project = new Project(id, name, description, deadline, creationTime, views, percentCompleted, email, status, 1);
                     projectList.add(project);
                 } while (cursor.moveToNext());
             }

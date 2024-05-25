@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.do_an_cs3.Adapter.ViewPagerAdapter2;
+import com.example.do_an_cs3.Adapter.ViewPagerAdapterDepartment;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.Job.AddProjectActivity;
 import com.example.do_an_cs3.View.Job.ProjectActivity;
@@ -43,7 +43,7 @@ public class PersonnalActivity extends AppCompatActivity {
         mtablayout = findViewById(R.id.tabLayout);
         mviewPager = findViewById(R.id.viewpager);
 
-        ViewPagerAdapter2 viewPagerAdapter = new ViewPagerAdapter2(getSupportFragmentManager(), FragmentStatePagerAdapter .BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        ViewPagerAdapterDepartment viewPagerAdapter = new ViewPagerAdapterDepartment(getSupportFragmentManager(), FragmentStatePagerAdapter .BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         mviewPager.setAdapter(viewPagerAdapter);
         mtablayout.setupWithViewPager(mviewPager);
 

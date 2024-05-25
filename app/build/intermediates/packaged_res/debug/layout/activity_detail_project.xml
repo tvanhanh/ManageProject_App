@@ -1,176 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="#FFFFFF">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="696dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp">
 
-        <!-- Header -->
-        <TextView
-            android:id="@+id/tvHeader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Chi Tiết Project"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_gravity="center_horizontal"
-            android:paddingBottom="16dp" />
-
-        <!-- Status and Deadline -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="• Đang Thực Hiện"
-                android:textColor="#0000FF"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Thời hạn: 17:00 T7, 11/5/24 Trễ!"
-                android:textColor="#FF0000"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <!-- Task Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Đi học"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:paddingBottom="8dp" />
-
-        <!-- Task Creator Info -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="16dp">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-
-                />
-            <!--                android:src="@drawable/ic_user" -->
+            android:layout_marginTop="45dp"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:paddingStart="8dp">
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="Suspicious0dp">
 
+                <!-- Nút "Quay lại" -->
+                <Button
+                    android:id="@+id/buttonComback"
+                    android:layout_width="47dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/baseline_arrow_back_24" />
+
+                <!-- Logo -->
                 <TextView
+                    android:id="@+id/logo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:text="Chi tiết dự án"
+                    android:textSize="18sp" />
+
+                <!-- Các nút chức năng -->
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="haha2"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="haha2@gmail.com"
-                    android:textColor="#666666"
-                    android:textSize="14sp" />
+                    <!-- Nút Tìm kiếm -->
+                    <Button
+                        android:id="@+id/buttonSeacrh"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/search" />
+
+                    <!-- Nút Ngày -->
+                    <Button
+                        android:id="@+id/buttonDate"
+                        android:layout_width="30dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/clock" />
+
+                    <!-- Nút Cảnh báo -->
+                    <Button
+                        android:id="@+id/buttonWarning"
+                        android:layout_width="30dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/date" />
+                </LinearLayout>
             </LinearLayout>
-
+            <!-- Header -->
             <TextView
+                android:id="@+id/tvHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="39 lần xem"
-                android:textColor="#666666"
-                android:textSize="14sp"
-                android:paddingEnd="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quan Trọng"
-                android:textColor="#666666"
-                android:textSize="14sp"
-                android:padding="4dp" />
-<!--                android:background="@drawable/bg_label_important"-->
-
-        </LinearLayout>
-
-        <!-- Add Tag Button -->
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+ Thêm Thẻ"
-            android:backgroundTint="#EEEEEE"
-            android:textColor="#000000"
-            android:padding="8dp"
-            android:layout_gravity="center_horizontal" />
-
-        <!-- Attached Files -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="📎 File đính kèm"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:paddingBottom="16dp"
+                android:text="Chi Tiết Project"
                 android:textColor="#000000"
-                android:textSize="16sp"
-                android:paddingBottom="8dp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chưa có file đính kèm cho công việc này."
-                android:textColor="#666666"
-                android:textSize="14sp"
-                android:paddingBottom="16dp" />
-        </LinearLayout>
-
-        <!-- Task Participants -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="👤 Người Thực Hiện"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:paddingBottom="8dp" />
-
+            <!-- Status and Deadline -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingBottom="8dp">
 
-                <ImageView
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="• Đang Thực Hiện"
+                    android:textColor="#0000FF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thời hạn: 17:00 T7, 11/5/24 Trễ!"
+                    android:textColor="#FF0000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Task Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="Tên dự án"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <!-- Task Creator Info -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="16dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/circleImageView"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-
-                    />
+                    android:background="@drawable/circle_background"
+                    android:src="@drawable/hanh" />
                 <!--                android:src="@drawable/ic_user" -->
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -181,89 +150,295 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Trần Văn Hạnh"
+                        android:text="user"
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ban Lãnh Đạo - haha1@gmail.com"
+                        android:text="user@gmail.com"
                         android:textColor="#666666"
                         android:textSize="14sp" />
                 </LinearLayout>
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-
-                />
-                <!--                    android:src="@drawable/ic_view" -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="39 lần xem"
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Phối Hợp"
-                    android:textColor="#666666"
-                    android:textSize="14dp"
                     android:padding="4dp"
+                    android:text="Quan Trọng"
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
+                <!--                android:background="@drawable/bg_label_important"-->
 
-                />
-                <!--                android:background="@drawable/bg_label_coordinator"-->
+            </LinearLayout>
+
+            <!-- Add Tag Button -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="#EEEEEE"
+                android:padding="8dp"
+                android:text="+ Thêm Thẻ"
+                android:textColor="#000000" />
+
+            <!-- Attached Files -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:text="📎 File đính kèm"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="16dp"
+                    android:text="Chưa có file đính kèm cho công việc này."
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Task Participants -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:text="👤 Người Thực Hiện"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/circleImageViewWork"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_background"
+                        android:src="@drawable/hanh" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Trần Văn Hạnh"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ban Lãnh Đạo - haha1@gmail.com"
+                            android:textColor="#666666"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+
+                        />
+                    <!--                    android:src="@drawable/ic_view" -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="Phối Hợp"
+                        android:textColor="#666666"
+                        android:textSize="14dp"
+
+                        />
+                    <!--                android:background="@drawable/bg_label_coordinator"-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Task Items -->
+
+            <!-- Discussion Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="154dp"
+                android:orientation="vertical"
+                android:paddingTop="16dp">
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Code"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="32dp"
+                    android:paddingBottom="8dp"
+                    android:text="T7, 11/5/24 07:35"
+                    android:textColor="#FF0000"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Ngủ"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="50dp"
+                android:paddingTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:text="💬 Thảo Luận"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <!-- Button to add a new discussion -->
+
+                    <!-- Existing discussions -->
+                    <Button
+                        android:id="@+id/btnAddDiscussion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="178dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@color/xanhduong"
+                        android:backgroundTint="#EEEEEE"
+                        android:text="+ Thêm "
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/discussionContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="16dp">
+
+                    <!-- Example of a single discussion item -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="#F5F5F5"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+
+                        <!--                android:src="@drawable/ic_user" -->
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingStart="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Trần Văn Hạnh"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nội dung thảo luận..."
+                                android:textColor="#666666"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btnReply"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:padding="8dp"
+                            android:text="Phản"
+                            android:textColor="#0000FF" />
+
+                        <Button
+                            android:id="@+id/btnDelete"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:padding="8dp"
+                            android:text="Xóa"
+                            android:textColor="#FF0000" />
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/circleImageViewComment"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/circle_background"
+                            android:src="@drawable/hanh" />
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+    </ScrollView>
 
-        <!-- Task Items -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="16dp">
-
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Code"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:padding="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T7, 11/5/24 07:35"
-                android:textColor="#FF0000"
-                android:textSize="14sp"
-                android:paddingStart="32dp"
-                android:paddingBottom="8dp" />
-
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ngủ"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:padding="8dp" />
-
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ăn"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:padding="8dp" />
-
-            <!-- More Button -->
-            <Button
-                android:id="@+id/btnViewMore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Xem thêm"
-                android:backgroundTint="#FF6600"
-                android:textColor="#FFFFFF"
-                android:padding="8dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp" />
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    <!-- More Button -->
+    <Button
+        android:id="@+id/btnViewMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="26dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/xanhduong"
+        android:padding="8dp"
+        android:text="Xem thêm"
+        android:textColor="#FFFFFF"/>
+</FrameLayout>

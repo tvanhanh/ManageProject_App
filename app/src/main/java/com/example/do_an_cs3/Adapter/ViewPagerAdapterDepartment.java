@@ -10,8 +10,8 @@ import com.example.do_an_cs3.View.back_end.View_fragment.FragmentPersonnal.ListD
 import com.example.do_an_cs3.View.back_end.View_fragment.FragmentPersonnal.ListPersonnalFragment;
 import com.example.do_an_cs3.View.back_end.View_fragment.FragmentHome.UpdateNewFragment;
 
-public class ViewPagerAdapter2 extends FragmentPagerAdapter {
-    public ViewPagerAdapter2(@NonNull FragmentManager fm, int behaviorResumeOnlyCurrentFragment) {
+public class ViewPagerAdapterDepartment extends FragmentPagerAdapter {
+    public ViewPagerAdapterDepartment(@NonNull FragmentManager fm, int behaviorResumeOnlyCurrentFragment) {
         super(fm);
     }
 

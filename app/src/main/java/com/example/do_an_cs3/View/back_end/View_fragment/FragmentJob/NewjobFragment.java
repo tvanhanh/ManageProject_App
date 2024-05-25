@@ -3,12 +3,19 @@ package com.example.do_an_cs3.View.back_end.View_fragment.FragmentJob;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.do_an_cs3.Adapter.ProjectAdapter;
+import com.example.do_an_cs3.Database.DatabaseManager;
+import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.R;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +32,10 @@ public class NewjobFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private RecyclerView rcv_project;
+    private ProjectAdapter project_adapter;
+    private DatabaseManager dbManager;
+    private List<Project> projects;
 
     public NewjobFragment() {
         // Required empty public constructor
@@ -60,7 +71,21 @@ public class NewjobFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_newjob, container, false);
+        View view = inflater.inflate(R.layout.fragment_newjob, container, false);
+
+        // Initialize RecyclerView
+        rcv_project = view.findViewById(R.id.rcv_project);
+        // rcv_project.setHasFixedSize(true);
+
+        // Set up the adapter
+        dbManager = new DatabaseManager(requireContext());
+        projects = dbManager.getAllProjects();
+        project_adapter = new ProjectAdapter(projects, requireContext());
+
+        // Set up RecyclerView
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false);
+        rcv_project.setLayoutManager(linearLayoutManager);
+        rcv_project.setAdapter(project_adapter);
+        return view;
     }
 }

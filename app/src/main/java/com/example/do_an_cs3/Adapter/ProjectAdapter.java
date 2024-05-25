@@ -14,7 +14,11 @@ import com.example.do_an_cs3.View.Projects.ProjectViewHolder;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.Projects.DetailProjectActivity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
     private List<Project> projectList;
@@ -48,6 +52,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
           //  holder.tvPercent.setText(String.valueOf(project.getPercentCompleted()));
             holder.tvProjectName.setText(project.getName());
           //  holder.tvDescriptionProject.setText(project.getDescription());
+
             holder.tvProjectDeadline.setText(project.getDeadline());
           //  holder.tvProjectCreationTime.setText(project.getCreationTime());
             holder.tvProjectStatus.setText(project.getStatus());
