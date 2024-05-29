@@ -1,5 +1,7 @@
 package com.example.do_an_cs3.View.back_end.View_fragment.FragmentHome;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +28,10 @@ public class UpdateNewFragment extends Fragment {
     public UpdateNewFragment() {
         // Required empty public constructor
     }
-
+    private String getCurrentUserEmail() {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        return sharedPreferences.getString("user_email", null); // Trả về null nếu không tìm thấy email
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -35,10 +40,10 @@ public class UpdateNewFragment extends Fragment {
         // Initialize RecyclerView
         rcv_project = view.findViewById(R.id.rcv_project);
        // rcv_project.setHasFixedSize(true);
-
+        String email = getCurrentUserEmail();
         // Set up the adapter
         dbManager = new DatabaseManager(requireContext());
-        projects = dbManager.getAllProjects();
+        projects = dbManager.getAllProjects(email);
         project_adapter = new ProjectAdapter(projects, requireContext());
 
         // Set up RecyclerView

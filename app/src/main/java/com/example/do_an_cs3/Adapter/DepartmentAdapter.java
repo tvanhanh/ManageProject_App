@@ -13,11 +13,11 @@ import com.example.do_an_cs3.R;
 
 import java.util.List;
 
-public class DeparmentAdapter extends RecyclerView.Adapter<DeparmentAdapter.DeparmentViewHolder> {
+public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.DeparmentViewHolder> {
 
     private List<Deparments> mDeparment;
 
-    public DeparmentAdapter(List<Deparments> deparmentsList) {
+    public DepartmentAdapter(List<Deparments> deparmentsList) {
         this.mDeparment = deparmentsList;
     }
 

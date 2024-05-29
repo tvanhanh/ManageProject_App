@@ -1,5 +1,7 @@
 package com.example.do_an_cs3.View.back_end.View_fragment.FragmentJob;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -67,19 +69,22 @@ public class NewjobFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    private String getCurrentUserEmail() {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        return sharedPreferences.getString("user_email", null); // Trả về null nếu không tìm thấy email
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_newjob, container, false);
-
+        String email = getCurrentUserEmail();
         // Initialize RecyclerView
         rcv_project = view.findViewById(R.id.rcv_project);
         // rcv_project.setHasFixedSize(true);
 
         // Set up the adapter
         dbManager = new DatabaseManager(requireContext());
-        projects = dbManager.getAllProjects();
+        projects = dbManager.getAllProjects(email);
         project_adapter = new ProjectAdapter(projects, requireContext());
 
         // Set up RecyclerView

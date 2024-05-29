@@ -22,15 +22,15 @@ import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
 import com.anychart.charts.Pie;
-import com.example.do_an_cs3.Adapter.DeparmentAdapter;
+import com.example.do_an_cs3.Adapter.DepartmentAdapter;
 import com.example.do_an_cs3.Adapter.ViewPagerAdapterHome;
 import com.example.do_an_cs3.Database.Database;
 import com.example.do_an_cs3.Database.DatabaseManager;
 import com.example.do_an_cs3.Model.Deparments;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.View.Job.AddProjectActivity;
-import com.example.do_an_cs3.View.Job.ProjectActivity;
+import com.example.do_an_cs3.View.Project.AddProjectActivity;
+import com.example.do_an_cs3.View.Project.ProjectActivity;
 import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private BottomNavigationView bottomNavigationView;
     private RecyclerView rcv_deparment;
-    private DeparmentAdapter deparmentAdapter;
+    private DepartmentAdapter deparmentAdapter;
     private Button WarningButton;
     private CircleImageView circleImageView;
     private TextView tvUserName;
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         rcv_deparment.setLayoutManager(linearLayoutManager);
 
         List<Deparments> deparmentsList = createDummyData();
-        deparmentAdapter = new DeparmentAdapter(deparmentsList);
+        deparmentAdapter = new DepartmentAdapter(deparmentsList);
         rcv_deparment.setAdapter(deparmentAdapter);
 
         WarningButton = findViewById(R.id.buttonWarning);

@@ -57,7 +57,7 @@ public class DatabaseManager {
             return -1; // hoặc một giá trị khác biểu thị lỗi
         }
         // Kiểm tra mật khẩu có đúng độ dài 6 ký tự không
-        if (password.length() <= 6) {
+        if (password.length() <= 1) {
             return -2; // hoặc một giá trị khác biểu thị lỗi
         }
 
@@ -83,6 +83,42 @@ public class DatabaseManager {
         long id = db.insert("Users", null, values);
         return id;
     }
+
+
+    public long addProjectParticipants(String email, String project_id) {
+        // Kiểm tra email có đúng định dạng "@gmail.com"
+        if (!isValidEmail(email)) {
+            return -1; // hoặc một giá trị khác biểu thị lỗi
+        }
+
+        // Kiểm tra xem email đã tồn tại trong bảng Users chưa
+        Cursor userCursor = db.query("Users", null, "email=?", new String[]{email}, null, null, null);
+        if (userCursor.getCount() == 0) {
+            // Nếu email không tồn tại, đóng cursor và trả về -2 hoặc một giá trị mà bạn xác định để biểu thị lỗi
+            userCursor.close();
+            return -2; // hoặc một giá trị khác biểu thị lỗi
+        }
+        userCursor.close();
+
+        // Kiểm tra xem cặp email và project_id đã tồn tại trong bảng Project_Participants chưa
+        Cursor participantCursor = db.query("Project_Participants", null, "email=? AND project_id=?", new String[]{email, project_id}, null, null, null);
+        if (participantCursor.getCount() > 0) {
+            // Nếu cặp email và project_id đã tồn tại, đóng cursor và trả về -3 hoặc một giá trị mà bạn xác định để biểu thị lỗi
+            participantCursor.close();
+            return -3; // hoặc một giá trị khác biểu thị lỗi
+        }
+        participantCursor.close();
+
+        // Nếu email hợp lệ và không tồn tại trong bảng Project_Participants, thêm mới người tham gia vào cơ sở dữ liệu
+        ContentValues values = new ContentValues();
+        values.put("email", email);
+        values.put("project_id", project_id);
+
+        long id = db.insert("Project_Participants", null, values);
+        return id;
+    }
+    // Giả định là có một phương thức để kiểm tra định dạng email
+
 
 
     //    private byte[] getBytesFromImage(String imagePath) {
@@ -132,6 +168,7 @@ public class DatabaseManager {
 //        }
 //        return null;
 //    }
+
     @SuppressLint("Range")
     public User getUserInfo(String email) {
         User user = null; // Khởi tạo user là null để kiểm tra sau
@@ -243,6 +280,7 @@ public class DatabaseManager {
         }
     }
 
+
     public long addProject(String name, String description, String deadline,String creationTime, String status, int views ,float percent_complete, String email, int department) {
         try {
             // Tạo một đối tượng ContentValues để chứa dữ liệu cần chèn vào cơ sở dữ liệu
@@ -255,10 +293,9 @@ public class DatabaseManager {
             values.put("views", views);
             values.put("percent_complete",percent_complete);
             values.put("email", email);
-            values.put("department_id", department  );
+            values.put("department_id", department);
             // Thực hiện chèn dữ liệu vào bảng "Projects" của cơ sở dữ liệu
             long id = db.insert("Projects", null, values);
-
             return id;
         } catch (Exception e) {
             // Xử lý lỗi và thông báo cho người dùng
@@ -267,15 +304,35 @@ public class DatabaseManager {
             return -1; // Trả về giá trị -1 để biểu thị rằng có lỗi xảy ra
         }
     }
-
+    public int getTotalOngoingProjects(String email) {
+        int totalProjects = 0;
+        Cursor cursor = null;
+        try {
+            // Thực hiện truy vấn để đếm số lượng dự án có trạng thái "đang thực hiện" của email xác định
+            String query = "SELECT COUNT(*) FROM Projects WHERE status = ? AND email = ?";
+            cursor = db.rawQuery(query, new String[]{"Đang thực hiện", email});
+            if (cursor != null && cursor.moveToFirst()) {
+                totalProjects = cursor.getInt(0); // Lấy giá trị từ cột đầu tiên của kết quả truy vấn
+            }
+        } catch (Exception e) {
+            // Xử lý lỗi và thông báo cho người dùng
+            Log.e("Get Total Ongoing Projects Error", "Error getting total ongoing projects: " + e.getMessage());
+            Toast.makeText(null, "Error getting total ongoing projects: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        } finally {
+            if (cursor != null) {
+                cursor.close(); // Đảm bảo đóng con trỏ để tránh rò rỉ bộ nhớ
+            }
+        }
+        return totalProjects;
+    }
     @SuppressLint("Range")
-    public List<Project> getAllProjects() {
+    public List<Project> getAllProjects(String emailProject) {
         List<Project> projectList = new ArrayList<>();
         SQLiteDatabase db = null;
         Cursor cursor = null;
         try {
             db = this.dbhelper.getReadableDatabase();
-            cursor = db.rawQuery("SELECT * FROM Projects", null);
+            cursor = db.rawQuery("SELECT * FROM Projects WHERE email = ?", new String[]{emailProject});
             if (cursor.moveToFirst()) {
                 do {
                     int id = cursor.getInt(cursor.getColumnIndex("project_id"));

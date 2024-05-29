@@ -20,6 +20,10 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_processing_job.xml"
     },
     {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_addpersonnal.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_addpersonnal.xml"
+    },
+    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\bottom_sheet_dialog.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\bottom_sheet_dialog.xml"
     },
@@ -32,8 +36,16 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_project.xml"
     },
     {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_addproject.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_addproject.xml"
+    },
+    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_pending_job.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_pending_job.xml"
+    },
+    {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_personnal.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_personnal.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\item_department.xml",
@@ -52,12 +64,20 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_list_deparment.xml"
     },
     {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_detail_project.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_detail_project.xml"
+    },
+    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_warning.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_warning.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_complete.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_complete.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\item_user_follow.xml",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\item_user_follow.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_adddeparments.xml",
@@ -68,8 +88,20 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_plash.xml"
     },
     {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/item_task.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/item_task.xml"
+    },
+    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_important.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_important.xml"
+    },
+    {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_adddeparments.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_adddeparments.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\item_user.xml",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\item_user.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_addproject.xml",
@@ -78,10 +110,6 @@
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_register.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_register.xml"
-    },
-    {
-        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/bottom_sheet_dialog.xml",
-        "source": "com.example.do_an_cs3.app-main-48:/layout/bottom_sheet_dialog.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_edit_account.xml",
@@ -100,6 +128,10 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_report.xml"
     },
     {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_add_job.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_add_job.xml"
+    },
+    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_newjob.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_newjob.xml"
     },
@@ -110,6 +142,10 @@
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_add_infor.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_add_infor.xml"
+    },
+    {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_setting.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_setting.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_login.xml",
@@ -134,5 +170,9 @@
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_list_personnal.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_list_personnal.xml"
+    },
+    {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_project.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_project.xml"
     }
 ]

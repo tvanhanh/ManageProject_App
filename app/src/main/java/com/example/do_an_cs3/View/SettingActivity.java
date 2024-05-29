@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.View.Job.AddProjectActivity;
-import com.example.do_an_cs3.View.Job.ProjectActivity;
+import com.example.do_an_cs3.View.Project.AddProjectActivity;
+import com.example.do_an_cs3.View.Project.ProjectActivity;
 import com.example.do_an_cs3.View.Users.ChangePassActivity;
 import com.example.do_an_cs3.View.Users.EditAccountActivity;
 import com.example.do_an_cs3.View.Users.LoginActivity;

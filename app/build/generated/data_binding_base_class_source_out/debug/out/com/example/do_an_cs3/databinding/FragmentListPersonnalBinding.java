@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.do_an_cs3.R;
@@ -22,10 +23,14 @@ public final class FragmentListPersonnalBinding implements ViewBinding {
   @NonNull
   public final Button buttonaddperson;
 
+  @NonNull
+  public final RecyclerView rcvUser;
+
   private FragmentListPersonnalBinding(@NonNull LinearLayout rootView,
-      @NonNull Button buttonaddperson) {
+      @NonNull Button buttonaddperson, @NonNull RecyclerView rcvUser) {
     this.rootView = rootView;
     this.buttonaddperson = buttonaddperson;
+    this.rcvUser = rcvUser;
   }
 
   @Override
@@ -61,7 +66,13 @@ public final class FragmentListPersonnalBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentListPersonnalBinding((LinearLayout) rootView, buttonaddperson);
+      id = R.id.rcv_user;
+      RecyclerView rcvUser = ViewBindings.findChildViewById(rootView, id);
+      if (rcvUser == null) {
+        break missingId;
+      }
+
+      return new FragmentListPersonnalBinding((LinearLayout) rootView, buttonaddperson, rcvUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

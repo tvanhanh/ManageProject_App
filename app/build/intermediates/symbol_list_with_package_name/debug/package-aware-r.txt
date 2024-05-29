@@ -3041,6 +3041,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable addjob
 drawable addperson
 drawable anser
 drawable avd_hide_password
@@ -3173,6 +3174,7 @@ drawable mtrl_switch_thumb_unchecked_pressed
 drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
+drawable muiten
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -3189,6 +3191,7 @@ drawable notify_panel_notification_icon_bg
 drawable password
 drawable pause
 drawable people
+drawable peoples
 drawable qrcode
 drawable refuse
 drawable refuse1
@@ -3216,6 +3219,7 @@ drawable tochuc
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable user
+drawable useravatar
 drawable youtube
 font apptext
 font bhu
@@ -3236,7 +3240,9 @@ id FirstFragment
 id META
 id NO_DEBUG
 id NamePersonOfTaskUpdate
+id NameProrjectDetail
 id NameTaskNewUpdate
+id PossitonAndEmail
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -3307,6 +3313,8 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addJob
+id addTag
 id add_job
 id alertTitle
 id aligned
@@ -3344,6 +3352,7 @@ id btnDelete
 id btnDeleteTask
 id btnEditExtend
 id btnHistory
+id btnImportant
 id btnLogin
 id btnPause
 id btnRegister
@@ -3404,6 +3413,7 @@ id constraint
 id container
 id content
 id contentPanel
+id contentTask
 id contiguous
 id continuousVelocity
 id coordinator
@@ -3451,6 +3461,7 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editAddNameJob
 id editAddNameProject
 id editTextAddress
 id editTextAddressAdd
@@ -3518,6 +3529,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id img_use_follow
 id img_user
 id immediateStop
 id included
@@ -3554,6 +3566,7 @@ id lnImageViewAdd
 id lnLeader
 id lnPersonally
 id lnQRcode
+id lnRCVTask
 id locale
 id loginEditTextEmail
 id loginEditTextPassword
@@ -3692,6 +3705,9 @@ id radio
 id ratio
 id rcv_deparment
 id rcv_project
+id rcv_task
+id rcv_user
+id rcv_userFollow
 id recent_activity
 id rectangles
 id report_drawn
@@ -3841,7 +3857,11 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvAccountInfo
+id tvDeadlineDetail
+id tvDealine
 id tvDepartment
+id tvEmail
+id tvEmailDetail
 id tvHeader
 id tvInstructions
 id tvMGT
@@ -3850,6 +3870,11 @@ id tvProjectCreationTime
 id tvProjectDeadline
 id tvProjectName
 id tvProjectStatus
+id tvStatusDetail
+id tvStatusFile
+id tvUserName
+id tvUserNameDetail
+id tvViews
 id typeJob
 id unchecked
 id uniform
@@ -3858,6 +3883,8 @@ id unlabeled
 id up
 id useLogo
 id userName
+id userNameFollow
+id userNameNguoiThucHien
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -3995,6 +4022,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_infor
+layout activity_add_job
 layout activity_adddeparments
 layout activity_addpersonnal
 layout activity_addproject
@@ -4043,6 +4071,9 @@ layout fragment_processing_job
 layout fragment_updatenew
 layout item_department
 layout item_project
+layout item_task
+layout item_user
+layout item_user_follow
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

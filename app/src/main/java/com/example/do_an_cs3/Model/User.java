@@ -3,14 +3,35 @@ package com.example.do_an_cs3.Model;
 import android.content.Intent;
 
 public class User {
-
+    private String email;
     private String userName;
+
+    public int getTotalProjects() {
+        return totalProjects;
+    }
+
     private String phoneNumber;
+
+    public User(String userName) {
+        this.userName = userName;
+    }
+
+    public User(String userName, String avatar) {
+        this.userName = userName;
+        this.avatar = avatar;
+    }
+
     private String address;
     private String referralCode;
     private String avatar;
     private int deparment;
     private String role;
+
+    public void setTotalProjects(int totalProjects) {
+        this.totalProjects = totalProjects;
+    }
+
+    private int totalProjects;
 
     public User() {
     }
@@ -23,6 +44,21 @@ public class User {
         this.avatar = avatar;
         this.deparment = deparment;
         this.role = role;
+    }
+
+    public User(String email, String userName, int deparment, int totalProjects  ) {
+        this.email = email;
+        this.userName = userName;
+        this.deparment = deparment;
+        this.totalProjects = totalProjects;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUserName() {
