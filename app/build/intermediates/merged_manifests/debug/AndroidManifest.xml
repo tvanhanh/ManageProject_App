@@ -62,12 +62,12 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.do_an_cs3.View.Job.ProjectActivity"
+            android:name="com.example.do_an_cs3.View.Project.ProjectActivity"
             android:exported="false"
             android:label="@string/title_activity_job"
             android:theme="@style/Theme.DO_AN_CS3" />
         <activity
-            android:name="com.example.do_an_cs3.View.Job.AddProjectActivity"
+            android:name="com.example.do_an_cs3.View.Project.AddProjectActivity"
             android:exported="false"
             android:label="@string/Addjob"
             android:theme="@style/Theme.DO_AN_CS3" />

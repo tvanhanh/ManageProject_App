@@ -25,7 +25,6 @@ import com.google.android.material.tabs.TabLayout;
 public class PersonnalActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityPersonnalBinding binding;
     private TabLayout mtablayout;
     private ViewPager mviewPager;
     private Button buttoncomback;
