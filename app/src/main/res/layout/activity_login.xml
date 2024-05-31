@@ -9,7 +9,9 @@
     android:paddingRight="@dimen/activity_horizotal_magin"
     android:paddingTop="@dimen/activity_vertical_magin"
     android:paddingBottom="@dimen/activity_vertical_magin"
-    tools:context=".View.Users.LoginActivity">
+    tools:context=".View.Users.LoginActivity"
+    android:background="@drawable/background"
+    >
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -32,8 +34,8 @@
         android:textSize="25dp" />
 
     <ImageView
-        android:layout_width="54dp"
-        android:layout_height="22dp"
+        android:layout_width="60dp"
+        android:layout_height="54dp"
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
         android:background="@drawable/logo">
@@ -45,15 +47,15 @@
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:layout_marginTop="30dp"
-        android:background="@color/gray"
         android:layout_alignParentEnd="true"
         android:layout_marginLeft="0dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <EditText
             android:id="@+id/loginEditTextEmail"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="54dp"
             android:layout_margin="@dimen/size10dp"
             android:layout_marginStart="@dimen/size10dp"
             android:layout_marginTop="@dimen/size10dp"
@@ -66,12 +68,12 @@
             android:padding="@dimen/size10dp"
             android:singleLine="true"
             android:textColor="@color/black"
-            android:textColorHint="@color/gray" />
+            android:textColorHint="@color/black" />
 
         <EditText
             android:id="@+id/loginEditTextPassword"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="54dp"
             android:layout_margin="@dimen/size10dp"
             android:layout_marginStart="@dimen/size10dp"
             android:layout_marginTop="@dimen/size10dp"
@@ -80,10 +82,11 @@
             android:background="@color/white"
             android:drawableLeft="@drawable/password"
             android:drawablePadding="@dimen/size10dp"
-            android:hint="mật khẩu"
+            android:hint="Mật khẩu"
             android:padding="@dimen/size10dp"
             android:singleLine="true"
-            android:textColorHint="@color/gray" />
+            android:inputType="textPassword"
+            android:textColorHint="@color/black" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -96,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="Forget password"
-                android:textColor="@color/print" />
+                android:textColor="@color/red" />
 
             <CheckBox
                 android:id="@+id/checkBox"
@@ -104,7 +107,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="120dp"
                 android:layout_weight="1"
-                android:text="show password"
+                android:text="Show password"
                 android:textColor="@color/print" />
 
         </LinearLayout>
@@ -112,20 +115,21 @@
 
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:textColor="@color/black"
             android:backgroundTint="@color/donhat"
             android:text="@string/btnLogin" />
-
         <TextView
             android:id="@+id/newAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginTop="40dp"
-            android:text="To Register New Account"
+            android:text="Register New Account"
             android:textColor="@color/red" />
 
 

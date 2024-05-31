@@ -2,6 +2,7 @@ package com.example.do_an_cs3.View.Project;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.do_an_cs3.Adapter.TaskAdapter;
 import com.example.do_an_cs3.Database.DatabaseManager;
+import com.example.do_an_cs3.LoadingDialogFragment;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.MainActivity;
 import com.example.do_an_cs3.View.Users.PersonnalActivity;
@@ -40,6 +42,8 @@ public class AddProjectActivity extends AppCompatActivity {
     private TextInputEditText descriptionProject;
     private TextView deadlineTime;
     private TaskAdapter taskAdapter;
+    private LoadingDialogFragment loadingDialog;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -96,11 +100,15 @@ public class AddProjectActivity extends AppCompatActivity {
             if (name.isEmpty() || description.isEmpty() || deadline.isEmpty()) {
                 Toast.makeText(this, "Vui lòng kiểm tra lại thông tin", Toast.LENGTH_SHORT).show();
             } else {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                loadingDialog = LoadingDialogFragment.newInstance();
+                loadingDialog.show(fragmentManager, "loading");
                 long insertedId = dbManager.addProject(name, description, deadline,creationTime, status,views,percent_complete,email,department);
+                loadingDialog.dismiss();
                 if (insertedId != -1) {
                     Toast.makeText(this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
-                    taskAdapter.notifyDataSetChanged();
-                    Intent intent = new Intent(AddProjectActivity.this, DetailProjectActivity.class);
+                    //.notifyDataSetChanged();
+                    Intent intent = new Intent(AddProjectActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(this, "Lỗi " + name, Toast.LENGTH_SHORT).show();

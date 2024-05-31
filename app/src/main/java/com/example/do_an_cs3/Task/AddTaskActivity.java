@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -15,20 +14,14 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.do_an_cs3.Adapter.TaskAdapter;
 import com.example.do_an_cs3.Database.DatabaseManager;
+import com.example.do_an_cs3.LoadingDialogFragment;
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.View.Project.AddProjectActivity;
 import com.example.do_an_cs3.View.Project.DetailProjectActivity;
-import com.example.do_an_cs3.View.Project.ProjectActivity;
-import com.example.do_an_cs3.View.SettingActivity;
-import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.SimpleDateFormat;
@@ -41,13 +34,14 @@ public class AddTaskActivity extends AppCompatActivity {
     private TextView deadlineTime;
     private Button nextButton;
     private Button btnBack;
-
+    private LoadingDialogFragment loadingDialog;
     private TaskAdapter taskAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add_task);
+
         nameTask = findViewById(R.id.editAddNameJob);
         descriptionTask = findViewById(R.id.textInputEditTextDescription);
         deadlineTime = findViewById(R.id.textViewDate);
@@ -66,56 +60,63 @@ public class AddTaskActivity extends AppCompatActivity {
             if (name.isEmpty() || description.isEmpty() || deadline.isEmpty()) {
                 Toast.makeText(this, "Vui lòng kiểm tra lại thông tin", Toast.LENGTH_SHORT).show();
             } else {
-                long insertedId = dbManager.addTask(name, description, deadline, status, email, idProject);
-                if (insertedId != -1) {
-                    Toast.makeText(this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
-                    taskAdapter.notifyDataSetChanged();
-                    intent = new Intent(AddTaskActivity.this, DetailProjectActivity.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(this, "Lỗi " + name, Toast.LENGTH_SHORT).show();
-                }
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                loadingDialog = LoadingDialogFragment.newInstance();
+                loadingDialog.show(fragmentManager, "loading");
+
+                new Thread(() -> {
+                    long insertedId = dbManager.addTask(name, description, deadline, status, email, idProject);
+                    runOnUiThread(() -> {
+                        loadingDialog.dismiss();
+                        if (insertedId != -1) {
+                            Toast.makeText(AddTaskActivity.this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
+                            if (taskAdapter != null) {
+                                taskAdapter.notifyDataSetChanged();
+                            }
+                            Intent detailIntent = new Intent(AddTaskActivity.this, DetailProjectActivity.class);
+                            detailIntent.putExtra("idProject", idProject);
+                            startActivity(detailIntent);
+                            finish();
+                        } else {
+                            Toast.makeText(AddTaskActivity.this, "Lỗi " + name, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }).start();
             }
         });
 
         Button buttonAddTime = findViewById(R.id.buttonaddTime);
-        buttonAddTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar calendar = Calendar.getInstance();
-                int year = calendar.get(Calendar.YEAR);
-                int month = calendar.get(Calendar.MONTH);
-                int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+        buttonAddTime.setOnClickListener(v -> {
+            Calendar calendar = Calendar.getInstance();
+            int year = calendar.get(Calendar.YEAR);
+            int month = calendar.get(Calendar.MONTH);
+            int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog datePickerDialog = new DatePickerDialog(AddTaskActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        Calendar selectedCalendar = Calendar.getInstance();
-                        selectedCalendar.set(year, month, dayOfMonth);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(AddTaskActivity.this, (view, year1, month1, dayOfMonth1) -> {
+                Calendar selectedCalendar = Calendar.getInstance();
+                selectedCalendar.set(year1, month1, dayOfMonth1);
 
-                        int hour = calendar.get(Calendar.HOUR_OF_DAY);
-                        int minute = calendar.get(Calendar.MINUTE);
+                int hour = calendar.get(Calendar.HOUR_OF_DAY);
+                int minute = calendar.get(Calendar.MINUTE);
 
-                        TimePickerDialog timePickerDialog = new TimePickerDialog(AddTaskActivity.this, new TimePickerDialog.OnTimeSetListener() {
-                            @Override
-                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                                selectedCalendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-                                selectedCalendar.set(Calendar.MINUTE, minute);
+                TimePickerDialog timePickerDialog = new TimePickerDialog(AddTaskActivity.this, (view1, hourOfDay, minute1) -> {
+                    selectedCalendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                    selectedCalendar.set(Calendar.MINUTE, minute1);
 
-                                SimpleDateFormat sdf = new SimpleDateFormat("EEEE, dd MMMM yyyy, HH:mm", new Locale("vi"));
-                                String dateTime = sdf.format(selectedCalendar.getTime());
+                    SimpleDateFormat sdf = new SimpleDateFormat("EEEE, dd MMMM yyyy, HH:mm", new Locale("vi"));
+                    String dateTime = sdf.format(selectedCalendar.getTime());
 
-                                deadlineTime.setText(dateTime);
-                            }
-                        }, hour, minute, true);
-                        timePickerDialog.show();
-                    }
-                }, year, month, dayOfMonth);
-                datePickerDialog.show();
-            }
+                    deadlineTime.setText(dateTime);
+                }, hour, minute, true);
+                timePickerDialog.show();
+            }, year, month, dayOfMonth);
+            datePickerDialog.show();
         });
 
+        btnBack = findViewById(R.id.btnback);
+        btnBack.setOnClickListener(v -> finish());
     }
+
     public String getCurrentUserEmail() {
         SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
         return sharedPreferences.getString("user_email", null);
