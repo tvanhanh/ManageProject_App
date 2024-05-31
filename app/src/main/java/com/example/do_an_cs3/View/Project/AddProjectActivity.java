@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.do_an_cs3.Adapter.TaskAdapter;
 import com.example.do_an_cs3.Database.DatabaseManager;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.MainActivity;
@@ -38,6 +39,7 @@ public class AddProjectActivity extends AppCompatActivity {
     private EditText nameProject;
     private TextInputEditText descriptionProject;
     private TextView deadlineTime;
+    private TaskAdapter taskAdapter;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -82,7 +84,7 @@ public class AddProjectActivity extends AppCompatActivity {
         nextButton.setOnClickListener(v -> {
             String name = nameProject.getText().toString();
             String description = descriptionProject.getText().toString();
-            String deadline = deadlineTime.getText().toString();
+            String deadline =deadlineTime.getText().toString();
             String creationTime = dateFormat.format(currentCreation);
             String status = "Đang thực hiện";
             int views = 0;
@@ -90,13 +92,16 @@ public class AddProjectActivity extends AppCompatActivity {
             String email = getCurrentUserEmail();
             int department = 0;
 
+
             if (name.isEmpty() || description.isEmpty() || deadline.isEmpty()) {
                 Toast.makeText(this, "Vui lòng kiểm tra lại thông tin", Toast.LENGTH_SHORT).show();
             } else {
                 long insertedId = dbManager.addProject(name, description, deadline,creationTime, status,views,percent_complete,email,department);
                 if (insertedId != -1) {
                     Toast.makeText(this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
-                    finish();
+                    taskAdapter.notifyDataSetChanged();
+                    Intent intent = new Intent(AddProjectActivity.this, DetailProjectActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(this, "Lỗi " + name, Toast.LENGTH_SHORT).show();
                 }

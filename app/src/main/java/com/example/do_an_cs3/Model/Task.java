@@ -1,12 +1,37 @@
 package com.example.do_an_cs3.Model;
 
 public class Task {
+
+    private int id;
     private String  taskName;
     private String  taskDescription;
     private String  taskDeadline;
     private String  taskStatus;
     private String  taskEmail;
+
+    private String username;
+
+    public Task( String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, String username, int projectId) {
+        this.id = id;
+        this.taskName = taskName;
+        this.taskDescription = taskDescription;
+        this.taskDeadline = taskDeadline;
+        this.taskStatus = taskStatus;
+        this.taskEmail = taskEmail;
+        this.username = username;
+        this.projectId = projectId;
+
+    }
+
     private int  projectId;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public Task(String taskName, String taskDescription, String taskDeadline) {
         this.taskName = taskName;
@@ -62,12 +87,25 @@ public class Task {
         this.projectId = projectId;
     }
 
-    public Task(String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, int projectId) {
+    public Task(int id,String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, int projectId) {
+        this.id = id;
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskDeadline = taskDeadline;
         this.taskStatus = taskStatus;
         this.taskEmail = taskEmail;
         this.projectId = projectId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Task(String taskName) {
+        this.taskName = taskName;
     }
 }

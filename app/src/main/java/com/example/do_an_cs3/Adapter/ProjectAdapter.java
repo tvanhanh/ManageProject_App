@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.ViewHolder.ProjectViewHolder;
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.View.Projects.DetailProjectActivity;
+import com.example.do_an_cs3.View.Project.DetailProjectActivity;
 
 import java.util.List;
 
@@ -51,11 +51,13 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, DetailProjectActivity.class);
+                    intent.putExtra("idProject", project.getId());
                     intent.putExtra("projectCreationTime", project.getCreationTime());
                     intent.putExtra("projectEmail", project.getEmail());
                     intent.putExtra("projectName", project.getName());
                     intent.putExtra("projectDeadline", project.getDeadline());
                     intent.putExtra("projectStatus", project.getStatus());
+
                     mContext.startActivity(intent);
                 }
             });

@@ -14,6 +14,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.do_an_cs3.Model.Project;
+import com.example.do_an_cs3.Model.Task;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.View.Users.ChooseRoleActivity;
 import com.example.do_an_cs3.View.MainActivity;
@@ -325,6 +326,27 @@ public class DatabaseManager {
         }
         return totalProjects;
     }
+
+    public long addTask(String name, String description, String deadline, String status, String email, int projectId) {
+        try {
+            // Tạo một đối tượng ContentValues để chứa dữ liệu cần chèn vào cơ sở dữ liệu
+            ContentValues values = new ContentValues();
+            values.put("task_name", name);
+            values.put("task_description", description);
+            values.put("deadline", deadline); // Chèn chuỗi định dạng Deadline vào cột Deadline
+            values.put("status", status);
+            values.put("email", email);
+            values.put("project_id", projectId);
+            // Thực hiện chèn dữ liệu vào bảng "Projects" của cơ sở dữ liệu
+            long id = db.insert("Tasks", null, values);
+            return id;
+        } catch (Exception e) {
+            // Xử lý lỗi và thông báo cho người dùng
+            Log.e("Add Task Error", "Error adding task: " + e.getMessage());
+            Toast.makeText(null, "Error adding task: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            return -1; // Trả về giá trị -1 để biểu thị rằng có lỗi xảy ra
+        }
+    }
     @SuppressLint("Range")
     public List<Project> getAllProjects(String emailProject) {
         List<Project> projectList = new ArrayList<>();
@@ -350,6 +372,7 @@ public class DatabaseManager {
 //                    }
                     Project project = new Project(id, name, description, deadline, creationTime, views, percentCompleted, email, status, 1);
                     projectList.add(project);
+
                 } while (cursor.moveToNext());
             }
         } catch (Exception e) {
@@ -364,6 +387,43 @@ public class DatabaseManager {
             }
         }
         return projectList;
+    }
+    @SuppressLint("Range")
+    public List<Task> getAllTask(int idProject) {
+        List<Task> taskList = new ArrayList<>();
+        SQLiteDatabase db = null;
+        Cursor cursor = null;
+        try {
+            db = this.dbhelper.getReadableDatabase();
+            cursor = db.rawQuery("SELECT * FROM Tasks WHERE project_id = ?", new String[]{String.valueOf(idProject)});
+            if (cursor.moveToFirst()) {
+                do {
+                    int id = cursor.getInt(cursor.getColumnIndex("task_id"));
+                    String name = cursor.getString(cursor.getColumnIndex("task_name"));
+                    String description = cursor.getString(cursor.getColumnIndex("task_description"));
+                    String deadline = cursor.getString(cursor.getColumnIndex("deadline"));
+                    String status = cursor.getString(cursor.getColumnIndex("status"));
+                    String email = cursor.getString(cursor.getColumnIndex("email"));
+                    int project_id = cursor.getInt(cursor.getColumnIndex("project_id"));
+//                    if (cursor.isNull(department)) {
+//                        department = 1; // hoặc bất kỳ giá trị mặc định nào bạn muốn
+//                    }
+                    Task task = new Task(id, name, description, deadline,status, email, project_id);
+                    taskList.add(task);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Log lỗi hoặc xử lý ngoại lệ tại đây
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return taskList;
     }
 
 }

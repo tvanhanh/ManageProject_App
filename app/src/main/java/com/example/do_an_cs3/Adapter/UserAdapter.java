@@ -5,16 +5,13 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.View.Projects.DetailProjectActivity;
-import com.example.do_an_cs3.ViewHolder.ProjectViewHolder;
+import com.example.do_an_cs3.View.Project.DetailProjectActivity;
 import com.example.do_an_cs3.ViewHolder.UserViewHolder;
 
 import java.util.List;
@@ -49,7 +46,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
                 @Override
                 public void onClick(View v) {
 //                    Intent intent = new Intent(mContext, DetailProjectActivity.class);
-//                    intent.putExtra("projectCreationTime", project.getCreationTime());
+//                    intent.putExtra("userName", user.getUserName());
 //                    intent.putExtra("projectEmail", project.getEmail());
 //                    intent.putExtra("projectName", project.getName());
 //                    intent.putExtra("projectDeadline", project.getDeadline());

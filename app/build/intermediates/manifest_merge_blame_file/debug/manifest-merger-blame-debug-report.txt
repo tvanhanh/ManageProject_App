@@ -30,284 +30,290 @@
 19-->[androidx.core:core:1.9.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\3b2124d97d3f45e547b873e9eebf26b9\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 20
 21    <application
-21-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:9:5-110:19
+21-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:9:5-112:19
 22        android:name="androidx.multidex.MultiDexApplication"
-22-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:11:9-61
+22-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:10:9-61
 23        android:allowBackup="true"
-23-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:12:9-35
+23-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:11:9-35
 24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 24-->[androidx.core:core:1.9.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\3b2124d97d3f45e547b873e9eebf26b9\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 25        android:dataExtractionRules="@xml/data_extraction_rules"
-25-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:13:9-65
+25-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:12:9-65
 26        android:debuggable="true"
 27        android:extractNativeLibs="false"
 28        android:fullBackupContent="@xml/backup_rules"
-28-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:14:9-54
+28-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:13:9-54
 29        android:icon="@mipmap/logo"
-29-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:15:9-36
+29-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:14:9-36
 30        android:label="@string/app_name"
-30-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:16:9-41
+30-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:15:9-41
 31        android:roundIcon="@mipmap/logo"
-31-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:17:9-41
+31-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:16:9-41
 32        android:supportsRtl="true"
-32-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:18:9-35
+32-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:17:9-35
 33        android:testOnly="true"
 34        android:theme="@style/Theme.DO_AN_CS3" >
-34-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:19:9-47
+34-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:18:9-47
 35        <activity
-35-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:21:9-23:40
-36            android:name="com.example.do_an_cs3.View.Users.AddProfileActivity"
-36-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:22:13-58
+35-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:20:9-22:40
+36            android:name="com.example.do_an_cs3.Task.AddTaskActivity"
+36-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:21:13-49
 37            android:exported="false" />
-37-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:23:13-37
+37-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:22:13-37
 38        <activity
-38-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:24:9-26:40
-39            android:name="com.example.do_an_cs3.View.Projects.DetailProjectActivity"
-39-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:25:13-64
+38-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:23:9-25:40
+39            android:name="com.example.do_an_cs3.View.Users.AddProfileActivity"
+39-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:24:13-58
 40            android:exported="false" />
-40-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:26:13-37
+40-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:25:13-37
 41        <activity
-41-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:27:9-29:40
-42            android:name="com.example.do_an_cs3.View.Users.ChooseRoleActivity"
-42-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:28:13-58
+41-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:26:9-28:40
+42            android:name="com.example.do_an_cs3.View.Project.DetailProjectActivity"
+42-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:27:13-63
 43            android:exported="false" />
-43-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:29:13-37
+43-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:28:13-37
 44        <activity
-44-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:30:9-41:20
-45            android:name="com.example.do_an_cs3.View.splash"
-45-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:31:13-40
-46            android:exported="true" >
-46-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:32:13-36
-47            <intent-filter>
-47-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:33:13-37:29
-48                <action android:name="android.intent.action.MAIN" />
-48-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:34:17-69
-48-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:34:25-66
-49
-50                <category android:name="android.intent.category.LAUNCHER" />
-50-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:36:17-77
-50-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:36:27-74
-51            </intent-filter>
+44-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:29:9-31:40
+45            android:name="com.example.do_an_cs3.View.Users.ChooseRoleActivity"
+45-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:30:13-58
+46            android:exported="false" />
+46-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:31:13-37
+47        <activity
+47-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:32:9-44:20
+48            android:name="com.example.do_an_cs3.View.splash"
+48-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:33:13-40
+49            android:exported="true" >
+49-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:34:13-36
+50            <intent-filter>
+50-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:35:13-39:29
+51                <action android:name="android.intent.action.MAIN" />
+51-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:36:17-69
+51-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:36:25-66
 52
-53            <meta-data
-53-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:38:13-40:36
-54                android:name="android.app.Activity"
-54-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:39:17-52
-55                android:value="" />
-55-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:40:17-33
-56        </activity>
-57        <activity
-57-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:42:9-48:20
-58            android:name="com.example.do_an_cs3.View.MainActivity"
-58-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:43:13-46
-59            android:exported="false" >
-59-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:44:13-37
-60            <meta-data
-60-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:38:13-40:36
-61                android:name="android.app.Activity"
-61-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:39:17-52
-62                android:value="" />
-62-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:40:17-33
-63        </activity>
-64        <activity
-64-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:49:9-53:54
-65            android:name="com.example.do_an_cs3.View.Project.ProjectActivity"
-65-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:50:13-57
-66            android:exported="false"
-66-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:51:13-37
-67            android:label="@string/title_activity_job"
-67-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:52:13-55
-68            android:theme="@style/Theme.DO_AN_CS3" />
-68-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:53:13-51
-69        <activity
-69-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:54:9-58:54
-70            android:name="com.example.do_an_cs3.View.Project.AddProjectActivity"
-70-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:55:13-60
-71            android:exported="false"
-71-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:56:13-37
-72            android:label="@string/Addjob"
-72-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:57:13-43
-73            android:theme="@style/Theme.DO_AN_CS3" />
-73-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:58:13-51
-74        <activity
-74-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:59:9-63:54
-75            android:name="com.example.do_an_cs3.View.Users.PersonnalActivity"
-75-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:60:13-57
-76            android:exported="false"
-76-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:61:13-37
-77            android:label="@string/personnal"
-77-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:62:13-46
-78            android:theme="@style/Theme.DO_AN_CS3" />
-78-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:63:13-51
-79        <activity
-79-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:64:9-68:54
-80            android:name="com.example.do_an_cs3.View.SettingActivity"
-80-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:65:13-49
-81            android:exported="false"
-81-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:66:13-37
-82            android:label="@string/setting"
-82-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:67:13-44
-83            android:theme="@style/Theme.DO_AN_CS3" />
-83-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:68:13-51
-84        <activity
-84-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:69:9-73:54
-85            android:name="com.example.do_an_cs3.View.WarningActivity"
-85-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:70:13-49
-86            android:exported="false"
-86-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:71:13-37
-87            android:label="@string/warning"
-87-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:72:13-44
-88            android:theme="@style/Theme.DO_AN_CS3" />
-88-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:73:13-51
-89        <activity
-89-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:74:9-78:54
-90            android:name="com.example.do_an_cs3.View.Users.EditAccountActivity"
-90-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:75:13-59
-91            android:exported="false"
-91-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:76:13-37
-92            android:label="@string/editAccount"
-92-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:77:13-48
-93            android:theme="@style/Theme.DO_AN_CS3" />
-93-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:78:13-51
-94        <activity
-94-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:79:9-83:54
-95            android:name="com.example.do_an_cs3.View.Users.ChangePassActivity"
-95-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:80:13-58
-96            android:exported="false"
-96-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:81:13-37
-97            android:label="@string/changepass"
-97-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:82:13-47
-98            android:theme="@style/Theme.DO_AN_CS3" />
-98-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:83:13-51
-99        <activity
-99-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:84:9-88:54
-100            android:name="com.example.do_an_cs3.View.ReportActivity"
-100-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:85:13-48
-101            android:exported="false"
-101-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:86:13-37
-102            android:label="@string/report"
-102-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:87:13-43
-103            android:theme="@style/Theme.DO_AN_CS3" />
-103-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:88:13-51
-104        <activity
-104-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:89:9-93:54
-105            android:name="com.example.do_an_cs3.View.Users.AddPersonnalActivity"
-105-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:90:13-60
-106            android:exported="false"
-106-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:91:13-37
-107            android:label="AddPersonnalActivity"
-107-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:92:13-49
-108            android:theme="@style/Theme.DO_AN_CS3" />
-108-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:93:13-51
-109        <activity
-109-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:94:9-98:54
-110            android:name="com.example.do_an_cs3.View.Departments.AddDeparmentsActivity"
-110-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:95:13-67
-111            android:exported="false"
-111-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:96:13-37
-112            android:label="AddDeparmentsActivity"
-112-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:97:13-50
-113            android:theme="@style/Theme.DO_AN_CS3" />
-113-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:98:13-51
-114        <activity
-114-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:99:9-103:54
-115            android:name="com.example.do_an_cs3.View.Users.LoginActivity"
-115-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:100:13-53
-116            android:exported="false"
-116-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:101:13-37
-117            android:label="LoginActivity"
-117-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:102:13-42
-118            android:theme="@style/Theme.DO_AN_CS3" />
-118-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:103:13-51
-119        <activity
-119-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:104:9-108:54
-120            android:name="com.example.do_an_cs3.View.Users.RegisterActivity"
-120-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:105:13-56
-121            android:exported="false"
-121-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:106:13-37
-122            android:label="@string/personnal"
-122-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:107:13-46
-123            android:theme="@style/Theme.DO_AN_CS3" />
-123-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:108:13-51
-124
-125        <provider
-125-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-126            android:name="androidx.startup.InitializationProvider"
-126-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-127            android:authorities="com.example.do_an_cs3.androidx-startup"
-127-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-128            android:exported="false" >
-128-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-129            <meta-data
-129-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-130                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-130-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-131                android:value="androidx.startup" />
-131-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+53                <category android:name="android.intent.category.LAUNCHER" />
+53-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:38:17-77
+53-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:38:27-74
+54            </intent-filter>
+55
+56            <meta-data
+56-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:41:13-43:36
+57                android:name="android.app.Activity"
+57-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:42:17-52
+58                android:value="" />
+58-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:43:17-33
+59        </activity>
+60        <activity
+60-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:45:9-51:20
+61            android:name="com.example.do_an_cs3.View.MainActivity"
+61-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:46:13-46
+62            android:exported="false" >
+62-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:47:13-37
+63            <meta-data
+63-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:41:13-43:36
+64                android:name="android.app.Activity"
+64-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:42:17-52
+65                android:value="" />
+65-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:43:17-33
+66        </activity>
+67        <activity
+67-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:52:9-56:54
+68            android:name="com.example.do_an_cs3.View.Project.ProjectActivity"
+68-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:53:13-57
+69            android:exported="false"
+69-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:54:13-37
+70            android:label="@string/title_activity_job"
+70-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:55:13-55
+71            android:theme="@style/Theme.DO_AN_CS3" />
+71-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:56:13-51
+72        <activity
+72-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:57:9-61:54
+73            android:name="com.example.do_an_cs3.View.Project.AddProjectActivity"
+73-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:58:13-60
+74            android:exported="false"
+74-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:59:13-37
+75            android:label="@string/Addjob"
+75-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:60:13-43
+76            android:theme="@style/Theme.DO_AN_CS3" />
+76-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:61:13-51
+77        <activity
+77-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:62:9-66:54
+78            android:name="com.example.do_an_cs3.View.Users.PersonnalActivity"
+78-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:63:13-57
+79            android:exported="false"
+79-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:64:13-37
+80            android:label="@string/personnal"
+80-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:65:13-46
+81            android:theme="@style/Theme.DO_AN_CS3" />
+81-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:66:13-51
+82        <activity
+82-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:67:9-71:54
+83            android:name="com.example.do_an_cs3.View.SettingActivity"
+83-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:68:13-49
+84            android:exported="false"
+84-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:69:13-37
+85            android:label="@string/setting"
+85-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:70:13-44
+86            android:theme="@style/Theme.DO_AN_CS3" />
+86-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:71:13-51
+87        <activity
+87-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:72:9-76:54
+88            android:name="com.example.do_an_cs3.View.WarningActivity"
+88-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:73:13-49
+89            android:exported="false"
+89-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:74:13-37
+90            android:label="@string/warning"
+90-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:75:13-44
+91            android:theme="@style/Theme.DO_AN_CS3" />
+91-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:76:13-51
+92        <activity
+92-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:77:9-81:54
+93            android:name="com.example.do_an_cs3.View.Users.EditAccountActivity"
+93-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:78:13-59
+94            android:exported="false"
+94-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:79:13-37
+95            android:label="@string/editAccount"
+95-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:80:13-48
+96            android:theme="@style/Theme.DO_AN_CS3" />
+96-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:81:13-51
+97        <activity
+97-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:82:9-86:54
+98            android:name="com.example.do_an_cs3.View.Users.ChangePassActivity"
+98-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:83:13-58
+99            android:exported="false"
+99-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:84:13-37
+100            android:label="@string/changepass"
+100-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:85:13-47
+101            android:theme="@style/Theme.DO_AN_CS3" />
+101-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:86:13-51
+102        <activity
+102-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:87:9-91:54
+103            android:name="com.example.do_an_cs3.View.ReportActivity"
+103-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:88:13-48
+104            android:exported="false"
+104-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:89:13-37
+105            android:label="@string/report"
+105-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:90:13-43
+106            android:theme="@style/Theme.DO_AN_CS3" />
+106-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:91:13-51
+107        <activity
+107-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:92:9-96:54
+108            android:name="com.example.do_an_cs3.View.Users.AddPersonnalActivity"
+108-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:93:13-60
+109            android:exported="false"
+109-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:94:13-37
+110            android:label="AddPersonnalActivity"
+110-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:95:13-49
+111            android:theme="@style/Theme.DO_AN_CS3" />
+111-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:96:13-51
+112        <activity
+112-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:97:9-101:54
+113            android:name="com.example.do_an_cs3.View.Departments.AddDeparmentsActivity"
+113-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:98:13-67
+114            android:exported="false"
+114-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:99:13-37
+115            android:label="AddDeparmentsActivity"
+115-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:100:13-50
+116            android:theme="@style/Theme.DO_AN_CS3" />
+116-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:101:13-51
+117        <activity
+117-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:102:9-106:54
+118            android:name="com.example.do_an_cs3.View.Users.LoginActivity"
+118-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:103:13-53
+119            android:exported="false"
+119-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:104:13-37
+120            android:label="LoginActivity"
+120-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:105:13-42
+121            android:theme="@style/Theme.DO_AN_CS3" />
+121-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:106:13-51
+122        <activity
+122-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:107:9-111:54
+123            android:name="com.example.do_an_cs3.View.Users.RegisterActivity"
+123-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:108:13-56
+124            android:exported="false"
+124-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:109:13-37
+125            android:label="@string/personnal"
+125-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:110:13-46
+126            android:theme="@style/Theme.DO_AN_CS3" />
+126-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:111:13-51
+127
+128        <provider
+128-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+129            android:name="androidx.startup.InitializationProvider"
+129-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+130            android:authorities="com.example.do_an_cs3.androidx-startup"
+130-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+131            android:exported="false" >
+131-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
 132            <meta-data
-132-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\PC ASUS\.gradle\caches\transforms-3\7af7287dcf52a2eb553d62ae7517d927\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-133                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-133-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\PC ASUS\.gradle\caches\transforms-3\7af7287dcf52a2eb553d62ae7517d927\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+132-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+133                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+133-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
 134                android:value="androidx.startup" />
-134-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\PC ASUS\.gradle\caches\transforms-3\7af7287dcf52a2eb553d62ae7517d927\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+134-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
 135            <meta-data
-135-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-136                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-136-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+135-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\PC ASUS\.gradle\caches\transforms-3\7af7287dcf52a2eb553d62ae7517d927\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+136                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+136-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\PC ASUS\.gradle\caches\transforms-3\7af7287dcf52a2eb553d62ae7517d927\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
 137                android:value="androidx.startup" />
-137-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-138        </provider>
-139
-140        <uses-library
-140-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
-141            android:name="androidx.window.extensions"
-141-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
-142            android:required="false" />
-142-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
+137-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\PC ASUS\.gradle\caches\transforms-3\7af7287dcf52a2eb553d62ae7517d927\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+138            <meta-data
+138-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+139                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+139-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+140                android:value="androidx.startup" />
+140-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+141        </provider>
+142
 143        <uses-library
-143-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
-144            android:name="androidx.window.sidecar"
-144-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
+143-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
+144            android:name="androidx.window.extensions"
+144-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
 145            android:required="false" />
-145-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
-146
-147        <receiver
-147-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-148            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-148-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-149            android:directBootAware="false"
-149-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-150            android:enabled="true"
-150-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-151            android:exported="true"
-151-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-152            android:permission="android.permission.DUMP" >
-152-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-153            <intent-filter>
-153-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-154                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-154-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-154-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-155            </intent-filter>
+145-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
+146        <uses-library
+146-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
+147            android:name="androidx.window.sidecar"
+147-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
+148            android:required="false" />
+148-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
+149
+150        <receiver
+150-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+151            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+151-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+152            android:directBootAware="false"
+152-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+153            android:enabled="true"
+153-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+154            android:exported="true"
+154-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+155            android:permission="android.permission.DUMP" >
+155-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
 156            <intent-filter>
-156-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-157                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-157-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-157-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+156-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+157                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+157-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+157-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
 158            </intent-filter>
 159            <intent-filter>
-159-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-160                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-160-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-160-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+159-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+160                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+160-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+160-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
 161            </intent-filter>
 162            <intent-filter>
-162-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-163                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-163-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-163-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+162-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+163                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+163-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+163-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
 164            </intent-filter>
-165        </receiver>
-166    </application>
-167
-168</manifest>
+165            <intent-filter>
+165-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+166                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+166-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+166-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+167            </intent-filter>
+168        </receiver>
+169    </application>
+170
+171</manifest>

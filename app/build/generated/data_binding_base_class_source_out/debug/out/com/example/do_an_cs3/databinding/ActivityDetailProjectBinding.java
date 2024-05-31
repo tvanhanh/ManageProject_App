@@ -30,13 +30,16 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
   public final TextView PossitonAndEmail;
 
   @NonNull
-  public final Button addJob;
-
-  @NonNull
   public final Button addTag;
 
   @NonNull
+  public final Button addTask;
+
+  @NonNull
   public final Button btnAddDiscussion;
+
+  @NonNull
+  public final Button btnBack;
 
   @NonNull
   public final Button btnDelete;
@@ -49,9 +52,6 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
 
   @NonNull
   public final Button btnViewMore;
-
-  @NonNull
-  public final Button buttonComback;
 
   @NonNull
   public final Button buttonDate;
@@ -115,9 +115,9 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
 
   private ActivityDetailProjectBinding(@NonNull FrameLayout rootView,
       @NonNull TextView NameProrjectDetail, @NonNull TextView PossitonAndEmail,
-      @NonNull Button addJob, @NonNull Button addTag, @NonNull Button btnAddDiscussion,
-      @NonNull Button btnDelete, @NonNull Button btnImportant, @NonNull Button btnReply,
-      @NonNull Button btnViewMore, @NonNull Button buttonComback, @NonNull Button buttonDate,
+      @NonNull Button addTag, @NonNull Button addTask, @NonNull Button btnAddDiscussion,
+      @NonNull Button btnBack, @NonNull Button btnDelete, @NonNull Button btnImportant,
+      @NonNull Button btnReply, @NonNull Button btnViewMore, @NonNull Button buttonDate,
       @NonNull Button buttonSeacrh, @NonNull Button buttonWarning,
       @NonNull CircleImageView circleImageView, @NonNull CircleImageView circleImageViewComment,
       @NonNull CircleImageView circleImageViewWork, @NonNull LinearLayout discussionContainer,
@@ -130,14 +130,14 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
     this.rootView = rootView;
     this.NameProrjectDetail = NameProrjectDetail;
     this.PossitonAndEmail = PossitonAndEmail;
-    this.addJob = addJob;
     this.addTag = addTag;
+    this.addTask = addTask;
     this.btnAddDiscussion = btnAddDiscussion;
+    this.btnBack = btnBack;
     this.btnDelete = btnDelete;
     this.btnImportant = btnImportant;
     this.btnReply = btnReply;
     this.btnViewMore = btnViewMore;
-    this.buttonComback = buttonComback;
     this.buttonDate = buttonDate;
     this.buttonSeacrh = buttonSeacrh;
     this.buttonWarning = buttonWarning;
@@ -199,21 +199,27 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.addJob;
-      Button addJob = ViewBindings.findChildViewById(rootView, id);
-      if (addJob == null) {
-        break missingId;
-      }
-
       id = R.id.addTag;
       Button addTag = ViewBindings.findChildViewById(rootView, id);
       if (addTag == null) {
         break missingId;
       }
 
+      id = R.id.addTask;
+      Button addTask = ViewBindings.findChildViewById(rootView, id);
+      if (addTask == null) {
+        break missingId;
+      }
+
       id = R.id.btnAddDiscussion;
       Button btnAddDiscussion = ViewBindings.findChildViewById(rootView, id);
       if (btnAddDiscussion == null) {
+        break missingId;
+      }
+
+      id = R.id.btnBack;
+      Button btnBack = ViewBindings.findChildViewById(rootView, id);
+      if (btnBack == null) {
         break missingId;
       }
 
@@ -238,12 +244,6 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
       id = R.id.btnViewMore;
       Button btnViewMore = ViewBindings.findChildViewById(rootView, id);
       if (btnViewMore == null) {
-        break missingId;
-      }
-
-      id = R.id.buttonComback;
-      Button buttonComback = ViewBindings.findChildViewById(rootView, id);
-      if (buttonComback == null) {
         break missingId;
       }
 
@@ -368,8 +368,8 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
       }
 
       return new ActivityDetailProjectBinding((FrameLayout) rootView, NameProrjectDetail,
-          PossitonAndEmail, addJob, addTag, btnAddDiscussion, btnDelete, btnImportant, btnReply,
-          btnViewMore, buttonComback, buttonDate, buttonSeacrh, buttonWarning, circleImageView,
+          PossitonAndEmail, addTag, addTask, btnAddDiscussion, btnBack, btnDelete, btnImportant,
+          btnReply, btnViewMore, buttonDate, buttonSeacrh, buttonWarning, circleImageView,
           circleImageViewComment, circleImageViewWork, discussionContainer, linearLayout, lnRCVTask,
           logo, rcvTask, rcvUserFollow, tvDeadlineDetail, tvEmailDetail, tvHeader, tvStatusDetail,
           tvStatusFile, tvUserNameDetail, tvViews, userNameNguoiThucHien);
