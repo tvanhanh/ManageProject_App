@@ -44,6 +44,7 @@ public class UpdateNewFragment extends Fragment {
         // Set up the adapter
         dbManager = new DatabaseManager(requireContext());
         projects = dbManager.getAllProjects(email);
+
         project_adapter = new ProjectAdapter(projects, requireContext());
 
         // Set up RecyclerView

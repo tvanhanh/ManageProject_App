@@ -126,12 +126,13 @@ id TimeUpdateTask
 id accountButton
 id action_FirstFragment_to_SecondFragment
 id action_SecondFragment_to_FirstFragment
-id addJob
 id addTag
+id addTask
 id add_job
 id anyChartView
 id bottomnavigation
 id btnAddDiscussion
+id btnBack
 id btnConfirmComplete
 id btnDelete
 id btnDeleteTask
@@ -237,6 +238,7 @@ id recent_activity
 id service_price
 id setting
 id statistic
+id statusTask
 id tabLayout
 id tab_layout
 id text
@@ -263,6 +265,7 @@ id textView7
 id textView8
 id textViewDate
 id textforgotpass
+id timeUpdateTask
 id tvAccountInfo
 id tvDeadlineDetail
 id tvDealine
@@ -290,7 +293,7 @@ id userNameNguoiThucHien
 id viewpager
 id viewpager_2
 layout activity_add_infor
-layout activity_add_job
+layout activity_add_task
 layout activity_adddeparments
 layout activity_addpersonnal
 layout activity_addproject

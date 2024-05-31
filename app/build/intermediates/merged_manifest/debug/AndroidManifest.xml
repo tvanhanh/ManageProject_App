@@ -33,10 +33,13 @@
         android:testOnly="true"
         android:theme="@style/Theme.DO_AN_CS3" >
         <activity
+            android:name="com.example.do_an_cs3.Task.AddTaskActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.do_an_cs3.View.Users.AddProfileActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.do_an_cs3.View.Projects.DetailProjectActivity"
+            android:name="com.example.do_an_cs3.View.Project.DetailProjectActivity"
             android:exported="false" />
         <activity
             android:name="com.example.do_an_cs3.View.Users.ChooseRoleActivity"

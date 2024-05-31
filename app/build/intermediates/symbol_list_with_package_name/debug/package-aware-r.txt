@@ -3313,8 +3313,8 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id addJob
 id addTag
+id addTask
 id add_job
 id alertTitle
 id aligned
@@ -3347,6 +3347,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btnAddDiscussion
+id btnBack
 id btnConfirmComplete
 id btnDelete
 id btnDeleteTask
@@ -3779,6 +3780,7 @@ id startVertical
 id staticLayout
 id staticPostLayout
 id statistic
+id statusTask
 id stop
 id stretch
 id submenuarrow
@@ -3840,6 +3842,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timeUpdateTask
 id title
 id titleDividerNoCustom
 id title_template
@@ -4021,7 +4024,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_infor
-layout activity_add_job
+layout activity_add_task
 layout activity_adddeparments
 layout activity_addpersonnal
 layout activity_addproject

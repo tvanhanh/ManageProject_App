@@ -45,7 +45,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:text="Cảnh Báo"
-            android:textSize="22dp" />
+            android:textSize="18dp" />
 
         <LinearLayout
             android:layout_width="0dp"

@@ -30,6 +30,7 @@ import com.example.do_an_cs3.Model.Deparments;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.Project.AddProjectActivity;
+import com.example.do_an_cs3.View.Project.DetailProjectActivity;
 import com.example.do_an_cs3.View.Project.ProjectActivity;
 import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -146,9 +147,9 @@ public class MainActivity extends AppCompatActivity {
         pie.background().fill("#E8DFCA"); // Đổi màu nền thành màu trắng (#FFFFFF)
         anyChartView.setChart(pie);
     }
+
     private void displayUserInfo() {
         User user = dbManager.getUserInfo(getCurrentUserEmail());
-
         if (user != null) {
             tvUserName.setText(user.getUserName());
             tvPosision.setText(user.getRole());

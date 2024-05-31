@@ -3312,8 +3312,8 @@ int id action_text 0x7f09004e
 int id actions 0x7f09004f
 int id activity_chooser_view_content 0x7f090050
 int id add 0x7f090051
-int id addJob 0x7f090052
 int id addTag 0x7f090053
+int id addTask 0x7f0902a3
 int id add_job 0x7f090054
 int id alertTitle 0x7f090055
 int id aligned 0x7f090056
@@ -3346,6 +3346,7 @@ int id bounceBoth 0x7f090070
 int id bounceEnd 0x7f090071
 int id bounceStart 0x7f090072
 int id btnAddDiscussion 0x7f090073
+int id btnBack 0x7f0902a4
 int id btnConfirmComplete 0x7f090074
 int id btnDelete 0x7f090075
 int id btnDeleteTask 0x7f090076
@@ -3779,6 +3780,7 @@ int id startVertical 0x7f09021d
 int id staticLayout 0x7f09021e
 int id staticPostLayout 0x7f09021f
 int id statistic 0x7f090220
+int id statusTask 0x7f0902a5
 int id stop 0x7f090221
 int id stretch 0x7f090222
 int id submenuarrow 0x7f090223
@@ -3840,6 +3842,7 @@ int id textinput_placeholder 0x7f09025a
 int id textinput_prefix_text 0x7f09025b
 int id textinput_suffix_text 0x7f09025c
 int id time 0x7f09025d
+int id timeUpdateTask 0x7f0902a6
 int id title 0x7f09025e
 int id titleDividerNoCustom 0x7f09025f
 int id title_template 0x7f090260
@@ -4021,7 +4024,7 @@ int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
 int layout activity_add_infor 0x7f0c001c
-int layout activity_add_job 0x7f0c008d
+int layout activity_add_task 0x7f0c008f
 int layout activity_adddeparments 0x7f0c001d
 int layout activity_addpersonnal 0x7f0c001e
 int layout activity_addproject 0x7f0c001f

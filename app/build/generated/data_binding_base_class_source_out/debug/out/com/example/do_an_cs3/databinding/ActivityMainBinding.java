@@ -16,6 +16,7 @@ import androidx.viewbinding.ViewBindings;
 import androidx.viewpager.widget.ViewPager;
 import com.anychart.AnyChartView;
 import com.example.do_an_cs3.R;
+import com.example.do_an_cs3.WrapContentViewPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -76,7 +77,7 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ViewPager viewpager;
 
   @NonNull
-  public final ViewPager viewpager2;
+  public final WrapContentViewPager viewpager2;
 
   private ActivityMainBinding(@NonNull RelativeLayout rootView, @NonNull AnyChartView anyChartView,
       @NonNull BottomNavigationView bottomnavigation, @NonNull Button buttonDate,
@@ -85,7 +86,7 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull TextView logo, @NonNull TextView position, @NonNull RecyclerView rcvDeparment,
       @NonNull TabLayout tabLayout, @NonNull TextView text, @NonNull TextView textView,
       @NonNull TextView textView2, @NonNull TextView userName, @NonNull ViewPager viewpager,
-      @NonNull ViewPager viewpager2) {
+      @NonNull WrapContentViewPager viewpager2) {
     this.rootView = rootView;
     this.anyChartView = anyChartView;
     this.bottomnavigation = bottomnavigation;
@@ -230,7 +231,7 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       id = R.id.viewpager_2;
-      ViewPager viewpager2 = ViewBindings.findChildViewById(rootView, id);
+      WrapContentViewPager viewpager2 = ViewBindings.findChildViewById(rootView, id);
       if (viewpager2 == null) {
         break missingId;
       }
