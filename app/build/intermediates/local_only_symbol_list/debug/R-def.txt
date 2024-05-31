@@ -72,6 +72,7 @@ drawable lightbulb
 drawable lock
 drawable logo
 drawable logo1
+drawable logo_laucher
 drawable logout
 drawable mail
 drawable medal
@@ -198,6 +199,7 @@ id emailaccount
 id home
 id img_use_follow
 id img_user
+id img_userProject
 id intru
 id job
 id job_complete

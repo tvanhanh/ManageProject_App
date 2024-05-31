@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
     private CircleImageView circleImageView;
     private TextView tvUserName;
     private TextView tvPosision;
+
+    public MainActivity() {
+    }
+
     private Database dbhelper;
     private DatabaseManager dbManager;
     private AnyChartView anyChartView;
@@ -148,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         anyChartView.setChart(pie);
     }
 
-    private void displayUserInfo() {
+    public void displayUserInfo() {
         User user = dbManager.getUserInfo(getCurrentUserEmail());
         if (user != null) {
             tvUserName.setText(user.getUserName());

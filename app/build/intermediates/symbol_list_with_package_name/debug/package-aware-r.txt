@@ -3113,6 +3113,7 @@ drawable lightbulb
 drawable lock
 drawable logo
 drawable logo1
+drawable logo_laucher
 drawable logout
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3532,6 +3533,7 @@ id ignoreRequest
 id image
 id img_use_follow
 id img_user
+id img_userProject
 id immediateStop
 id included
 id indeterminate
