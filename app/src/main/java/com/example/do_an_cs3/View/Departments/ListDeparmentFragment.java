@@ -1,4 +1,4 @@
-package com.example.do_an_cs3.View.back_end.View_fragment.FragmentPersonnal;
+package com.example.do_an_cs3.View.Departments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.Departments.AddDeparmentsActivity;
+import com.example.do_an_cs3.View.back_end.View_fragment.FragmentPersonnal.ListPersonnalFragment;
 
 public class ListDeparmentFragment extends Fragment {
     private Button add;

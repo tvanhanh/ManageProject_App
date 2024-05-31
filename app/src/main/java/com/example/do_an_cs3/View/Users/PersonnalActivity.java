@@ -14,8 +14,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.do_an_cs3.Adapter.ViewPagerAdapterDepartment;
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.View.Job.AddProjectActivity;
-import com.example.do_an_cs3.View.Job.ProjectActivity;
+import com.example.do_an_cs3.View.Project.AddProjectActivity;
+import com.example.do_an_cs3.View.Project.ProjectActivity;
 import com.example.do_an_cs3.View.MainActivity;
 import com.example.do_an_cs3.View.SettingActivity;
 import com.example.do_an_cs3.databinding.ActivityPersonnalBinding;
@@ -25,7 +25,6 @@ import com.google.android.material.tabs.TabLayout;
 public class PersonnalActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityPersonnalBinding binding;
     private TabLayout mtablayout;
     private ViewPager mviewPager;
     private Button buttoncomback;

@@ -1,4 +1,4 @@
-package com.example.do_an_cs3.View.Job;
+package com.example.do_an_cs3.View.Project;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;

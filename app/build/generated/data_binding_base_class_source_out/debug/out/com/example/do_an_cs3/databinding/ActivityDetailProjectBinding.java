@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.do_an_cs3.R;
@@ -23,10 +24,25 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final TextView NameProrjectDetail;
+
+  @NonNull
+  public final TextView PossitonAndEmail;
+
+  @NonNull
+  public final Button addJob;
+
+  @NonNull
+  public final Button addTag;
+
+  @NonNull
   public final Button btnAddDiscussion;
 
   @NonNull
   public final Button btnDelete;
+
+  @NonNull
+  public final Button btnImportant;
 
   @NonNull
   public final Button btnReply;
@@ -62,21 +78,63 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
   public final LinearLayout linearLayout;
 
   @NonNull
+  public final LinearLayout lnRCVTask;
+
+  @NonNull
   public final TextView logo;
+
+  @NonNull
+  public final RecyclerView rcvTask;
+
+  @NonNull
+  public final RecyclerView rcvUserFollow;
+
+  @NonNull
+  public final TextView tvDeadlineDetail;
+
+  @NonNull
+  public final TextView tvEmailDetail;
 
   @NonNull
   public final TextView tvHeader;
 
+  @NonNull
+  public final TextView tvStatusDetail;
+
+  @NonNull
+  public final TextView tvStatusFile;
+
+  @NonNull
+  public final TextView tvUserNameDetail;
+
+  @NonNull
+  public final TextView tvViews;
+
+  @NonNull
+  public final TextView userNameNguoiThucHien;
+
   private ActivityDetailProjectBinding(@NonNull FrameLayout rootView,
-      @NonNull Button btnAddDiscussion, @NonNull Button btnDelete, @NonNull Button btnReply,
+      @NonNull TextView NameProrjectDetail, @NonNull TextView PossitonAndEmail,
+      @NonNull Button addJob, @NonNull Button addTag, @NonNull Button btnAddDiscussion,
+      @NonNull Button btnDelete, @NonNull Button btnImportant, @NonNull Button btnReply,
       @NonNull Button btnViewMore, @NonNull Button buttonComback, @NonNull Button buttonDate,
       @NonNull Button buttonSeacrh, @NonNull Button buttonWarning,
       @NonNull CircleImageView circleImageView, @NonNull CircleImageView circleImageViewComment,
       @NonNull CircleImageView circleImageViewWork, @NonNull LinearLayout discussionContainer,
-      @NonNull LinearLayout linearLayout, @NonNull TextView logo, @NonNull TextView tvHeader) {
+      @NonNull LinearLayout linearLayout, @NonNull LinearLayout lnRCVTask, @NonNull TextView logo,
+      @NonNull RecyclerView rcvTask, @NonNull RecyclerView rcvUserFollow,
+      @NonNull TextView tvDeadlineDetail, @NonNull TextView tvEmailDetail,
+      @NonNull TextView tvHeader, @NonNull TextView tvStatusDetail, @NonNull TextView tvStatusFile,
+      @NonNull TextView tvUserNameDetail, @NonNull TextView tvViews,
+      @NonNull TextView userNameNguoiThucHien) {
     this.rootView = rootView;
+    this.NameProrjectDetail = NameProrjectDetail;
+    this.PossitonAndEmail = PossitonAndEmail;
+    this.addJob = addJob;
+    this.addTag = addTag;
     this.btnAddDiscussion = btnAddDiscussion;
     this.btnDelete = btnDelete;
+    this.btnImportant = btnImportant;
     this.btnReply = btnReply;
     this.btnViewMore = btnViewMore;
     this.buttonComback = buttonComback;
@@ -88,8 +146,18 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
     this.circleImageViewWork = circleImageViewWork;
     this.discussionContainer = discussionContainer;
     this.linearLayout = linearLayout;
+    this.lnRCVTask = lnRCVTask;
     this.logo = logo;
+    this.rcvTask = rcvTask;
+    this.rcvUserFollow = rcvUserFollow;
+    this.tvDeadlineDetail = tvDeadlineDetail;
+    this.tvEmailDetail = tvEmailDetail;
     this.tvHeader = tvHeader;
+    this.tvStatusDetail = tvStatusDetail;
+    this.tvStatusFile = tvStatusFile;
+    this.tvUserNameDetail = tvUserNameDetail;
+    this.tvViews = tvViews;
+    this.userNameNguoiThucHien = userNameNguoiThucHien;
   }
 
   @Override
@@ -119,6 +187,30 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.NameProrjectDetail;
+      TextView NameProrjectDetail = ViewBindings.findChildViewById(rootView, id);
+      if (NameProrjectDetail == null) {
+        break missingId;
+      }
+
+      id = R.id.PossitonAndEmail;
+      TextView PossitonAndEmail = ViewBindings.findChildViewById(rootView, id);
+      if (PossitonAndEmail == null) {
+        break missingId;
+      }
+
+      id = R.id.addJob;
+      Button addJob = ViewBindings.findChildViewById(rootView, id);
+      if (addJob == null) {
+        break missingId;
+      }
+
+      id = R.id.addTag;
+      Button addTag = ViewBindings.findChildViewById(rootView, id);
+      if (addTag == null) {
+        break missingId;
+      }
+
       id = R.id.btnAddDiscussion;
       Button btnAddDiscussion = ViewBindings.findChildViewById(rootView, id);
       if (btnAddDiscussion == null) {
@@ -128,6 +220,12 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
       id = R.id.btnDelete;
       Button btnDelete = ViewBindings.findChildViewById(rootView, id);
       if (btnDelete == null) {
+        break missingId;
+      }
+
+      id = R.id.btnImportant;
+      Button btnImportant = ViewBindings.findChildViewById(rootView, id);
+      if (btnImportant == null) {
         break missingId;
       }
 
@@ -197,9 +295,39 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.lnRCVTask;
+      LinearLayout lnRCVTask = ViewBindings.findChildViewById(rootView, id);
+      if (lnRCVTask == null) {
+        break missingId;
+      }
+
       id = R.id.logo;
       TextView logo = ViewBindings.findChildViewById(rootView, id);
       if (logo == null) {
+        break missingId;
+      }
+
+      id = R.id.rcv_task;
+      RecyclerView rcvTask = ViewBindings.findChildViewById(rootView, id);
+      if (rcvTask == null) {
+        break missingId;
+      }
+
+      id = R.id.rcv_userFollow;
+      RecyclerView rcvUserFollow = ViewBindings.findChildViewById(rootView, id);
+      if (rcvUserFollow == null) {
+        break missingId;
+      }
+
+      id = R.id.tvDeadlineDetail;
+      TextView tvDeadlineDetail = ViewBindings.findChildViewById(rootView, id);
+      if (tvDeadlineDetail == null) {
+        break missingId;
+      }
+
+      id = R.id.tvEmailDetail;
+      TextView tvEmailDetail = ViewBindings.findChildViewById(rootView, id);
+      if (tvEmailDetail == null) {
         break missingId;
       }
 
@@ -209,10 +337,42 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityDetailProjectBinding((FrameLayout) rootView, btnAddDiscussion, btnDelete,
-          btnReply, btnViewMore, buttonComback, buttonDate, buttonSeacrh, buttonWarning,
-          circleImageView, circleImageViewComment, circleImageViewWork, discussionContainer,
-          linearLayout, logo, tvHeader);
+      id = R.id.tvStatusDetail;
+      TextView tvStatusDetail = ViewBindings.findChildViewById(rootView, id);
+      if (tvStatusDetail == null) {
+        break missingId;
+      }
+
+      id = R.id.tvStatusFile;
+      TextView tvStatusFile = ViewBindings.findChildViewById(rootView, id);
+      if (tvStatusFile == null) {
+        break missingId;
+      }
+
+      id = R.id.tvUserNameDetail;
+      TextView tvUserNameDetail = ViewBindings.findChildViewById(rootView, id);
+      if (tvUserNameDetail == null) {
+        break missingId;
+      }
+
+      id = R.id.tvViews;
+      TextView tvViews = ViewBindings.findChildViewById(rootView, id);
+      if (tvViews == null) {
+        break missingId;
+      }
+
+      id = R.id.userNameNguoiThucHien;
+      TextView userNameNguoiThucHien = ViewBindings.findChildViewById(rootView, id);
+      if (userNameNguoiThucHien == null) {
+        break missingId;
+      }
+
+      return new ActivityDetailProjectBinding((FrameLayout) rootView, NameProrjectDetail,
+          PossitonAndEmail, addJob, addTag, btnAddDiscussion, btnDelete, btnImportant, btnReply,
+          btnViewMore, buttonComback, buttonDate, buttonSeacrh, buttonWarning, circleImageView,
+          circleImageViewComment, circleImageViewWork, discussionContainer, linearLayout, lnRCVTask,
+          logo, rcvTask, rcvUserFollow, tvDeadlineDetail, tvEmailDetail, tvHeader, tvStatusDetail,
+          tvStatusFile, tvUserNameDetail, tvViews, userNameNguoiThucHien);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

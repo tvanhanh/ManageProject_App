@@ -36,7 +36,7 @@ public class ChooseRoleActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String userEmail = getCurrentUserEmail();
                 if (userEmail != null) {
-                    dbManager.updateUserRole(userEmail, "", "Phòng Lãnh Đạo");
+                    dbManager.updateUserRole(userEmail, "Leader", "Phòng Lãnh Đạo");
                     Intent intent = new Intent(ChooseRoleActivity.this, AddProfileActivity.class);
                     startActivity(intent);
                     finish();

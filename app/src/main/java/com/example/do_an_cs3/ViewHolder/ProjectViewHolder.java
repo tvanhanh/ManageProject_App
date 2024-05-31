@@ -1,4 +1,4 @@
-package com.example.do_an_cs3.View.Projects;
+package com.example.do_an_cs3.ViewHolder;
 
 import android.view.View;
 import android.widget.TextView;
@@ -22,7 +22,5 @@ public class ProjectViewHolder extends RecyclerView.ViewHolder {
         tvProjectCreationTime = itemView.findViewById(R.id.tvProjectCreationTime);
         tvProjectStatus = itemView.findViewById(R.id.tvProjectStatus);
         //  tvProjectDepartment =
-
-
     }
 }

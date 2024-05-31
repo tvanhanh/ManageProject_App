@@ -31,7 +31,7 @@
                      android:id="@+id/circleImageViewMain"
                      android:layout_width="60dp"
                      android:layout_height="60dp"
-                     android:src="@drawable/hanh" />
+                     android:src="@drawable/useravatar" />
              </LinearLayout>
 
              <!-- Layout dạng dọc chứa TextView -->
