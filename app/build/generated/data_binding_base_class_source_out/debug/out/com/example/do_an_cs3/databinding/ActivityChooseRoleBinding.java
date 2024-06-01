@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +18,7 @@ import java.lang.String;
 
 public final class ActivityChooseRoleBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final LinearLayout lnIdOrg;
@@ -40,7 +41,7 @@ public final class ActivityChooseRoleBinding implements ViewBinding {
   @NonNull
   public final TextView tvInstructions;
 
-  private ActivityChooseRoleBinding(@NonNull LinearLayout rootView, @NonNull LinearLayout lnIdOrg,
+  private ActivityChooseRoleBinding(@NonNull ScrollView rootView, @NonNull LinearLayout lnIdOrg,
       @NonNull LinearLayout lnLeader, @NonNull LinearLayout lnPersonally,
       @NonNull LinearLayout lnQRcode, @NonNull TextView tvAccountInfo, @NonNull TextView tvHeader,
       @NonNull TextView tvInstructions) {
@@ -56,7 +57,7 @@ public final class ActivityChooseRoleBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -123,7 +124,7 @@ public final class ActivityChooseRoleBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityChooseRoleBinding((LinearLayout) rootView, lnIdOrg, lnLeader, lnPersonally,
+      return new ActivityChooseRoleBinding((ScrollView) rootView, lnIdOrg, lnLeader, lnPersonally,
           lnQRcode, tvAccountInfo, tvHeader, tvInstructions);
     }
     String missingId = rootView.getResources().getResourceName(id);

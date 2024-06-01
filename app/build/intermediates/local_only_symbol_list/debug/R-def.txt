@@ -13,7 +13,9 @@ color gray
 color grey
 color listDepartment
 color orange
+color pinkTask
 color print
+color projectB
 color red
 color viewpager
 color white
@@ -123,8 +125,9 @@ id NameTaskNewUpdate
 id PossitonAndEmail
 id SecondFragment
 id SharForFF
+id TimeCreationProjectDetail
 id TimeUpdateTask
-id accountButton
+id accountAvt
 id action_FirstFragment_to_SecondFragment
 id action_SecondFragment_to_FirstFragment
 id addTag
@@ -172,7 +175,6 @@ id circleImageViewMain
 id circleImageViewWork
 id comeback
 id contentTask
-id deleteAccount
 id deparment_name
 id discussionContainer
 id editAddNameJob
@@ -287,6 +289,7 @@ id tvStatusFile
 id tvUserName
 id tvUserNameDetail
 id tvViews
+id tvprojectContext
 id typeJob
 id unitInformation
 id userName

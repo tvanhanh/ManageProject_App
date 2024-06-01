@@ -21,7 +21,7 @@ public class ProjectViewHolder extends RecyclerView.ViewHolder {
         //tvPercent = itemView.findViewById(R.id.tvPercent);
         tvNamePerson = itemView.findViewById(R.id.NamePersonOfTaskUpdate);
         tvProjectName = itemView.findViewById(R.id.tvProjectName);
-       // tvDescriptionProject = itemView.findViewById(R.id.tvDescriptionProject);
+        tvDescriptionProject = itemView.findViewById(R.id.tvprojectContext);
         tvProjectDeadline = itemView.findViewById(R.id.tvProjectDeadline);
         tvProjectCreationTime = itemView.findViewById(R.id.tvProjectCreationTime);
         tvProjectStatus = itemView.findViewById(R.id.tvProjectStatus);

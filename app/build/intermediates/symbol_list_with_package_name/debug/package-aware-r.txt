@@ -2129,6 +2129,7 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color orange
+color pinkTask
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2138,6 +2139,7 @@ color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color print
+color projectB
 color red
 color ripple_material_dark
 color ripple_material_light
@@ -3253,6 +3255,7 @@ id SecondFragment
 id SharForFF
 id TOP_END
 id TOP_START
+id TimeCreationProjectDetail
 id TimeUpdateTask
 id accelerate
 id accessibility_action_clickable_span
@@ -3288,7 +3291,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
-id accountButton
+id accountAvt
 id actionDown
 id actionDownUp
 id actionUp
@@ -3431,7 +3434,6 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
-id deleteAccount
 id deltaRelative
 id deparment_name
 id dependency_ordering
@@ -3879,6 +3881,7 @@ id tvStatusFile
 id tvUserName
 id tvUserNameDetail
 id tvViews
+id tvprojectContext
 id typeJob
 id unchecked
 id uniform

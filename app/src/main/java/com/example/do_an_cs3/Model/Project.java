@@ -8,6 +8,16 @@ public class Project {
 
     private String creationTime;
 
+    public Project(String name, String description, String deadline, String creationTime, int views, int percentCompleted, String status) {
+        this.name = name;
+        this.description = description;
+        this.deadline = deadline;
+        this.creationTime = creationTime;
+        this.views = views;
+        this.percentCompleted = percentCompleted;
+        this.status = status;
+    }
+
     public String getDeadline() {
         return deadline;
     }

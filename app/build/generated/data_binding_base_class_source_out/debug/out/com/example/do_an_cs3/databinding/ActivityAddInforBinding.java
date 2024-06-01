@@ -42,9 +42,6 @@ public final class ActivityAddInforBinding implements ViewBinding {
   public final Button comeback;
 
   @NonNull
-  public final TextView deleteAccount;
-
-  @NonNull
   public final EditText editTextAddressAdd;
 
   @NonNull
@@ -74,11 +71,10 @@ public final class ActivityAddInforBinding implements ViewBinding {
   private ActivityAddInforBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnSave,
       @NonNull Button buttonHome, @NonNull Button buttondatejob, @NonNull TextView chaneAvata,
       @NonNull CircleImageView circleImageView, @NonNull Button comeback,
-      @NonNull TextView deleteAccount, @NonNull EditText editTextAddressAdd,
-      @NonNull EditText editTextNameAdd, @NonNull EditText editTextPhoneAdd,
-      @NonNull LinearLayout linearLayout, @NonNull LinearLayout lnImageViewAdd,
-      @NonNull TextView logo, @NonNull TextView textView11, @NonNull TextView textView5,
-      @NonNull TextView textView8) {
+      @NonNull EditText editTextAddressAdd, @NonNull EditText editTextNameAdd,
+      @NonNull EditText editTextPhoneAdd, @NonNull LinearLayout linearLayout,
+      @NonNull LinearLayout lnImageViewAdd, @NonNull TextView logo, @NonNull TextView textView11,
+      @NonNull TextView textView5, @NonNull TextView textView8) {
     this.rootView = rootView;
     this.btnSave = btnSave;
     this.buttonHome = buttonHome;
@@ -86,7 +82,6 @@ public final class ActivityAddInforBinding implements ViewBinding {
     this.chaneAvata = chaneAvata;
     this.circleImageView = circleImageView;
     this.comeback = comeback;
-    this.deleteAccount = deleteAccount;
     this.editTextAddressAdd = editTextAddressAdd;
     this.editTextNameAdd = editTextNameAdd;
     this.editTextPhoneAdd = editTextPhoneAdd;
@@ -161,12 +156,6 @@ public final class ActivityAddInforBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.deleteAccount;
-      TextView deleteAccount = ViewBindings.findChildViewById(rootView, id);
-      if (deleteAccount == null) {
-        break missingId;
-      }
-
       id = R.id.editTextAddressAdd;
       EditText editTextAddressAdd = ViewBindings.findChildViewById(rootView, id);
       if (editTextAddressAdd == null) {
@@ -222,9 +211,8 @@ public final class ActivityAddInforBinding implements ViewBinding {
       }
 
       return new ActivityAddInforBinding((ConstraintLayout) rootView, btnSave, buttonHome,
-          buttondatejob, chaneAvata, circleImageView, comeback, deleteAccount, editTextAddressAdd,
-          editTextNameAdd, editTextPhoneAdd, linearLayout, lnImageViewAdd, logo, textView11,
-          textView5, textView8);
+          buttondatejob, chaneAvata, circleImageView, comeback, editTextAddressAdd, editTextNameAdd,
+          editTextPhoneAdd, linearLayout, lnImageViewAdd, logo, textView11, textView5, textView8);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

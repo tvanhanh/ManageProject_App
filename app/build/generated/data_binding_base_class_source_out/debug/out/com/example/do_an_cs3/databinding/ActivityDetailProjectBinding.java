@@ -30,6 +30,9 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
   public final TextView PossitonAndEmail;
 
   @NonNull
+  public final TextView TimeCreationProjectDetail;
+
+  @NonNull
   public final Button addTag;
 
   @NonNull
@@ -96,9 +99,6 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
   public final TextView tvEmailDetail;
 
   @NonNull
-  public final TextView tvHeader;
-
-  @NonNull
   public final TextView tvStatusDetail;
 
   @NonNull
@@ -111,25 +111,29 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
   public final TextView tvViews;
 
   @NonNull
+  public final TextView tvprojectContext;
+
+  @NonNull
   public final TextView userNameNguoiThucHien;
 
   private ActivityDetailProjectBinding(@NonNull FrameLayout rootView,
       @NonNull TextView NameProrjectDetail, @NonNull TextView PossitonAndEmail,
-      @NonNull Button addTag, @NonNull Button addTask, @NonNull Button btnAddDiscussion,
-      @NonNull Button btnBack, @NonNull Button btnDelete, @NonNull Button btnImportant,
-      @NonNull Button btnReply, @NonNull Button btnViewMore, @NonNull Button buttonDate,
-      @NonNull Button buttonSeacrh, @NonNull Button buttonWarning,
+      @NonNull TextView TimeCreationProjectDetail, @NonNull Button addTag, @NonNull Button addTask,
+      @NonNull Button btnAddDiscussion, @NonNull Button btnBack, @NonNull Button btnDelete,
+      @NonNull Button btnImportant, @NonNull Button btnReply, @NonNull Button btnViewMore,
+      @NonNull Button buttonDate, @NonNull Button buttonSeacrh, @NonNull Button buttonWarning,
       @NonNull CircleImageView circleImageView, @NonNull CircleImageView circleImageViewComment,
       @NonNull CircleImageView circleImageViewWork, @NonNull LinearLayout discussionContainer,
       @NonNull LinearLayout linearLayout, @NonNull LinearLayout lnRCVTask, @NonNull TextView logo,
       @NonNull RecyclerView rcvTask, @NonNull RecyclerView rcvUserFollow,
       @NonNull TextView tvDeadlineDetail, @NonNull TextView tvEmailDetail,
-      @NonNull TextView tvHeader, @NonNull TextView tvStatusDetail, @NonNull TextView tvStatusFile,
+      @NonNull TextView tvStatusDetail, @NonNull TextView tvStatusFile,
       @NonNull TextView tvUserNameDetail, @NonNull TextView tvViews,
-      @NonNull TextView userNameNguoiThucHien) {
+      @NonNull TextView tvprojectContext, @NonNull TextView userNameNguoiThucHien) {
     this.rootView = rootView;
     this.NameProrjectDetail = NameProrjectDetail;
     this.PossitonAndEmail = PossitonAndEmail;
+    this.TimeCreationProjectDetail = TimeCreationProjectDetail;
     this.addTag = addTag;
     this.addTask = addTask;
     this.btnAddDiscussion = btnAddDiscussion;
@@ -152,11 +156,11 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
     this.rcvUserFollow = rcvUserFollow;
     this.tvDeadlineDetail = tvDeadlineDetail;
     this.tvEmailDetail = tvEmailDetail;
-    this.tvHeader = tvHeader;
     this.tvStatusDetail = tvStatusDetail;
     this.tvStatusFile = tvStatusFile;
     this.tvUserNameDetail = tvUserNameDetail;
     this.tvViews = tvViews;
+    this.tvprojectContext = tvprojectContext;
     this.userNameNguoiThucHien = userNameNguoiThucHien;
   }
 
@@ -196,6 +200,12 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
       id = R.id.PossitonAndEmail;
       TextView PossitonAndEmail = ViewBindings.findChildViewById(rootView, id);
       if (PossitonAndEmail == null) {
+        break missingId;
+      }
+
+      id = R.id.TimeCreationProjectDetail;
+      TextView TimeCreationProjectDetail = ViewBindings.findChildViewById(rootView, id);
+      if (TimeCreationProjectDetail == null) {
         break missingId;
       }
 
@@ -331,12 +341,6 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvHeader;
-      TextView tvHeader = ViewBindings.findChildViewById(rootView, id);
-      if (tvHeader == null) {
-        break missingId;
-      }
-
       id = R.id.tvStatusDetail;
       TextView tvStatusDetail = ViewBindings.findChildViewById(rootView, id);
       if (tvStatusDetail == null) {
@@ -361,6 +365,12 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvprojectContext;
+      TextView tvprojectContext = ViewBindings.findChildViewById(rootView, id);
+      if (tvprojectContext == null) {
+        break missingId;
+      }
+
       id = R.id.userNameNguoiThucHien;
       TextView userNameNguoiThucHien = ViewBindings.findChildViewById(rootView, id);
       if (userNameNguoiThucHien == null) {
@@ -368,11 +378,12 @@ public final class ActivityDetailProjectBinding implements ViewBinding {
       }
 
       return new ActivityDetailProjectBinding((FrameLayout) rootView, NameProrjectDetail,
-          PossitonAndEmail, addTag, addTask, btnAddDiscussion, btnBack, btnDelete, btnImportant,
-          btnReply, btnViewMore, buttonDate, buttonSeacrh, buttonWarning, circleImageView,
-          circleImageViewComment, circleImageViewWork, discussionContainer, linearLayout, lnRCVTask,
-          logo, rcvTask, rcvUserFollow, tvDeadlineDetail, tvEmailDetail, tvHeader, tvStatusDetail,
-          tvStatusFile, tvUserNameDetail, tvViews, userNameNguoiThucHien);
+          PossitonAndEmail, TimeCreationProjectDetail, addTag, addTask, btnAddDiscussion, btnBack,
+          btnDelete, btnImportant, btnReply, btnViewMore, buttonDate, buttonSeacrh, buttonWarning,
+          circleImageView, circleImageViewComment, circleImageViewWork, discussionContainer,
+          linearLayout, lnRCVTask, logo, rcvTask, rcvUserFollow, tvDeadlineDetail, tvEmailDetail,
+          tvStatusDetail, tvStatusFile, tvUserNameDetail, tvViews, tvprojectContext,
+          userNameNguoiThucHien);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -14,6 +14,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.do_an_cs3.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -26,7 +27,7 @@ public final class ActivitySettingBinding implements ViewBinding {
   public final TextView SharForFF;
 
   @NonNull
-  public final Button accountButton;
+  public final CircleImageView accountAvt;
 
   @NonNull
   public final BottomNavigationView bottomnavigation;
@@ -116,7 +117,7 @@ public final class ActivitySettingBinding implements ViewBinding {
   public final TextView unitInformation;
 
   private ActivitySettingBinding(@NonNull ConstraintLayout rootView, @NonNull TextView SharForFF,
-      @NonNull Button accountButton, @NonNull BottomNavigationView bottomnavigation,
+      @NonNull CircleImageView accountAvt, @NonNull BottomNavigationView bottomnavigation,
       @NonNull Button buttonComback, @NonNull Button buttonDate, @NonNull Button buttonSeacrh,
       @NonNull Button buttonWarning, @NonNull TextView chanepass, @NonNull TextView chucvu,
       @NonNull TextView editaccount, @NonNull TextView emailaccount, @NonNull TextView intru,
@@ -129,7 +130,7 @@ public final class ActivitySettingBinding implements ViewBinding {
       @NonNull TextView typeJob, @NonNull TextView unitInformation) {
     this.rootView = rootView;
     this.SharForFF = SharForFF;
-    this.accountButton = accountButton;
+    this.accountAvt = accountAvt;
     this.bottomnavigation = bottomnavigation;
     this.buttonComback = buttonComback;
     this.buttonDate = buttonDate;
@@ -194,9 +195,9 @@ public final class ActivitySettingBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.accountButton;
-      Button accountButton = ViewBindings.findChildViewById(rootView, id);
-      if (accountButton == null) {
+      id = R.id.accountAvt;
+      CircleImageView accountAvt = ViewBindings.findChildViewById(rootView, id);
+      if (accountAvt == null) {
         break missingId;
       }
 
@@ -374,7 +375,7 @@ public final class ActivitySettingBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySettingBinding((ConstraintLayout) rootView, SharForFF, accountButton,
+      return new ActivitySettingBinding((ConstraintLayout) rootView, SharForFF, accountAvt,
           bottomnavigation, buttonComback, buttonDate, buttonSeacrh, buttonWarning, chanepass,
           chucvu, editaccount, emailaccount, intru, linearLayout, linearLayout2, liner1, liner2,
           logo, logout, nameaccount, recentActivity, servicePrice, statistic, textView10,

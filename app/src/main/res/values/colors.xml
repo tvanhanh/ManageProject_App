@@ -5,6 +5,7 @@
     <color name="xanhlaChụoi">#7FFF00</color>
     <color name="dennham">#CCCCCC</color>
     <color name="print">#FF66CC</color>
+    <color name="pinkTask">#F3D1E8</color>
     <color name="yelo">#E8DFCA</color>
     <color name="grey">#DDDDDD</color>
     <color name="red">#CC0000</color>
@@ -18,4 +19,6 @@
     <color name="orange">#FEB941</color>
     <color name="donhat">#FF5580</color>
     <color name="xanhduong">#5AB2FF</color>
+    <color name="projectB">#F0F3D8</color>
+
 </resources>

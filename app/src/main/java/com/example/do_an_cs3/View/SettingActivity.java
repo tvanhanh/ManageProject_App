@@ -1,7 +1,13 @@
 package com.example.do_an_cs3.View;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +15,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.do_an_cs3.Database.DatabaseManager;
+import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.Project.AddProjectActivity;
 import com.example.do_an_cs3.View.Project.ProjectActivity;
@@ -18,20 +26,30 @@ import com.example.do_an_cs3.View.Users.LoginActivity;
 import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class SettingActivity extends AppCompatActivity {
     private TextView editTextAccount;
     private TextView changepass;
     private TextView statistic;
     private Button comback;
     private TextView logout;
+    private DatabaseManager dbManager;
+    private CircleImageView circleImageView;
+    private TextView tvUsername, tvEmail, tvRole;
+
+    @SuppressLint("MissingInflatedId")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-
+        dbManager = new DatabaseManager(SettingActivity.this);
+        tvEmail = findViewById(R.id.emailaccount);
+        tvUsername = findViewById(R.id.nameaccount);
+        tvRole = findViewById(R.id.chucvu);
+        circleImageView = findViewById(R.id.accountAvt);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigation);
         MenuItem settingMenuItem = bottomNavigationView.getMenu().findItem(R.id.setting);
         settingMenuItem.setChecked(true);
-
 
         logout = findViewById(R.id.logout);
 
@@ -50,7 +68,7 @@ public class SettingActivity extends AppCompatActivity {
                 finish();
             }
         });
-        // sử tài khoản
+        // sửa tài khoản
         editTextAccount = findViewById(R.id.editaccount);
         editTextAccount.setOnClickListener(v -> {
             Intent intent = new Intent(SettingActivity.this, EditAccountActivity.class);
@@ -128,7 +146,23 @@ public class SettingActivity extends AppCompatActivity {
                 return true;
             }
         });
+        displayUserInfo();
     }
-
-
+    public void displayUserInfo() {
+        User user = dbManager.getUserInfo(getCurrentUserEmail());
+        if (user != null) {
+            tvUsername.setText(user.getUserName());
+            tvEmail.setText(getCurrentUserEmail());
+            tvRole.setText(user.getRole());
+            if (user.getAvatar() != null) {
+                byte[] avatarBytes = Base64.decode(user.getAvatar(), Base64.DEFAULT);
+                Bitmap avatarBitmap = BitmapFactory.decodeByteArray(avatarBytes, 0, avatarBytes.length);
+                circleImageView.setImageBitmap(avatarBitmap);
+            }
+        }
+    }
+    public String getCurrentUserEmail() {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        return sharedPreferences.getString("user_email", null);
+    }
     }

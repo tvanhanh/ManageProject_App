@@ -33,16 +33,10 @@ public final class ActivityEditAccountBinding implements ViewBinding {
   public final Button buttondatejob;
 
   @NonNull
-  public final TextView chaneAvata;
-
-  @NonNull
   public final CircleImageView circleImageView;
 
   @NonNull
   public final Button comeback;
-
-  @NonNull
-  public final TextView deleteAccount;
 
   @NonNull
   public final EditText editTextAddress;
@@ -87,23 +81,20 @@ public final class ActivityEditAccountBinding implements ViewBinding {
   public final TextView tvMGT;
 
   private ActivityEditAccountBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonHome,
-      @NonNull Button buttonUpdate, @NonNull Button buttondatejob, @NonNull TextView chaneAvata,
+      @NonNull Button buttonUpdate, @NonNull Button buttondatejob,
       @NonNull CircleImageView circleImageView, @NonNull Button comeback,
-      @NonNull TextView deleteAccount, @NonNull EditText editTextAddress,
-      @NonNull EditText editTextDepartment, @NonNull EditText editTextName,
-      @NonNull EditText editTextPhone, @NonNull EditText editTextPosition,
-      @NonNull EditText editTextReferral, @NonNull LinearLayout linearLayout,
-      @NonNull TextView logo, @NonNull TextView textView11, @NonNull TextView textView12,
-      @NonNull TextView textView5, @NonNull TextView textView8, @NonNull TextView tvDepartment,
-      @NonNull TextView tvMGT) {
+      @NonNull EditText editTextAddress, @NonNull EditText editTextDepartment,
+      @NonNull EditText editTextName, @NonNull EditText editTextPhone,
+      @NonNull EditText editTextPosition, @NonNull EditText editTextReferral,
+      @NonNull LinearLayout linearLayout, @NonNull TextView logo, @NonNull TextView textView11,
+      @NonNull TextView textView12, @NonNull TextView textView5, @NonNull TextView textView8,
+      @NonNull TextView tvDepartment, @NonNull TextView tvMGT) {
     this.rootView = rootView;
     this.buttonHome = buttonHome;
     this.buttonUpdate = buttonUpdate;
     this.buttondatejob = buttondatejob;
-    this.chaneAvata = chaneAvata;
     this.circleImageView = circleImageView;
     this.comeback = comeback;
-    this.deleteAccount = deleteAccount;
     this.editTextAddress = editTextAddress;
     this.editTextDepartment = editTextDepartment;
     this.editTextName = editTextName;
@@ -165,12 +156,6 @@ public final class ActivityEditAccountBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.chaneAvata;
-      TextView chaneAvata = ViewBindings.findChildViewById(rootView, id);
-      if (chaneAvata == null) {
-        break missingId;
-      }
-
       id = R.id.circleImageView;
       CircleImageView circleImageView = ViewBindings.findChildViewById(rootView, id);
       if (circleImageView == null) {
@@ -180,12 +165,6 @@ public final class ActivityEditAccountBinding implements ViewBinding {
       id = R.id.comeback;
       Button comeback = ViewBindings.findChildViewById(rootView, id);
       if (comeback == null) {
-        break missingId;
-      }
-
-      id = R.id.deleteAccount;
-      TextView deleteAccount = ViewBindings.findChildViewById(rootView, id);
-      if (deleteAccount == null) {
         break missingId;
       }
 
@@ -274,9 +253,9 @@ public final class ActivityEditAccountBinding implements ViewBinding {
       }
 
       return new ActivityEditAccountBinding((ConstraintLayout) rootView, buttonHome, buttonUpdate,
-          buttondatejob, chaneAvata, circleImageView, comeback, deleteAccount, editTextAddress,
-          editTextDepartment, editTextName, editTextPhone, editTextPosition, editTextReferral,
-          linearLayout, logo, textView11, textView12, textView5, textView8, tvDepartment, tvMGT);
+          buttondatejob, circleImageView, comeback, editTextAddress, editTextDepartment,
+          editTextName, editTextPhone, editTextPosition, editTextReferral, linearLayout, logo,
+          textView11, textView12, textView5, textView8, tvDepartment, tvMGT);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

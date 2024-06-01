@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.Model.Task;
 import com.example.do_an_cs3.Model.User;
+import com.example.do_an_cs3.View.Users.AddProfileActivity;
 import com.example.do_an_cs3.View.Users.ChooseRoleActivity;
 import com.example.do_an_cs3.View.MainActivity;
 
@@ -217,38 +218,48 @@ public class DatabaseManager {
 
     @SuppressLint("Range") // Phương thức đăng nhập
     public boolean login(String email, String password, Activity activity) {
-        String[] columns = {"email", "role"};
+        String[] columns = {"email", "role",};
         String selection = "email=? AND password=?";
         String[] selectionArgs = {email, password};
 
-        Cursor cursor = db.query("Users", columns, selection, selectionArgs, null, null, null);
-        int count = cursor.getCount();
+        Cursor cursor = null;
+        try {
+            cursor = db.query("Users", columns, selection, selectionArgs, null, null, null);
+            int count = cursor.getCount();
 
-        if (count > 0) {
-            cursor.moveToFirst();
-            String role = cursor.getString(cursor.getColumnIndex("role"));
-            cursor.close(); // Close the cursor after retrieving the data
-            // Lưu email của người dùng vào SharedPreferences
-            SharedPreferences sharedPreferences = activity.getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("user_email", email);
-            editor.apply();
-            if (role == null || role.isEmpty()) {
-                // If role is empty, display a different view
-                Intent intent = new Intent(activity, ChooseRoleActivity.class); // Assuming ChooseRoleActivity is the activity you want to show
-                activity.startActivity(intent);
+            if (count > 0) {
+                cursor.moveToFirst();
+                String role = cursor.getString(cursor.getColumnIndexOrThrow("role"));
+
+                // Lưu email của người dùng vào SharedPreferences
+                SharedPreferences sharedPreferences = activity.getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("user_email", email);
+                editor.apply();
+
+                if (role == null || role.isEmpty()) {
+                    // If role is empty, display a different view
+                    Intent intent = new Intent(activity, ChooseRoleActivity.class); // Assuming ChooseRoleActivity is the activity you want to show
+                    activity.startActivity(intent);
+                }
+                     else {
+                        // If login is successful and role is not empty, go to MainActivity
+                        Intent intent = new Intent(activity, MainActivity.class);
+                        activity.startActivity(intent);
+                    }
+                // Ẩn LoginActivity
+                activity.finish();
+                return true;
             } else {
-                // If login is successful and role is not empty, go to MainActivity
-                Intent intent = new Intent(activity, MainActivity.class);
-                activity.startActivity(intent);
+                return false;
             }
-
-            // Ẩn LoginActivity
-            activity.finish();
-            return true;
-        } else {
-            cursor.close(); // Ensure the cursor is closed if count is 0
+        } catch (Exception e) {
+            e.printStackTrace();
             return false;
+        } finally {
+            if (cursor != null) {
+                cursor.close(); // Ensure the cursor is closed
+            }
         }
     }
 
@@ -424,6 +435,45 @@ public class DatabaseManager {
             }
         }
         return taskList;
+    }
+    @SuppressLint("Range")
+    public Project getInfoProject(int idProject){
+        Project project = new Project();
+        SQLiteDatabase db = null;
+        Cursor cursor = null;
+        try {
+            db = this.dbhelper.getReadableDatabase();
+            cursor = db.rawQuery("SELECT * FROM Projects WHERE project_id = ?", new String[]{String.valueOf(idProject)});
+            if (cursor.moveToFirst()) {
+                do {
+                    String name = cursor.getString(cursor.getColumnIndex("project_name"));
+                    String description = cursor.getString(cursor.getColumnIndex("project_description"));
+                    String deadline = cursor.getString(cursor.getColumnIndex("deadline"));
+                    String creationTime = cursor.getString(cursor.getColumnIndex("creation_time"));
+                    String status = cursor.getString(cursor.getColumnIndex("status"));
+                    int views = cursor.getInt(cursor.getColumnIndex("views"));
+                    int percentCompleted = cursor.getInt(cursor.getColumnIndex("percent_complete"));
+//                    String email = cursor.getString(cursor.getColumnIndex("email"));
+//                    int department = cursor.getInt(cursor.getColumnIndex("department_id"));
+//                    if (cursor.isNull(department)) {
+//                        department = 1; // hoặc bất kỳ giá trị mặc định nào bạn muốn
+//                    }
+                     project = new Project( name, description, deadline, creationTime, views, percentCompleted, status);
+
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Log lỗi hoặc xử lý ngoại lệ tại đây
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return project;
     }
 
 }

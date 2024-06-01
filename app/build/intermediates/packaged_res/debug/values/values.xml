@@ -10,7 +10,9 @@
     <color name="grey">#DDDDDD</color>
     <color name="listDepartment">#A0EFC7</color>
     <color name="orange">#FEB941</color>
+    <color name="pinkTask">#F3D1E8</color>
     <color name="print">#FF66CC</color>
+    <color name="projectB">#F0F3D8</color>
     <color name="red">#CC0000</color>
     <color name="viewpager">#FFF9D0</color>
     <color name="white">#FFFFFFFF</color>
@@ -44,7 +46,7 @@
     <string name="lorem_ipsum">
 
     </string>
-    <string name="newjob">VIỆC MỚI</string>
+    <string name="newjob">DỰ ÁN MỚI</string>
     <string name="next">Next</string>
     <string name="pause">TẠM DỪNG</string>
     <string name="pendingjob">ĐANG THỰC HIỆN</string>

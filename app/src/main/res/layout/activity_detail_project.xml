@@ -82,23 +82,13 @@
                 </LinearLayout>
             </LinearLayout>
             <!-- Header -->
-            <TextView
-                android:id="@+id/tvHeader"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:paddingBottom="16dp"
-                android:text="Chi Tiết Project"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
 
             <!-- Status and Deadline -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="10dp"
                 android:paddingBottom="8dp">
 
                 <TextView
@@ -118,16 +108,31 @@
                     android:textColor="#FF0000"
                     android:textSize="16sp" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/NameProrjectDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+
+                    android:text="Tên dự án"
+                    android:textColor="@color/orange"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/TimeCreationProjectDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:text="Ngày tạo"
+                    android:textColor="@color/xanhduong"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
             <!-- Task Title -->
-            <TextView
-                android:id="@+id/NameProrjectDetail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="8dp"
-                android:text="Tên dự án"
-                android:textColor="#000000"
-                android:textSize="18sp" />
 
             <!-- Task Creator Info -->
             <LinearLayout
@@ -145,7 +150,7 @@
                 <!--                android:src="@drawable/ic_user" -->
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
@@ -166,25 +171,40 @@
                         android:text="user@gmail.com"
                         android:textColor="#666666"
                         android:textSize="13sp" />
-                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="8dp"
+                            android:text="Lần xem:"
+                            android:textColor="#666666"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/poppins_black"/>
+                    <TextView
+                        android:id="@+id/tvViews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="8dp"
+                        android:text="39"
+                        android:fontFamily="@font/poppins_black"
+                        android:textColor="@color/buttonXanhDam"
+                        android:textSize="14sp" />
+                    </LinearLayout>
+                    </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tvViews"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="8dp"
-                    android:text="39 lần xem"
-                    android:textColor="#666666"
-                    android:textSize="14sp" />
+
 
                 <Button
                     android:id="@+id/btnImportant"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="79dp"
+                    android:layout_height="36dp"
                     android:padding="4dp"
                     android:text="Quan Trọng"
                     android:textColor="#666666"
-                    android:textSize="14sp" />
+                    android:textSize="10sp" />
                 <!--                android:background="@drawable/bg_label_important"-->
 
             </LinearLayout>
@@ -199,6 +219,28 @@
                 android:padding="8dp"
                 android:text="+ Thêm Thẻ"
                 android:textColor="#000000" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nội dung dự án:"
+                android:textColor="@color/black"
+                android:background="@color/butomnavication"
+                android:layout_marginLeft="10dp"
+                android:textAlignment="center"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/poppins_black"
+                ></TextView>
+            <TextView
+                android:id="@+id/tvprojectContext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="noi dung"
+
+                android:textColor="@color/black"
+                android:background="@color/viewpager"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp"
+                ></TextView>
 
             <!-- Attached Files -->
             <LinearLayout

@@ -48,7 +48,7 @@ public class ViewPagerAdapterJob extends FragmentPagerAdapter {
         String title = "";
         switch (position) {
             case 0:
-                title = "VIỆC MỚI";
+                title = "DỰ ÁN MỚI";
                 break;
             case 1:
                 title = "ĐANG THỰC HIỆN";

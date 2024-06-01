@@ -54,9 +54,9 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
             displayUserInfo(holder.tvNamePerson,holder.circleImageView);
           //  holder.tvPercent.setText(String.valueOf(project.getPercentCompleted()));
             holder.tvProjectName.setText(project.getName());
-          //  holder.tvDescriptionProject.setText(project.getDescription());
+           //holder.tvDescriptionProject.setText(project.getDescription());
 
-            holder.tvProjectDeadline.setText(project.getDeadline());
+            //holder.tvProjectDeadline.setText(project.getDeadline());
           //  holder.tvProjectCreationTime.setText(project.getCreationTime());
             holder.tvProjectStatus.setText(project.getStatus());
            // holder.tvProjectDepartment.setText(project.getDepartment());
