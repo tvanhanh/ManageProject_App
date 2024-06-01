@@ -1,51 +1,51 @@
-com.example.do_an_cs3.app-core-runtime-2.2.0-0 C:\Users\PC ASUS\.gradle\caches\transforms-3\0093cd2565da35fdacc82376edf20485\transformed\core-runtime-2.2.0\res
-com.example.do_an_cs3.app-navigation-runtime-2.7.7-1 C:\Users\PC ASUS\.gradle\caches\transforms-3\02abcfc40c6e795f7908a7b438b104ed\transformed\navigation-runtime-2.7.7\res
-com.example.do_an_cs3.app-jetified-savedstate-1.2.1-2 C:\Users\PC ASUS\.gradle\caches\transforms-3\0451fd021ac0e3d83576ef902a2c0bf2\transformed\jetified-savedstate-1.2.1\res
-com.example.do_an_cs3.app-jetified-lifecycle-livedata-core-ktx-2.6.2-3 C:\Users\PC ASUS\.gradle\caches\transforms-3\04e0d1c14a079b9b40a995a9600f662e\transformed\jetified-lifecycle-livedata-core-ktx-2.6.2\res
-com.example.do_an_cs3.app-jetified-lifecycle-runtime-ktx-2.6.2-4 C:\Users\PC ASUS\.gradle\caches\transforms-3\0b16f42d2639affa0734ad5d7b9fd963\transformed\jetified-lifecycle-runtime-ktx-2.6.2\res
-com.example.do_an_cs3.app-appcompat-1.6.1-5 C:\Users\PC ASUS\.gradle\caches\transforms-3\0cc58336eee0550850dee7ad7eb9a9ee\transformed\appcompat-1.6.1\res
-com.example.do_an_cs3.app-coordinatorlayout-1.1.0-6 C:\Users\PC ASUS\.gradle\caches\transforms-3\0efb471232654f90f248d94510e49a25\transformed\coordinatorlayout-1.1.0\res
-com.example.do_an_cs3.app-jetified-appcompat-resources-1.6.1-7 C:\Users\PC ASUS\.gradle\caches\transforms-3\0f18a8a1d0caf2ca474f21e367cf2d94\transformed\jetified-appcompat-resources-1.6.1\res
-com.example.do_an_cs3.app-recyclerview-1.1.0-8 C:\Users\PC ASUS\.gradle\caches\transforms-3\168a1590c380b03ddcf668fd2bf49f21\transformed\recyclerview-1.1.0\res
-com.example.do_an_cs3.app-recyclerview-selection-1.1.0-9 C:\Users\PC ASUS\.gradle\caches\transforms-3\1849c8a2db8bddd20fa0ab377cac5895\transformed\recyclerview-selection-1.1.0\res
-com.example.do_an_cs3.app-jetified-emoji2-1.2.0-10 C:\Users\PC ASUS\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\res
-com.example.do_an_cs3.app-lifecycle-livedata-core-2.6.2-11 C:\Users\PC ASUS\.gradle\caches\transforms-3\26567f2086b347a4e749b8b90ae8ebf4\transformed\lifecycle-livedata-core-2.6.2\res
-com.example.do_an_cs3.app-jetified-activity-1.8.0-12 C:\Users\PC ASUS\.gradle\caches\transforms-3\2798cd7f312787eb2327c79b13349440\transformed\jetified-activity-1.8.0\res
-com.example.do_an_cs3.app-slidingpanelayout-1.2.0-13 C:\Users\PC ASUS\.gradle\caches\transforms-3\27db715454ccb60c858ed5b34549620e\transformed\slidingpanelayout-1.2.0\res
-com.example.do_an_cs3.app-jetified-profileinstaller-1.3.0-14 C:\Users\PC ASUS\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\res
-com.example.do_an_cs3.app-core-1.9.0-15 C:\Users\PC ASUS\.gradle\caches\transforms-3\3b2124d97d3f45e547b873e9eebf26b9\transformed\core-1.9.0\res
-com.example.do_an_cs3.app-jetified-annotation-experimental-1.3.0-16 C:\Users\PC ASUS\.gradle\caches\transforms-3\56e3e4c904eb531d6807f8bb878127f8\transformed\jetified-annotation-experimental-1.3.0\res
-com.example.do_an_cs3.app-jetified-activity-ktx-1.8.0-17 C:\Users\PC ASUS\.gradle\caches\transforms-3\57eb5f416024044ecb14c20a4023237a\transformed\jetified-activity-ktx-1.8.0\res
-com.example.do_an_cs3.app-jetified-AnyChart-Android-1.1.2-18 C:\Users\PC ASUS\.gradle\caches\transforms-3\5be14ec6e80495f7e706515919b71b46\transformed\jetified-AnyChart-Android-1.1.2\res
-com.example.do_an_cs3.app-jetified-fragment-ktx-1.6.2-19 C:\Users\PC ASUS\.gradle\caches\transforms-3\62258e05869ec74b6fcf5dd71395440b\transformed\jetified-fragment-ktx-1.6.2\res
-com.example.do_an_cs3.app-navigation-ui-2.7.7-20 C:\Users\PC ASUS\.gradle\caches\transforms-3\67ccf74a6c627c7fa413e3153d4a5088\transformed\navigation-ui-2.7.7\res
-com.example.do_an_cs3.app-jetified-lifecycle-process-2.6.2-21 C:\Users\PC ASUS\.gradle\caches\transforms-3\7af7287dcf52a2eb553d62ae7517d927\transformed\jetified-lifecycle-process-2.6.2\res
-com.example.do_an_cs3.app-jetified-core-ktx-1.9.0-22 C:\Users\PC ASUS\.gradle\caches\transforms-3\7e20736ba77e9346b553d1e1d463224f\transformed\jetified-core-ktx-1.9.0\res
-com.example.do_an_cs3.app-navigation-fragment-2.7.7-23 C:\Users\PC ASUS\.gradle\caches\transforms-3\87a2ea5863b53790c1cc28b19a1486ea\transformed\navigation-fragment-2.7.7\res
-com.example.do_an_cs3.app-constraintlayout-2.1.4-24 C:\Users\PC ASUS\.gradle\caches\transforms-3\8da6363c192d327e2e1e241fbc6e86cc\transformed\constraintlayout-2.1.4\res
-com.example.do_an_cs3.app-jetified-circleimageview-3.1.0-25 C:\Users\PC ASUS\.gradle\caches\transforms-3\a08648e064cc5ddfd2f383e3a22ed92f\transformed\jetified-circleimageview-3.1.0\res
-com.example.do_an_cs3.app-lifecycle-livedata-2.6.2-26 C:\Users\PC ASUS\.gradle\caches\transforms-3\a196a3a454cc9133e4b3f44f9663a5f9\transformed\lifecycle-livedata-2.6.2\res
-com.example.do_an_cs3.app-transition-1.4.1-27 C:\Users\PC ASUS\.gradle\caches\transforms-3\a42598a66eb0c31e35ba1dd3050d91fc\transformed\transition-1.4.1\res
-com.example.do_an_cs3.app-jetified-startup-runtime-1.1.1-28 C:\Users\PC ASUS\.gradle\caches\transforms-3\af2880aeb8597c325bdadf8e0d3640ed\transformed\jetified-startup-runtime-1.1.1\res
-com.example.do_an_cs3.app-lifecycle-runtime-2.6.2-29 C:\Users\PC ASUS\.gradle\caches\transforms-3\beb3fce39dd162d8dbbd29f70b39b2c2\transformed\lifecycle-runtime-2.6.2\res
-com.example.do_an_cs3.app-navigation-common-2.7.7-30 C:\Users\PC ASUS\.gradle\caches\transforms-3\c560cd5cd522e192f0fddc0f9c0f2a31\transformed\navigation-common-2.7.7\res
-com.example.do_an_cs3.app-drawerlayout-1.1.1-31 C:\Users\PC ASUS\.gradle\caches\transforms-3\c5880ab739052464d371f4cd8cc3b5b7\transformed\drawerlayout-1.1.1\res
-com.example.do_an_cs3.app-jetified-savedstate-ktx-1.2.1-32 C:\Users\PC ASUS\.gradle\caches\transforms-3\c6431420c17f0a32ecac8c1869ea8c0c\transformed\jetified-savedstate-ktx-1.2.1\res
-com.example.do_an_cs3.app-jetified-lifecycle-viewmodel-savedstate-2.6.2-33 C:\Users\PC ASUS\.gradle\caches\transforms-3\ca2aa6184afb1394f2a8a128e0bd261a\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\res
-com.example.do_an_cs3.app-jetified-viewpager2-1.0.0-34 C:\Users\PC ASUS\.gradle\caches\transforms-3\cb64701ab8d57a523162b930fd3d306b\transformed\jetified-viewpager2-1.0.0\res
-com.example.do_an_cs3.app-cardview-1.0.0-35 C:\Users\PC ASUS\.gradle\caches\transforms-3\cec6354e01c58f9940e1a52d6e06c82e\transformed\cardview-1.0.0\res
-com.example.do_an_cs3.app-jetified-window-1.0.0-36 C:\Users\PC ASUS\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\res
-com.example.do_an_cs3.app-lifecycle-viewmodel-2.6.2-37 C:\Users\PC ASUS\.gradle\caches\transforms-3\f43bca2e70cc32179791d2b52dfd1588\transformed\lifecycle-viewmodel-2.6.2\res
-com.example.do_an_cs3.app-jetified-emoji2-views-helper-1.2.0-38 C:\Users\PC ASUS\.gradle\caches\transforms-3\f64df57b4d2a727391ff1f4d040ff855\transformed\jetified-emoji2-views-helper-1.2.0\res
-com.example.do_an_cs3.app-fragment-1.6.2-39 C:\Users\PC ASUS\.gradle\caches\transforms-3\f833a3e43c9a08ed3500d8d2dad02cbf\transformed\fragment-1.6.2\res
-com.example.do_an_cs3.app-jetified-lifecycle-viewmodel-ktx-2.6.2-40 C:\Users\PC ASUS\.gradle\caches\transforms-3\fac420a703e7c8d2eb24db6bf22481ba\transformed\jetified-lifecycle-viewmodel-ktx-2.6.2\res
-com.example.do_an_cs3.app-material-1.11.0-41 C:\Users\PC ASUS\.gradle\caches\transforms-3\fca63faf14e3c19556a647de5838948d\transformed\material-1.11.0\res
-com.example.do_an_cs3.app-pngs-42 C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\build\generated\res\pngs\debug
-com.example.do_an_cs3.app-resValues-43 C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\build\generated\res\resValues\debug
-com.example.do_an_cs3.app-packageDebugResources-44 C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.do_an_cs3.app-packageDebugResources-45 C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.do_an_cs3.app-merged_res-46 C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\build\intermediates\merged_res\debug
-com.example.do_an_cs3.app-debug-47 C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\debug\res
-com.example.do_an_cs3.app-main-48 C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\res
-com.example.do_an_cs3.app-layout-49 C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\res\layout\job
-com.example.do_an_cs3.app-layout-50 C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\res\layout\project
+com.example.do_an_cs3.app-core-runtime-2.2.0-0 C:\Users\nhutl\.gradle\caches\transforms-3\0093cd2565da35fdacc82376edf20485\transformed\core-runtime-2.2.0\res
+com.example.do_an_cs3.app-navigation-runtime-2.7.7-1 C:\Users\nhutl\.gradle\caches\transforms-3\02abcfc40c6e795f7908a7b438b104ed\transformed\navigation-runtime-2.7.7\res
+com.example.do_an_cs3.app-jetified-savedstate-1.2.1-2 C:\Users\nhutl\.gradle\caches\transforms-3\0451fd021ac0e3d83576ef902a2c0bf2\transformed\jetified-savedstate-1.2.1\res
+com.example.do_an_cs3.app-jetified-lifecycle-livedata-core-ktx-2.6.2-3 C:\Users\nhutl\.gradle\caches\transforms-3\04e0d1c14a079b9b40a995a9600f662e\transformed\jetified-lifecycle-livedata-core-ktx-2.6.2\res
+com.example.do_an_cs3.app-jetified-lifecycle-runtime-ktx-2.6.2-4 C:\Users\nhutl\.gradle\caches\transforms-3\0b16f42d2639affa0734ad5d7b9fd963\transformed\jetified-lifecycle-runtime-ktx-2.6.2\res
+com.example.do_an_cs3.app-appcompat-1.6.1-5 C:\Users\nhutl\.gradle\caches\transforms-3\0cc58336eee0550850dee7ad7eb9a9ee\transformed\appcompat-1.6.1\res
+com.example.do_an_cs3.app-coordinatorlayout-1.1.0-6 C:\Users\nhutl\.gradle\caches\transforms-3\0efb471232654f90f248d94510e49a25\transformed\coordinatorlayout-1.1.0\res
+com.example.do_an_cs3.app-jetified-appcompat-resources-1.6.1-7 C:\Users\nhutl\.gradle\caches\transforms-3\0f18a8a1d0caf2ca474f21e367cf2d94\transformed\jetified-appcompat-resources-1.6.1\res
+com.example.do_an_cs3.app-recyclerview-1.1.0-8 C:\Users\nhutl\.gradle\caches\transforms-3\168a1590c380b03ddcf668fd2bf49f21\transformed\recyclerview-1.1.0\res
+com.example.do_an_cs3.app-recyclerview-selection-1.1.0-9 C:\Users\nhutl\.gradle\caches\transforms-3\1849c8a2db8bddd20fa0ab377cac5895\transformed\recyclerview-selection-1.1.0\res
+com.example.do_an_cs3.app-jetified-emoji2-1.2.0-10 C:\Users\nhutl\.gradle\caches\transforms-3\1c05fa127456b71d912870b504b01f7a\transformed\jetified-emoji2-1.2.0\res
+com.example.do_an_cs3.app-lifecycle-livedata-core-2.6.2-11 C:\Users\nhutl\.gradle\caches\transforms-3\26567f2086b347a4e749b8b90ae8ebf4\transformed\lifecycle-livedata-core-2.6.2\res
+com.example.do_an_cs3.app-jetified-activity-1.8.0-12 C:\Users\nhutl\.gradle\caches\transforms-3\2798cd7f312787eb2327c79b13349440\transformed\jetified-activity-1.8.0\res
+com.example.do_an_cs3.app-slidingpanelayout-1.2.0-13 C:\Users\nhutl\.gradle\caches\transforms-3\27db715454ccb60c858ed5b34549620e\transformed\slidingpanelayout-1.2.0\res
+com.example.do_an_cs3.app-jetified-profileinstaller-1.3.0-14 C:\Users\nhutl\.gradle\caches\transforms-3\384937463f54277851b9aef2428bc94a\transformed\jetified-profileinstaller-1.3.0\res
+com.example.do_an_cs3.app-core-1.9.0-15 C:\Users\nhutl\.gradle\caches\transforms-3\3b2124d97d3f45e547b873e9eebf26b9\transformed\core-1.9.0\res
+com.example.do_an_cs3.app-jetified-annotation-experimental-1.3.0-16 C:\Users\nhutl\.gradle\caches\transforms-3\56e3e4c904eb531d6807f8bb878127f8\transformed\jetified-annotation-experimental-1.3.0\res
+com.example.do_an_cs3.app-jetified-activity-ktx-1.8.0-17 C:\Users\nhutl\.gradle\caches\transforms-3\57eb5f416024044ecb14c20a4023237a\transformed\jetified-activity-ktx-1.8.0\res
+com.example.do_an_cs3.app-jetified-AnyChart-Android-1.1.2-18 C:\Users\nhutl\.gradle\caches\transforms-3\5be14ec6e80495f7e706515919b71b46\transformed\jetified-AnyChart-Android-1.1.2\res
+com.example.do_an_cs3.app-jetified-fragment-ktx-1.6.2-19 C:\Users\nhutl\.gradle\caches\transforms-3\62258e05869ec74b6fcf5dd71395440b\transformed\jetified-fragment-ktx-1.6.2\res
+com.example.do_an_cs3.app-navigation-ui-2.7.7-20 C:\Users\nhutl\.gradle\caches\transforms-3\67ccf74a6c627c7fa413e3153d4a5088\transformed\navigation-ui-2.7.7\res
+com.example.do_an_cs3.app-jetified-lifecycle-process-2.6.2-21 C:\Users\nhutl\.gradle\caches\transforms-3\7af7287dcf52a2eb553d62ae7517d927\transformed\jetified-lifecycle-process-2.6.2\res
+com.example.do_an_cs3.app-jetified-core-ktx-1.9.0-22 C:\Users\nhutl\.gradle\caches\transforms-3\7e20736ba77e9346b553d1e1d463224f\transformed\jetified-core-ktx-1.9.0\res
+com.example.do_an_cs3.app-navigation-fragment-2.7.7-23 C:\Users\nhutl\.gradle\caches\transforms-3\87a2ea5863b53790c1cc28b19a1486ea\transformed\navigation-fragment-2.7.7\res
+com.example.do_an_cs3.app-constraintlayout-2.1.4-24 C:\Users\nhutl\.gradle\caches\transforms-3\8da6363c192d327e2e1e241fbc6e86cc\transformed\constraintlayout-2.1.4\res
+com.example.do_an_cs3.app-jetified-circleimageview-3.1.0-25 C:\Users\nhutl\.gradle\caches\transforms-3\a08648e064cc5ddfd2f383e3a22ed92f\transformed\jetified-circleimageview-3.1.0\res
+com.example.do_an_cs3.app-lifecycle-livedata-2.6.2-26 C:\Users\nhutl\.gradle\caches\transforms-3\a196a3a454cc9133e4b3f44f9663a5f9\transformed\lifecycle-livedata-2.6.2\res
+com.example.do_an_cs3.app-transition-1.4.1-27 C:\Users\nhutl\.gradle\caches\transforms-3\a42598a66eb0c31e35ba1dd3050d91fc\transformed\transition-1.4.1\res
+com.example.do_an_cs3.app-jetified-startup-runtime-1.1.1-28 C:\Users\nhutl\.gradle\caches\transforms-3\af2880aeb8597c325bdadf8e0d3640ed\transformed\jetified-startup-runtime-1.1.1\res
+com.example.do_an_cs3.app-lifecycle-runtime-2.6.2-29 C:\Users\nhutl\.gradle\caches\transforms-3\beb3fce39dd162d8dbbd29f70b39b2c2\transformed\lifecycle-runtime-2.6.2\res
+com.example.do_an_cs3.app-navigation-common-2.7.7-30 C:\Users\nhutl\.gradle\caches\transforms-3\c560cd5cd522e192f0fddc0f9c0f2a31\transformed\navigation-common-2.7.7\res
+com.example.do_an_cs3.app-drawerlayout-1.1.1-31 C:\Users\nhutl\.gradle\caches\transforms-3\c5880ab739052464d371f4cd8cc3b5b7\transformed\drawerlayout-1.1.1\res
+com.example.do_an_cs3.app-jetified-savedstate-ktx-1.2.1-32 C:\Users\nhutl\.gradle\caches\transforms-3\c6431420c17f0a32ecac8c1869ea8c0c\transformed\jetified-savedstate-ktx-1.2.1\res
+com.example.do_an_cs3.app-jetified-lifecycle-viewmodel-savedstate-2.6.2-33 C:\Users\nhutl\.gradle\caches\transforms-3\ca2aa6184afb1394f2a8a128e0bd261a\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\res
+com.example.do_an_cs3.app-jetified-viewpager2-1.0.0-34 C:\Users\nhutl\.gradle\caches\transforms-3\cb64701ab8d57a523162b930fd3d306b\transformed\jetified-viewpager2-1.0.0\res
+com.example.do_an_cs3.app-cardview-1.0.0-35 C:\Users\nhutl\.gradle\caches\transforms-3\cec6354e01c58f9940e1a52d6e06c82e\transformed\cardview-1.0.0\res
+com.example.do_an_cs3.app-jetified-window-1.0.0-36 C:\Users\nhutl\.gradle\caches\transforms-3\d69cfe4db353cb7df383fcd830b2bdd9\transformed\jetified-window-1.0.0\res
+com.example.do_an_cs3.app-lifecycle-viewmodel-2.6.2-37 C:\Users\nhutl\.gradle\caches\transforms-3\f43bca2e70cc32179791d2b52dfd1588\transformed\lifecycle-viewmodel-2.6.2\res
+com.example.do_an_cs3.app-jetified-emoji2-views-helper-1.2.0-38 C:\Users\nhutl\.gradle\caches\transforms-3\f64df57b4d2a727391ff1f4d040ff855\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.example.do_an_cs3.app-fragment-1.6.2-39 C:\Users\nhutl\.gradle\caches\transforms-3\f833a3e43c9a08ed3500d8d2dad02cbf\transformed\fragment-1.6.2\res
+com.example.do_an_cs3.app-jetified-lifecycle-viewmodel-ktx-2.6.2-40 C:\Users\nhutl\.gradle\caches\transforms-3\fac420a703e7c8d2eb24db6bf22481ba\transformed\jetified-lifecycle-viewmodel-ktx-2.6.2\res
+com.example.do_an_cs3.app-material-1.11.0-41 C:\Users\nhutl\.gradle\caches\transforms-3\fca63faf14e3c19556a647de5838948d\transformed\material-1.11.0\res
+com.example.do_an_cs3.app-pngs-42 C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\build\generated\res\pngs\debug
+com.example.do_an_cs3.app-resValues-43 C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\build\generated\res\resValues\debug
+com.example.do_an_cs3.app-packageDebugResources-44 C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.do_an_cs3.app-packageDebugResources-45 C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.do_an_cs3.app-merged_res-46 C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\build\intermediates\merged_res\debug
+com.example.do_an_cs3.app-debug-47 C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\debug\res
+com.example.do_an_cs3.app-main-48 C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\res
+com.example.do_an_cs3.app-layout-49 C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\res\layout\job
+com.example.do_an_cs3.app-layout-50 C:\Users\nhutl\AndroidStudioProjects\DO_AN_CS\app\src\main\res\layout\project

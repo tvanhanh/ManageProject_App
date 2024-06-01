@@ -30,7 +30,7 @@ public final class ItemProjectBinding implements ViewBinding {
   public final TextView TimeUpdateTask;
 
   @NonNull
-  public final CircleImageView imgUser;
+  public final CircleImageView imgUserProject;
 
   @NonNull
   public final TextView tvPersonCreation;
@@ -49,14 +49,14 @@ public final class ItemProjectBinding implements ViewBinding {
 
   private ItemProjectBinding(@NonNull CardView rootView, @NonNull TextView NamePersonOfTaskUpdate,
       @NonNull TextView NameTaskNewUpdate, @NonNull TextView TimeUpdateTask,
-      @NonNull CircleImageView imgUser, @NonNull TextView tvPersonCreation,
+      @NonNull CircleImageView imgUserProject, @NonNull TextView tvPersonCreation,
       @NonNull TextView tvProjectCreationTime, @NonNull TextView tvProjectDeadline,
       @NonNull TextView tvProjectName, @NonNull TextView tvProjectStatus) {
     this.rootView = rootView;
     this.NamePersonOfTaskUpdate = NamePersonOfTaskUpdate;
     this.NameTaskNewUpdate = NameTaskNewUpdate;
     this.TimeUpdateTask = TimeUpdateTask;
-    this.imgUser = imgUser;
+    this.imgUserProject = imgUserProject;
     this.tvPersonCreation = tvPersonCreation;
     this.tvProjectCreationTime = tvProjectCreationTime;
     this.tvProjectDeadline = tvProjectDeadline;
@@ -109,9 +109,9 @@ public final class ItemProjectBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.img_user;
-      CircleImageView imgUser = ViewBindings.findChildViewById(rootView, id);
-      if (imgUser == null) {
+      id = R.id.img_userProject;
+      CircleImageView imgUserProject = ViewBindings.findChildViewById(rootView, id);
+      if (imgUserProject == null) {
         break missingId;
       }
 
@@ -146,8 +146,8 @@ public final class ItemProjectBinding implements ViewBinding {
       }
 
       return new ItemProjectBinding((CardView) rootView, NamePersonOfTaskUpdate, NameTaskNewUpdate,
-          TimeUpdateTask, imgUser, tvPersonCreation, tvProjectCreationTime, tvProjectDeadline,
-          tvProjectName, tvProjectStatus);
+          TimeUpdateTask, imgUserProject, tvPersonCreation, tvProjectCreationTime,
+          tvProjectDeadline, tvProjectName, tvProjectStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

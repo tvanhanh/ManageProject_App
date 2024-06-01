@@ -3,8 +3,11 @@ package com.example.do_an_cs3.View.Users;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText loginTextEmail;
     private TextView newAccount;
+    private CheckBox showPass;
     private EditText loginTextPassword;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -38,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
+        showPass = findViewById(R.id.checkBox);
         dbManager = new DatabaseManager(this);
         loginTextEmail = findViewById(R.id.loginEditTextEmail);
         loginTextPassword = findViewById(R.id.loginEditTextPassword);
@@ -47,6 +52,18 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                handleLogin();
+            }
+        });
+        // show pass
+        showPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(showPass.isChecked()){
+                    loginTextPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }
+                else {
+                    loginTextPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
             }
         });
 

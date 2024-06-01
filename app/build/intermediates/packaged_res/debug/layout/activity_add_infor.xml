@@ -89,7 +89,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/circle_background"
                 android:scaleType="centerCrop"
-                android:src="@drawable/hanh" />
+                android:src="@drawable/useravatar" />
 
 
 
@@ -199,10 +199,10 @@
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="61dp"
         android:layout_marginEnd="4dp"
-        android:backgroundTint="@color/print"
+        android:backgroundTint="@color/xanhduong"
         android:text="LƯU"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -116,6 +116,7 @@ import com.example.do_an_cs3.Database.DatabaseManager;
 import com.example.do_an_cs3.Model.Task;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
+import com.example.do_an_cs3.View.MainActivity;
 
 import java.util.List;
 
@@ -125,6 +126,10 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     private Context mContext;
     private DatabaseManager dbManager;
     private User currentUser;
+    private MainActivity mainActivity;
+    public TaskAdapter(){
+
+    }
 
     public TaskAdapter(List<Task> tasks, Context mContext) {
         this.tasks = tasks;
@@ -186,7 +191,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         }
     }
 
-    private String getCurrentUserEmail() {
+    public String getCurrentUserEmail() {
         SharedPreferences sharedPreferences = mContext.getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
         return sharedPreferences.getString("user_email", null); // Trả về null nếu không tìm thấy email
     }

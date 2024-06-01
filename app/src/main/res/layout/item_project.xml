@@ -18,11 +18,11 @@
 
             <!-- Phần cho ảnh -->
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/img_user"
+                android:id="@+id/img_userProject"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="0.5"
-                android:src="@drawable/hanh" />
+                android:src="@drawable/useravatar" />
 
             <!-- Phần cho tên dự án và trạng thái -->
             <LinearLayout
@@ -114,7 +114,7 @@
                 android:id="@+id/NamePersonOfTaskUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Văn Hạnh" />
+                android:text="userName" />
 
             <TextView
                 android:id="@+id/TimeUpdateTask"

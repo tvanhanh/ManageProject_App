@@ -207,7 +207,7 @@
             android:id="@+id/logo"
             android:layout_width="86dp"
             android:layout_height="43dp"
-            android:background="@drawable/logo"
+            android:background="@drawable/logo_laucher"
 
             />
 

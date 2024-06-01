@@ -288,7 +288,7 @@
                             android:id="@+id/userNameNguoiThucHien"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Trần Văn Hạnh"
+                            android:text="userName"
                             android:textColor="#000000"
                             android:textSize="16sp" />
 
@@ -296,7 +296,7 @@
                             android:id="@+id/PossitonAndEmail"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Ban Lãnh Đạo - haha1@gmail.com"
+                            android:text="Chuc vu - email"
                             android:textColor="#666666"
                             android:textSize="14sp" />
                     </LinearLayout>

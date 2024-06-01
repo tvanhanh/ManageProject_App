@@ -30,9 +30,6 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final CheckBox checkBox;
 
   @NonNull
-  public final LinearLayout lnForgetPasswordAndRegister;
-
-  @NonNull
   public final LinearLayout lnFrameLogin;
 
   @NonNull
@@ -54,14 +51,13 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextView textforgotpass;
 
   private ActivityLoginBinding(@NonNull RelativeLayout rootView, @NonNull Button btnLogin,
-      @NonNull CheckBox checkBox, @NonNull LinearLayout lnForgetPasswordAndRegister,
-      @NonNull LinearLayout lnFrameLogin, @NonNull EditText loginEditTextEmail,
-      @NonNull EditText loginEditTextPassword, @NonNull RelativeLayout main,
-      @NonNull TextView newAccount, @NonNull TextView textLogin, @NonNull TextView textforgotpass) {
+      @NonNull CheckBox checkBox, @NonNull LinearLayout lnFrameLogin,
+      @NonNull EditText loginEditTextEmail, @NonNull EditText loginEditTextPassword,
+      @NonNull RelativeLayout main, @NonNull TextView newAccount, @NonNull TextView textLogin,
+      @NonNull TextView textforgotpass) {
     this.rootView = rootView;
     this.btnLogin = btnLogin;
     this.checkBox = checkBox;
-    this.lnForgetPasswordAndRegister = lnForgetPasswordAndRegister;
     this.lnFrameLogin = lnFrameLogin;
     this.loginEditTextEmail = loginEditTextEmail;
     this.loginEditTextPassword = loginEditTextPassword;
@@ -110,12 +106,6 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.lnForgetPasswordAndRegister;
-      LinearLayout lnForgetPasswordAndRegister = ViewBindings.findChildViewById(rootView, id);
-      if (lnForgetPasswordAndRegister == null) {
-        break missingId;
-      }
-
       id = R.id.lnFrameLogin;
       LinearLayout lnFrameLogin = ViewBindings.findChildViewById(rootView, id);
       if (lnFrameLogin == null) {
@@ -154,9 +144,8 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((RelativeLayout) rootView, btnLogin, checkBox,
-          lnForgetPasswordAndRegister, lnFrameLogin, loginEditTextEmail, loginEditTextPassword,
-          main, newAccount, textLogin, textforgotpass);
+      return new ActivityLoginBinding((RelativeLayout) rootView, btnLogin, checkBox, lnFrameLogin,
+          loginEditTextEmail, loginEditTextPassword, main, newAccount, textLogin, textforgotpass);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

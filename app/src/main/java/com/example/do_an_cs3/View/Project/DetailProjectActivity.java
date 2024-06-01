@@ -32,8 +32,8 @@ import java.util.List;
 public class DetailProjectActivity extends AppCompatActivity {
     private RecyclerView rcv_userFollow;
     private RecyclerView rcv_task;
-    private  RecyclerView.Adapter userFollowAdapter;
-    private  RecyclerView.Adapter taskAdapter;
+    private UserFollowAdapter userFollowAdapter;
+    private TaskAdapter taskAdapter;
     private DatabaseManager dbManager;
 
     private Button btnAddTask;
@@ -43,6 +43,7 @@ public class DetailProjectActivity extends AppCompatActivity {
 
     private int idProject;
     private TextView emailDetail;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class DetailProjectActivity extends AppCompatActivity {
         rcv_userFollow = findViewById(R.id.rcv_userFollow);
         rcv_task = findViewById(R.id.rcv_task);
         emailDetail.setText(getCurrentUserEmail());
+
         btnViewMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,39 +73,39 @@ public class DetailProjectActivity extends AppCompatActivity {
         List<User> user = createDummyData();
         userFollowAdapter = new UserFollowAdapter(user);
         rcv_userFollow.setAdapter(userFollowAdapter);
+
         LinearLayoutManager linearLayoutManagerTask = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         rcv_task.setLayoutManager(linearLayoutManagerTask);
+
         Intent intent = getIntent();
         idProject = intent.getIntExtra("idProject", -1);
         User userdetail = dbManager.getUserInfo(getCurrentUserEmail());
-        if (userdetail != null){
+        if (userdetail != null) {
             userNameDetail.setText(userdetail.getUserName());
-       }
-        taskList = dbManager.getAllTask(idProject);
+        }
+
+        // Khởi tạo taskList và taskAdapter ngay cả khi chưa có task
+        taskList = new ArrayList<>();
         taskAdapter = new TaskAdapter(taskList, this);
         rcv_task.setAdapter(taskAdapter);
 
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailProjectActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        //Lấy id cùa dự án chọn
-
-            btnBack.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(DetailProjectActivity.this, MainActivity.class);
-                    startActivity(intent);
-                }
-            });
-
-
-            btnAddTask.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(DetailProjectActivity.this, AddTaskActivity.class);
-                    intent.putExtra("idProject", idProject);
-                    startActivity(intent);
-                }
-            });
-        }
+        btnAddTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailProjectActivity.this, AddTaskActivity.class);
+                intent.putExtra("idProject", idProject);
+                startActivity(intent);
+            }
+        });
+    }
 
     private List<User> createDummyData() {
         List<User> dummyData = new ArrayList<>();
@@ -115,92 +117,86 @@ public class DetailProjectActivity extends AppCompatActivity {
         dummyData.add(new User("Ha"));
         return dummyData;
     }
-//    private List<Task> createDummyDataTask() {
-//        List<Task> dummyData = new ArrayList<>();
-//        dummyData.add(new Task("Hanh"));
-//        dummyData.add(new Task("No"));
-//        dummyData.add(new Task("Ha"));
-//        dummyData.add(new Task("Hanh"));
-//        dummyData.add(new Task("No"));
-//        dummyData.add(new Task("Ha"));
-//        return dummyData;
-//    }
-            private void showBottomSheetDialog() {
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
-                View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_dialog, null);
-                bottomSheetDialog.setContentView(bottomSheetView);
-                bottomSheetDialog.show();
 
-                // Xử lý sự kiện cho các nút trong BottomSheetDialog
-                Button btnShareTask = bottomSheetView.findViewById(R.id.btnShareTask);
-                Button btnConfirmComplete = bottomSheetView.findViewById(R.id.btnConfirmComplete);
-                Button btnPause = bottomSheetView.findViewById(R.id.btnPause);
-                Button btnReject = bottomSheetView.findViewById(R.id.btnReject);
-                Button btnDeleteTask = bottomSheetView.findViewById(R.id.btnDeleteTask);
-                Button btnEditExtend = bottomSheetView.findViewById(R.id.btnEditExtend);
-                Button btnHistory = bottomSheetView.findViewById(R.id.btnHistory);
+    private void showBottomSheetDialog() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_dialog, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
 
-                // Thiết lập các sự kiện click cho các nút
-                btnShareTask.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Xử lý chia sẻ công việc
-                        bottomSheetDialog.dismiss();
-                    }
-                });
+        // Xử lý sự kiện cho các nút trong BottomSheetDialog
+        Button btnShareTask = bottomSheetView.findViewById(R.id.btnShareTask);
+        Button btnConfirmComplete = bottomSheetView.findViewById(R.id.btnConfirmComplete);
+        Button btnPause = bottomSheetView.findViewById(R.id.btnPause);
+        Button btnReject = bottomSheetView.findViewById(R.id.btnReject);
+        Button btnDeleteTask = bottomSheetView.findViewById(R.id.btnDeleteTask);
+        Button btnEditExtend = bottomSheetView.findViewById(R.id.btnEditExtend);
+        Button btnHistory = bottomSheetView.findViewById(R.id.btnHistory);
 
-                btnConfirmComplete.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Xác nhận hoàn thành
-                        bottomSheetDialog.dismiss();
-                    }
-                });
-
-                btnPause.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Tạm dừng công việc
-                        bottomSheetDialog.dismiss();
-                    }
-                });
-
-                btnReject.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Từ chối công việc
-                        bottomSheetDialog.dismiss();
-                    }
-                });
-
-                btnDeleteTask.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Xóa công việc
-                        bottomSheetDialog.dismiss();
-                    }
-                });
-
-                btnEditExtend.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Sửa hoặc gia hạn công việc
-                        bottomSheetDialog.dismiss();
-                    }
-                });
-
-                btnHistory.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Xem lịch sử công việc
-                        bottomSheetDialog.dismiss();
-                    }
-                });
+        // Thiết lập các sự kiện click cho các nút
+        btnShareTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Xử lý chia sẻ công việc
+                bottomSheetDialog.dismiss();
             }
+        });
+
+        btnConfirmComplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Xác nhận hoàn thành
+                bottomSheetDialog.dismiss();
+            }
+        });
+
+        btnPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Tạm dừng công việc
+                bottomSheetDialog.dismiss();
+            }
+        });
+
+        btnReject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Từ chối công việc
+                bottomSheetDialog.dismiss();
+            }
+        });
+
+        btnDeleteTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Xóa công việc
+                bottomSheetDialog.dismiss();
+            }
+        });
+
+        btnEditExtend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Sửa hoặc gia hạn công việc
+                bottomSheetDialog.dismiss();
+            }
+        });
+
+        btnHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Xem lịch sử công việc
+                bottomSheetDialog.dismiss();
+            }
+        });
+    }
+
     private String getCurrentUserEmail() {
         SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
         return sharedPreferences.getString("user_email", null); // Trả về null nếu không tìm thấy email
     }
+
+    @Override
     protected void onResume() {
         super.onResume();
         // Tải lại danh sách task khi Activity được hiển thị lại
@@ -213,5 +209,3 @@ public class DetailProjectActivity extends AppCompatActivity {
         taskAdapter.notifyDataSetChanged();
     }
 }
-
-
