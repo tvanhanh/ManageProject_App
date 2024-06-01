@@ -75,7 +75,6 @@ public class AddProjectActivity extends AppCompatActivity {
                 return true;
             }
         });
-
         nameProject = findViewById(R.id.editAddNameProject);
         descriptionProject = findViewById(R.id.textInputEditTextDescription);
         deadlineTime = findViewById(R.id.textViewDate);
@@ -90,7 +89,7 @@ public class AddProjectActivity extends AppCompatActivity {
             String description = descriptionProject.getText().toString();
             String deadline =deadlineTime.getText().toString();
             String creationTime = dateFormat.format(currentCreation);
-            String status = "Đang thực hiện";
+            String status = "Dự án mới";
             int views = 0;
             float percent_complete = 0;
             String email = getCurrentUserEmail();
@@ -108,8 +107,8 @@ public class AddProjectActivity extends AppCompatActivity {
                 if (insertedId != -1) {
                     Toast.makeText(this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
                     //.notifyDataSetChanged();
-                    Intent intent = new Intent(AddProjectActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    Intent intent1 = new Intent(AddProjectActivity.this, MainActivity.class);
+                    startActivity(intent1);
                 } else {
                     Toast.makeText(this, "Lỗi " + name, Toast.LENGTH_SHORT).show();
                 }
@@ -195,4 +194,5 @@ public class AddProjectActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
         return sharedPreferences.getString("user_email", null);
     }
+
 }

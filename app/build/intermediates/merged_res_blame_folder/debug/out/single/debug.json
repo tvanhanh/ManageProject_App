@@ -24,24 +24,24 @@
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\drawable\\hanh.png"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-46:\\drawable_muiten.png.flat",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\drawable\\muiten.png"
-    },
-    {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-46:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-46:\\layout_activity_add_infor.xml.flat",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_add_infor.xml"
+        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-46:\\drawable_muiten.png.flat",
+        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\drawable\\muiten.png"
+    },
+    {
+        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-46:\\drawable_star.png.flat",
+        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\drawable\\star.png"
     },
     {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-46:\\drawable_medal.png.flat",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\drawable\\medal.png"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-46:\\drawable_star.png.flat",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\drawable\\star.png"
+        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-46:\\layout_activity_add_infor.xml.flat",
+        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_add_infor.xml"
     },
     {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-46:\\layout_activity_register.xml.flat",
@@ -168,6 +168,10 @@
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\font\\poppins_black.ttf"
     },
     {
+        "merged": "com.example.do_an_cs3.app-merged_res-46:/layout_activity_edit_account.xml.flat",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_edit_account.xml"
+    },
+    {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-46:\\drawable_folder.png.flat",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\drawable\\folder.png"
     },
@@ -182,10 +186,6 @@
     {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-46:\\layout_activity_addproject.xml.flat",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_addproject.xml"
-    },
-    {
-        "merged": "com.example.do_an_cs3.app-merged_res-46:/layout_activity_login.xml.flat",
-        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_login.xml"
     },
     {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-46:\\layout_activity_login.xml.flat",
