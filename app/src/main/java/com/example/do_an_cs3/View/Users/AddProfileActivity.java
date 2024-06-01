@@ -304,7 +304,7 @@ public class AddProfileActivity extends AppCompatActivity {
         initialize();
     }
 
-    private void checkPermissions() {
+    public void checkPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             if (!Environment.isExternalStorageManager()) {
                 requestManageExternalStoragePermission();
@@ -352,7 +352,7 @@ public class AddProfileActivity extends AppCompatActivity {
         }
     }
 
-    private void initialize() {
+    public void initialize() {
         circleImageAvatar.setOnClickListener(v -> openImageChooser());
 
         buttonSave.setOnClickListener(v -> {
@@ -362,7 +362,7 @@ public class AddProfileActivity extends AppCompatActivity {
         });
     }
 
-    private void openImageChooser() {
+    void openImageChooser() {
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         intent.setType("image/*");
@@ -379,7 +379,7 @@ public class AddProfileActivity extends AppCompatActivity {
         }
     }
 
-    private void saveUserInfo() {
+    public void saveUserInfo() {
         String userName = editTextUserName.getText().toString();
         String phoneNumber = editTextPhoneNumber.getText().toString();
         String address = editTextAddress.getText().toString();

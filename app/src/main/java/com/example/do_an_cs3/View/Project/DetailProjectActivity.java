@@ -211,12 +211,14 @@ public class DetailProjectActivity extends AppCompatActivity {
                 // Xóa công việc
                 bottomSheetDialog.dismiss();
             }
+
         });
 
         btnEditExtend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Sửa hoặc gia hạn công việc
+
                 bottomSheetDialog.dismiss();
             }
         });

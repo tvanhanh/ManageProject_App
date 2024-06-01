@@ -2,6 +2,7 @@ package com.example.do_an_cs3.Database;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -21,9 +22,6 @@ import com.example.do_an_cs3.View.Users.ChooseRoleActivity;
 import com.example.do_an_cs3.View.MainActivity;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.SecureRandom;
@@ -34,7 +32,7 @@ public class DatabaseManager {
 
     private Database dbhelper;
     private SQLiteDatabase db;
-
+    private Context mContext;
     private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private static final int CODE_LENGTH = 8;
     private static final SecureRandom RANDOM = new SecureRandom();
@@ -42,6 +40,7 @@ public class DatabaseManager {
     public DatabaseManager(Context context) {
         dbhelper = new Database(context);
         db = dbhelper.getWritableDatabase();
+        mContext = context;
     }
 
     public static String generateReferralCode() {
@@ -316,13 +315,64 @@ public class DatabaseManager {
             return -1; // Trả về giá trị -1 để biểu thị rằng có lỗi xảy ra
         }
     }
-    public int getTotalOngoingProjects(String email) {
+    public void deleteProject(int id) {
+        try {
+            db = dbhelper.getWritableDatabase();
+            int rowsAffected = db.delete("Projects", "project_id = ?", new String[]{String.valueOf(id)});
+            if (rowsAffected > 0) {
+                Log.d("Delete Project", "Project with ID " + id + " deleted} successfully");
+            } else {
+                Log.d("Delete Project", "No project deleted. Project with ID " + id + " not found");
+            }
+            db.close();
+    }catch (Exception e){
+            Log.e("Delete Project Error", "Error deleting project: " + e.getMessage());
+        }
+
+    }
+    public boolean updateUserInfo(String email, String name, String phone, String address, String role, String department, String referralCode,byte[] avatarData) {
+        try {
+            db = this.dbhelper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("username", name);
+            values.put("phone_number", phone);
+            values.put("address", address);
+            values.put("role", role);
+            values.put("department_id", department);
+            values.put("referral_code", referralCode);
+            values.put("avatar_url", avatarData);
+            int rowsAffected = db.update("Users", values, "email = ?", new String[]{email});
+
+            return rowsAffected > 0;
+        } catch (Exception e) {
+            Log.e("Update User Info Error", "Error updating user info: " + e.getMessage());
+            return false;
+        }
+    }
+    // chuyển đổi hình ảnh
+    public byte[] getBytesFromImage(Uri imageUri) {
+        try {
+            InputStream inputStream = mContext.getContentResolver().openInputStream(imageUri);
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
+            return outputStream.toByteArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public int getTotalOngoingProjects(String email, String status) {
         int totalProjects = 0;
         Cursor cursor = null;
         try {
             // Thực hiện truy vấn để đếm số lượng dự án có trạng thái "đang thực hiện" của email xác định
             String query = "SELECT COUNT(*) FROM Projects WHERE status = ? AND email = ?";
-            cursor = db.rawQuery(query, new String[]{"Đang thực hiện", email});
+            cursor = db.rawQuery(query, new String[]{status, email});
             if (cursor != null && cursor.moveToFirst()) {
                 totalProjects = cursor.getInt(0); // Lấy giá trị từ cột đầu tiên của kết quả truy vấn
             }
@@ -335,6 +385,7 @@ public class DatabaseManager {
                 cursor.close(); // Đảm bảo đóng con trỏ để tránh rò rỉ bộ nhớ
             }
         }
+        Log.d("TotalProjectsByStatus", "Status: " + status + ", Email: " + email + ", Count: " + totalProjects);
         return totalProjects;
     }
 
@@ -475,5 +526,6 @@ public class DatabaseManager {
         }
         return project;
     }
+
 
 }
