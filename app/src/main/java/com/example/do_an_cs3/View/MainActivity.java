@@ -199,7 +199,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
     private List<Deparments> createDummyData() {
         List<Deparments> dummyData = new ArrayList<>();
         dummyData.add(new Deparments("Department 1", "50%", "10%"));

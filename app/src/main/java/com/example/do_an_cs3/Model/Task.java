@@ -10,8 +10,17 @@ public class Task {
     private String  taskEmail;
 
     private String username;
+    private String timeComplete;
 
-    public Task( String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, String username, int projectId) {
+    public String getTimeComplete() {
+        return timeComplete;
+    }
+
+    public void setTimeComplete(String timeComplete) {
+        this.timeComplete = timeComplete;
+    }
+
+    public Task(String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, String username, int projectId) {
         this.id = id;
         this.taskName = taskName;
         this.taskDescription = taskDescription;
@@ -24,6 +33,10 @@ public class Task {
     }
 
     private int  projectId;
+
+    public Task() {
+
+    }
 
     public String getUsername() {
         return username;
@@ -87,7 +100,7 @@ public class Task {
         this.projectId = projectId;
     }
 
-    public Task(int id,String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, int projectId) {
+    public Task(int id,String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, int projectId, String timeComplete) {
         this.id = id;
         this.taskName = taskName;
         this.taskDescription = taskDescription;
@@ -95,6 +108,7 @@ public class Task {
         this.taskStatus = taskStatus;
         this.taskEmail = taskEmail;
         this.projectId = projectId;
+        this.timeComplete =timeComplete;
     }
 
     public int getId() {

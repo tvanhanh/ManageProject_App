@@ -87,7 +87,7 @@ public class AddProjectActivity extends AppCompatActivity {
         nextButton.setOnClickListener(v -> {
             String name = nameProject.getText().toString();
             String description = descriptionProject.getText().toString();
-            String deadline =deadlineTime.getText().toString();
+            String deadline = "Thời hạn: " + deadlineTime.getText().toString();
             String creationTime = dateFormat.format(currentCreation);
             String status = "Dự án mới";
             int views = 0;

@@ -4,16 +4,16 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_expiring_soon.xml"
     },
     {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_edit_project.xml",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_edit_project.xml"
+    },
+    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_main.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\item_project.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\item_project.xml"
-    },
-    {
-        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_edit_account.xml",
-        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_edit_account.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_personnal.xml",
@@ -58,6 +58,10 @@
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\fragment_list_deparment.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-48:\\layout\\fragment_list_deparment.xml"
+    },
+    {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-45:/layout/activity_detail_project.xml",
+        "source": "com.example.do_an_cs3.app-main-48:/layout/activity_detail_project.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-45:\\layout\\activity_warning.xml",

@@ -25,6 +25,7 @@ import com.example.do_an_cs3.Database.DatabaseManager;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.MainActivity;
+import com.example.do_an_cs3.View.SettingActivity;
 
 import java.io.IOException;
 
@@ -103,6 +104,9 @@ public class EditAccountActivity extends AppCompatActivity {
                 Log.d("AvatarData", "Length: " + (avatarData != null ? avatarData.length : 0));
 
                 if(isSuccess){
+                    Intent intent = new Intent(EditAccountActivity.this, SettingActivity.class);
+
+                    startActivity(intent);
                     Toast.makeText(EditAccountActivity.this,"Thông tin đã được câp nhật",Toast.LENGTH_SHORT).show();
 
                 }

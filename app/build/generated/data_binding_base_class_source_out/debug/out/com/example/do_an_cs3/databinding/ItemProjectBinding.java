@@ -4,6 +4,8 @@ package com.example.do_an_cs3.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,7 +32,13 @@ public final class ItemProjectBinding implements ViewBinding {
   public final TextView TimeUpdateTask;
 
   @NonNull
+  public final CheckBox checkboxTask;
+
+  @NonNull
   public final CircleImageView imgUserProject;
+
+  @NonNull
+  public final LinearLayout lnTaskCompleteNew;
 
   @NonNull
   public final TextView tvPersonCreation;
@@ -49,14 +57,17 @@ public final class ItemProjectBinding implements ViewBinding {
 
   private ItemProjectBinding(@NonNull CardView rootView, @NonNull TextView NamePersonOfTaskUpdate,
       @NonNull TextView NameTaskNewUpdate, @NonNull TextView TimeUpdateTask,
-      @NonNull CircleImageView imgUserProject, @NonNull TextView tvPersonCreation,
+      @NonNull CheckBox checkboxTask, @NonNull CircleImageView imgUserProject,
+      @NonNull LinearLayout lnTaskCompleteNew, @NonNull TextView tvPersonCreation,
       @NonNull TextView tvProjectCreationTime, @NonNull TextView tvProjectDeadline,
       @NonNull TextView tvProjectName, @NonNull TextView tvProjectStatus) {
     this.rootView = rootView;
     this.NamePersonOfTaskUpdate = NamePersonOfTaskUpdate;
     this.NameTaskNewUpdate = NameTaskNewUpdate;
     this.TimeUpdateTask = TimeUpdateTask;
+    this.checkboxTask = checkboxTask;
     this.imgUserProject = imgUserProject;
+    this.lnTaskCompleteNew = lnTaskCompleteNew;
     this.tvPersonCreation = tvPersonCreation;
     this.tvProjectCreationTime = tvProjectCreationTime;
     this.tvProjectDeadline = tvProjectDeadline;
@@ -109,9 +120,21 @@ public final class ItemProjectBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.checkboxTask;
+      CheckBox checkboxTask = ViewBindings.findChildViewById(rootView, id);
+      if (checkboxTask == null) {
+        break missingId;
+      }
+
       id = R.id.img_userProject;
       CircleImageView imgUserProject = ViewBindings.findChildViewById(rootView, id);
       if (imgUserProject == null) {
+        break missingId;
+      }
+
+      id = R.id.lnTaskCompleteNew;
+      LinearLayout lnTaskCompleteNew = ViewBindings.findChildViewById(rootView, id);
+      if (lnTaskCompleteNew == null) {
         break missingId;
       }
 
@@ -146,8 +169,8 @@ public final class ItemProjectBinding implements ViewBinding {
       }
 
       return new ItemProjectBinding((CardView) rootView, NamePersonOfTaskUpdate, NameTaskNewUpdate,
-          TimeUpdateTask, imgUserProject, tvPersonCreation, tvProjectCreationTime,
-          tvProjectDeadline, tvProjectName, tvProjectStatus);
+          TimeUpdateTask, checkboxTask, imgUserProject, lnTaskCompleteNew, tvPersonCreation,
+          tvProjectCreationTime, tvProjectDeadline, tvProjectName, tvProjectStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -17,6 +17,7 @@ color pinkTask
 color print
 color projectB
 color red
+color task
 color viewpager
 color white
 color xanhduong
@@ -139,7 +140,7 @@ id btnAddDiscussion
 id btnBack
 id btnConfirmComplete
 id btnDelete
-id btnDeleteTask
+id btnDeleteProject
 id btnEditExtend
 id btnHistory
 id btnImportant
@@ -158,6 +159,7 @@ id buttonComback
 id buttonDate
 id buttonHome
 id buttonSeacrh
+id buttonThenext
 id buttonUpdate
 id buttonWarning
 id buttonadd
@@ -168,6 +170,7 @@ id buttondatejob
 id chaneAvata
 id chanepass
 id checkBox
+id checkboxTask
 id chucvu
 id circleImageView
 id circleImageViewComment
@@ -214,9 +217,14 @@ id lnFrameRegister
 id lnIdOrg
 id lnImageViewAdd
 id lnLeader
+id lnPause
 id lnPersonally
 id lnQRcode
 id lnRCVTask
+id lnShare
+id lnTaskCompleteNew
+id lnTuChoi
+id lnXacNhanHoanThanh
 id loginEditTextEmail
 id loginEditTextPassword
 id logo
@@ -305,6 +313,7 @@ layout activity_addproject
 layout activity_choose_role
 layout activity_detail_project
 layout activity_edit_account
+layout activity_edit_project
 layout activity_login
 layout activity_main
 layout activity_personnal

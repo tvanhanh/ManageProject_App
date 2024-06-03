@@ -2,6 +2,7 @@ package com.example.do_an_cs3.View.Project;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -9,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,10 +26,13 @@ import com.example.do_an_cs3.R;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.do_an_cs3.Task.AddTaskActivity;
 import com.example.do_an_cs3.View.MainActivity;
+import com.example.do_an_cs3.View.back_end.View_fragment.FragmentHome.UpdateNewFragment;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
@@ -41,6 +46,7 @@ public class DetailProjectActivity extends AppCompatActivity {
     private UserFollowAdapter userFollowAdapter;
     private TaskAdapter taskAdapter;
     private DatabaseManager dbManager;
+    private UpdateNewFragment updateNewFragment;
 
     private Button btnAddTask;
     private Button btnBack;
@@ -48,11 +54,23 @@ public class DetailProjectActivity extends AppCompatActivity {
     private List<Task> taskList;
 
     private int idProject;
+
+    public DetailProjectActivity() {
+    }
+
+    public int getIdProject() {
+        return idProject;
+    }
+
+
+
+    private String nameProject;
     private TextView emailDetail;
     private CircleImageView circleImageView;
     private CircleImageView circleImageViewWork;
     private TextView tvNameProjet, tvDeadline, tvTimeCreation, tvView, tvStatus, tvConText, tvRole, tvUserNameDetailWord;
-
+    private Button btnDelete, btnEdit, btnHistory;
+    private LinearLayout lnShare, lnXacNhanHoanThanh, lnPause, lnTuChoi;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -61,30 +79,38 @@ public class DetailProjectActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_detail_project);
         dbManager = new DatabaseManager(DetailProjectActivity.this);
+        updateNewFragment = new UpdateNewFragment();
 
 
         Button btnViewMore = findViewById(R.id.btnViewMore);
         btnAddTask = findViewById(R.id.addTask);
         btnBack = findViewById(R.id.btnBack);
-        emailDetail = findViewById(R.id.tvEmailDetail);
-        userNameDetail = findViewById(R.id.tvUserNameDetail);
+
 
         rcv_userFollow = findViewById(R.id.rcv_userFollow);
         rcv_task = findViewById(R.id.rcv_task);
-
+        //Thông tin project
         tvNameProjet = findViewById(R.id.NameProrjectDetail);
         tvStatus = findViewById(R.id.tvStatusDetail);
         tvDeadline = findViewById(R.id.tvDeadlineDetail);
         tvTimeCreation = findViewById(R.id.TimeCreationProjectDetail);
         tvConText = findViewById(R.id.tvprojectContext);
         tvView = findViewById(R.id.tvViews);
+
+        //thông tin user
         circleImageView =findViewById(R.id.circleImageView);
         circleImageViewWork =findViewById(R.id.circleImageViewWork);
         tvRole = findViewById(R.id.PossitonAndEmail);
         tvUserNameDetailWord = findViewById(R.id.userNameNguoiThucHien);
+        emailDetail = findViewById(R.id.tvEmailDetail);
+        userNameDetail = findViewById(R.id.tvUserNameDetail);
+
+
+
         emailDetail.setText(getCurrentUserEmail());
         Intent intent = getIntent();
         idProject = intent.getIntExtra("idProject", -1);
+        nameProject = intent.getStringExtra("projectName");
         User userdetail = dbManager.getUserInfo(getCurrentUserEmail());
         if (userdetail != null) {
             userNameDetail.setText(userdetail.getUserName());
@@ -93,18 +119,9 @@ public class DetailProjectActivity extends AppCompatActivity {
         taskList = new ArrayList<>();
         taskAdapter = new TaskAdapter(taskList, this);
         rcv_task.setAdapter(taskAdapter);
-        Project project = new Project();
-        project =  dbManager.getInfoProject(idProject);
-        if(project != null)
-        {
-            tvNameProjet.setText(project.getName());
-            tvStatus.setText(project.getStatus());
-            tvDeadline.setText(project.getDeadline());
-            tvTimeCreation.setText("Ngày tạo: "+project.getCreationTime());
-            String view =  String.valueOf( project.getViews() );
-            tvView.setText("Lượt xem: " + view);
-            tvConText.setText(project.getDescription());
-        }
+
+
+        updateInfoProject();
 
 
 
@@ -157,6 +174,7 @@ public class DetailProjectActivity extends AppCompatActivity {
         return dummyData;
     }
 
+    @SuppressLint("WrongViewCast")
     private void showBottomSheetDialog() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_dialog, null);
@@ -164,16 +182,16 @@ public class DetailProjectActivity extends AppCompatActivity {
         bottomSheetDialog.show();
 
         // Xử lý sự kiện cho các nút trong BottomSheetDialog
-        Button btnShareTask = bottomSheetView.findViewById(R.id.btnShareTask);
-        Button btnConfirmComplete = bottomSheetView.findViewById(R.id.btnConfirmComplete);
-        Button btnPause = bottomSheetView.findViewById(R.id.btnPause);
-        Button btnReject = bottomSheetView.findViewById(R.id.btnReject);
-        Button btnDeleteTask = bottomSheetView.findViewById(R.id.btnDeleteTask);
-        Button btnEditExtend = bottomSheetView.findViewById(R.id.btnEditExtend);
-        Button btnHistory = bottomSheetView.findViewById(R.id.btnHistory);
+        lnShare = bottomSheetView.findViewById(R.id.lnShare);
+        lnXacNhanHoanThanh = bottomSheetView.findViewById(R.id.lnXacNhanHoanThanh);
+        lnPause = bottomSheetView.findViewById(R.id.lnPause);
+        lnTuChoi = bottomSheetView.findViewById(R.id.lnTuChoi);
+        btnDelete = bottomSheetView.findViewById(R.id.btnDeleteProject);
+        btnEdit = bottomSheetView.findViewById(R.id.btnEditExtend);
+        btnHistory = bottomSheetView.findViewById(R.id.btnHistory);
 
         // Thiết lập các sự kiện click cho các nút
-        btnShareTask.setOnClickListener(new View.OnClickListener() {
+        lnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Xử lý chia sẻ công việc
@@ -181,23 +199,28 @@ public class DetailProjectActivity extends AppCompatActivity {
             }
         });
 
-        btnConfirmComplete.setOnClickListener(new View.OnClickListener() {
+        lnXacNhanHoanThanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Xác nhận hoàn thành
+                dbManager.updateStatusProject("Hoàn thành", idProject);
+                Toast.makeText(DetailProjectActivity.this, "Dự án đã hoàn thành", Toast.LENGTH_SHORT).show();
                 bottomSheetDialog.dismiss();
+                updateInfoProject();
             }
         });
 
-        btnPause.setOnClickListener(new View.OnClickListener() {
+        lnPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Tạm dừng công việc
+                dbManager.updateStatusProject("Tạm dừng", idProject);
+                Toast.makeText(DetailProjectActivity.this, "Đã tạm dừng dự án", Toast.LENGTH_SHORT).show();
                 bottomSheetDialog.dismiss();
+                updateInfoProject();
+
             }
         });
 
-        btnReject.setOnClickListener(new View.OnClickListener() {
+        lnTuChoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Từ chối công việc
@@ -205,20 +228,47 @@ public class DetailProjectActivity extends AppCompatActivity {
             }
         });
 
-        btnDeleteTask.setOnClickListener(new View.OnClickListener() {
+        btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Xóa công việc
+                AlertDialog.Builder builder = new AlertDialog.Builder(DetailProjectActivity.this);
+                builder.setMessage("Bạn có chắc chắn muốn xóa dự án này không?")
+                        .setPositiveButton("Xóa", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // Xử lý khi người dùng chọn xóa
+                                if (dbManager.deleteProject(idProject)) {
+                                    updateNewFragment.updateRecyclerView();
+                                    Intent intent = new Intent(DetailProjectActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                    Toast.makeText(DetailProjectActivity.this, "Xóa dự án " + nameProject + " thành công", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(DetailProjectActivity.this, "Xóa dự án " + nameProject + " không thành công", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        })
+                        .setNegativeButton("Không xóa", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // Xử lý khi người dùng chọn không xóa
+                                dialog.dismiss();
+                            }
+                        });
+                // Tạo và hiển thị AlertDialog
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+                // Đóng bottomSheetDialog
                 bottomSheetDialog.dismiss();
             }
-
         });
 
-        btnEditExtend.setOnClickListener(new View.OnClickListener() {
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Sửa hoặc gia hạn công việc
-
+                Intent intent = new Intent(DetailProjectActivity.this,EditProjectActivity.class);
+                intent.putExtra("idProject", idProject);
+                startActivity(intent);
                 bottomSheetDialog.dismiss();
             }
         });
@@ -263,4 +313,18 @@ public class DetailProjectActivity extends AppCompatActivity {
             }
         }
     }
+    public  void updateInfoProject(){
+        Project project =  dbManager.getInfoProject(idProject);
+        if(project != null)
+        {
+            tvNameProjet.setText(project.getName());
+            tvStatus.setText(project.getStatus());
+            tvDeadline.setText(project.getDeadline());
+            tvTimeCreation.setText("Ngày tạo: "+project.getCreationTime());
+            String view =  String.valueOf( project.getViews() );
+            tvView.setText( view);
+            tvConText.setText(project.getDescription());
+        }
+    }
+
 }

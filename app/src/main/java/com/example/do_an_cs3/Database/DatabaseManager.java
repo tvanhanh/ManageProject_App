@@ -315,20 +315,70 @@ public class DatabaseManager {
             return -1; // Trả về giá trị -1 để biểu thị rằng có lỗi xảy ra
         }
     }
-    public void deleteProject(int id) {
+    public boolean updateProject(String name, String description, String deadline,String creationTime, String status, int views,int project_id ) {
+        boolean success = false;
+        try {
+            // Tạo một đối tượng ContentValues để chứa dữ liệu cần chèn vào cơ sở dữ liệu
+            ContentValues values = new ContentValues();
+            values.put("project_name", name);
+            values.put("project_description", description);
+            values.put("deadline", deadline); // Chèn chuỗi định dạng Deadline vào cột Deadline
+            values.put("creation_time", creationTime);
+            values.put("status", status);
+            values.put("views", views);
+            // Thực hiện chèn dữ liệu vào bảng "Projects" của cơ sở dữ liệu
+            int rowsAffeted  = db.update("Projects", values,"project_id = ?", new String[]{String.valueOf(project_id)});
+            return  rowsAffeted > 0;
+        } catch (Exception e) {
+            // Xử lý lỗi và thông báo cho người dùng
+            Log.e("Add Project Error", "Error adding project: " + e.getMessage());
+            return success; // Trả về giá trị -1 để biểu thị rằng có lỗi xảy ra
+        }
+    }
+    public boolean updateTimeCompleteTask(String timeComplete, int task_id) {
+        SQLiteDatabase db = null;
+        boolean success = false;
+
+        try {
+            db = dbhelper.getWritableDatabase();
+            // Tạo một đối tượng ContentValues để chứa dữ liệu cần cập nhật vào cơ sở dữ liệu
+            ContentValues values = new ContentValues();
+            values.put("time_complete", timeComplete);
+
+            // Thực hiện cập nhật dữ liệu vào bảng "Tasks" của cơ sở dữ liệu
+            int rowsAffected = db.update("Tasks", values, "task_id = ?", new String[]{String.valueOf(task_id)});
+            success = rowsAffected > 0;
+        } catch (Exception e) {
+            // Xử lý lỗi và thông báo cho người dùng
+            Log.e("Update Task Error", "Error updating task: " + e.getMessage());
+        } finally {
+            if (db != null && db.isOpen()) {
+                db.close();
+            }
+        }
+
+        return success;
+    }
+
+    public boolean deleteProject(int id) {
+        boolean success = false;
         try {
             db = dbhelper.getWritableDatabase();
             int rowsAffected = db.delete("Projects", "project_id = ?", new String[]{String.valueOf(id)});
             if (rowsAffected > 0) {
-                Log.d("Delete Project", "Project with ID " + id + " deleted} successfully");
+                success = true;
             } else {
                 Log.d("Delete Project", "No project deleted. Project with ID " + id + " not found");
-            }
-            db.close();
-    }catch (Exception e){
-            Log.e("Delete Project Error", "Error deleting project: " + e.getMessage());
-        }
 
+            }
+        } catch (Exception e) {
+            Log.e("Delete Project Error", "Error deleting project: " + e.getMessage());
+        } finally {
+            if (db != null) {
+                db.close();
+            }
+        }
+        return success;
     }
     public boolean updateUserInfo(String email, String name, String phone, String address, String role, String department, String referralCode,byte[] avatarData) {
         try {
@@ -409,6 +459,53 @@ public class DatabaseManager {
             return -1; // Trả về giá trị -1 để biểu thị rằng có lỗi xảy ra
         }
     }
+    public boolean updateStatusTask(String status, int task_id) {
+        SQLiteDatabase db = null;
+        boolean success = false;
+
+        try {
+            db = this.dbhelper.getWritableDatabase();
+            // Tạo một đối tượng ContentValues để chứa dữ liệu cần cập nhật vào cơ sở dữ liệu
+            ContentValues values = new ContentValues();
+            values.put("status", status);
+
+            int rowsAffected = db.update("Tasks", values, "task_id = ?", new String[]{String.valueOf(task_id)});
+            success = rowsAffected > 0;
+        } catch (Exception e) {
+            // Xử lý lỗi và thông báo cho người dùng
+            Log.e("Update Task Error", "Error updating task: " + e.getMessage());
+        } finally {
+            if (db != null && db.isOpen()) {
+                db.close();
+            }
+        }
+
+        return success;
+    }
+    public boolean updateStatusProject(String status, int project_id) {
+        SQLiteDatabase db = null;
+        boolean success = false;
+
+        try {
+            db = this.dbhelper.getWritableDatabase();
+            // Tạo một đối tượng ContentValues để chứa dữ liệu cần cập nhật vào cơ sở dữ liệu
+            ContentValues values = new ContentValues();
+            values.put("status", status);
+
+            int rowsAffected = db.update("Projects", values, "project_id = ?", new String[]{String.valueOf(project_id)});
+            success = rowsAffected > 0;
+        } catch (Exception e) {
+            // Xử lý lỗi và thông báo cho người dùng
+            Log.e("Update Task Error", "Error updating task: " + e.getMessage());
+        } finally {
+            if (db != null && db.isOpen()) {
+                db.close();
+            }
+        }
+
+        return success;
+    }
+
     @SuppressLint("Range")
     public List<Project> getAllProjects(String emailProject) {
         List<Project> projectList = new ArrayList<>();
@@ -464,13 +561,14 @@ public class DatabaseManager {
                     String name = cursor.getString(cursor.getColumnIndex("task_name"));
                     String description = cursor.getString(cursor.getColumnIndex("task_description"));
                     String deadline = cursor.getString(cursor.getColumnIndex("deadline"));
+                    String timeComplete = cursor.getString(cursor.getColumnIndex("time_complete"));
                     String status = cursor.getString(cursor.getColumnIndex("status"));
                     String email = cursor.getString(cursor.getColumnIndex("email"));
                     int project_id = cursor.getInt(cursor.getColumnIndex("project_id"));
 //                    if (cursor.isNull(department)) {
 //                        department = 1; // hoặc bất kỳ giá trị mặc định nào bạn muốn
 //                    }
-                    Task task = new Task(id, name, description, deadline,status, email, project_id);
+                    Task task = new Task(id, name, description, deadline, status, email, project_id, timeComplete);
                     taskList.add(task);
                 } while (cursor.moveToNext());
             }
@@ -521,7 +619,7 @@ public class DatabaseManager {
                 cursor.close();
             }
             if (db != null) {
-                db.close();
+               // db.close();
             }
         }
         return project;

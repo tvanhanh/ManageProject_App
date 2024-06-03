@@ -2153,6 +2153,7 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color task
 color tooltip_background_dark
 color tooltip_background_light
 color viewpager
@@ -3354,7 +3355,7 @@ id btnAddDiscussion
 id btnBack
 id btnConfirmComplete
 id btnDelete
-id btnDeleteTask
+id btnDeleteProject
 id btnEditExtend
 id btnHistory
 id btnImportant
@@ -3374,6 +3375,7 @@ id buttonDate
 id buttonHome
 id buttonPanel
 id buttonSeacrh
+id buttonThenext
 id buttonUpdate
 id buttonWarning
 id buttonadd
@@ -3397,6 +3399,7 @@ id chaneAvata
 id chanepass
 id checkBox
 id checkbox
+id checkboxTask
 id checked
 id chronometer
 id chucvu
@@ -3568,9 +3571,14 @@ id lnFrameRegister
 id lnIdOrg
 id lnImageViewAdd
 id lnLeader
+id lnPause
 id lnPersonally
 id lnQRcode
 id lnRCVTask
+id lnShare
+id lnTaskCompleteNew
+id lnTuChoi
+id lnXacNhanHoanThanh
 id locale
 id loginEditTextEmail
 id loginEditTextPassword
@@ -4036,6 +4044,7 @@ layout activity_addproject
 layout activity_choose_role
 layout activity_detail_project
 layout activity_edit_account
+layout activity_edit_project
 layout activity_login
 layout activity_main
 layout activity_personnal

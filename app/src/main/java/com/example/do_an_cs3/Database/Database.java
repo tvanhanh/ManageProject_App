@@ -10,7 +10,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "ManageProject";
 
     // Phiên bản cơ sở dữ liệu
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
 
     // Constructor
     public Database(Context context) {
@@ -167,33 +167,46 @@ public class Database extends SQLiteOpenHelper {
     // Phương thức onUpgrade để nâng cấp cơ sở dữ liệu
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (oldVersion < 3) {
+        if (oldVersion < 4) {
             // Tạo bảng tạm thời
-            String createTempTableUsers = "CREATE TABLE Users_temp (" +
-                    "email TEXT PRIMARY KEY NOT NULL, " +
-                    "username TEXT, " +
-                    "password TEXT NOT NULL, " +
-                    "phone_number TEXT, " +
-                    "address TEXT, " +
-                    "referral_code TEXT, " +
-                    "avatar_url BLOB, " +
-                    "department_id INTEGER," +
-                    "role TEXT, " +  // Bỏ giá trị mặc định cho role
-                    "FOREIGN KEY(department_id) REFERENCES Departments(department_id)" +
+//            String createTempTableUsers = "CREATE TABLE Users_temp (" +
+//                    "email TEXT PRIMARY KEY NOT NULL, " +
+//                    "username TEXT, " +
+//                    "password TEXT NOT NULL, " +
+//                    "phone_number TEXT, " +
+//                    "address TEXT, " +
+//                    "referral_code TEXT, " +
+//                    "avatar_url BLOB, " +
+//                    "department_id INTEGER," +
+//                    "role TEXT, " +  // Bỏ giá trị mặc định cho role
+//                    "FOREIGN KEY(department_id) REFERENCES Departments(department_id)" +
+//                    ")";
+//            db.execSQL(createTempTableUsers);
+            String createTempTableTasks = "CREATE TABLE Tasks_temp (" +
+                    "task_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    "task_name TEXT, " +
+                    "task_description TEXT, " +
+                    "deadline TEXT, " +
+                    "time_complete TEXT," +
+                    "status TEXT, " +
+                    "email TEXT, "+
+                    "project_id INTEGER, " +
+                    "FOREIGN KEY(email) REFERENCES Users(email) , " +
+                    "FOREIGN KEY(project_id) REFERENCES Projects(project_id)" +
                     ")";
-            db.execSQL(createTempTableUsers);
+            db.execSQL(createTempTableTasks);
 
             // Sao chép dữ liệu từ bảng cũ sang bảng tạm thời
-            String copyDataToTempTable = "INSERT INTO Users_temp (email, username, password, phone_number, address, referral_code, avatar_url, department_id, role) " +
-                    "SELECT email, username, password, phone_number, address, referral_code, avatar_url, department_id, role FROM Users";
-            db.execSQL(copyDataToTempTable);
+//            String copyDataToTempTable = "INSERT INTO Tasks_temp (email, username, password, phone_number, address, referral_code, avatar_url, department_id, role) " +
+//                    "SELECT email, username, password, phone_number, address, referral_code, avatar_url, department_id, role FROM Users";
+//            db.execSQL(copyDataToTempTable);
 
             // Xóa bảng cũ
-            String dropOldTable = "DROP TABLE Users";
+            String dropOldTable = "DROP TABLE Tasks";
             db.execSQL(dropOldTable);
 
             // Đổi tên bảng tạm thời thành tên bảng cũ
-            String renameTempTable = "ALTER TABLE Users_temp RENAME TO Users";
+            String renameTempTable = "ALTER TABLE Tasks_temp RENAME TO Tasks";
             db.execSQL(renameTempTable);
         }
 

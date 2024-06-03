@@ -7,6 +7,7 @@
     android:padding="16dp">
 
     <LinearLayout
+        android:id="@+id/lnShare"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/roundgreen"
@@ -28,11 +29,12 @@
             android:backgroundTint="@color/xanhla"
             android:gravity="left"
             android:padding="8dp"
-            android:text="Chia sẻ công việc"
+            android:text="Chia sẻ dự án"
             android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lnXacNhanHoanThanh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -62,7 +64,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@drawable/round_gray"
-        android:layout_margin="5dp">
+        android:layout_margin="5dp"
+        android:id="@+id/lnPause">
 
         <TextView
             android:layout_width="0dp"
@@ -89,6 +92,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@drawable/round_less_red"
+        android:id="@+id/lnTuChoi"
+
         android:layout_margin="5dp"
         >
 
@@ -103,7 +108,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/donhat"
             android:padding="8dp"
-            android:text="Từ chối xin việc"
+            android:text="Từ chối tham gia"
             android:layout_weight="7"
             android:gravity="left"
             android:textSize="16sp" />
@@ -118,13 +123,13 @@
         android:paddingTop="0dp">
 
         <Button
-            android:id="@+id/btnDeleteTask"
+            android:id="@+id/btnDeleteProject"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@drawable/delete"
             android:padding="8dp"
-            android:text="Xóa việc"
+            android:text="Xóa dự án"
             android:backgroundTint="@color/red"
             android:textSize="16sp" />
         <!--        android:drawableTop="@drawable/ic_delete"-->
@@ -136,7 +141,6 @@
             android:layout_weight="1"
             android:drawableTop="@drawable/editing"
             android:backgroundTint="@color/xanhlaChụoi"
-
             android:padding="8dp"
             android:text="Sửa/Gia hạn"
             android:textSize="16sp" />

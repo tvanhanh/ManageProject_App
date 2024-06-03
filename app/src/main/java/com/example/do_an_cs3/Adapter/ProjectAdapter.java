@@ -33,56 +33,89 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
     private Context mContext;
     private DatabaseManager dbManager;
     private  TaskAdapter taskAdapter;
+    private ProjectViewHolder currentViewHolder;
+    private View view;
 
     public ProjectAdapter(List<Project> projectList, Context mContext) {
         this.projectList = projectList;
         this.mContext = mContext;
     }
+    public ProjectAdapter(List<Project> projectList, Context mContext, TaskAdapter taskAdapter) {
+        this.projectList = projectList;
+        this.mContext = mContext;
+        this.taskAdapter = taskAdapter;
+    }
+
+    public ProjectAdapter() {
+
+    }
+
     @NonNull
     @Override
     public ProjectViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_project, parent, false);
+         view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_project, parent, false);
         return new ProjectViewHolder(view);
     }
+
     @Override
     public void onBindViewHolder(@NonNull ProjectViewHolder holder, int position) {
         dbManager = new DatabaseManager(mContext);
-        taskAdapter = new TaskAdapter();
         Project project = projectList.get(position);
+        currentViewHolder = holder;
         if(project != null){
             holder.tvProjectCreationTime.setText(project.getCreationTime());
-            displayUserInfo(holder.tvNamePerson,holder.circleImageView);
-          //  holder.tvPercent.setText(String.valueOf(project.getPercentCompleted()));
+            displayUserInfo(holder.tvNamePersonCreation,holder.circleImageView);
             holder.tvProjectName.setText(project.getName());
-           //holder.tvDescriptionProject.setText(project.getDescription());
-
-            //holder.tvProjectDeadline.setText(project.getDeadline());
-          //  holder.tvProjectCreationTime.setText(project.getCreationTime());
+            holder.tvProjectDeadline.setText(project.getDeadline());
             holder.tvProjectStatus.setText(project.getStatus());
-           // holder.tvProjectDepartment.setText(project.getDepartment());
+            holder.lnTask.setVisibility(View.GONE);
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(mContext, DetailProjectActivity.class);
-                    intent.putExtra("idProject", project.getId());
-                    intent.putExtra("projectCreationTime", project.getCreationTime());
-                    intent.putExtra("projectEmail", project.getEmail());
-                    intent.putExtra("projectName", project.getName());
-                    intent.putExtra("projectDeadline", project.getDeadline());
-                    intent.putExtra("projectStatus", project.getStatus());
+                    int clickedPosition = holder.getAdapterPosition(); // Lấy vị trí của mục được nhấp vào
+                    if (clickedPosition != RecyclerView.NO_POSITION) {
+                        Project clickedProject = projectList.get(clickedPosition); // Lấy dự án tương ứng với vị trí được nhấp vào
+                        Intent intent = new Intent(mContext, DetailProjectActivity.class);
+                        intent.putExtra("idProject", clickedProject.getId());
+                        intent.putExtra("projectCreationTime", clickedProject.getCreationTime());
+                        intent.putExtra("projectEmail", clickedProject.getEmail());
+                        intent.putExtra("projectName", clickedProject.getName());
+                        intent.putExtra("projectDeadline", clickedProject.getDeadline());
+                        intent.putExtra("projectStatus", clickedProject.getStatus());
 
-                    mContext.startActivity(intent);
+                        // Gọi phương thức để truyền vị trí của mục được chọn
+                        TaskAdapter taskAdapter = new TaskAdapter();
+                        taskAdapter.setSelectedPosition(clickedPosition);
+
+                        mContext.startActivity(intent);
+                    }
                 }
             });
         }
     }
+
+
     @Override
     public int getItemCount() {
         if(projectList != null){
             return projectList.size();
         }
         return 0;
+    }
+
+    public void setTaskNewComplete(int position, String status, String name, String person, String time) {
+        // Kiểm tra xem currentViewHolder đã được khởi tạo chưa
+        if (currentViewHolder != null && position == currentViewHolder.getAdapterPosition()) {
+            if (status.equals("Hoàn thành")) {
+                currentViewHolder.checkBoxTask.setChecked(true);
+            } else {
+                currentViewHolder.checkBoxTask.setChecked(false);
+            }
+            currentViewHolder.tvNameTaskNewUpdate.setText(name);
+            currentViewHolder.tvNamePersonOfTaskUpdate.setText(person);
+            currentViewHolder.timeUpdateTask.setText(time);
+        }
     }
     public void displayUserInfo(TextView tvUserName, CircleImageView circleImageView) {
         User user = dbManager.getUserInfo(getCurrentUserEmail());
@@ -99,4 +132,5 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
         SharedPreferences sharedPreferences = mContext.getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
         return sharedPreferences.getString("user_email", null); // Trả về null nếu không tìm thấy email
     }
+
 }

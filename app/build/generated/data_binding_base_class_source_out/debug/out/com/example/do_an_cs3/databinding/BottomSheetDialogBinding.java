@@ -23,7 +23,7 @@ public final class BottomSheetDialogBinding implements ViewBinding {
   public final Button btnConfirmComplete;
 
   @NonNull
-  public final Button btnDeleteTask;
+  public final Button btnDeleteProject;
 
   @NonNull
   public final Button btnEditExtend;
@@ -40,18 +40,36 @@ public final class BottomSheetDialogBinding implements ViewBinding {
   @NonNull
   public final Button btnShareTask;
 
+  @NonNull
+  public final LinearLayout lnPause;
+
+  @NonNull
+  public final LinearLayout lnShare;
+
+  @NonNull
+  public final LinearLayout lnTuChoi;
+
+  @NonNull
+  public final LinearLayout lnXacNhanHoanThanh;
+
   private BottomSheetDialogBinding(@NonNull LinearLayout rootView,
-      @NonNull Button btnConfirmComplete, @NonNull Button btnDeleteTask,
+      @NonNull Button btnConfirmComplete, @NonNull Button btnDeleteProject,
       @NonNull Button btnEditExtend, @NonNull Button btnHistory, @NonNull Button btnPause,
-      @NonNull Button btnReject, @NonNull Button btnShareTask) {
+      @NonNull Button btnReject, @NonNull Button btnShareTask, @NonNull LinearLayout lnPause,
+      @NonNull LinearLayout lnShare, @NonNull LinearLayout lnTuChoi,
+      @NonNull LinearLayout lnXacNhanHoanThanh) {
     this.rootView = rootView;
     this.btnConfirmComplete = btnConfirmComplete;
-    this.btnDeleteTask = btnDeleteTask;
+    this.btnDeleteProject = btnDeleteProject;
     this.btnEditExtend = btnEditExtend;
     this.btnHistory = btnHistory;
     this.btnPause = btnPause;
     this.btnReject = btnReject;
     this.btnShareTask = btnShareTask;
+    this.lnPause = lnPause;
+    this.lnShare = lnShare;
+    this.lnTuChoi = lnTuChoi;
+    this.lnXacNhanHoanThanh = lnXacNhanHoanThanh;
   }
 
   @Override
@@ -87,9 +105,9 @@ public final class BottomSheetDialogBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnDeleteTask;
-      Button btnDeleteTask = ViewBindings.findChildViewById(rootView, id);
-      if (btnDeleteTask == null) {
+      id = R.id.btnDeleteProject;
+      Button btnDeleteProject = ViewBindings.findChildViewById(rootView, id);
+      if (btnDeleteProject == null) {
         break missingId;
       }
 
@@ -123,8 +141,33 @@ public final class BottomSheetDialogBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.lnPause;
+      LinearLayout lnPause = ViewBindings.findChildViewById(rootView, id);
+      if (lnPause == null) {
+        break missingId;
+      }
+
+      id = R.id.lnShare;
+      LinearLayout lnShare = ViewBindings.findChildViewById(rootView, id);
+      if (lnShare == null) {
+        break missingId;
+      }
+
+      id = R.id.lnTuChoi;
+      LinearLayout lnTuChoi = ViewBindings.findChildViewById(rootView, id);
+      if (lnTuChoi == null) {
+        break missingId;
+      }
+
+      id = R.id.lnXacNhanHoanThanh;
+      LinearLayout lnXacNhanHoanThanh = ViewBindings.findChildViewById(rootView, id);
+      if (lnXacNhanHoanThanh == null) {
+        break missingId;
+      }
+
       return new BottomSheetDialogBinding((LinearLayout) rootView, btnConfirmComplete,
-          btnDeleteTask, btnEditExtend, btnHistory, btnPause, btnReject, btnShareTask);
+          btnDeleteProject, btnEditExtend, btnHistory, btnPause, btnReject, btnShareTask, lnPause,
+          lnShare, lnTuChoi, lnXacNhanHoanThanh);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

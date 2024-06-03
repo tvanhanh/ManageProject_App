@@ -75,6 +75,7 @@ public class AddTaskActivity extends AppCompatActivity {
                             }
                             Intent detailIntent = new Intent(AddTaskActivity.this, DetailProjectActivity.class);
                             detailIntent.putExtra("idProject", idProject);
+
                             startActivity(detailIntent);
                             finish();
                         } else {
