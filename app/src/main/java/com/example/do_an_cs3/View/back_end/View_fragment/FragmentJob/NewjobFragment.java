@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.do_an_cs3.Adapter.ProjectAdapter;
-import com.example.do_an_cs3.Database.DatabaseManager;
+
 import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.R;
 
@@ -36,7 +36,7 @@ public class NewjobFragment extends Fragment {
     private String mParam2;
     private RecyclerView rcv_project;
     private ProjectAdapter project_adapter;
-    private DatabaseManager dbManager;
+
     private List<Project> projects;
 
     public NewjobFragment() {
@@ -83,9 +83,9 @@ public class NewjobFragment extends Fragment {
         // rcv_project.setHasFixedSize(true);
 
         // Set up the adapter
-        dbManager = new DatabaseManager(requireContext());
-        projects = dbManager.getAllProjects(email);
-        project_adapter = new ProjectAdapter(projects, requireContext());
+      //  dbManager = new DatabaseManager(requireContext());
+       // projects = dbManager.getAllProjects(email);
+     project_adapter = new ProjectAdapter(projects, requireContext(), this);
 
         // Set up RecyclerView
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false);

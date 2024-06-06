@@ -109,7 +109,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nhập ID Tổ Chức"
+                    android:text="ID Dự án tham gia"
                     android:textColor="#FF6600"
                     android:textSize="16sp"
                     android:paddingTop="8dp"
@@ -118,7 +118,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Quản Lý và Nhân Viên"
+                    android:text="Nhân Viên"
                     android:textColor="#000000"
                     android:textSize="14sp"
                     android:gravity="center" />
@@ -152,7 +152,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Quản Lý Nhân Viên"
+                    android:text="Nhân Viên"
                     android:textColor="#000000"
                     android:textSize="14sp"
                     android:gravity="center" />

@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.do_an_cs3.Adapter.TaskAdapter;
 import com.example.do_an_cs3.Adapter.UserFollowAdapter;
-import com.example.do_an_cs3.Database.DatabaseManager;
+
 import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.Model.Task;
 import com.example.do_an_cs3.Model.User;
@@ -34,6 +34,8 @@ import com.example.do_an_cs3.Task.AddTaskActivity;
 import com.example.do_an_cs3.View.MainActivity;
 import com.example.do_an_cs3.View.back_end.View_fragment.FragmentHome.UpdateNewFragment;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +47,7 @@ public class DetailProjectActivity extends AppCompatActivity {
     private RecyclerView rcv_task;
     private UserFollowAdapter userFollowAdapter;
     private TaskAdapter taskAdapter;
-    private DatabaseManager dbManager;
+
     private UpdateNewFragment updateNewFragment;
 
     private Button btnAddTask;
@@ -71,6 +73,7 @@ public class DetailProjectActivity extends AppCompatActivity {
     private TextView tvNameProjet, tvDeadline, tvTimeCreation, tvView, tvStatus, tvConText, tvRole, tvUserNameDetailWord;
     private Button btnDelete, btnEdit, btnHistory;
     private LinearLayout lnShare, lnXacNhanHoanThanh, lnPause, lnTuChoi;
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://manageproject-7a9ac-default-rtdb.firebaseio.com/");
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -78,7 +81,7 @@ public class DetailProjectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_detail_project);
-        dbManager = new DatabaseManager(DetailProjectActivity.this);
+        //dbManager = new DatabaseManager(DetailProjectActivity.this);
         updateNewFragment = new UpdateNewFragment();
 
 
@@ -111,7 +114,8 @@ public class DetailProjectActivity extends AppCompatActivity {
         Intent intent = getIntent();
         idProject = intent.getIntExtra("idProject", -1);
         nameProject = intent.getStringExtra("projectName");
-        User userdetail = dbManager.getUserInfo(getCurrentUserEmail());
+        User userdetail = null;
+                //dbManager.getUserInfo(getCurrentUserEmail());
         if (userdetail != null) {
             userNameDetail.setText(userdetail.getUserName());
         }
@@ -202,7 +206,7 @@ public class DetailProjectActivity extends AppCompatActivity {
         lnXacNhanHoanThanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbManager.updateStatusProject("Hoàn thành", idProject);
+                //dbManager.updateStatusProject("Hoàn thành", idProject);
                 Toast.makeText(DetailProjectActivity.this, "Dự án đã hoàn thành", Toast.LENGTH_SHORT).show();
                 bottomSheetDialog.dismiss();
                 updateInfoProject();
@@ -212,7 +216,7 @@ public class DetailProjectActivity extends AppCompatActivity {
         lnPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbManager.updateStatusProject("Tạm dừng", idProject);
+                //dbManager.updateStatusProject("Tạm dừng", idProject);
                 Toast.makeText(DetailProjectActivity.this, "Đã tạm dừng dự án", Toast.LENGTH_SHORT).show();
                 bottomSheetDialog.dismiss();
                 updateInfoProject();
@@ -236,8 +240,8 @@ public class DetailProjectActivity extends AppCompatActivity {
                         .setPositiveButton("Xóa", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 // Xử lý khi người dùng chọn xóa
-                                if (dbManager.deleteProject(idProject)) {
-                                    updateNewFragment.updateRecyclerView();
+                                if (true) {
+                                   // updateNewFragment.updateRecyclerView();
                                     Intent intent = new Intent(DetailProjectActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     Toast.makeText(DetailProjectActivity.this, "Xóa dự án " + nameProject + " thành công", Toast.LENGTH_SHORT).show();
@@ -291,40 +295,40 @@ public class DetailProjectActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         // Tải lại danh sách task khi Activity được hiển thị lại
-        loadTasks();
+     //   loadTasks();
     }
 
-    private void loadTasks() {
-        taskList.clear();
-        taskList.addAll(dbManager.getAllTask(idProject));
-        taskAdapter.notifyDataSetChanged();
-    }
+//    private void loadTasks() {
+//        taskList.clear();
+//        taskList.addAll(dbManager.getAllTask(idProject));
+//        taskAdapter.notifyDataSetChanged();
+//    }
     public void displayUserInfo() {
-        User user = dbManager.getUserInfo(getCurrentUserEmail());
-        if (user != null) {
-            tvUserNameDetailWord.setText(user.getUserName());
-            emailDetail.setText(getCurrentUserEmail());
-            tvRole.setText(user.getRole()+" - " + getCurrentUserEmail());
-            if (user.getAvatar() != null) {
-                byte[] avatarBytes = Base64.decode(user.getAvatar(), Base64.DEFAULT);
-                Bitmap avatarBitmap = BitmapFactory.decodeByteArray(avatarBytes, 0, avatarBytes.length);
-                circleImageView.setImageBitmap(avatarBitmap);
-                circleImageViewWork.setImageBitmap(avatarBitmap);
-            }
-        }
+//        User user = dbManager.getUserInfo(getCurrentUserEmail());
+//        if (user != null) {
+//            tvUserNameDetailWord.setText(user.getUserName());
+//            emailDetail.setText(getCurrentUserEmail());
+//            tvRole.setText(user.getRole()+" - " + getCurrentUserEmail());
+//            if (user.getAvatar() != null) {
+//                byte[] avatarBytes = Base64.decode(user.getAvatar(), Base64.DEFAULT);
+//                Bitmap avatarBitmap = BitmapFactory.decodeByteArray(avatarBytes, 0, avatarBytes.length);
+//                circleImageView.setImageBitmap(avatarBitmap);
+//                circleImageViewWork.setImageBitmap(avatarBitmap);
+    //        }
+    //    }
     }
     public  void updateInfoProject(){
-        Project project =  dbManager.getInfoProject(idProject);
-        if(project != null)
-        {
-            tvNameProjet.setText(project.getName());
-            tvStatus.setText(project.getStatus());
-            tvDeadline.setText(project.getDeadline());
-            tvTimeCreation.setText("Ngày tạo: "+project.getCreationTime());
-            String view =  String.valueOf( project.getViews() );
-            tvView.setText( view);
-            tvConText.setText(project.getDescription());
-        }
-    }
+ //       Project project =  dbManager.getInfoProject(idProject);
+//        if(project != null)
+//        {
+//            tvNameProjet.setText(project.getName());
+//            tvStatus.setText(project.getStatus());
+//            tvDeadline.setText(project.getDeadline());
+//            tvTimeCreation.setText("Ngày tạo: "+project.getCreationTime());
+//            String view =  String.valueOf( project.getViews() );
+//            tvView.setText( view);
+//            tvConText.setText(project.getDescription());
+//        }
+}
 
 }

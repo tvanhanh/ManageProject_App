@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.do_an_cs3.Database.DatabaseManager;
+
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.Project.AddProjectActivity;
@@ -34,7 +34,7 @@ public class SettingActivity extends AppCompatActivity {
     private TextView statistic;
     private Button comback;
     private TextView logout;
-    private DatabaseManager dbManager;
+
     private CircleImageView circleImageView;
     private TextView tvUsername, tvEmail, tvRole;
 
@@ -42,7 +42,7 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-        dbManager = new DatabaseManager(SettingActivity.this);
+       // dbManager = new DatabaseManager(SettingActivity.this);
         tvEmail = findViewById(R.id.emailaccount);
         tvUsername = findViewById(R.id.nameaccount);
         tvRole = findViewById(R.id.chucvu);
@@ -149,17 +149,17 @@ public class SettingActivity extends AppCompatActivity {
         displayUserInfo();
     }
     public void displayUserInfo() {
-        User user = dbManager.getUserInfo(getCurrentUserEmail());
-        if (user != null) {
-            tvUsername.setText(user.getUserName());
-            tvEmail.setText(getCurrentUserEmail());
-            tvRole.setText(user.getRole());
-            if (user.getAvatar() != null) {
-                byte[] avatarBytes = Base64.decode(user.getAvatar(), Base64.DEFAULT);
-                Bitmap avatarBitmap = BitmapFactory.decodeByteArray(avatarBytes, 0, avatarBytes.length);
-                circleImageView.setImageBitmap(avatarBitmap);
-            }
-        }
+//        User user = dbManager.getUserInfo(getCurrentUserEmail());
+//        if (user != null) {
+//            tvUsername.setText(user.getUserName());
+//            tvEmail.setText(getCurrentUserEmail());
+//            tvRole.setText(user.getRole());
+//            if (user.getAvatar() != null) {
+//                byte[] avatarBytes = Base64.decode(user.getAvatar(), Base64.DEFAULT);
+//                Bitmap avatarBitmap = BitmapFactory.decodeByteArray(avatarBytes, 0, avatarBytes.length);
+//                circleImageView.setImageBitmap(avatarBitmap);
+//            }
+//        }
     }
     public String getCurrentUserEmail() {
         SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);

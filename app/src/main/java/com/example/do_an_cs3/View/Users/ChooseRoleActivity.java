@@ -1,19 +1,24 @@
 package com.example.do_an_cs3.View.Users;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.do_an_cs3.Database.DatabaseManager;
+import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
+
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.MainActivity;
+import com.google.firebase.database.DatabaseReference;
 
 public class ChooseRoleActivity extends AppCompatActivity {
 
@@ -22,21 +27,27 @@ public class ChooseRoleActivity extends AppCompatActivity {
     private LinearLayout lnQR;
     private LinearLayout lnPersonally;
 
-    private DatabaseManager dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_choose_role);
-        dbManager = new DatabaseManager(this);
+       // dbManager = new DatabaseManager(this);
         lnLeader = findViewById(R.id.lnLeader);
         lnLeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String userEmail = getCurrentUserEmail();
                 if (userEmail != null) {
-                    dbManager.updateUserRole(userEmail, "Leader", "Phòng Lãnh Đạo");
+                   // dbManager.updateUserRole(userEmail, "Leader", "Phòng Lãnh Đạo");
+                    DatabaseReference databaseReference = DatabaseFirebaseManager.getInstance().getDatabaseReference();
+                    String encodedEmail = userEmail.replace(".", ",");
+
+                    // Reference to the specific user's role node
+                    DatabaseReference userRoleRef = databaseReference.child("users").child(encodedEmail).child("role");
+                    // Update the role
+                    userRoleRef.setValue("Lãnh đạo");
                     Intent intent = new Intent(ChooseRoleActivity.this, AddProfileActivity.class);
                     startActivity(intent);
                     finish();
@@ -53,10 +64,39 @@ public class ChooseRoleActivity extends AppCompatActivity {
         lnIdOrg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChooseRoleActivity.this, MainActivity.class);
-                startActivity(intent);
+                // Tạo một AlertDialog.Builder
+                AlertDialog.Builder builder = new AlertDialog.Builder(ChooseRoleActivity.this);
+                builder.setTitle("Nhập ID dự án");
+
+                // Thiết lập ô nhập liệu
+                final EditText input = new EditText(ChooseRoleActivity.this);
+                builder.setView(input);
+
+                // Thiết lập nút xác nhận
+                builder.setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Xử lý khi người dùng nhấn nút Xác nhận
+                        String projectId = input.getText().toString();
+                        // Thực hiện các hành động cần thiết với projectId ở đây
+                    }
+                });
+
+                // Thiết lập nút hủy
+                builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Đóng dialog khi người dùng nhấn nút Hủy
+                        dialog.cancel();
+                    }
+                });
+
+                // Hiển thị AlertDialog
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
             }
         });
+
         lnQR = findViewById(R.id.lnQRcode);
         lnQR.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,8 +112,15 @@ public class ChooseRoleActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String userEmail = getCurrentUserEmail();
                 if (userEmail != null) {
-                    dbManager.updateUserRole(userEmail, "Personally", null);
-                    Intent intent = new Intent(ChooseRoleActivity.this, MainActivity.class);
+                   // dbManager.updateUserRole(userEmail, "Personally", null);
+                    DatabaseReference databaseReference = DatabaseFirebaseManager.getInstance().getDatabaseReference();
+                    String encodedEmail = userEmail.replace(".", ",");
+
+                    // Reference to the specific user's role node
+                    DatabaseReference userRoleRef = databaseReference.child("users").child(encodedEmail).child("role");
+                    // Update the role
+                    userRoleRef.setValue("Cá nhân");
+                    Intent intent = new Intent(ChooseRoleActivity.this, AddProfileActivity.class);
                     startActivity(intent);
                     finish();
                 } else {

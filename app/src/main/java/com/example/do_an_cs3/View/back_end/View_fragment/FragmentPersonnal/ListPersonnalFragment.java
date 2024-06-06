@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.do_an_cs3.Adapter.ProjectAdapter;
 import com.example.do_an_cs3.Adapter.UserAdapter;
-import com.example.do_an_cs3.Database.DatabaseManager;
+
 import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
@@ -36,7 +36,7 @@ public class ListPersonnalFragment extends Fragment {
 
     private RecyclerView rcv_user;
     private UserAdapter user_adapter;
-    private DatabaseManager dbManager;
+   // private DatabaseManager dbManager;
     private List<User> users;
 private Button buttonAdd;
     // TODO: Rename and change types of parameters
@@ -85,7 +85,7 @@ private Button buttonAdd;
         // rcv_project.setHasFixedSize(true);
       //  String email = getCurrentUserEmail();
         // Set up the adapter
-        dbManager = new DatabaseManager(requireContext());
+       // dbManager = new DatabaseManager(requireContext());
     //    users = dbManager.getAllProjects();
       //  project_adapter = new ProjectAdapter(projects, requireContext());
 

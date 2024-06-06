@@ -261,14 +261,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.do_an_cs3.Database.Database;
+import com.bumptech.glide.Glide;
+
+import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
+import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.MainActivity;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.UUID;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -281,24 +292,28 @@ public class AddProfileActivity extends AppCompatActivity {
     private EditText editTextAddress;
     private CircleImageView circleImageAvatar;
     private String avatarFilePath;
-    private Database dbhelper;
+
     private SQLiteDatabase db;
+    private FirebaseStorage storage;
+    private StorageReference storageRef;
 
     public AddProfileActivity() {
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_infor);
-
+        storage = FirebaseStorage.getInstance();
+        storageRef = storage.getReference();
         editTextUserName = findViewById(R.id.editTextNameAdd);
         editTextPhoneNumber = findViewById(R.id.editTextPhoneAdd);
         editTextAddress = findViewById(R.id.editTextAddressAdd);
         circleImageAvatar = findViewById(R.id.circleImageView);
         buttonSave = findViewById(R.id.btnSave);
-        dbhelper = new Database(this);
-        db = dbhelper.getWritableDatabase();
+//        dbhelper = new Database(this);
+//        db = dbhelper.getWritableDatabase();
 
         checkPermissions();
         initialize();
@@ -310,11 +325,13 @@ public class AddProfileActivity extends AppCompatActivity {
                 requestManageExternalStoragePermission();
             }
         } else {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+                    ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 requestStoragePermission();
             }
         }
     }
+
 
     private void requestManageExternalStoragePermission() {
         Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
@@ -354,11 +371,8 @@ public class AddProfileActivity extends AppCompatActivity {
 
     public void initialize() {
         circleImageAvatar.setOnClickListener(v -> openImageChooser());
-
         buttonSave.setOnClickListener(v -> {
-            saveUserInfo();
-            Intent intent = new Intent(AddProfileActivity.this, MainActivity.class);
-            startActivity(intent);
+            saveUserData();
         });
     }
 
@@ -369,79 +383,179 @@ public class AddProfileActivity extends AppCompatActivity {
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
 
+//    public void loadImageFromFirebase(String encodedEmail) {
+//        // Lấy URL của ảnh từ cơ sở dữ liệu Firebase Realtime Database hoặc Cloud Firestore
+//        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("users").child(encodedEmail).child("avatar");
+//        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                String imageUrl = dataSnapshot.getValue(String.class);
+//                // Sử dụng URL này để tải ảnh về và hiển thị nó
+//                Glide.with(AddProfileActivity.this)
+//                        .load(imageUrl)
+//                        .into(circleImageAvatar);
+//            }
+//
+//    @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                // Xử lý khi có lỗi xảy ra
+//                Toast.makeText(AddProfileActivity.this, "Lỗi khi tải ảnh từ Firebase: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+
     @Override
+
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri imageUri = data.getData();
             circleImageAvatar.setImageURI(imageUri);
-            avatarFilePath = imageUri.toString();
+            uploadImageToFirebase(imageUri);
         }
     }
 
-    public void saveUserInfo() {
+    private String imageUrl;
+
+    public void uploadImageToFirebase(Uri imageUri) {
+        // Tạo một tham chiếu đến node trong Firebase Storage
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("avatars/" + UUID.randomUUID().toString());
+
+        // Tải ảnh lên Firebase Storage
+        storageRef.putFile(imageUri)
+                .addOnSuccessListener(taskSnapshot -> {
+                    // Lấy URL của ảnh đã tải lên
+                    storageRef.getDownloadUrl().addOnSuccessListener(uri -> {
+                        imageUrl = uri.toString();
+                        Toast.makeText(this, "Ảnh đã được tải lên thành công. Hãy nhấn lưu để hoàn tất.", Toast.LENGTH_SHORT).show();
+                    });
+                })
+                .addOnFailureListener(e -> {
+                    // Xử lý khi có lỗi xảy ra
+                    Toast.makeText(this, "Lỗi khi tải ảnh lên Firebase Storage: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    public void saveUserData() {
         String userName = editTextUserName.getText().toString();
         String phoneNumber = editTextPhoneNumber.getText().toString();
         String address = editTextAddress.getText().toString();
-        String userEmail = getCurrentUserEmail();
-        saveUserWithAvatar(userEmail, userName, phoneNumber, address, avatarFilePath);
-    }
 
-    public void saveUserWithAvatar(String email, String userName, String phoneNumber, String address, String avatarUri) {
-        ContentValues values = new ContentValues();
-        values.put("username", userName);
-        values.put("phone_number", phoneNumber);
-        values.put("address", address);
 
-        byte[] avatarData = getBytesFromImage(avatarUri);
-        if (avatarData != null) {
-            values.put("avatar_url", avatarData);
-        }
+        // Tạo một đối tượng User mới và cập nhật trường avatarUr
+        if((userName.isEmpty() || phoneNumber.isEmpty() || address.isEmpty() || imageUrl == null )){
+            Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+        }else{
+            String userEmail = getCurrentUserEmail();
+            String encodedEmail = userEmail.replace(".", ",");
 
-        int rowsAffected = db.update("Users", values, "email=?", new String[]{email});
-        if (rowsAffected > 0) {
-            Log.i("DatabaseHelper", "User updated successfully");
-        } else {
-            Log.e("DatabaseHelper", "Failed to update user");
-        }
-        db.close();
-    }
+            DatabaseReference userRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("users").child(encodedEmail);
 
-    private byte[] getBytesFromImage(String uriString) {
-        InputStream inputStream = null;
-        ByteArrayOutputStream outputStream = null;
-        try {
-            Uri imageUri = Uri.parse(uriString);
-            inputStream = getContentResolver().openInputStream(imageUri);
-            outputStream = new ByteArrayOutputStream();
-            byte[] buffer = new byte[1024];
-            int bytesRead;
-            while ((bytesRead = inputStream.read(buffer)) != -1) {
-                outputStream.write(buffer, 0, bytesRead);
-            }
-            return outputStream.toByteArray();
-        } catch (FileNotFoundException e) {
-            Log.e("DatabaseManager", "File not found", e);
-        } catch (IOException e) {
-            Log.e("DatabaseManager", "Failed to read file", e);
-        } finally {
-            try {
-                if (inputStream != null) {
-                    inputStream.close();
+            userRef.child("username").setValue(userName).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Log.d("FirebaseDatabase", "Username saved successfully");
+                } else {
+                    Log.e("FirebaseDatabase", "Failed to save username", task.getException());
                 }
-                if (outputStream != null) {
-                    outputStream.close();
+            });
+
+            userRef.child("phone").setValue(phoneNumber).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Log.d("FirebaseDatabase", "Phone number saved successfully");
+                } else {
+                    Log.e("FirebaseDatabase", "Failed to save phone number", task.getException());
                 }
-            } catch (IOException e) {
-                Log.e("DatabaseManager", "Failed to close streams", e);
-            }
-        }
-        return null;
+            });
+
+            userRef.child("address").setValue(address).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Log.d("FirebaseDatabase", "Address saved successfully");
+                } else {
+                    Log.e("FirebaseDatabase", "Failed to save address", task.getException());
+                }
+            });
+            userRef.child("avatar").setValue(imageUrl).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                   // loadImageFromFirebase(encodedEmail);
+                    Toast.makeText(this, "Thông tin đã được lưu thành công", Toast.LENGTH_SHORT).show();
+                } else {
+                    Log.e("FirebaseDatabase", "Failed to save avatar", task.getException());
+                }
+            });
+            Intent intent = new Intent(AddProfileActivity.this, MainActivity.class);
+            startActivity(intent);
     }
+    }
+
+    // Gọi phương thức này khi nhấn nút lưu
+
+
+
+//
+//    public void saveUserInfo() {
+//        String userName = editTextUserName.getText().toString();
+//        String phoneNumber = editTextPhoneNumber.getText().toString();
+//        String address = editTextAddress.getText().toString();
+//        String userEmail = getCurrentUserEmail();
+//        saveUserWithAvatar(userEmail, userName, phoneNumber, address, avatarFilePath);
+//    }
+
+//    public void saveUserWithAvatar(String email, String userName, String phoneNumber, String address, String avatarUri) {
+//        ContentValues values = new ContentValues();
+//        values.put("username", userName);
+//        values.put("phone_number", phoneNumber);
+//        values.put("address", address);
+//
+//        byte[] avatarData = getBytesFromImage(avatarUri);
+//        if (avatarData != null) {
+//            values.put("avatar_url", avatarData);
+//        }
+//
+//        int rowsAffected = db.update("Users", values, "email=?", new String[]{email});
+//        if (rowsAffected > 0) {
+//            Log.i("DatabaseHelper", "User updated successfully");
+//        } else {
+//            Log.e("DatabaseHelper", "Failed to update user");
+//        }
+//        db.close();
+//    }
+//
+//    private byte[] getBytesFromImage(String uriString) {
+//        InputStream inputStream = null;
+//        ByteArrayOutputStream outputStream = null;
+//        try {
+//            Uri imageUri = Uri.parse(uriString);
+//            inputStream = getContentResolver().openInputStream(imageUri);
+//            outputStream = new ByteArrayOutputStream();
+//            byte[] buffer = new byte[1024];
+//            int bytesRead;
+//            while ((bytesRead = inputStream.read(buffer)) != -1) {
+//                outputStream.write(buffer, 0, bytesRead);
+//            }
+//            return outputStream.toByteArray();
+//        } catch (FileNotFoundException e) {
+//            Log.e("DatabaseManager", "File not found", e);
+//        } catch (IOException e) {
+//            Log.e("DatabaseManager", "Failed to read file", e);
+//        } finally {
+//            try {
+//                if (inputStream != null) {
+//                    inputStream.close();
+//                }
+//                if (outputStream != null) {
+//                    outputStream.close();
+//                }
+//            } catch (IOException e) {
+//                Log.e("DatabaseManager", "Failed to close streams", e);
+//            }
+//        }
+//        return null;
+//   }
 
     public String getCurrentUserEmail() {
         SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
         return sharedPreferences.getString("user_email", null);
     }
 }
+
 

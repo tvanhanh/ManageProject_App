@@ -21,7 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.do_an_cs3.Database.DatabaseManager;
+
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.MainActivity;
@@ -42,7 +42,7 @@ public class EditAccountActivity extends AppCompatActivity {
     private String avatarUrl;
     private EditText editTextDepartment;
     private EditText editTextReferralCode;
-    private DatabaseManager dbManager;
+   // private DatabaseManager dbManager;
     private Button update;
     private CircleImageView circleImageAvatar;
     private String avatarFilePath;
@@ -68,7 +68,7 @@ public class EditAccountActivity extends AppCompatActivity {
         editTextDepartment = findViewById(R.id.editTextDepartment);
         editTextReferralCode = findViewById(R.id.editTextReferral);
         addProfileActivity = new AddProfileActivity();
-        dbManager = new DatabaseManager(this);
+      //  dbManager = new DatabaseManager(this);
 
         buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,29 +91,29 @@ public class EditAccountActivity extends AppCompatActivity {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = editTextName.getText().toString();
-                String phone = editTextPhone.getText().toString();
-                String address = editTextAddress.getText().toString();
-                String role = editTextRole.getText().toString();
-                String department = editTextDepartment.getText().toString();
-                String referralCode = editTextReferralCode.getText().toString();
-                String email = getCurrentUserEmail();
-                byte[] avatarData = dbManager.getBytesFromImage(Uri.parse(avatarUrl));
-
-                boolean isSuccess = dbManager.updateUserInfo(email, name, phone, address, role, department, referralCode,avatarData);
-                Log.d("AvatarData", "Length: " + (avatarData != null ? avatarData.length : 0));
-
-                if(isSuccess){
-                    Intent intent = new Intent(EditAccountActivity.this, SettingActivity.class);
-
-                    startActivity(intent);
-                    Toast.makeText(EditAccountActivity.this,"Thông tin đã được câp nhật",Toast.LENGTH_SHORT).show();
-
-                }
-                else {
-                    Toast.makeText(EditAccountActivity.this,"Câp nhật thất bại",Toast.LENGTH_SHORT).show();
-                }
-            }
+//                String name = editTextName.getText().toString();
+//                String phone = editTextPhone.getText().toString();
+//                String address = editTextAddress.getText().toString();
+//                String role = editTextRole.getText().toString();
+//                String department = editTextDepartment.getText().toString();
+//                String referralCode = editTextReferralCode.getText().toString();
+//                String email = getCurrentUserEmail();
+//                byte[] avatarData = dbManager.getBytesFromImage(Uri.parse(avatarUrl));
+//
+//                boolean isSuccess = dbManager.updateUserInfo(email, name, phone, address, role, department, referralCode,avatarData);
+//                Log.d("AvatarData", "Length: " + (avatarData != null ? avatarData.length : 0));
+//
+//                if(isSuccess){
+//                    Intent intent = new Intent(EditAccountActivity.this, SettingActivity.class);
+//
+//                    startActivity(intent);
+//                    Toast.makeText(EditAccountActivity.this,"Thông tin đã được câp nhật",Toast.LENGTH_SHORT).show();
+//
+//                }
+//                else {
+//                    Toast.makeText(EditAccountActivity.this,"Câp nhật thất bại",Toast.LENGTH_SHORT).show();
+//                }
+           }
         });
 
         circleImageView .setOnClickListener(new View.OnClickListener() {
@@ -152,21 +152,21 @@ displayUserInfo();
 
 
     private void displayUserInfo() {
-        User user = dbManager.getUserInfo(getCurrentUserEmail());
-        if (user != null) {
-            editTextName.setText(user.getUserName());
-            editTextPhone.setText(user.getPhoneNumber());
-            editTextAddress.setText(user.getAddress());
-            editTextRole.setText(user.getRole());
-            editTextDepartment.setText(String.valueOf(user.getDeparment())); // Chuyển đổi department_id thành String
-            editTextReferralCode.setText(user.getReferralCode());
-
-            if (user.getAvatar() != null) {
-                byte[] avatarBytes = Base64.decode(user.getAvatar(), Base64.DEFAULT);
-                Bitmap avatarBitmap = BitmapFactory.decodeByteArray(avatarBytes, 0, avatarBytes.length);
-                circleImageView.setImageBitmap(avatarBitmap);
-            }
-        }
+//        User user = dbManager.getUserInfo(getCurrentUserEmail());
+//        if (user != null) {
+//            editTextName.setText(user.getUserName());
+//            editTextPhone.setText(user.getPhoneNumber());
+//            editTextAddress.setText(user.getAddress());
+//            editTextRole.setText(user.getRole());
+//            editTextDepartment.setText(String.valueOf(user.getDeparment())); // Chuyển đổi department_id thành String
+//            editTextReferralCode.setText(user.getReferralCode());
+//
+//            if (user.getAvatar() != null) {
+//                byte[] avatarBytes = Base64.decode(user.getAvatar(), Base64.DEFAULT);
+//                Bitmap avatarBitmap = BitmapFactory.decodeByteArray(avatarBytes, 0, avatarBytes.length);
+//                circleImageView.setImageBitmap(avatarBitmap);
+//            }
+//        }
     }
 
     private String getCurrentUserEmail() {

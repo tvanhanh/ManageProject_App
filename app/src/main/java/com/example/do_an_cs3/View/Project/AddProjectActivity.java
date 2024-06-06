@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -21,14 +22,22 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.do_an_cs3.Adapter.TaskAdapter;
-import com.example.do_an_cs3.Database.DatabaseManager;
+import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
+
 import com.example.do_an_cs3.LoadingDialogFragment;
+import com.example.do_an_cs3.MemoryData;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.MainActivity;
+import com.example.do_an_cs3.View.Users.LoginActivity;
 import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.example.do_an_cs3.View.SettingActivity;
+import com.example.do_an_cs3.View.Users.RegisterActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -54,7 +63,7 @@ public class AddProjectActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigation);
         MenuItem jobaddMenuItem = bottomNavigationView.getMenu().findItem(R.id.add_job);
         jobaddMenuItem.setChecked(true);
-        DatabaseManager dbManager = new DatabaseManager(this);
+       // DatabaseManager dbManager = new DatabaseManager(this);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -94,7 +103,7 @@ public class AddProjectActivity extends AppCompatActivity {
             float percent_complete = 0;
             String email = getCurrentUserEmail();
             int department = 0;
-
+            String encodedEmail = email.replace(".", ",");
 
             if (name.isEmpty() || description.isEmpty() || deadline.isEmpty()) {
                 Toast.makeText(this, "Vui lòng kiểm tra lại thông tin", Toast.LENGTH_SHORT).show();
@@ -102,18 +111,59 @@ public class AddProjectActivity extends AppCompatActivity {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 loadingDialog = LoadingDialogFragment.newInstance();
                 loadingDialog.show(fragmentManager, "loading");
-                long insertedId = dbManager.addProject(name, description, deadline,creationTime, status,views,percent_complete,email,department);
-                loadingDialog.dismiss();
-                if (insertedId != -1) {
-                    Toast.makeText(this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
-                    //.notifyDataSetChanged();
-                    Intent intent1 = new Intent(AddProjectActivity.this, MainActivity.class);
-                    startActivity(intent1);
-                } else {
-                    Toast.makeText(this, "Lỗi " + name, Toast.LENGTH_SHORT).show();
-                }
+                DatabaseReference projectsRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("projects");
+                DatabaseReference newProjectRef = projectsRef.push();
+                String projectId = newProjectRef.getKey();
+                projectsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.child("projects").hasChild(projectId)) {
+                            Toast.makeText(AddProjectActivity.this, "Projects already exists", Toast.LENGTH_SHORT).show();
+                        } else {
+                            newProjectRef.child("creationTime").setValue(creationTime);
+                            newProjectRef.child("deadline").setValue(deadline);
+                            newProjectRef.child("department").setValue(department);
+                            newProjectRef.child("email").setValue(email);
+                            newProjectRef.child("description").setValue(description);
+                            newProjectRef.child("percentCompleted").setValue(percent_complete);
+                            newProjectRef.child("id").setValue(projectId);
+                            newProjectRef.child("name").setValue(name);
+                            newProjectRef.child("deadline").setValue(deadline);
+                            newProjectRef.child("status").setValue(status);
+                            newProjectRef.child("views").setValue(views);
+                            Toast.makeText(AddProjectActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(AddProjectActivity.this, MainActivity.class);
+                            intent.putExtra("email", email);
+                            intent.putExtra("emailEncoded", encodedEmail);
+                            intent.putExtra("password", email);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Log.e("Firebase", "Database error: " + error.getMessage());
+                    }
+                });
+                // }
             }
         });
+
+
+
+//                long insertedId = dbManager.addProject(name, description, deadline,creationTime, status,views,percent_complete,email,department);
+//                loadingDialog.dismiss();
+//                if (insertedId != -1) {
+//                    Toast.makeText(this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
+//                    //.notifyDataSetChanged();
+//                    Intent intent1 = new Intent(AddProjectActivity.this, MainActivity.class);
+//                    startActivity(intent1);
+//                } else {
+//                    Toast.makeText(this, "Lỗi " + name, Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
         Button buttonAddTime = findViewById(R.id.buttonaddTime);
         buttonAddTime.setOnClickListener(new View.OnClickListener() {

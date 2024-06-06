@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.do_an_cs3.app-mergeDebugResources-44:/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "com.example.do_an_cs3.app-mergeDebugResources-52:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PC ASUS\\.gradle\\caches\\transforms-3\\0cc58336eee0550850dee7ad7eb9a9ee\\transformed\\appcompat-1.6.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\PC ASUS\\.gradle\\caches\\transforms-3\\04bc3d77ec8874ee0f40515b9c4544a8\\transformed\\appcompat-1.6.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

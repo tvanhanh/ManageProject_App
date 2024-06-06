@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.do_an_cs3.Database.DatabaseManager;
+
 import com.example.do_an_cs3.Model.Task;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
@@ -28,7 +28,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
 
     private List<Task> tasks;
     private Context mContext;
-    private DatabaseManager dbManager;
+
     private User currentUser;
     private ProjectAdapter projectAdapter;
     private int selectedPosition = -1;
@@ -42,8 +42,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     public TaskAdapter(List<Task> tasks, Context mContext) {
         this.tasks = tasks;
         this.mContext = mContext;
-        this.dbManager = new DatabaseManager(mContext);
-        this.currentUser = dbManager.getUserInfo(getCurrentUserEmail());
+//        this.dbManager = new DatabaseManager(mContext);
+//        this.currentUser = dbManager.getUserInfo(getCurrentUserEmail());
         this.projectAdapter = new ProjectAdapter();
     }
 
@@ -91,7 +91,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                 // Log thông tin trạng thái được cập nhật
                 Log.d("DEBUG", "Updating status to: " + status);
                 // Thực hiện cập nhật trạng thái trong cơ sở dữ liệu
-                boolean success = dbManager.updateStatusTask(status, task.getId());
+             boolean success = true;
+                     //dbManager.updateStatusTask(status, task.getId());
 
                 if (success) {
                     // Cập nhật trạng thái của task nếu cập nhật trong cơ sở dữ liệu thành công
@@ -102,7 +103,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                         Date currentUpdate = new Date();
                         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy, HH:mm");
                         String formattedDate = dateFormat.format(currentUpdate);
-                        dbManager.updateTimeCompleteTask(formattedDate, task.getId());
+                        //dbManager.updateTimeCompleteTask(formattedDate, task.getId());
                         task.setTimeComplete(formattedDate); // Cập nhật trong đối tượng Task
                         holder.timeUpdate.setText("Xong vào: " + task.getTimeComplete());
 

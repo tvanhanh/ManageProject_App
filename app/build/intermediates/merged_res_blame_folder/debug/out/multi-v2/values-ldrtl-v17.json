@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.do_an_cs3.app-mergeDebugResources-44:/values-ldrtl-v17/values-ldrtl-v17.xml",
+            "outputFile": "com.example.do_an_cs3.app-mergeDebugResources-52:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PC ASUS\\.gradle\\caches\\transforms-3\\fca63faf14e3c19556a647de5838948d\\transformed\\material-1.11.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "source": "C:\\Users\\PC ASUS\\.gradle\\caches\\transforms-3\\b2547da85573097f57869217d90380e8\\transformed\\material-1.11.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

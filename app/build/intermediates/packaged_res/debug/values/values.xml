@@ -39,6 +39,11 @@
     <string name="editAccount">EditAccountActivity</string>
     <string name="expiring_soon">SẮP HẾT HẠN</string>
     <string name="first_fragment_label">First Fragment</string>
+    <string name="gcm_defaultSenderId" translatable="false">586335084980</string>
+    <string name="google_api_key" translatable="false">AIzaSyDdyopTdUJZ3QoRyUjbRDKY8euB25EFpbI</string>
+    <string name="google_app_id" translatable="false">1:586335084980:android:ee631bf867c04c060312e1</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDdyopTdUJZ3QoRyUjbRDKY8euB25EFpbI</string>
+    <string name="google_storage_bucket" translatable="false">manageproject-7a9ac.appspot.com</string>
     <string name="hintEmail">Email</string>
     <string name="hintPassword">Mật khẩu</string>
     <string name="important">QUAN TRỌNG</string>
@@ -55,6 +60,7 @@
     <string name="personnal">PersonnalActivity</string>
     <string name="previous">Previous</string>
     <string name="processingjob">CHỜ DUYỆT</string>
+    <string name="project_id" translatable="false">manageproject-7a9ac</string>
     <string name="report">ReportActivity</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="setting">SettingActivity</string>

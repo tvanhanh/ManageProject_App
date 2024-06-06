@@ -1,12 +1,18 @@
 package com.example.do_an_cs3.Model;
 
 public class Project {
-    private int id;
+    private String id;
     private String name;
     private String description;
     private String deadline;
 
     private String creationTime;
+    private int views;
+
+    private int percentCompleted;
+    private String email;
+    private String status;
+    private int department;
 
     public Project(String name, String description, String deadline, String creationTime, int views, int percentCompleted, String status) {
         this.name = name;
@@ -15,6 +21,16 @@ public class Project {
         this.creationTime = creationTime;
         this.views = views;
         this.percentCompleted = percentCompleted;
+        this.status = status;
+    }
+
+    public Project(String id, String name, String description, String deadline, String creationTime, String email, String status) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.deadline = deadline;
+        this.creationTime = creationTime;
+        this.email = email;
         this.status = status;
     }
 
@@ -34,12 +50,7 @@ public class Project {
         this.creationTime = creationTime;
     }
 
-    private int views;
 
-    private int percentCompleted;
-    private String email;
-    private String status;
-    private int department;
 
     // Constructors
 
@@ -61,7 +72,7 @@ public class Project {
         this.percentCompleted = percentCompleted;
     }
 
-    public Project(int id, String name, String description, String deadline, String creationTime, int views, int percentCompleted, String email, String status, int department) {
+    public Project(String id, String name, String description, String deadline, String creationTime, int views, int percentCompleted, String email, String status, int department) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -77,11 +88,11 @@ public class Project {
     public Project() {
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

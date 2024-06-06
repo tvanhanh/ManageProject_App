@@ -18,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.do_an_cs3.Adapter.TaskAdapter;
-import com.example.do_an_cs3.Database.DatabaseManager;
 import com.example.do_an_cs3.LoadingDialogFragment;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.Project.DetailProjectActivity;
@@ -46,7 +45,7 @@ public class AddTaskActivity extends AppCompatActivity {
         descriptionTask = findViewById(R.id.textInputEditTextDescription);
         deadlineTime = findViewById(R.id.textViewDate);
         nextButton = findViewById(R.id.butonThenext);
-        DatabaseManager dbManager = new DatabaseManager(this);
+     //   DatabaseManager dbManager = new DatabaseManager(this);
 
         nextButton.setOnClickListener(v -> {
             String name = nameTask.getText().toString();
@@ -65,7 +64,8 @@ public class AddTaskActivity extends AppCompatActivity {
                 loadingDialog.show(fragmentManager, "loading");
 
                 new Thread(() -> {
-                    long insertedId = dbManager.addTask(name, description, deadline, status, email, idProject);
+                    long insertedId = 1;
+                           // dbManager.addTask(name, description, deadline, status, email, idProject);
                     runOnUiThread(() -> {
                         loadingDialog.dismiss();
                         if (insertedId != -1) {

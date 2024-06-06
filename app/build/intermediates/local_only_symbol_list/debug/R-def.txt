@@ -360,6 +360,11 @@ string document
 string editAccount
 string expiring_soon
 string first_fragment_label
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
 string hintEmail
 string hintPassword
 string important
@@ -374,6 +379,7 @@ string pendingjob
 string personnal
 string previous
 string processingjob
+string project_id
 string report
 string second_fragment_label
 string setting

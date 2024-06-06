@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 import com.example.do_an_cs3.Adapter.ProjectAdapter;
 import com.example.do_an_cs3.Adapter.TaskAdapter;
-import com.example.do_an_cs3.Database.DatabaseManager;
+
 import com.example.do_an_cs3.LoadingDialogFragment;
 import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.R;
@@ -45,7 +45,7 @@ public class EditProjectActivity extends AppCompatActivity {
     private TextView deadlineTime;
     private LoadingDialogFragment loadingDialog;
     private int idProject;
-    private DatabaseManager dbManager;
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -65,14 +65,15 @@ public class EditProjectActivity extends AppCompatActivity {
             return;  // Ngăn chặn mã tiếp tục thực thi nếu không có idProject
         }
 
-        dbManager = new DatabaseManager(this);
+        // dbManager = new DatabaseManager(this);
 
         nameProject = findViewById(R.id.editAddNameProject);
         descriptionProject = findViewById(R.id.textInputEditTextDescription);
         deadlineTime = findViewById(R.id.textViewDate);
         Date currentCreation = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy, HH:mm");
-        Project project = dbManager.getInfoProject(idProject);
+        //Project project = dbManager.getInfoProject(idProject);
+        Project project = new Project();
         nameProject.setText(project.getName());
         descriptionProject.setText(project.getDescription());
         deadlineTime.setText(project.getDeadline());
@@ -89,18 +90,18 @@ public class EditProjectActivity extends AppCompatActivity {
             if (name.isEmpty() || description.isEmpty() || deadline.isEmpty()) {
                 Toast.makeText(this, "Vui lòng kiểm tra lại thông tin", Toast.LENGTH_SHORT).show();
             } else {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                loadingDialog = LoadingDialogFragment.newInstance();
-                loadingDialog.show(fragmentManager, "loading");
-                boolean updated = dbManager.updateProject(name, description, deadline, creationTime, status, views, idProject);
-                loadingDialog.dismiss();
-                if (updated) {
-                    Toast.makeText(this, "Cập nhật thành công dự án " + name, Toast.LENGTH_SHORT).show();
-                    Intent intent1 = new Intent(EditProjectActivity.this, MainActivity.class);
-                    startActivity(intent1);
-                } else {
-                    Toast.makeText(this, "Cập nhật " + name+"thất bại", Toast.LENGTH_SHORT).show();
-                }
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                loadingDialog = LoadingDialogFragment.newInstance();
+//                loadingDialog.show(fragmentManager, "loading");
+//                boolean updated = dbManager.updateProject(name, description, deadline, creationTime, status, views, idProject);
+//                loadingDialog.dismiss();
+//                if (updated) {
+//                    Toast.makeText(this, "Cập nhật thành công dự án " + name, Toast.LENGTH_SHORT).show();
+//                    Intent intent1 = new Intent(EditProjectActivity.this, MainActivity.class);
+//                    startActivity(intent1);
+//                } else {
+//                    Toast.makeText(this, "Cập nhật " + name+"thất bại", Toast.LENGTH_SHORT).show();
+//                }
             }
         });
 
