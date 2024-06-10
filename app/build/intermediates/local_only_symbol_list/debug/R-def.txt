@@ -105,6 +105,7 @@ drawable search
 drawable share
 drawable sharej
 drawable star
+drawable threedots
 drawable tochuc
 drawable user
 drawable useravatar
@@ -131,6 +132,8 @@ id TimeUpdateTask
 id accountAvt
 id action_FirstFragment_to_SecondFragment
 id action_SecondFragment_to_FirstFragment
+id action_delete
+id action_edit
 id addTag
 id addTask
 id add_job
@@ -153,6 +156,7 @@ id btnSave
 id btnShareTask
 id btnViewMore
 id btnback
+id butonAdd
 id butonThenext
 id button
 id buttonComback
@@ -177,8 +181,10 @@ id circleImageViewComment
 id circleImageViewMain
 id circleImageViewWork
 id comeback
+id comeplete
 id contentTask
 id deparment_name
+id department_reycleView
 id discussionContainer
 id editAddNameJob
 id editAddNameProject
@@ -237,6 +243,7 @@ id nav_graph
 id nav_graph2
 id newAccount
 id number
+id options
 id ownone
 id owntwo
 id personnal
@@ -256,6 +263,7 @@ id tab_layout
 id text
 id textInputEditTextDescription
 id textLogin
+id textOption
 id textRegister
 id textView
 id textView10
@@ -276,6 +284,7 @@ id textView6
 id textView7
 id textView8
 id textViewDate
+id text_department_name
 id textforgotpass
 id timeUpdateTask
 id tvAccountInfo
@@ -339,11 +348,13 @@ layout fragment_personnal
 layout fragment_processing_job
 layout fragment_updatenew
 layout item_department
+layout item_listdepartment
 layout item_project
 layout item_task
 layout item_user
 layout item_user_follow
 menu mune_buttom_navigation
+menu popup_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap logo

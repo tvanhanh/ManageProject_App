@@ -6,6 +6,9 @@ public class User {
     private String email;
     private String userName;
 
+    public User(String name, String phone, String address, String role, String department, String referralCode, String avatarUrl) {
+    }
+
     public int getTotalProjects() {
         return totalProjects;
     }

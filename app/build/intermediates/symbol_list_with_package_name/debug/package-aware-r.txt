@@ -3257,6 +3257,7 @@ drawable share
 drawable sharej
 drawable star
 drawable test_level_drawable
+drawable threedots
 drawable tochuc
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3345,7 +3346,9 @@ id action_bar_subtitle
 id action_bar_title
 id action_container
 id action_context_bar
+id action_delete
 id action_divider
+id action_edit
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -3408,6 +3411,7 @@ id btnSave
 id btnShareTask
 id btnViewMore
 id btnback
+id butonAdd
 id butonThenext
 id button
 id buttonComback
@@ -3455,6 +3459,7 @@ id clockwise
 id closest
 id collapseActionView
 id comeback
+id comeplete
 id compress
 id confirm_button
 id constraint
@@ -3480,6 +3485,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id deparment_name
+id department_reycleView
 id dependency_ordering
 id design_bottom_sheet
 id design_menu_item_action_area
@@ -3734,6 +3740,7 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
+id options
 id outline
 id outward
 id overshoot
@@ -3863,6 +3870,7 @@ id text2
 id textEnd
 id textInputEditTextDescription
 id textLogin
+id textOption
 id textRegister
 id textSpacerNoButtons
 id textSpacerNoTitle
@@ -3887,6 +3895,7 @@ id textView6
 id textView7
 id textView8
 id textViewDate
+id text_department_name
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -4132,6 +4141,7 @@ layout fragment_personnal
 layout fragment_processing_job
 layout fragment_updatenew
 layout item_department
+layout item_listdepartment
 layout item_project
 layout item_task
 layout item_user
@@ -4199,6 +4209,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout view_anychart
 menu mune_buttom_navigation
+menu popup_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap logo

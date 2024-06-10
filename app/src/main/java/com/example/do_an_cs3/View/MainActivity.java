@@ -59,6 +59,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MainActivity extends AppCompatActivity {
     private TabLayout mTablayout;
     private ViewPager mViewPager;
+    private String encodedEmail;
     public int daDaThucHien;
     private BottomNavigationView bottomNavigationView;
     private RecyclerView rcv_deparment;
@@ -67,37 +68,40 @@ public class MainActivity extends AppCompatActivity {
     private CircleImageView circleImageView;
     private TextView tvUserName;
     private TextView tvPosision;
+    private DatabaseReference userRef;
 
     public MainActivity() {
     }
 
     //private Database dbhelper;
-   // private DatabaseManager dbManager;
-   private DatabaseFirebaseManager dbFBManager;
+    // private DatabaseManager dbManager;
+    private DatabaseFirebaseManager dbFBManager;
     private AnyChartView anyChartView;
     private static final int ADD_PROJECT_REQUEST_CODE = 1;
     private String lastLoggedInEmail;
     private String[] statusTask = {"Dự án mới", "Đang thực hiện", "Chờ duyệt", "Hoàn thành", "Tạm dừng"};
     //private int[] quantityProjects = new int[statusTask.length];
     private int[] quantityTasks = new int[statusTask.length];
+
     public String getCurrentUserEmail() {
         SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
         return sharedPreferences.getString("user_email", null);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         anyChartView = findViewById(R.id.anyChartView);
 
-      //  dbhelper = new Database(this);
+        //  dbhelper = new Database(this);
         //dbManager = new DatabaseManager(this);
         dbFBManager = new DatabaseFirebaseManager();
         mTablayout = findViewById(R.id.tab_layout);
         mViewPager = findViewById(R.id.viewpager_2);
 
         //thống kê
-        for (int i = 0; i <5 ;i++){
+        for (int i = 0; i < 5; i++) {
             //quantityTasks[i]=dbManager.getTotalOngoingProjects(getCurrentUserEmail(),statusTask[i]);
         }
         ViewPagerAdapterHome viewPagerAdapter = new ViewPagerAdapterHome(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
@@ -146,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         rcv_deparment.setLayoutManager(linearLayoutManager);
 
         List<Deparments> deparmentsList = createDummyData();
-        deparmentAdapter = new DepartmentAdapter(deparmentsList);
+        deparmentAdapter = new DepartmentAdapter(deparmentsList, this);
         rcv_deparment.setAdapter(deparmentAdapter);
 
         WarningButton = findViewById(R.id.buttonWarning);
@@ -157,13 +161,14 @@ public class MainActivity extends AppCompatActivity {
         setupChartView();
         displayUserInfo();
     }
+
     private void setupChartView() {
         Pie pie = AnyChart.pie();
         List<DataEntry> dataEntries = new ArrayList<>();
 
         for (int i = 0; i < statusTask.length; i++) {
             String quatityTask = String.valueOf(quantityTasks[i]);
-            dataEntries.add(new ValueDataEntry( quatityTask +" "+ statusTask[i], quantityTasks[i]));
+            dataEntries.add(new ValueDataEntry(quatityTask + " " + statusTask[i], quantityTasks[i]));
         }
         pie.data(dataEntries);
         pie.legend()
@@ -198,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 
-//    public void displayUserInfo() {
+    //    public void displayUserInfo() {
 //        User user = dbManager.getUserInfo(getCurrentUserEmail());
 //        if (user != null) {
 //            tvUserName.setText(user.getUserName());
@@ -210,47 +215,52 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        }
 //    }
-public void displayUserInfo() {
-    String userEmail = getCurrentUserEmail();
-    String encodedEmail = userEmail.replace(".", ",");
-    DatabaseReference userRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("users").child(encodedEmail);
+    public void displayUserInfo() {
+        String userEmail = getCurrentUserEmail();
+        if (userEmail != null) {
+            encodedEmail = userEmail.replace(".", ",");
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+            userRef = databaseReference.child("users").child(encodedEmail);
 
-    // Sử dụng ValueEventListener để lấy dữ liệu từ Firebase
-    userRef.addListenerForSingleValueEvent(new ValueEventListener() {
-        @Override
-        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-            // Kiểm tra xem dữ liệu có tồn tại hay không
-            if (dataSnapshot.exists()) {
-                // Lấy dữ liệu từ DataSnapshot và hiển thị nó trong TextView
-                String userName = dataSnapshot.child("username").getValue(String.class);
-                String position = dataSnapshot.child("position").getValue(String.class);
-                dbFBManager.loadImageFromFirebase(encodedEmail, MainActivity.this,circleImageView);
-                // Hiển thị dữ liệu trong TextView
-                tvUserName.setText(userName);
-                tvPosision.setText(position);
-            } else {
-                // Xử lý trường hợp không có dữ liệu
-                Toast.makeText(MainActivity.this, "Không tìm thấy thông tin người dùng", Toast.LENGTH_SHORT).show();
-            }
-        }
+            // Sử dụng ValueEventListener để lấy dữ liệu từ Firebase
+            userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    // Kiểm tra xem dữ liệu có tồn tại hay không
+                    if (dataSnapshot.exists()) {
+                        // Lấy dữ liệu từ DataSnapshot và hiển thị nó trong TextView
+                        String userName = dataSnapshot.child("userName").getValue(String.class);
+                        String position = dataSnapshot.child("position").getValue(String.class);
+                        dbFBManager.loadImageFromFirebase(encodedEmail, MainActivity.this, circleImageView);
+                        // Hiển thị dữ liệu trong TextView
+                        tvUserName.setText(userName);
+                        tvPosision.setText(position);
+                    } else {
+                        // Xử lý trường hợp không có dữ liệu
+                        Toast.makeText(MainActivity.this, "Không tìm thấy thông tin người dùng", Toast.LENGTH_SHORT).show();
+                    }
+                }
 
-        @Override
-        public void onCancelled(@NonNull DatabaseError databaseError) {
-            // Xử lý khi có lỗi xảy ra trong quá trình đọc dữ liệu từ Firebase
-            Log.e("FirebaseDatabase", "Failed to read user data", databaseError.toException());
-            Toast.makeText(MainActivity.this, "Đã xảy ra lỗi khi đọc dữ liệu từ Firebase", Toast.LENGTH_SHORT).show();
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    // Xử lý khi có lỗi xảy ra trong quá trình đọc dữ liệu từ Firebase
+                    Log.e("FirebaseDatabase", "Failed to read user data", databaseError.toException());
+                    Toast.makeText(MainActivity.this, "Đã xảy ra lỗi khi đọc dữ liệu từ Firebase", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else {
+            Toast.makeText(MainActivity.this, "Không tìm thấy email người dùng", Toast.LENGTH_SHORT).show();
         }
-    });
-}
+    }
 
 
 
 
     private List<Deparments> createDummyData() {
         List<Deparments> dummyData = new ArrayList<>();
-        dummyData.add(new Deparments("Department 1", "50%", "10%"));
-        dummyData.add(new Deparments("Department 2", "60%", "20%"));
-        dummyData.add(new Deparments("Department 3", "70%", "30%"));
+//        dummyData.add(new Deparments("Department 1", "50%", "10%"));
+//        dummyData.add(new Deparments("Department 2", "60%", "20%"));
+//        dummyData.add(new Deparments("Department 3", "70%", "30%"));
         return dummyData;
     }
 

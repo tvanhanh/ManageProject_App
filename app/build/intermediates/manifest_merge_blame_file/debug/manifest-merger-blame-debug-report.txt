@@ -9,496 +9,496 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-11-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:5:5-80
-11-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:5:22-77
+11-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:5:5-80
+11-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:5:22-77
 12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-12-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:6:5-81
-12-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:6:22-78
+12-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:6:5-81
+12-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:6:22-78
 13    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
-13-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:7:5-82
-13-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:7:22-79
+13-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:7:5-82
+13-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:7:22-79
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:8:5-66
-14-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:8:22-64
+14-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:8:5-66
+14-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:8:22-64
 15
 16    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 17    <!-- <uses-sdk android:minSdkVersion="21"/> -->
 18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-18-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:23:5-79
-18-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:23:22-76
+18-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:23:5-79
+18-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:23:22-76
 19    <uses-permission android:name="android.permission.WAKE_LOCK" />
-19-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:24:5-68
-19-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:24:22-65
+19-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:24:5-68
+19-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:24:22-65
 20    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-20-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:25:5-79
-20-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:25:22-76
+20-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:25:5-79
+20-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:25:22-76
 21    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
-21-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:26:5-88
-21-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:26:22-85
+21-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:26:5-88
+21-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:26:22-85
 22    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
-22-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:27:5-82
-22-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:27:22-79
+22-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:27:5-82
+22-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:27:22-79
 23    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-23-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:26:5-110
-23-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:26:22-107
+23-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:26:5-110
+23-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:26:22-107
 24
 25    <permission
-25-->[androidx.core:core:1.9.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\47b29ef2dd63ed349cb6838d50c8db1f\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+25-->[androidx.core:core:1.9.0] C:\Users\nhutl\.gradle\caches\transforms-3\47b29ef2dd63ed349cb6838d50c8db1f\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
 26        android:name="com.example.do_an_cs3.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-26-->[androidx.core:core:1.9.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\47b29ef2dd63ed349cb6838d50c8db1f\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+26-->[androidx.core:core:1.9.0] C:\Users\nhutl\.gradle\caches\transforms-3\47b29ef2dd63ed349cb6838d50c8db1f\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
 27        android:protectionLevel="signature" />
-27-->[androidx.core:core:1.9.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\47b29ef2dd63ed349cb6838d50c8db1f\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+27-->[androidx.core:core:1.9.0] C:\Users\nhutl\.gradle\caches\transforms-3\47b29ef2dd63ed349cb6838d50c8db1f\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 28
 29    <uses-permission android:name="com.example.do_an_cs3.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-29-->[androidx.core:core:1.9.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\47b29ef2dd63ed349cb6838d50c8db1f\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-29-->[androidx.core:core:1.9.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\47b29ef2dd63ed349cb6838d50c8db1f\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+29-->[androidx.core:core:1.9.0] C:\Users\nhutl\.gradle\caches\transforms-3\47b29ef2dd63ed349cb6838d50c8db1f\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+29-->[androidx.core:core:1.9.0] C:\Users\nhutl\.gradle\caches\transforms-3\47b29ef2dd63ed349cb6838d50c8db1f\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 30
 31    <application
-31-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:9:5-115:19
+31-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:9:5-115:19
 32        android:name="androidx.multidex.MultiDexApplication"
-32-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:10:9-61
+32-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:10:9-61
 33        android:allowBackup="true"
-33-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:11:9-35
+33-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:11:9-35
 34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-34-->[androidx.core:core:1.9.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\47b29ef2dd63ed349cb6838d50c8db1f\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+34-->[androidx.core:core:1.9.0] C:\Users\nhutl\.gradle\caches\transforms-3\47b29ef2dd63ed349cb6838d50c8db1f\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 35        android:dataExtractionRules="@xml/data_extraction_rules"
-35-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:12:9-65
+35-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:12:9-65
 36        android:debuggable="true"
 37        android:extractNativeLibs="false"
 38        android:fullBackupContent="@xml/backup_rules"
-38-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:13:9-54
+38-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:13:9-54
 39        android:icon="@mipmap/logo"
-39-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:14:9-36
+39-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:14:9-36
 40        android:label="@string/app_name"
-40-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:15:9-41
+40-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:15:9-41
 41        android:roundIcon="@mipmap/logo"
-41-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:16:9-41
+41-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:16:9-41
 42        android:supportsRtl="true"
-42-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:17:9-35
+42-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:17:9-35
 43        android:testOnly="true"
 44        android:theme="@style/Theme.DO_AN_CS3" >
-44-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:18:9-47
+44-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:18:9-47
 45        <activity
-45-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:20:9-22:40
+45-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:20:9-22:40
 46            android:name="com.example.do_an_cs3.View.Project.EditProjectActivity"
-46-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:21:13-61
+46-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:21:13-61
 47            android:exported="false" />
-47-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:22:13-37
+47-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:22:13-37
 48        <activity
-48-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:23:9-25:40
+48-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:23:9-25:40
 49            android:name="com.example.do_an_cs3.Task.AddTaskActivity"
-49-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:24:13-49
+49-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:24:13-49
 50            android:exported="false" />
-50-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:25:13-37
+50-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:25:13-37
 51        <activity
-51-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:26:9-28:40
+51-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:26:9-28:40
 52            android:name="com.example.do_an_cs3.View.Users.AddProfileActivity"
-52-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:27:13-58
+52-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:27:13-58
 53            android:exported="false" />
-53-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:28:13-37
+53-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:28:13-37
 54        <activity
-54-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:29:9-31:40
+54-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:29:9-31:40
 55            android:name="com.example.do_an_cs3.View.Project.DetailProjectActivity"
-55-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:30:13-63
+55-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:30:13-63
 56            android:exported="false" />
-56-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:31:13-37
+56-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:31:13-37
 57        <activity
-57-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:32:9-34:40
+57-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:32:9-34:40
 58            android:name="com.example.do_an_cs3.View.Users.ChooseRoleActivity"
-58-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:33:13-58
+58-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:33:13-58
 59            android:exported="false" />
-59-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:34:13-37
+59-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:34:13-37
 60        <activity
-60-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:35:9-47:20
+60-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:35:9-47:20
 61            android:name="com.example.do_an_cs3.View.MainActivity"
-61-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:36:13-46
+61-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:36:13-46
 62            android:exported="true" >
-62-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:37:13-36
+62-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:37:13-36
 63            <intent-filter>
-63-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:38:13-42:29
+63-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:38:13-42:29
 64                <action android:name="android.intent.action.MAIN" />
-64-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:39:17-69
-64-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:39:25-66
+64-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:39:17-69
+64-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:39:25-66
 65
 66                <category android:name="android.intent.category.LAUNCHER" />
-66-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:41:17-77
-66-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:41:27-74
+66-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:41:17-77
+66-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:41:27-74
 67            </intent-filter>
 68
 69            <meta-data
-69-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:44:13-46:36
+69-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:44:13-46:36
 70                android:name="android.app.Activity"
-70-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:45:17-52
+70-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:45:17-52
 71                android:value="" />
-71-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:46:17-33
+71-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:46:17-33
 72        </activity>
 73        <activity
-73-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:48:9-54:20
+73-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:48:9-54:20
 74            android:name="com.example.do_an_cs3.View.Users.LoginActivity"
-74-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:49:13-53
+74-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:49:13-53
 75            android:exported="false" >
-75-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:50:13-37
+75-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:50:13-37
 76            <meta-data
-76-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:44:13-46:36
+76-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:44:13-46:36
 77                android:name="android.app.Activity"
-77-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:45:17-52
+77-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:45:17-52
 78                android:value="" />
-78-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:46:17-33
+78-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:46:17-33
 79        </activity>
 80        <activity
-80-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:55:9-59:54
+80-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:55:9-59:54
 81            android:name="com.example.do_an_cs3.View.Project.ProjectActivity"
-81-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:56:13-57
+81-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:56:13-57
 82            android:exported="false"
-82-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:57:13-37
+82-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:57:13-37
 83            android:label="@string/title_activity_job"
-83-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:58:13-55
+83-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:58:13-55
 84            android:theme="@style/Theme.DO_AN_CS3" />
-84-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:59:13-51
+84-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:59:13-51
 85        <activity
-85-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:60:9-64:54
+85-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:60:9-64:54
 86            android:name="com.example.do_an_cs3.View.Project.AddProjectActivity"
-86-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:61:13-60
+86-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:61:13-60
 87            android:exported="false"
-87-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:62:13-37
+87-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:62:13-37
 88            android:label="@string/Addjob"
-88-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:63:13-43
+88-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:63:13-43
 89            android:theme="@style/Theme.DO_AN_CS3" />
-89-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:64:13-51
+89-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:64:13-51
 90        <activity
-90-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:65:9-69:54
+90-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:65:9-69:54
 91            android:name="com.example.do_an_cs3.View.Users.PersonnalActivity"
-91-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:66:13-57
+91-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:66:13-57
 92            android:exported="false"
-92-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:67:13-37
+92-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:67:13-37
 93            android:label="@string/personnal"
-93-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:68:13-46
+93-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:68:13-46
 94            android:theme="@style/Theme.DO_AN_CS3" />
-94-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:69:13-51
+94-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:69:13-51
 95        <activity
-95-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:70:9-74:54
+95-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:70:9-74:54
 96            android:name="com.example.do_an_cs3.View.SettingActivity"
-96-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:71:13-49
+96-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:71:13-49
 97            android:exported="false"
-97-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:72:13-37
+97-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:72:13-37
 98            android:label="@string/setting"
-98-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:73:13-44
+98-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:73:13-44
 99            android:theme="@style/Theme.DO_AN_CS3" />
-99-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:74:13-51
+99-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:74:13-51
 100        <activity
-100-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:75:9-79:54
+100-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:75:9-79:54
 101            android:name="com.example.do_an_cs3.View.WarningActivity"
-101-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:76:13-49
+101-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:76:13-49
 102            android:exported="false"
-102-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:77:13-37
+102-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:77:13-37
 103            android:label="@string/warning"
-103-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:78:13-44
+103-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:78:13-44
 104            android:theme="@style/Theme.DO_AN_CS3" />
-104-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:79:13-51
+104-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:79:13-51
 105        <activity
-105-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:80:9-84:54
+105-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:80:9-84:54
 106            android:name="com.example.do_an_cs3.View.Users.EditAccountActivity"
-106-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:81:13-59
+106-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:81:13-59
 107            android:exported="false"
-107-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:82:13-37
+107-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:82:13-37
 108            android:label="@string/editAccount"
-108-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:83:13-48
+108-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:83:13-48
 109            android:theme="@style/Theme.DO_AN_CS3" />
-109-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:84:13-51
+109-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:84:13-51
 110        <activity
-110-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:85:9-89:54
+110-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:85:9-89:54
 111            android:name="com.example.do_an_cs3.View.Users.ChangePassActivity"
-111-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:86:13-58
+111-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:86:13-58
 112            android:exported="false"
-112-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:87:13-37
+112-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:87:13-37
 113            android:label="@string/changepass"
-113-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:88:13-47
+113-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:88:13-47
 114            android:theme="@style/Theme.DO_AN_CS3" />
-114-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:89:13-51
+114-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:89:13-51
 115        <activity
-115-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:90:9-94:54
+115-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:90:9-94:54
 116            android:name="com.example.do_an_cs3.View.ReportActivity"
-116-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:91:13-48
+116-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:91:13-48
 117            android:exported="false"
-117-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:92:13-37
+117-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:92:13-37
 118            android:label="@string/report"
-118-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:93:13-43
+118-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:93:13-43
 119            android:theme="@style/Theme.DO_AN_CS3" />
-119-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:94:13-51
+119-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:94:13-51
 120        <activity
-120-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:95:9-99:54
+120-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:95:9-99:54
 121            android:name="com.example.do_an_cs3.View.Users.AddPersonnalActivity"
-121-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:96:13-60
+121-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:96:13-60
 122            android:exported="false"
-122-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:97:13-37
+122-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:97:13-37
 123            android:label="AddPersonnalActivity"
-123-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:98:13-49
+123-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:98:13-49
 124            android:theme="@style/Theme.DO_AN_CS3" />
-124-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:99:13-51
+124-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:99:13-51
 125        <activity
-125-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:100:9-104:54
+125-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:100:9-104:54
 126            android:name="com.example.do_an_cs3.View.Departments.AddDeparmentsActivity"
-126-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:101:13-67
+126-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:101:13-67
 127            android:exported="false"
-127-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:102:13-37
+127-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:102:13-37
 128            android:label="AddDeparmentsActivity"
-128-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:103:13-50
+128-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:103:13-50
 129            android:theme="@style/Theme.DO_AN_CS3" />
-129-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:104:13-51
+129-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:104:13-51
 130        <activity
-130-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:105:9-109:54
+130-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:105:9-109:54
 131            android:name="com.example.do_an_cs3.View.splash"
-131-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:106:13-40
+131-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:106:13-40
 132            android:exported="false"
-132-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:107:13-37
+132-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:107:13-37
 133            android:label="plashActivity"
-133-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:108:13-42
+133-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:108:13-42
 134            android:theme="@style/Theme.DO_AN_CS3" />
-134-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:109:13-51
+134-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:109:13-51
 135        <activity
-135-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:110:9-114:54
+135-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:110:9-114:54
 136            android:name="com.example.do_an_cs3.View.Users.RegisterActivity"
-136-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:111:13-56
+136-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:111:13-56
 137            android:exported="false"
-137-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:112:13-37
+137-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:112:13-37
 138            android:label="@string/personnal"
-138-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:113:13-46
+138-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:113:13-46
 139            android:theme="@style/Theme.DO_AN_CS3" />
-139-->C:\Users\PC ASUS\AndroidStudioProjects\DO_AN_CS3_1\app\src\main\AndroidManifest.xml:114:13-51
+139-->C:\Users\nhutl\AndroidStudioProjects\ProjectManager\app\src\main\AndroidManifest.xml:114:13-51
 140
 141        <service
-141-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:27:9-36:19
+141-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:27:9-36:19
 142            android:name="com.google.firebase.components.ComponentDiscoveryService"
-142-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:28:13-84
+142-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:28:13-84
 143            android:directBootAware="true"
-143-->[com.google.firebase:firebase-common:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+143-->[com.google.firebase:firebase-common:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:32:13-43
 144            android:exported="false" >
-144-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:29:13-37
+144-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:29:13-37
 145            <meta-data
-145-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:30:13-32:85
+145-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:30:13-32:85
 146                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
-146-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:31:17-118
+146-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:31:17-118
 147                android:value="com.google.firebase.components.ComponentRegistrar" />
-147-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:32:17-82
+147-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:32:17-82
 148            <meta-data
-148-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:33:13-35:85
+148-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:33:13-35:85
 149                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-149-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:34:17-107
+149-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:34:17-107
 150                android:value="com.google.firebase.components.ComponentRegistrar" />
-150-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:35:17-82
+150-->[com.google.firebase:firebase-storage:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\6346bbd6aa3b41696c2f692459859693\transformed\jetified-firebase-storage-21.0.0\AndroidManifest.xml:35:17-82
 151            <meta-data
-151-->[com.google.firebase:firebase-database:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1a4dbaf022cc75cbc7b1d3af707a759b\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:29:13-31:85
+151-->[com.google.firebase:firebase-database:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\1a4dbaf022cc75cbc7b1d3af707a759b\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:29:13-31:85
 152                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
-152-->[com.google.firebase:firebase-database:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1a4dbaf022cc75cbc7b1d3af707a759b\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:30:17-120
+152-->[com.google.firebase:firebase-database:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\1a4dbaf022cc75cbc7b1d3af707a759b\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:30:17-120
 153                android:value="com.google.firebase.components.ComponentRegistrar" />
-153-->[com.google.firebase:firebase-database:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1a4dbaf022cc75cbc7b1d3af707a759b\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:31:17-82
+153-->[com.google.firebase:firebase-database:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\1a4dbaf022cc75cbc7b1d3af707a759b\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:31:17-82
 154            <meta-data
-154-->[com.google.firebase:firebase-database:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1a4dbaf022cc75cbc7b1d3af707a759b\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:32:13-34:85
+154-->[com.google.firebase:firebase-database:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\1a4dbaf022cc75cbc7b1d3af707a759b\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:32:13-34:85
 155                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-155-->[com.google.firebase:firebase-database:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1a4dbaf022cc75cbc7b1d3af707a759b\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:33:17-109
+155-->[com.google.firebase:firebase-database:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\1a4dbaf022cc75cbc7b1d3af707a759b\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:33:17-109
 156                android:value="com.google.firebase.components.ComponentRegistrar" />
-156-->[com.google.firebase:firebase-database:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\1a4dbaf022cc75cbc7b1d3af707a759b\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:34:17-82
+156-->[com.google.firebase:firebase-database:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\1a4dbaf022cc75cbc7b1d3af707a759b\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:34:17-82
 157            <meta-data
-157-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\5d789b17fc5ca6b01e1a0e6e858fe2b7\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:25:13-27:85
+157-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\5d789b17fc5ca6b01e1a0e6e858fe2b7\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:25:13-27:85
 158                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar"
-158-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\5d789b17fc5ca6b01e1a0e6e858fe2b7\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:26:17-120
+158-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\5d789b17fc5ca6b01e1a0e6e858fe2b7\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:26:17-120
 159                android:value="com.google.firebase.components.ComponentRegistrar" />
-159-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\5d789b17fc5ca6b01e1a0e6e858fe2b7\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:27:17-82
+159-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\5d789b17fc5ca6b01e1a0e6e858fe2b7\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:27:17-82
 160            <meta-data
-160-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\5d789b17fc5ca6b01e1a0e6e858fe2b7\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:28:13-30:85
+160-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\5d789b17fc5ca6b01e1a0e6e858fe2b7\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:28:13-30:85
 161                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
-161-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\5d789b17fc5ca6b01e1a0e6e858fe2b7\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:29:17-117
+161-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\5d789b17fc5ca6b01e1a0e6e858fe2b7\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:29:17-117
 162                android:value="com.google.firebase.components.ComponentRegistrar" />
-162-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\5d789b17fc5ca6b01e1a0e6e858fe2b7\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:30:17-82
+162-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\5d789b17fc5ca6b01e1a0e6e858fe2b7\transformed\jetified-firebase-appcheck-18.0.0\AndroidManifest.xml:30:17-82
 163            <meta-data
-163-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:37:13-39:85
+163-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:37:13-39:85
 164                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-164-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:38:17-139
+164-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:38:17-139
 165                android:value="com.google.firebase.components.ComponentRegistrar" />
-165-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:39:17-82
+165-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:39:17-82
 166            <meta-data
-166-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\b6e4dbcba3a0b1411cb274a7d1c56671\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:15:13-17:85
+166-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\b6e4dbcba3a0b1411cb274a7d1c56671\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:15:13-17:85
 167                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
-167-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\b6e4dbcba3a0b1411cb274a7d1c56671\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:16:17-130
+167-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\b6e4dbcba3a0b1411cb274a7d1c56671\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:16:17-130
 168                android:value="com.google.firebase.components.ComponentRegistrar" />
-168-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\b6e4dbcba3a0b1411cb274a7d1c56671\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:17:17-82
+168-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\b6e4dbcba3a0b1411cb274a7d1c56671\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:17:17-82
 169            <meta-data
-169-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\b6e4dbcba3a0b1411cb274a7d1c56671\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:18:13-20:85
+169-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\b6e4dbcba3a0b1411cb274a7d1c56671\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:18:13-20:85
 170                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-170-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\b6e4dbcba3a0b1411cb274a7d1c56671\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:19:17-127
+170-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\b6e4dbcba3a0b1411cb274a7d1c56671\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:19:17-127
 171                android:value="com.google.firebase.components.ComponentRegistrar" />
-171-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\b6e4dbcba3a0b1411cb274a7d1c56671\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:20:17-82
+171-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\b6e4dbcba3a0b1411cb274a7d1c56671\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:20:17-82
 172            <meta-data
-172-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\669acd86e9a89aa1e1df3891b95cde3d\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+172-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\669acd86e9a89aa1e1df3891b95cde3d\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
 173                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-173-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\669acd86e9a89aa1e1df3891b95cde3d\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+173-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\669acd86e9a89aa1e1df3891b95cde3d\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
 174                android:value="com.google.firebase.components.ComponentRegistrar" />
-174-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\669acd86e9a89aa1e1df3891b95cde3d\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+174-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\669acd86e9a89aa1e1df3891b95cde3d\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
 175            <meta-data
-175-->[com.google.firebase:firebase-common:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+175-->[com.google.firebase:firebase-common:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
 176                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-176-->[com.google.firebase:firebase-common:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+176-->[com.google.firebase:firebase-common:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:36:17-109
 177                android:value="com.google.firebase.components.ComponentRegistrar" />
-177-->[com.google.firebase:firebase-common:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+177-->[com.google.firebase:firebase-common:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:37:17-82
 178        </service>
 179
 180        <activity
-180-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\e1936c58da7a7e44a952cf2c0a553745\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+180-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\nhutl\.gradle\caches\transforms-3\e1936c58da7a7e44a952cf2c0a553745\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
 181            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-181-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\e1936c58da7a7e44a952cf2c0a553745\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+181-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\nhutl\.gradle\caches\transforms-3\e1936c58da7a7e44a952cf2c0a553745\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:19-85
 182            android:exported="false"
-182-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\e1936c58da7a7e44a952cf2c0a553745\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+182-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\nhutl\.gradle\caches\transforms-3\e1936c58da7a7e44a952cf2c0a553745\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:22:19-43
 183            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-183-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\e1936c58da7a7e44a952cf2c0a553745\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+183-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\nhutl\.gradle\caches\transforms-3\e1936c58da7a7e44a952cf2c0a553745\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:21:19-78
 184
 185        <property
-185-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:30:9-32:61
+185-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:30:9-32:61
 186            android:name="android.adservices.AD_SERVICES_CONFIG"
-186-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:31:13-65
+186-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:31:13-65
 187            android:resource="@xml/ga_ad_services_config" />
-187-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:32:13-58
+187-->[com.google.android.gms:play-services-measurement-api:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\ddca263111d2072e5f06cb9170215045\transformed\jetified-play-services-measurement-api-22.0.1\AndroidManifest.xml:32:13-58
 188
 189        <provider
-189-->[com.google.firebase:firebase-common:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+189-->[com.google.firebase:firebase-common:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
 190            android:name="com.google.firebase.provider.FirebaseInitProvider"
-190-->[com.google.firebase:firebase-common:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+190-->[com.google.firebase:firebase-common:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:24:13-77
 191            android:authorities="com.example.do_an_cs3.firebaseinitprovider"
-191-->[com.google.firebase:firebase-common:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+191-->[com.google.firebase:firebase-common:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:25:13-72
 192            android:directBootAware="true"
-192-->[com.google.firebase:firebase-common:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+192-->[com.google.firebase:firebase-common:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:26:13-43
 193            android:exported="false"
-193-->[com.google.firebase:firebase-common:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+193-->[com.google.firebase:firebase-common:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:27:13-37
 194            android:initOrder="100" />
-194-->[com.google.firebase:firebase-common:21.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+194-->[com.google.firebase:firebase-common:21.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a5f8854521a877589da990b5585f2a61\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:28:13-36
 195
 196        <receiver
-196-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:29:9-33:20
+196-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:29:9-33:20
 197            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-197-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:30:13-85
+197-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:30:13-85
 198            android:enabled="true"
-198-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:31:13-35
+198-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:31:13-35
 199            android:exported="false" >
-199-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:32:13-37
+199-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:32:13-37
 200        </receiver>
 201
 202        <service
-202-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:35:9-38:40
+202-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:35:9-38:40
 203            android:name="com.google.android.gms.measurement.AppMeasurementService"
-203-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:36:13-84
+203-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:36:13-84
 204            android:enabled="true"
-204-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:37:13-35
+204-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:37:13-35
 205            android:exported="false" />
-205-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:38:13-37
+205-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:38:13-37
 206        <service
-206-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:39:9-43:72
+206-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:39:9-43:72
 207            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-207-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:40:13-87
+207-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:40:13-87
 208            android:enabled="true"
-208-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:41:13-35
+208-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:41:13-35
 209            android:exported="false"
-209-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:42:13-37
+209-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:42:13-37
 210            android:permission="android.permission.BIND_JOB_SERVICE" />
-210-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\PC ASUS\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:43:13-69
+210-->[com.google.android.gms:play-services-measurement:22.0.1] C:\Users\nhutl\.gradle\caches\transforms-3\f23982993b7f253af2a9e5e02fb419c6\transformed\jetified-play-services-measurement-22.0.1\AndroidManifest.xml:43:13-69
 211
 212        <uses-library
-212-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\PC ASUS\.gradle\caches\transforms-3\8181b4543fd5c36d0c49770feea4d98a\transformed\jetified-ads-adservices-1.0.0-beta05\AndroidManifest.xml:23:9-25:40
+212-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\nhutl\.gradle\caches\transforms-3\8181b4543fd5c36d0c49770feea4d98a\transformed\jetified-ads-adservices-1.0.0-beta05\AndroidManifest.xml:23:9-25:40
 213            android:name="android.ext.adservices"
-213-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\PC ASUS\.gradle\caches\transforms-3\8181b4543fd5c36d0c49770feea4d98a\transformed\jetified-ads-adservices-1.0.0-beta05\AndroidManifest.xml:24:13-50
+213-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\nhutl\.gradle\caches\transforms-3\8181b4543fd5c36d0c49770feea4d98a\transformed\jetified-ads-adservices-1.0.0-beta05\AndroidManifest.xml:24:13-50
 214            android:required="false" />
-214-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\PC ASUS\.gradle\caches\transforms-3\8181b4543fd5c36d0c49770feea4d98a\transformed\jetified-ads-adservices-1.0.0-beta05\AndroidManifest.xml:25:13-37
+214-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\nhutl\.gradle\caches\transforms-3\8181b4543fd5c36d0c49770feea4d98a\transformed\jetified-ads-adservices-1.0.0-beta05\AndroidManifest.xml:25:13-37
 215
 216        <provider
-216-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+216-->[androidx.emoji2:emoji2:1.2.0] C:\Users\nhutl\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 217            android:name="androidx.startup.InitializationProvider"
-217-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+217-->[androidx.emoji2:emoji2:1.2.0] C:\Users\nhutl\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
 218            android:authorities="com.example.do_an_cs3.androidx-startup"
-218-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+218-->[androidx.emoji2:emoji2:1.2.0] C:\Users\nhutl\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
 219            android:exported="false" >
-219-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+219-->[androidx.emoji2:emoji2:1.2.0] C:\Users\nhutl\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
 220            <meta-data
-220-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+220-->[androidx.emoji2:emoji2:1.2.0] C:\Users\nhutl\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
 221                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-221-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+221-->[androidx.emoji2:emoji2:1.2.0] C:\Users\nhutl\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
 222                android:value="androidx.startup" />
-222-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+222-->[androidx.emoji2:emoji2:1.2.0] C:\Users\nhutl\.gradle\caches\transforms-3\378878fd59c37940d38ae09824b103ae\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
 223            <meta-data
-223-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\PC ASUS\.gradle\caches\transforms-3\952612f7d72ca5f615c9323603dbf218\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+223-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\nhutl\.gradle\caches\transforms-3\952612f7d72ca5f615c9323603dbf218\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
 224                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-224-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\PC ASUS\.gradle\caches\transforms-3\952612f7d72ca5f615c9323603dbf218\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+224-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\nhutl\.gradle\caches\transforms-3\952612f7d72ca5f615c9323603dbf218\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
 225                android:value="androidx.startup" />
-225-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\PC ASUS\.gradle\caches\transforms-3\952612f7d72ca5f615c9323603dbf218\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+225-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\nhutl\.gradle\caches\transforms-3\952612f7d72ca5f615c9323603dbf218\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
 226            <meta-data
-226-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+226-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
 227                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-227-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+227-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
 228                android:value="androidx.startup" />
-228-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+228-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
 229        </provider>
 230
 231        <uses-library
-231-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a78f9234abd19f16a9db93791495f7b4\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
+231-->[androidx.window:window:1.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a78f9234abd19f16a9db93791495f7b4\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
 232            android:name="androidx.window.extensions"
-232-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a78f9234abd19f16a9db93791495f7b4\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
+232-->[androidx.window:window:1.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a78f9234abd19f16a9db93791495f7b4\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
 233            android:required="false" />
-233-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a78f9234abd19f16a9db93791495f7b4\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
+233-->[androidx.window:window:1.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a78f9234abd19f16a9db93791495f7b4\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
 234        <uses-library
-234-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a78f9234abd19f16a9db93791495f7b4\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
+234-->[androidx.window:window:1.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a78f9234abd19f16a9db93791495f7b4\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
 235            android:name="androidx.window.sidecar"
-235-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a78f9234abd19f16a9db93791495f7b4\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
+235-->[androidx.window:window:1.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a78f9234abd19f16a9db93791495f7b4\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
 236            android:required="false" />
-236-->[androidx.window:window:1.0.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\a78f9234abd19f16a9db93791495f7b4\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
+236-->[androidx.window:window:1.0.0] C:\Users\nhutl\.gradle\caches\transforms-3\a78f9234abd19f16a9db93791495f7b4\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
 237
 238        <meta-data
-238-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\0ae578f03d517a6e453605553870432d\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+238-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\0ae578f03d517a6e453605553870432d\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
 239            android:name="com.google.android.gms.version"
-239-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\0ae578f03d517a6e453605553870432d\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+239-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\0ae578f03d517a6e453605553870432d\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
 240            android:value="@integer/google_play_services_version" />
-240-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\0ae578f03d517a6e453605553870432d\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+240-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\0ae578f03d517a6e453605553870432d\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
 241
 242        <provider
-242-->[com.squareup.picasso:picasso:2.8] C:\Users\PC ASUS\.gradle\caches\transforms-3\44b6b3b97764df40029638b6337eaf3f\transformed\jetified-picasso-2.8\AndroidManifest.xml:8:9-11:40
+242-->[com.squareup.picasso:picasso:2.8] C:\Users\nhutl\.gradle\caches\transforms-3\44b6b3b97764df40029638b6337eaf3f\transformed\jetified-picasso-2.8\AndroidManifest.xml:8:9-11:40
 243            android:name="com.squareup.picasso.PicassoProvider"
-243-->[com.squareup.picasso:picasso:2.8] C:\Users\PC ASUS\.gradle\caches\transforms-3\44b6b3b97764df40029638b6337eaf3f\transformed\jetified-picasso-2.8\AndroidManifest.xml:9:13-64
+243-->[com.squareup.picasso:picasso:2.8] C:\Users\nhutl\.gradle\caches\transforms-3\44b6b3b97764df40029638b6337eaf3f\transformed\jetified-picasso-2.8\AndroidManifest.xml:9:13-64
 244            android:authorities="com.example.do_an_cs3.com.squareup.picasso"
-244-->[com.squareup.picasso:picasso:2.8] C:\Users\PC ASUS\.gradle\caches\transforms-3\44b6b3b97764df40029638b6337eaf3f\transformed\jetified-picasso-2.8\AndroidManifest.xml:10:13-72
+244-->[com.squareup.picasso:picasso:2.8] C:\Users\nhutl\.gradle\caches\transforms-3\44b6b3b97764df40029638b6337eaf3f\transformed\jetified-picasso-2.8\AndroidManifest.xml:10:13-72
 245            android:exported="false" />
-245-->[com.squareup.picasso:picasso:2.8] C:\Users\PC ASUS\.gradle\caches\transforms-3\44b6b3b97764df40029638b6337eaf3f\transformed\jetified-picasso-2.8\AndroidManifest.xml:11:13-37
+245-->[com.squareup.picasso:picasso:2.8] C:\Users\nhutl\.gradle\caches\transforms-3\44b6b3b97764df40029638b6337eaf3f\transformed\jetified-picasso-2.8\AndroidManifest.xml:11:13-37
 246
 247        <receiver
-247-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+247-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
 248            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-248-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+248-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
 249            android:directBootAware="false"
-249-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+249-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
 250            android:enabled="true"
-250-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+250-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
 251            android:exported="true"
-251-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+251-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
 252            android:permission="android.permission.DUMP" >
-252-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+252-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
 253            <intent-filter>
-253-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+253-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
 254                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-254-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-254-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+254-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+254-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
 255            </intent-filter>
 256            <intent-filter>
-256-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+256-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
 257                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-257-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-257-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+257-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+257-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
 258            </intent-filter>
 259            <intent-filter>
-259-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+259-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
 260                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-260-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-260-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+260-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+260-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
 261            </intent-filter>
 262            <intent-filter>
-262-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+262-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
 263                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-263-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-263-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC ASUS\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+263-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+263-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\nhutl\.gradle\caches\transforms-3\910ba408192fe245fc229ad8db88b8d3\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
 264            </intent-filter>
 265        </receiver>
 266    </application>

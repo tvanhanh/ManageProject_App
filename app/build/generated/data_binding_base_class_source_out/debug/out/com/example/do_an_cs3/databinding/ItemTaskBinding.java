@@ -30,6 +30,9 @@ public final class ItemTaskBinding implements ViewBinding {
   public final TextView contentTask;
 
   @NonNull
+  public final TextView options;
+
+  @NonNull
   public final CheckBox statusTask;
 
   @NonNull
@@ -39,12 +42,13 @@ public final class ItemTaskBinding implements ViewBinding {
   public final TextView tvDealine;
 
   private ItemTaskBinding(@NonNull CardView rootView, @NonNull TextView NamePersonOfTaskUpdate,
-      @NonNull TextView NameTaskNewUpdate, @NonNull TextView contentTask,
+      @NonNull TextView NameTaskNewUpdate, @NonNull TextView contentTask, @NonNull TextView options,
       @NonNull CheckBox statusTask, @NonNull TextView timeUpdateTask, @NonNull TextView tvDealine) {
     this.rootView = rootView;
     this.NamePersonOfTaskUpdate = NamePersonOfTaskUpdate;
     this.NameTaskNewUpdate = NameTaskNewUpdate;
     this.contentTask = contentTask;
+    this.options = options;
     this.statusTask = statusTask;
     this.timeUpdateTask = timeUpdateTask;
     this.tvDealine = tvDealine;
@@ -95,6 +99,12 @@ public final class ItemTaskBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.options;
+      TextView options = ViewBindings.findChildViewById(rootView, id);
+      if (options == null) {
+        break missingId;
+      }
+
       id = R.id.statusTask;
       CheckBox statusTask = ViewBindings.findChildViewById(rootView, id);
       if (statusTask == null) {
@@ -114,7 +124,7 @@ public final class ItemTaskBinding implements ViewBinding {
       }
 
       return new ItemTaskBinding((CardView) rootView, NamePersonOfTaskUpdate, NameTaskNewUpdate,
-          contentTask, statusTask, timeUpdateTask, tvDealine);
+          contentTask, options, statusTask, timeUpdateTask, tvDealine);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

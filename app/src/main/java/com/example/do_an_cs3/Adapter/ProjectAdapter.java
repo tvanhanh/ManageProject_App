@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,14 +37,23 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
     private DatabaseFirebaseManager dbFBManager;
     private UpdateNewFragment activity;
 
+
+
     public ProjectAdapter(List<Project> projectList, Context mContext, UpdateNewFragment activity) {
         this.projectList = projectList;
         this.mContext = mContext;
         this.activity =  activity;
+
     }
 
     public ProjectAdapter() {
 
+    }
+
+
+    // lấy id project
+    public interface OnItemClickListener {
+        void onItemClick(Project project);
     }
 
     public ProjectAdapter(List<Project> projectList) {
@@ -61,6 +71,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
         this.projectList = projects;
         notifyDataSetChanged(); // Thông báo cho RecyclerView cập nhật giao diện
     }
+
 
 
     @NonNull
