@@ -1,125 +1,99 @@
+
 package com.example.do_an_cs3.Model;
-
 public class Task {
-
-    private int id;
-    private String  taskName;
-    private String  taskDescription;
-    private String  taskDeadline;
-    private String  taskStatus;
-    private String  taskEmail;
-
-    private String username;
+    private String id;
+    private String name;
+    private String description;
+    private String deadline;
+    private String status;
+    private String email;
+    private String projectId;
     private String timeComplete;
+
+    // Default constructor required for calls to DataSnapshot.getValue(Task.class)
+    public Task() {
+    }
+
+    public Task(String id, String name, String description, String deadline, String status, String email, String projectId, String timeComeplete) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.deadline = deadline;
+        this.status = status;
+        this.email = email;
+        this.projectId = projectId;
+        this.timeComplete = timeComeplete;
+    }
+
+    // Getters and setters
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getTimeComplete() {
         return timeComplete;
     }
 
     public void setTimeComplete(String timeComplete) {
+
         this.timeComplete = timeComplete;
     }
 
-    public Task(String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, String username, int projectId) {
-        this.id = id;
-        this.taskName = taskName;
-        this.taskDescription = taskDescription;
-        this.taskDeadline = taskDeadline;
-        this.taskStatus = taskStatus;
-        this.taskEmail = taskEmail;
-        this.username = username;
-        this.projectId = projectId;
-
-    }
-
-    private int  projectId;
-
-    public Task() {
-
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Task(String taskName, String taskDescription, String taskDeadline) {
-        this.taskName = taskName;
-        this.taskDescription = taskDescription;
-        this.taskDeadline = taskDeadline;
-    }
-
-    public String getTaskName() {
-        return taskName;
-    }
-
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
-    }
-
-    public String getTaskDescription() {
-        return taskDescription;
-    }
-
-    public void setTaskDescription(String taskDescription) {
-        this.taskDescription = taskDescription;
-    }
-
-    public String getTaskDeadline() {
-        return taskDeadline;
-    }
-
-    public void setTaskDeadline(String taskDeadline) {
-        this.taskDeadline = taskDeadline;
-    }
-
-    public String getTaskStatus() {
-        return taskStatus;
-    }
-
-    public void setTaskStatus(String taskStatus) {
-        this.taskStatus = taskStatus;
-    }
-
-    public String getTaskEmail() {
-        return taskEmail;
-    }
-
-    public void setTaskEmail(String taskEmail) {
-        this.taskEmail = taskEmail;
-    }
-
-    public int getProjectId() {
+    public String getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
-    }
-
-    public Task(int id,String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, int projectId, String timeComplete) {
-        this.id = id;
-        this.taskName = taskName;
-        this.taskDescription = taskDescription;
-        this.taskDeadline = taskDeadline;
-        this.taskStatus = taskStatus;
-        this.taskEmail = taskEmail;
-        this.projectId = projectId;
-        this.timeComplete =timeComplete;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Task(String taskName) {
-        this.taskName = taskName;
-    }
 }
+
+//   // public void setProjectId(String projectId) {
+//        this.projectId = projectId;
+//    }
+
+//    public String getUsername() {
+//        return getUsername();
+//    }
+

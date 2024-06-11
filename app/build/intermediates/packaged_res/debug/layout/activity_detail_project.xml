@@ -274,20 +274,18 @@
             <!-- Discussion Section -->
             <LinearLayout
                 android:id="@+id/lnRCVTask"
-                android:layout_width="match_parent"
+                android:layout_width="378dp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="20dp"
-               >
+                android:layout_marginRight="20dp">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcv_task"
-                    android:layout_width="match_parent"
+                    android:layout_width="359dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_marginBottom="10dp"
 
-                    android:scrollbars="none"
-                    >
+                    android:scrollbars="none">
 
                 </androidx.recyclerview.widget.RecyclerView>
             </LinearLayout>

@@ -22,12 +22,15 @@ import com.example.do_an_cs3.databinding.ActivityPersonnalBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
+import javax.annotation.Nullable;
+
 public class PersonnalActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private TabLayout mtablayout;
     private ViewPager mviewPager;
     private Button buttoncomback;
+    private int YOUR_REQUEST_CODE =100;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -42,7 +45,7 @@ public class PersonnalActivity extends AppCompatActivity {
         mtablayout = findViewById(R.id.tabLayout);
         mviewPager = findViewById(R.id.viewpager);
 
-        ViewPagerAdapterDepartment viewPagerAdapter = new ViewPagerAdapterDepartment(getSupportFragmentManager(), FragmentStatePagerAdapter .BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        ViewPagerAdapterDepartment viewPagerAdapter = new ViewPagerAdapterDepartment(getSupportFragmentManager(), FragmentStatePagerAdapter .BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT,PersonnalActivity.this);
         mviewPager.setAdapter(viewPagerAdapter);
         mtablayout.setupWithViewPager(mviewPager);
 
@@ -109,6 +112,14 @@ public class PersonnalActivity extends AppCompatActivity {
             }
         });
     }
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // Kiểm tra xem kết quả trả về có phải từ AddDeparmentsActivity không
+        if (requestCode == YOUR_REQUEST_CODE && resultCode == RESULT_OK) {
+            // Nếu là từ AddDeparmentsActivity, chuyển đến ListDepartmentFragment
+            mviewPager.setCurrentItem(1); // 1 là index của ListDepartmentFragment
+        }
+    }
 
 }

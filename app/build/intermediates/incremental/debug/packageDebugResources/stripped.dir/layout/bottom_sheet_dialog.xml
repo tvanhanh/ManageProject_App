@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/WhiteSmoke"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/lnShare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundgreen"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        >
+        <!-- Các chức năng chia sẻ công việc, xác nhận hoàn thành, tạm dừng, từ chối xin việc -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:drawableRight="@drawable/share"></TextView>
+
+        <Button
+            android:id="@+id/btnShareTask"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:backgroundTint="@color/xanhla"
+            android:gravity="left"
+            android:padding="8dp"
+            android:text="Chia sẻ dự án"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnXacNhanHoanThanh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/round_orange"
+        android:layout_margin="5dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:drawableRight="@drawable/checked"></TextView>
+        <Button
+            android:id="@+id/btnConfirmComplete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
+            android:padding="8dp"
+            android:layout_weight="7"
+            android:gravity="left"
+            android:text="Xác nhận hoàn thành"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/round_gray"
+        android:layout_margin="5dp"
+        android:id="@+id/lnPause">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:drawableRight="@drawable/pause"
+
+            ></TextView>
+        <Button
+            android:id="@+id/btnPause"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray"
+            android:padding="8dp"
+            android:text="Tạm dừng"
+            android:gravity="left"
+            android:layout_weight="7"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/round_less_red"
+        android:id="@+id/lnTuChoi"
+
+        android:layout_margin="5dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:drawableRight="@drawable/share"></TextView>
+        <Button
+            android:id="@+id/btnReject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/donhat"
+            android:padding="8dp"
+            android:text="Từ chối tham gia"
+            android:layout_weight="7"
+            android:gravity="left"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <!--    android:drawableLeft="@drawable/ic_reject"-->
+    <!-- Ba nút ngang: Xóa việc, Sửa/Gia hạn, Lịch sử -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="0dp">
+
+        <Button
+            android:id="@+id/btnDeleteProject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/delete"
+            android:padding="8dp"
+            android:text="Xóa dự án"
+            android:backgroundTint="@color/red"
+            android:textSize="16sp" />
+        <!--        android:drawableTop="@drawable/ic_delete"-->
+
+        <Button
+            android:id="@+id/btnEditExtend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/editing"
+            android:backgroundTint="@color/xanhlaChụoi"
+            android:padding="8dp"
+            android:text="Sửa/Gia hạn"
+            android:textSize="16sp" />
+        <!--            android:drawableTop="@drawable/ic_edit"-->
+
+        <Button
+            android:id="@+id/btnHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/history"
+            android:padding="8dp"
+            android:text="Lịch sử"
+            android:textSize="16sp" />
+        <!--            android:drawableTop="@drawable/ic_history"-->
+
+    </LinearLayout>
+</LinearLayout>
