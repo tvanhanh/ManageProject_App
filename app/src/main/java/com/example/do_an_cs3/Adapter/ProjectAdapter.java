@@ -72,7 +72,6 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ProjectViewHolder holder, int position) {
-        //dbManager = new DatabaseManager(mContext);
         dbFBManager = new DatabaseFirebaseManager(mContext);
         Project project = projectList.get(position);
         currentViewHolder = holder;

@@ -50,8 +50,9 @@ public class AddProjectActivity extends AppCompatActivity {
     private EditText nameProject;
     private TextInputEditText descriptionProject;
     private TextView deadlineTime;
-    private TaskAdapter taskAdapter;
+
     private LoadingDialogFragment loadingDialog;
+    private DatabaseFirebaseManager dbManager;
 
 
     @SuppressLint("MissingInflatedId")
@@ -59,7 +60,7 @@ public class AddProjectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addproject);
-
+        dbManager = new DatabaseFirebaseManager();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigation);
         MenuItem jobaddMenuItem = bottomNavigationView.getMenu().findItem(R.id.add_job);
         jobaddMenuItem.setChecked(true);
@@ -114,12 +115,29 @@ public class AddProjectActivity extends AppCompatActivity {
                 DatabaseReference projectsRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("projects");
                 DatabaseReference newProjectRef = projectsRef.push();
                 String projectId = newProjectRef.getKey();
+//                DatabaseReference projectParticipantRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("projectsParticipant");
+//                DatabaseReference newProjectParticipantRef = projectParticipantRef.push();
+//                String projectParticipantId = newProjectParticipantRef.getKey();
                 projectsRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.child("projects").hasChild(projectId)) {
-                            Toast.makeText(AddProjectActivity.this, "Projects already exists", Toast.LENGTH_SHORT).show();
+                        if (snapshot.child("projects").hasChild(projectId)
+                              //  && snapshot.child("projectsprojectsParticipant").hasChild(projectParticipantId)
+                        ) {
+                            Toast.makeText(AddProjectActivity.this, "Dự án đã tồn tại", Toast.LENGTH_SHORT).show();
                         } else {
+
+                            dbManager.saveProjectJoin( getCurrentUserEmail(), projectId ,AddProjectActivity.this, new DatabaseFirebaseManager.SaveProjectJoinListener() {
+                                @Override
+                                public void onSaveProjectJoinSuccess() {
+
+                                }
+
+                                @Override
+                                public void onSaveProjectJoinFailure(String errorMessage) {
+
+                                }
+                            });
                             newProjectRef.child("creationTime").setValue(creationTime);
                             newProjectRef.child("deadline").setValue(deadline);
                             newProjectRef.child("department").setValue(department);
@@ -131,7 +149,10 @@ public class AddProjectActivity extends AppCompatActivity {
                             newProjectRef.child("deadline").setValue(deadline);
                             newProjectRef.child("status").setValue(status);
                             newProjectRef.child("views").setValue(views);
-                            Toast.makeText(AddProjectActivity.this, "Success", Toast.LENGTH_SHORT).show();
+//                            newProjectParticipantRef.child("projet_id").setValue(projectId);
+//                            newProjectParticipantRef.child("email").setValue(email);
+
+                            Toast.makeText(AddProjectActivity.this, "Thêm dự án "+ name + " thành công", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(AddProjectActivity.this, MainActivity.class);
                             intent.putExtra("email", email);
                             intent.putExtra("emailEncoded", encodedEmail);
@@ -146,7 +167,7 @@ public class AddProjectActivity extends AppCompatActivity {
                         Log.e("Firebase", "Database error: " + error.getMessage());
                     }
                 });
-                // }
+
             }
         });
 

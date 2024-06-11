@@ -3,78 +3,28 @@ package com.example.do_an_cs3.Model;
 import android.content.Intent;
 
 public class User {
-    private String email;
-    private String userName;
-
-    public int getTotalProjects() {
-        return totalProjects;
-    }
-
-    private String phoneNumber;
-
-    public User(String userName) {
-        this.userName = userName;
-    }
-
-    public User(String userName, String avatar) {
-        this.userName = userName;
-        this.avatar = avatar;
-    }
-
     private String address;
-    private String referralCode;
     private String avatar;
-    private int deparment;
+    private String email;
+    private String password;
+    private String phone;
     private String role;
+    private String userName;
+    private String deparment;
 
-    public void setTotalProjects(int totalProjects) {
-        this.totalProjects = totalProjects;
-    }
-
-    private int totalProjects;
-
-    public User() {
-    }
-
-    public User(String userName, String phoneNumber, String address, String referralCode, String avatar, int deparment, String role) {
-        this.userName = userName;
-        this.phoneNumber = phoneNumber;
+    public User(String address, String avatar, String email, String password, String phone, String role, String username) {
         this.address = address;
-        this.referralCode = referralCode;
         this.avatar = avatar;
-        this.deparment = deparment;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
         this.role = role;
+        this.userName = username;
+//        this.deparment = deparment;
     }
 
-    public User(String email, String userName, int deparment, int totalProjects  ) {
-        this.email = email;
-        this.userName = userName;
-        this.deparment = deparment;
-        this.totalProjects = totalProjects;
-    }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public User(String ha) {
     }
 
     public String getAddress() {
@@ -85,14 +35,6 @@ public class User {
         this.address = address;
     }
 
-    public String getReferralCode() {
-        return referralCode;
-    }
-
-    public void setReferralCode(String referralCode) {
-        this.referralCode = referralCode;
-    }
-
     public String getAvatar() {
         return avatar;
     }
@@ -101,12 +43,28 @@ public class User {
         this.avatar = avatar;
     }
 
-    public int getDeparment() {
-        return deparment;
+    public String getEmail() {
+        return email;
     }
 
-    public void setDeparment(int deparment) {
-        this.deparment = deparment;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getRole() {
@@ -116,4 +74,51 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getDeparment() {
+        return deparment;
+    }
+
+    public void setDeparment(String deparment) {
+        this.deparment = deparment;
+    }
+
+    public int getTotalProjects() {
+        return totalProjects;
+    }
+
+
+    public User(String userName, String avatar) {
+        this.userName = userName;
+        this.avatar = avatar;
+    }
+    //private String referralCode;
+
+
+
+    public void setTotalProjects(int totalProjects) {
+        this.totalProjects = totalProjects;
+    }
+
+    private int totalProjects;
+
+    public User() {
+    }
+
+
+    public User(String email, String userName, String deparment) {
+        this.email = email;
+        this.userName = userName;
+        this.deparment = deparment;
+    }
+
+
 }

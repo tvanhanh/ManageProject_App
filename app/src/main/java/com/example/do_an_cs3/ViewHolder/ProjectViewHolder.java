@@ -12,7 +12,7 @@ import com.example.do_an_cs3.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ProjectViewHolder extends RecyclerView.ViewHolder {
+public  class ProjectViewHolder extends RecyclerView.ViewHolder {
     public TextView tvPercent, tvNamePersonCreation, tvProjectName, tvDescriptionProject,
             tvProjectDeadline, tvProjectCreationTime, tvProjectStatus, tvProjectDepartment;
     public CircleImageView circleImageView;

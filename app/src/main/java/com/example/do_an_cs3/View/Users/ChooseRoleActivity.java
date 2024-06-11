@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
 
 import com.example.do_an_cs3.R;
+import com.example.do_an_cs3.View.AddInfoCompanyActivity;
 import com.example.do_an_cs3.View.MainActivity;
 import com.google.firebase.database.DatabaseReference;
 
@@ -48,7 +49,7 @@ public class ChooseRoleActivity extends AppCompatActivity {
                     DatabaseReference userRoleRef = databaseReference.child("users").child(encodedEmail).child("role");
                     // Update the role
                     userRoleRef.setValue("Lãnh đạo");
-                    Intent intent = new Intent(ChooseRoleActivity.this, AddProfileActivity.class);
+                    Intent intent = new Intent(ChooseRoleActivity.this, AddInfoCompanyActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
@@ -119,8 +120,8 @@ public class ChooseRoleActivity extends AppCompatActivity {
                     // Reference to the specific user's role node
                     DatabaseReference userRoleRef = databaseReference.child("users").child(encodedEmail).child("role");
                     // Update the role
-                    userRoleRef.setValue("Cá nhân");
-                    Intent intent = new Intent(ChooseRoleActivity.this, AddProfileActivity.class);
+                    userRoleRef.setValue("Nhân viên");
+                    Intent intent = new Intent(ChooseRoleActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 } else {

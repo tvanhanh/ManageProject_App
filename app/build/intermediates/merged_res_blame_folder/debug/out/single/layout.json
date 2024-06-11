@@ -32,6 +32,10 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\fragment_important.xml"
     },
     {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-53:/layout/item_staff_work.xml",
+        "source": "com.example.do_an_cs3.app-main-56:/layout/item_staff_work.xml"
+    },
+    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\item_user_follow.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\item_user_follow.xml"
     },
@@ -52,6 +56,10 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\fragment_list_personnal.xml"
     },
     {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\fragment_be_invited.xml",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\fragment_be_invited.xml"
+    },
+    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\item_task.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\item_task.xml"
     },
@@ -68,12 +76,20 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activity_warning.xml"
     },
     {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\item_staff_work.xml",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\item_staff_work.xml"
+    },
+    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\activity_choose_role.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activity_choose_role.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\fragment_updatenew.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\fragment_updatenew.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\item_notifi.xml",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\item_notifi.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\activity_personnal.xml",
@@ -116,12 +132,16 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\bottom_sheet_dialog.xml"
     },
     {
-        "merged": "com.example.do_an_cs3.app-mergeDebugResources-53:/layout/activity_addproject.xml",
-        "source": "com.example.do_an_cs3.app-main-56:/layout/activity_addproject.xml"
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\activity_detail_invite.xml",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activity_detail_invite.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\fragment_list_deparment.xml",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\fragment_list_deparment.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\activity_add_info_company.xml",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activity_add_info_company.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\activity_register.xml",

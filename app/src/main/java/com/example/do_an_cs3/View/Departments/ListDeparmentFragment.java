@@ -12,8 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.View.Departments.AddDeparmentsActivity;
-import com.example.do_an_cs3.View.back_end.View_fragment.FragmentPersonnal.ListPersonnalFragment;
+import com.example.do_an_cs3.FragmentPersonnal.ListPersonnalFragment;
 
 public class ListDeparmentFragment extends Fragment {
     private Button add;

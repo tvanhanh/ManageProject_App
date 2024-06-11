@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.do_an_cs3.View.back_end.View_fragment.FragmentJob.ExpiringSoonFragment;
-import com.example.do_an_cs3.View.back_end.View_fragment.FragmentJob.LateFragment;
+import com.example.do_an_cs3.View.back_end.View_fragment.FragmentNotification.ExpiringSoonFragment;
+import com.example.do_an_cs3.View.back_end.View_fragment.FragmentNotification.BeInvitedFragment;
 
 public class ViewPagerAdapterWarning extends FragmentPagerAdapter {
     public ViewPagerAdapterWarning(@NonNull FragmentManager fm, int behaviorResumeOnlyCurrentFragment) {
@@ -19,10 +19,9 @@ public class ViewPagerAdapterWarning extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new ExpiringSoonFragment();
+                return new BeInvitedFragment();
             case 1:
-                return new LateFragment();
-
+                return new ExpiringSoonFragment();
             default:
                 return new ExpiringSoonFragment();
         }
@@ -38,10 +37,10 @@ public class ViewPagerAdapterWarning extends FragmentPagerAdapter {
         String title = "";
         switch (position) {
             case 0:
-                title = "SẮP HẾT HẠN";
+                title = "THÔNG BÁO CHUNG";
                 break;
             case 1:
-                title = "TRỄ HẠN";
+                title = "SẮP HẾT HẠN";
                 break;
         }
         return title;

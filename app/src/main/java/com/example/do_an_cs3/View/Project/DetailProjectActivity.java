@@ -18,6 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.do_an_cs3.Adapter.TaskAdapter;
 import com.example.do_an_cs3.Adapter.UserFollowAdapter;
 
+import com.example.do_an_cs3.Adapter.UserWorkInProjectAdapter;
+import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
 import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.Model.Task;
 import com.example.do_an_cs3.Model.User;
@@ -32,6 +34,7 @@ import android.widget.Toast;
 
 import com.example.do_an_cs3.Task.AddTaskActivity;
 import com.example.do_an_cs3.View.MainActivity;
+import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.example.do_an_cs3.View.back_end.View_fragment.FragmentHome.UpdateNewFragment;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.database.DatabaseReference;
@@ -48,19 +51,25 @@ public class DetailProjectActivity extends AppCompatActivity {
     private UserFollowAdapter userFollowAdapter;
     private TaskAdapter taskAdapter;
 
+    private RecyclerView rcv_user_work;
+    private UserWorkInProjectAdapter userWorkInProjectAdapter;
+
     private UpdateNewFragment updateNewFragment;
 
     private Button btnAddTask;
     private Button btnBack;
+    private Button btnAddStaff;
     private TextView userNameDetail;
     private List<Task> taskList;
+    private List<User> userWorkList;
+    private DatabaseFirebaseManager dbManager;
 
-    private int idProject;
+    private String idProject;
 
     public DetailProjectActivity() {
     }
 
-    public int getIdProject() {
+    public String getIdProject() {
         return idProject;
     }
 
@@ -84,12 +93,12 @@ public class DetailProjectActivity extends AppCompatActivity {
         //dbManager = new DatabaseManager(DetailProjectActivity.this);
         updateNewFragment = new UpdateNewFragment();
 
-
+        dbManager = new DatabaseFirebaseManager();
         Button btnViewMore = findViewById(R.id.btnViewMore);
         btnAddTask = findViewById(R.id.addTask);
         btnBack = findViewById(R.id.btnBack);
 
-
+        rcv_user_work = findViewById(R.id.rcv_staff_work);
         rcv_userFollow = findViewById(R.id.rcv_userFollow);
         rcv_task = findViewById(R.id.rcv_task);
         //Thông tin project
@@ -104,15 +113,14 @@ public class DetailProjectActivity extends AppCompatActivity {
         circleImageView =findViewById(R.id.circleImageView);
         circleImageViewWork =findViewById(R.id.circleImageViewWork);
         tvRole = findViewById(R.id.PossitonAndEmail);
-        tvUserNameDetailWord = findViewById(R.id.userNameNguoiThucHien);
+        tvUserNameDetailWord = findViewById(R.id.userNameWork);
         emailDetail = findViewById(R.id.tvEmailDetail);
         userNameDetail = findViewById(R.id.tvUserNameDetail);
 
 
-
         emailDetail.setText(getCurrentUserEmail());
         Intent intent = getIntent();
-        idProject = intent.getIntExtra("idProject", -1);
+        idProject = intent.getStringExtra("idProject");
         nameProject = intent.getStringExtra("projectName");
         User userdetail = null;
                 //dbManager.getUserInfo(getCurrentUserEmail());
@@ -123,19 +131,19 @@ public class DetailProjectActivity extends AppCompatActivity {
         taskList = new ArrayList<>();
         taskAdapter = new TaskAdapter(taskList, this);
         rcv_task.setAdapter(taskAdapter);
-
-
         updateInfoProject();
-
-
-
+        userWorkList = new ArrayList<>();
+        userWorkInProjectAdapter = new UserWorkInProjectAdapter(userWorkList,this);
+        rcv_user_work.setAdapter(userWorkInProjectAdapter);
+        getUsersWorkInProject(idProject);
         btnViewMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showBottomSheetDialog();
             }
         });
-
+        LinearLayoutManager linearLayoutManagerUserWork = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+        rcv_user_work.setLayoutManager(linearLayoutManagerUserWork);
         LinearLayoutManager linearLayoutManageruserFollow = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
         rcv_userFollow.setLayoutManager(linearLayoutManageruserFollow);
 
@@ -155,15 +163,23 @@ public class DetailProjectActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        btnAddTask.setOnClickListener(new View.OnClickListener() {
+        btnAddStaff = findViewById(R.id.btn_add_staff_work);
+        btnAddStaff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DetailProjectActivity.this, AddTaskActivity.class);
+                Intent intent = new Intent(DetailProjectActivity.this, PersonnalActivity.class);
                 intent.putExtra("idProject", idProject);
                 startActivity(intent);
             }
         });
+//        btnAddTask.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(DetailProjectActivity.this, AddTaskActivity.class);
+//                intent.putExtra("idProject", idProject);
+//                startActivity(intent);
+//            }
+//        });
         displayUserInfo();
     }
 
@@ -330,5 +346,40 @@ public class DetailProjectActivity extends AppCompatActivity {
 //            tvConText.setText(project.getDescription());
 //        }
 }
+    public void getUsersWorkInProject(String projectId) {
+        dbManager.getUsersByProjectId(projectId, new DatabaseFirebaseManager.GetUsersByProjectIdListener() {
+            @Override
+            public void onGetUsersByProjectIdSuccess(List<String> userIds) {
+                getUsers(userIds);
+            }
+
+            @Override
+            public void onGetUsersByProjectIdFailure(String errorMessage) {
+                // Xử lý khi không thể lấy được danh sách user làm việc trong dự án
+                Toast.makeText(DetailProjectActivity.this, "Failed to get users working in project: " + errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void getUsers(List<String> userIds) {
+        dbManager.getUsers(userIds, new DatabaseFirebaseManager.GetUsersListener() {
+            @Override
+            public void onGetUsersSuccess(List<User> users) {
+                // Hiển thị danh sách người dùng làm việc trong dự án
+                displayUsersWork(users);
+            }
+
+            @Override
+            public void onGetUsersFailure(String errorMessage) {
+                // Xử lý khi không thể lấy được thông tin của các người dùng
+                Toast.makeText(DetailProjectActivity.this, "Failed to get users: " + errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void displayUsersWork(List<User> users) {
+        userWorkList.clear();
+        userWorkList.addAll(users);
+        userWorkInProjectAdapter.notifyDataSetChanged();
+    }
+
 
 }

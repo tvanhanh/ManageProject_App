@@ -4,6 +4,10 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\lightbulb.png"
     },
     {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_activity_detail_invite.xml.flat",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activity_detail_invite.xml"
+    },
+    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\drawable_historyj.png.flat",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\historyj.png"
     },
@@ -130,6 +134,10 @@
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_fragment_list_deparment.xml.flat",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\fragment_list_deparment.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_item_staff_work.xml.flat",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\item_staff_work.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\drawable_logout.png.flat",
@@ -276,6 +284,10 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\color\\costom_color_navigation.xml"
     },
     {
+        "merged": "com.example.do_an_cs3.app-merged_res-54:/layout_item_staff_work.xml.flat",
+        "source": "com.example.do_an_cs3.app-main-56:/layout/item_staff_work.xml"
+    },
+    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\drawable_icon_setting.png.flat",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\icon_setting.png"
     },
@@ -396,6 +408,10 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\round_xanhlachuoi.xml"
     },
     {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_fragment_be_invited.xml.flat",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\fragment_be_invited.xml"
+    },
+    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\drawable_icon_home.png.flat",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\icon_home.png"
     },
@@ -428,12 +444,12 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\drawable_background.png.flat",
-        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\background.png"
-    },
-    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_activity_detail_project.xml.flat",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activity_detail_project.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\drawable_background.png.flat",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\background.png"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_fragment_expiring_soon.xml.flat",
@@ -448,12 +464,12 @@
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\anser.png"
     },
     {
-        "merged": "com.example.do_an_cs3.app-merged_res-54:/layout_activity_addproject.xml.flat",
-        "source": "com.example.do_an_cs3.app-main-56:/layout/activity_addproject.xml"
-    },
-    {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_item_notifi.xml.flat",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\item_notifi.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_fragment_list_personnal.xml.flat",
@@ -538,6 +554,10 @@
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\drawable_share.png.flat",
         "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\share.png"
+    },
+    {
+        "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_activity_add_info_company.xml.flat",
+        "source": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activity_add_info_company.xml"
     },
     {
         "merged": "C:\\Users\\PC ASUS\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_activity_add_infor.xml.flat",

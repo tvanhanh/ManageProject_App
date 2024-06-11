@@ -30,19 +30,19 @@ public final class ItemUserBinding implements ViewBinding {
   public final TextView tvEmail;
 
   @NonNull
-  public final TextView tvProjectName;
+  public final TextView tvTotalProject;
 
   @NonNull
   public final TextView tvUserName;
 
   private ItemUserBinding(@NonNull CardView rootView, @NonNull CircleImageView imgUser,
-      @NonNull TextView tvDepartment, @NonNull TextView tvEmail, @NonNull TextView tvProjectName,
+      @NonNull TextView tvDepartment, @NonNull TextView tvEmail, @NonNull TextView tvTotalProject,
       @NonNull TextView tvUserName) {
     this.rootView = rootView;
     this.imgUser = imgUser;
     this.tvDepartment = tvDepartment;
     this.tvEmail = tvEmail;
-    this.tvProjectName = tvProjectName;
+    this.tvTotalProject = tvTotalProject;
     this.tvUserName = tvUserName;
   }
 
@@ -91,9 +91,9 @@ public final class ItemUserBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvProjectName;
-      TextView tvProjectName = ViewBindings.findChildViewById(rootView, id);
-      if (tvProjectName == null) {
+      id = R.id.tvTotalProject;
+      TextView tvTotalProject = ViewBindings.findChildViewById(rootView, id);
+      if (tvTotalProject == null) {
         break missingId;
       }
 
@@ -103,8 +103,8 @@ public final class ItemUserBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemUserBinding((CardView) rootView, imgUser, tvDepartment, tvEmail, tvProjectName,
-          tvUserName);
+      return new ItemUserBinding((CardView) rootView, imgUser, tvDepartment, tvEmail,
+          tvTotalProject, tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

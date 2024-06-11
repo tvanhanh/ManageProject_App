@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.back_end.View_fragment.FragmentJob.ExpiringSoonFragment">
+    tools:context=".View.back_end.View_fragment.FragmentNotification.ExpiringSoonFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView

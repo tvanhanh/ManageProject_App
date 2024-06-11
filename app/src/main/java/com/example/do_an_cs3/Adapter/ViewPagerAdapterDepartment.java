@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.do_an_cs3.View.Departments.ListDeparmentFragment;
-import com.example.do_an_cs3.View.back_end.View_fragment.FragmentPersonnal.ListPersonnalFragment;
+import com.example.do_an_cs3.FragmentPersonnal.ListPersonnalFragment;
 import com.example.do_an_cs3.View.back_end.View_fragment.FragmentHome.UpdateNewFragment;
 
 public class ViewPagerAdapterDepartment extends FragmentPagerAdapter {

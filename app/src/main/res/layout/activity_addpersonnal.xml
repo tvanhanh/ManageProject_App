@@ -126,13 +126,13 @@
             android:textSize="18dp" />
 
         <EditText
-            android:id="@+id/editTextgmail"
-            android:layout_width="344dp"
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
             android:layout_height="42dp"
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="staff1@gmail.com"
-            android:inputType="text" />
+            android:inputType="text"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

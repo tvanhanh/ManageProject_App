@@ -36,7 +36,7 @@ public final class ActivityAddpersonnalBinding implements ViewBinding {
   public final Button buttondatejob;
 
   @NonNull
-  public final EditText editTextgmail;
+  public final EditText editTextEmail;
 
   @NonNull
   public final LinearLayout linearLayout;
@@ -58,7 +58,7 @@ public final class ActivityAddpersonnalBinding implements ViewBinding {
 
   private ActivityAddpersonnalBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button butonThenext, @NonNull Button buttonComback, @NonNull Button buttonHome,
-      @NonNull Button buttondatejob, @NonNull EditText editTextgmail,
+      @NonNull Button buttondatejob, @NonNull EditText editTextEmail,
       @NonNull LinearLayout linearLayout, @NonNull TextView logo,
       @NonNull RecyclerView rcvDeparment, @NonNull TextView text, @NonNull TextView textView14,
       @NonNull TextView textView15) {
@@ -67,7 +67,7 @@ public final class ActivityAddpersonnalBinding implements ViewBinding {
     this.buttonComback = buttonComback;
     this.buttonHome = buttonHome;
     this.buttondatejob = buttondatejob;
-    this.editTextgmail = editTextgmail;
+    this.editTextEmail = editTextEmail;
     this.linearLayout = linearLayout;
     this.logo = logo;
     this.rcvDeparment = rcvDeparment;
@@ -127,9 +127,9 @@ public final class ActivityAddpersonnalBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.editTextgmail;
-      EditText editTextgmail = ViewBindings.findChildViewById(rootView, id);
-      if (editTextgmail == null) {
+      id = R.id.editTextEmail;
+      EditText editTextEmail = ViewBindings.findChildViewById(rootView, id);
+      if (editTextEmail == null) {
         break missingId;
       }
 
@@ -170,7 +170,7 @@ public final class ActivityAddpersonnalBinding implements ViewBinding {
       }
 
       return new ActivityAddpersonnalBinding((ConstraintLayout) rootView, butonThenext,
-          buttonComback, buttonHome, buttondatejob, editTextgmail, linearLayout, logo, rcvDeparment,
+          buttonComback, buttonHome, buttondatejob, editTextEmail, linearLayout, logo, rcvDeparment,
           text, textView14, textView15);
     }
     String missingId = rootView.getResources().getResourceName(id);

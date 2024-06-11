@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,6 +33,7 @@ import com.example.do_an_cs3.Adapter.ViewPagerAdapterHome;
 
 import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
 
+import com.example.do_an_cs3.LoadingDialogFragment;
 import com.example.do_an_cs3.Model.Deparments;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     private CircleImageView circleImageView;
     private TextView tvUserName;
     private TextView tvPosision;
+    private LoadingDialogFragment loadingDialog;
 
     public MainActivity() {
     }
@@ -88,8 +91,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        anyChartView = findViewById(R.id.anyChartView);
 
+        anyChartView = findViewById(R.id.anyChartView);
+        
       //  dbhelper = new Database(this);
         //dbManager = new DatabaseManager(this);
         dbFBManager = new DatabaseFirebaseManager();
@@ -222,8 +226,8 @@ public void displayUserInfo() {
             // Kiểm tra xem dữ liệu có tồn tại hay không
             if (dataSnapshot.exists()) {
                 // Lấy dữ liệu từ DataSnapshot và hiển thị nó trong TextView
-                String userName = dataSnapshot.child("username").getValue(String.class);
-                String position = dataSnapshot.child("position").getValue(String.class);
+                String userName = dataSnapshot.child("userName").getValue(String.class);
+                String position = dataSnapshot.child("role").getValue(String.class);
                 dbFBManager.loadImageFromFirebase(encodedEmail, MainActivity.this,circleImageView);
                 // Hiển thị dữ liệu trong TextView
                 tvUserName.setText(userName);

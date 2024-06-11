@@ -18,7 +18,7 @@ public class LoadingDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Đang thêm task...");
+        progressDialog.setMessage("Đang tải..");
         progressDialog.setCancelable(false);
         return progressDialog;
     }

@@ -15,7 +15,7 @@
             android:id="@+id/img_user"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/hanh" />
+            android:src="@drawable/useravatar" />
 
         <LinearLayout
             android:layout_width="237dp"
@@ -46,7 +46,7 @@
                 android:text="Department" />
 
             <TextView
-                android:id="@+id/tvProjectName"
+                android:id="@+id/tvTotalProject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"

@@ -21,8 +21,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentManager;
 
 
+import com.example.do_an_cs3.LoadingDialogFragment;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.MainActivity;
 import com.google.firebase.FirebaseApp;
@@ -44,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText loginTextPassword;
     private String email;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://manageproject-7a9ac-default-rtdb.firebaseio.com/");
+    private LoadingDialogFragment loadingDialog;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -92,6 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                         Log.d("LoginActivity", "User Data: " + userData);
 
                         if (userData != null) {
+
                             String emailFFB = (String) userData.get("email");
                             String passwordFFB = (String) userData.get("password");
 
@@ -106,14 +110,16 @@ public class LoginActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString("user_email", emailText);
                                 editor.apply();
-                                if (role.equals("Lãnh đạo")) {
+                                if (role.equals("Lãnh đạo") || role.equals("Nhân viên")) {
+                                    FragmentManager fragmentManager = getSupportFragmentManager();
+                                    loadingDialog = LoadingDialogFragment.newInstance();
+                                    loadingDialog.show(fragmentManager, "loading");
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }
-
                                 else {
-                                    Intent intent = new Intent(LoginActivity.this, ChooseRoleActivity.class);
+                                    Intent intent = new Intent(LoginActivity.this, AddProfileActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }

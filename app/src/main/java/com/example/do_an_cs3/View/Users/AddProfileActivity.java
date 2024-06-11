@@ -451,7 +451,7 @@ public class AddProfileActivity extends AppCompatActivity {
 
             DatabaseReference userRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("users").child(encodedEmail);
 
-            userRef.child("username").setValue(userName).addOnCompleteListener(task -> {
+            userRef.child("userName").setValue(userName).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     Log.d("FirebaseDatabase", "Username saved successfully");
                 } else {
@@ -482,75 +482,12 @@ public class AddProfileActivity extends AppCompatActivity {
                     Log.e("FirebaseDatabase", "Failed to save avatar", task.getException());
                 }
             });
-            Intent intent = new Intent(AddProfileActivity.this, MainActivity.class);
+            Intent intent = new Intent(AddProfileActivity.this, ChooseRoleActivity.class);
             startActivity(intent);
     }
     }
 
     // Gọi phương thức này khi nhấn nút lưu
-
-
-
-//
-//    public void saveUserInfo() {
-//        String userName = editTextUserName.getText().toString();
-//        String phoneNumber = editTextPhoneNumber.getText().toString();
-//        String address = editTextAddress.getText().toString();
-//        String userEmail = getCurrentUserEmail();
-//        saveUserWithAvatar(userEmail, userName, phoneNumber, address, avatarFilePath);
-//    }
-
-//    public void saveUserWithAvatar(String email, String userName, String phoneNumber, String address, String avatarUri) {
-//        ContentValues values = new ContentValues();
-//        values.put("username", userName);
-//        values.put("phone_number", phoneNumber);
-//        values.put("address", address);
-//
-//        byte[] avatarData = getBytesFromImage(avatarUri);
-//        if (avatarData != null) {
-//            values.put("avatar_url", avatarData);
-//        }
-//
-//        int rowsAffected = db.update("Users", values, "email=?", new String[]{email});
-//        if (rowsAffected > 0) {
-//            Log.i("DatabaseHelper", "User updated successfully");
-//        } else {
-//            Log.e("DatabaseHelper", "Failed to update user");
-//        }
-//        db.close();
-//    }
-//
-//    private byte[] getBytesFromImage(String uriString) {
-//        InputStream inputStream = null;
-//        ByteArrayOutputStream outputStream = null;
-//        try {
-//            Uri imageUri = Uri.parse(uriString);
-//            inputStream = getContentResolver().openInputStream(imageUri);
-//            outputStream = new ByteArrayOutputStream();
-//            byte[] buffer = new byte[1024];
-//            int bytesRead;
-//            while ((bytesRead = inputStream.read(buffer)) != -1) {
-//                outputStream.write(buffer, 0, bytesRead);
-//            }
-//            return outputStream.toByteArray();
-//        } catch (FileNotFoundException e) {
-//            Log.e("DatabaseManager", "File not found", e);
-//        } catch (IOException e) {
-//            Log.e("DatabaseManager", "Failed to read file", e);
-//        } finally {
-//            try {
-//                if (inputStream != null) {
-//                    inputStream.close();
-//                }
-//                if (outputStream != null) {
-//                    outputStream.close();
-//                }
-//            } catch (IOException e) {
-//                Log.e("DatabaseManager", "Failed to close streams", e);
-//            }
-//        }
-//        return null;
-//   }
 
     public String getCurrentUserEmail() {
         SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);

@@ -65,7 +65,7 @@ public class AddTaskActivity extends AppCompatActivity {
 
                 new Thread(() -> {
                     long insertedId = 1;
-                           // dbManager.addTask(name, description, deadline, status, email, idProject);
+                    //dbManager.addTask(name, description, deadline, status, email, idProject);
                     runOnUiThread(() -> {
                         loadingDialog.dismiss();
                         if (insertedId != -1) {
