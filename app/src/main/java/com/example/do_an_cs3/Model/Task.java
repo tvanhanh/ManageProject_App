@@ -12,6 +12,9 @@ public class Task {
     private String username;
     private String timeComplete;
 
+    public Task(String taskId, String name, String description, String deadline, String status, String email, String idProject, String timeComeplete, String participantId) {
+    }
+
     public String getTimeComplete() {
         return timeComplete;
     }
@@ -20,7 +23,15 @@ public class Task {
         this.timeComplete = timeComplete;
     }
 
-    public Task(String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, String username, int projectId) {
+    public int getParticipantId() {
+        return participantId;
+    }
+
+    public void setParticipantId(int participantId) {
+        this.participantId = participantId;
+    }
+
+    public Task(String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, String username, int projectId, int participantId) {
         this.id = id;
         this.taskName = taskName;
         this.taskDescription = taskDescription;
@@ -29,10 +40,12 @@ public class Task {
         this.taskEmail = taskEmail;
         this.username = username;
         this.projectId = projectId;
+        this.participantId = participantId;
 
     }
 
     private int  projectId;
+    private int participantId;
 
     public Task() {
 

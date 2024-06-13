@@ -43,6 +43,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.DO_AN_CS3" >
         <activity
+            android:name="com.example.do_an_cs3.Task.ListTaskActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.do_an_cs3.Invite.DetailInviteActivity"
             android:exported="false" />
         <activity

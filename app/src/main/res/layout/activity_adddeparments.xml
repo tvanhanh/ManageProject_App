@@ -75,7 +75,7 @@
 
 
     <Button
-        android:id="@+id/butonThenext"
+        android:id="@+id/addDdepertment"
         android:layout_width="412dp"
         android:layout_height="80dp"
         android:layout_marginBottom="4dp"

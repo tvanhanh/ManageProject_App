@@ -149,8 +149,8 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
         rcv_deparment.setLayoutManager(linearLayoutManager);
 
-        List<Deparments> deparmentsList = createDummyData();
-        deparmentAdapter = new DepartmentAdapter(deparmentsList);
+      //  List<Deparments> deparmentsList = createDummyData();
+       // deparmentAdapter = new DepartmentAdapter(deparmentsList);
         rcv_deparment.setAdapter(deparmentAdapter);
 
         WarningButton = findViewById(R.id.buttonWarning);
@@ -250,13 +250,13 @@ public void displayUserInfo() {
 
 
 
-    private List<Deparments> createDummyData() {
-        List<Deparments> dummyData = new ArrayList<>();
-        dummyData.add(new Deparments("Department 1", "50%", "10%"));
-        dummyData.add(new Deparments("Department 2", "60%", "20%"));
-        dummyData.add(new Deparments("Department 3", "70%", "30%"));
-        return dummyData;
-    }
+//    private List<Deparments> createDummyData() {
+//        List<Deparments> dummyData = new ArrayList<>();
+//        dummyData.add(new Deparments("Department 1", "50%", "10%"));
+//        dummyData.add(new Deparments("Department 2", "60%", "20%"));
+//        dummyData.add(new Deparments("Department 3", "70%", "30%"));
+//        return dummyData;
+//    }
 
 //    @SuppressLint("Range")
 //    private User getUserInfo() {

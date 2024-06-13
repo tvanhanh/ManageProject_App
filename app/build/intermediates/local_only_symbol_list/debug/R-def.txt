@@ -105,6 +105,7 @@ drawable search
 drawable share
 drawable sharej
 drawable star
+drawable threedots
 drawable tochuc
 drawable user
 drawable useravatar
@@ -131,6 +132,8 @@ id TimeUpdateTask
 id accountAvt
 id action_FirstFragment_to_SecondFragment
 id action_SecondFragment_to_FirstFragment
+id addDdepertment
+id addJob
 id addTag
 id addTask
 id add_job
@@ -187,7 +190,9 @@ id companyPhoneNumber
 id contentTask
 id context
 id declineButton
+id delete
 id deparment_name
+id department_reycleView
 id discussionContainer
 id editAddNameJob
 id editAddNameProject
@@ -223,6 +228,7 @@ id linearLayout
 id linearLayout2
 id liner1
 id liner2
+id listJob
 id lnFrameLogin
 id lnFrameRegister
 id lnIdOrg
@@ -260,6 +266,7 @@ id rcv_task
 id rcv_user
 id rcv_userFollow
 id recent_activity
+id reycleViewTask
 id service_price
 id setting
 id statistic
@@ -270,6 +277,7 @@ id tab_layout
 id text
 id textInputEditTextDescription
 id textLogin
+id textOption
 id textRegister
 id textView
 id textView10
@@ -290,6 +298,7 @@ id textView6
 id textView7
 id textView8
 id textViewDate
+id text_department_name
 id textforgotpass
 id timeUpdateTask
 id tvAccountInfo
@@ -336,6 +345,7 @@ layout activity_detail_invite
 layout activity_detail_project
 layout activity_edit_account
 layout activity_edit_project
+layout activity_listtask
 layout activity_login
 layout activity_main
 layout activity_personnal
@@ -361,6 +371,7 @@ layout fragment_personnal
 layout fragment_processing_job
 layout fragment_updatenew
 layout item_department
+layout item_department_list
 layout item_notifi
 layout item_project
 layout item_staff_work
@@ -368,6 +379,7 @@ layout item_task
 layout item_user
 layout item_user_follow
 menu mune_buttom_navigation
+menu popup_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap logo

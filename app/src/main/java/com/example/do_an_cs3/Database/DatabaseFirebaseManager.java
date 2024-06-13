@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.example.do_an_cs3.Invite.DetailInviteActivity;
 import com.example.do_an_cs3.LoadingDialogFragment;
 import com.example.do_an_cs3.Model.Company;
+import com.example.do_an_cs3.Model.Deparments;
 import com.example.do_an_cs3.Model.Invite;
 import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.Model.User;
@@ -714,4 +715,39 @@ public class DatabaseFirebaseManager {
 //        }
 //        return taskList;
 //    }
+public interface DepartmentCallback {
+    void onDepartmentReceived(List<Deparments> deparments);
+    void onError(String errorMessage);
+
+}
+public void getDeparment(String email, DepartmentCallback callback) {
+    DatabaseReference departmentsRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("departments");
+    departmentsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
+            List<Deparments> departmentList = new ArrayList<>();
+            for (DataSnapshot departmentSnapshot : snapshot.getChildren()) {
+                Deparments deparments = departmentSnapshot.getValue(Deparments.class);
+                if (deparments != null && deparments.getEmail().equals(email)) {
+                    String departmentId = departmentSnapshot.child("id").getValue(String.class);
+                    String departmentName = departmentSnapshot.child("department_name").getValue(String.class);
+                    String completeJob = departmentSnapshot.child("completeJob").getValue(String.class);
+                    String email = departmentSnapshot.child("email").getValue(String.class);
+
+                    // Tạo đối tượng Deparments từ dữ liệu và thêm vào danh sách
+                    Deparments department = new Deparments(departmentId, departmentName,completeJob,email);
+                    departmentList.add(department);
+                }
+            }
+            // Gọi phương thức callback để trả về danh sách phòng ban
+            callback.onDepartmentReceived(departmentList);
         }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+            // Xử lý khi có lỗi xảy ra
+            callback.onError(error.getMessage());
+        }
+    });
+        }
+}

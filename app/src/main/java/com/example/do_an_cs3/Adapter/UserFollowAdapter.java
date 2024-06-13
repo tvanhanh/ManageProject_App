@@ -1,8 +1,11 @@
 package com.example.do_an_cs3.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -10,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
+import com.example.do_an_cs3.Task.AddTaskActivity;
 
 import java.util.List;
 
@@ -18,9 +22,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class UserFollowAdapter extends RecyclerView.Adapter<UserFollowAdapter.UserFollowViewHolder> {
 
     private List<User> users;
+    private Context context;
 
     public UserFollowAdapter(List<User> users) {
         this.users = users;
+        this.context = context;
     }
 
     @NonNull
@@ -49,11 +55,13 @@ public class UserFollowAdapter extends RecyclerView.Adapter<UserFollowAdapter.Us
         private CircleImageView circleImageViewFollow;
         private TextView tvUserName;
         private TextView tvUserName1;
+        private Button addTask;
 
         public UserFollowViewHolder(@NonNull View itemView) {
             super(itemView);
 //            circleImageViewFollow = itemView.findViewById(R.id.img_use_follow);
             tvUserName = itemView.findViewById(R.id.userNameFollow);
+            addTask = itemView.findViewById(R.id.addTask);
         }
     }
 }

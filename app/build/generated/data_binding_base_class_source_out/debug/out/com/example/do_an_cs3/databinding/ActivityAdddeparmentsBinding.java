@@ -23,7 +23,7 @@ public final class ActivityAdddeparmentsBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button butonThenext;
+  public final Button addDdepertment;
 
   @NonNull
   public final Button buttonComback;
@@ -56,13 +56,13 @@ public final class ActivityAdddeparmentsBinding implements ViewBinding {
   public final TextView textView7;
 
   private ActivityAdddeparmentsBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button butonThenext, @NonNull Button buttonComback, @NonNull Button buttonHome,
+      @NonNull Button addDdepertment, @NonNull Button buttonComback, @NonNull Button buttonHome,
       @NonNull Button buttondatejob, @NonNull EditText editTextname,
       @NonNull EditText editTextnumericalOrder, @NonNull LinearLayout linearLayout,
       @NonNull TextView logo, @NonNull TextView textView3, @NonNull TextView textView6,
       @NonNull TextView textView7) {
     this.rootView = rootView;
-    this.butonThenext = butonThenext;
+    this.addDdepertment = addDdepertment;
     this.buttonComback = buttonComback;
     this.buttonHome = buttonHome;
     this.buttondatejob = buttondatejob;
@@ -102,9 +102,9 @@ public final class ActivityAdddeparmentsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.butonThenext;
-      Button butonThenext = ViewBindings.findChildViewById(rootView, id);
-      if (butonThenext == null) {
+      id = R.id.addDdepertment;
+      Button addDdepertment = ViewBindings.findChildViewById(rootView, id);
+      if (addDdepertment == null) {
         break missingId;
       }
 
@@ -168,7 +168,7 @@ public final class ActivityAdddeparmentsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAdddeparmentsBinding((ConstraintLayout) rootView, butonThenext,
+      return new ActivityAdddeparmentsBinding((ConstraintLayout) rootView, addDdepertment,
           buttonComback, buttonHome, buttondatejob, editTextname, editTextnumericalOrder,
           linearLayout, logo, textView3, textView6, textView7);
     }

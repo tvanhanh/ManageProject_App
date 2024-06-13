@@ -133,7 +133,7 @@ public class DetailProjectActivity extends AppCompatActivity {
         rcv_task.setAdapter(taskAdapter);
         updateInfoProject();
         userWorkList = new ArrayList<>();
-        userWorkInProjectAdapter = new UserWorkInProjectAdapter(userWorkList,this);
+        userWorkInProjectAdapter = new UserWorkInProjectAdapter(userWorkList,this,this);
         rcv_user_work.setAdapter(userWorkInProjectAdapter);
         getUsersWorkInProject(idProject);
         btnViewMore.setOnClickListener(new View.OnClickListener() {

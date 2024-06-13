@@ -19,6 +19,10 @@
         android:theme="@style/Theme.DO_AN_CS3"
         tools:targetApi="31">
         <activity
+            android:name=".Task.ListTaskActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".Invite.DetailInviteActivity"
             android:exported="false" />
         <activity

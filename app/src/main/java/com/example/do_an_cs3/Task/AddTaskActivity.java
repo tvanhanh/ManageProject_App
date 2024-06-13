@@ -1,11 +1,14 @@
 package com.example.do_an_cs3.Task;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -18,10 +21,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.do_an_cs3.Adapter.TaskAdapter;
+import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
 import com.example.do_an_cs3.LoadingDialogFragment;
+import com.example.do_an_cs3.Model.Task;
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.View.Project.DetailProjectActivity;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -33,6 +39,7 @@ public class AddTaskActivity extends AppCompatActivity {
     private TextView deadlineTime;
     private Button nextButton;
     private Button btnBack;
+    private DatabaseFirebaseManager dbManager;
     private LoadingDialogFragment loadingDialog;
     private TaskAdapter taskAdapter;
 
@@ -45,7 +52,25 @@ public class AddTaskActivity extends AppCompatActivity {
         descriptionTask = findViewById(R.id.textInputEditTextDescription);
         deadlineTime = findViewById(R.id.textViewDate);
         nextButton = findViewById(R.id.butonThenext);
-     //   DatabaseManager dbManager = new DatabaseManager(this);
+        dbManager = new DatabaseFirebaseManager();
+
+        Intent intent = getIntent();
+        String idProject = intent.getStringExtra("projectId");
+        String participantId = intent.getStringExtra("participantemail");
+
+        if (idProject == null || idProject.isEmpty()) {
+            Toast.makeText(this, "Lỗi: ID dự án không hợp lệ", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "idProject is null or empty");
+            return;
+        }
+        Log.d(TAG, "idProject: " + idProject);
+
+        if (participantId == null || participantId.isEmpty()) {
+            Toast.makeText(this, "Lỗi: ID người tham gia không hợp lệ", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "participantId is null or empty");
+            return;
+        }
+        Log.d(TAG, "participantId: " + participantId);
 
         nextButton.setOnClickListener(v -> {
             String name = nameTask.getText().toString();
@@ -53,8 +78,6 @@ public class AddTaskActivity extends AppCompatActivity {
             String deadline = deadlineTime.getText().toString();
             String status = "Đang thực hiện";
             String email = getCurrentUserEmail();
-            Intent intent = getIntent();
-            int idProject = intent.getIntExtra("idProject", -1 );
 
             if (name.isEmpty() || description.isEmpty() || deadline.isEmpty()) {
                 Toast.makeText(this, "Vui lòng kiểm tra lại thông tin", Toast.LENGTH_SHORT).show();
@@ -63,26 +86,27 @@ public class AddTaskActivity extends AppCompatActivity {
                 loadingDialog = LoadingDialogFragment.newInstance();
                 loadingDialog.show(fragmentManager, "loading");
 
-                new Thread(() -> {
-                    long insertedId = 1;
-                    //dbManager.addTask(name, description, deadline, status, email, idProject);
-                    runOnUiThread(() -> {
-                        loadingDialog.dismiss();
-                        if (insertedId != -1) {
-                            Toast.makeText(AddTaskActivity.this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
-                            if (taskAdapter != null) {
-                                taskAdapter.notifyDataSetChanged();
-                            }
-                            Intent detailIntent = new Intent(AddTaskActivity.this, DetailProjectActivity.class);
-                            detailIntent.putExtra("idProject", idProject);
+                DatabaseReference databaseTasks = FirebaseDatabase.getInstance().getReference("tasks");
+                String taskId = databaseTasks.push().getKey();
+                String timeComeplete = null;
 
-                            startActivity(detailIntent);
-                            finish();
-                        } else {
-                            Toast.makeText(AddTaskActivity.this, "Lỗi " + name, Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }).start();
+                Task task = new Task(taskId, name, description, deadline, status, email, idProject, timeComeplete, participantId);
+
+                Log.d(TAG, "Saving task: " + task.toString());
+
+                databaseTasks.child(taskId).setValue(task).addOnCompleteListener(taskCompletion -> {
+                    loadingDialog.dismiss();
+                    if (taskCompletion.isSuccessful()) {
+                        Toast.makeText(AddTaskActivity.this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
+                        Intent detailIntent = new Intent(AddTaskActivity.this, ListTaskActivity.class);
+                        detailIntent.putExtra("idProject", idProject);
+                        detailIntent.putExtra("participantId", participantId);
+                        startActivity(detailIntent);
+                        finish();
+                    } else {
+                        Toast.makeText(AddTaskActivity.this, "Lỗi " + name, Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 

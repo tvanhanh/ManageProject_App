@@ -1,6 +1,7 @@
 package com.example.do_an_cs3.Adapter;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -18,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.do_an_cs3.Model.Task;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
+import com.example.do_an_cs3.Task.AddTaskActivity;
 import com.example.do_an_cs3.View.MainActivity;
 import com.example.do_an_cs3.View.Project.DetailProjectActivity;
 
@@ -133,6 +136,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         private TextView namePersonUpdate;
         private CheckBox taskStatus;
         private TextView timeUpdate;
+        private Button addTassk;
 
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -142,6 +146,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             namePersonUpdate = itemView.findViewById(R.id.NamePersonOfTaskUpdate);
             timeUpdate = itemView.findViewById(R.id.timeUpdateTask);
             taskStatus = itemView.findViewById(R.id.statusTask);
+            addTassk = itemView.findViewById(R.id.addTask);
         }
     }
     public Task getTask(int position) {
