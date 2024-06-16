@@ -1,5 +1,5 @@
-package com.example.do_an_cs3.Model;
 
+package com.example.do_an_cs3.Model;
 public class Task {
 
     private String id;
@@ -12,9 +12,11 @@ public class Task {
     private String username;
 
     private String idProject;
+
     private String timeComplete;
     private String emailParticipant;
     public Task(){
+
 
     }
 

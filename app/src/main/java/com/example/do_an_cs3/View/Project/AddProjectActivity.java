@@ -173,19 +173,6 @@ public class AddProjectActivity extends AppCompatActivity {
 
 
 
-//                long insertedId = dbManager.addProject(name, description, deadline,creationTime, status,views,percent_complete,email,department);
-//                loadingDialog.dismiss();
-//                if (insertedId != -1) {
-//                    Toast.makeText(this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
-//                    //.notifyDataSetChanged();
-//                    Intent intent1 = new Intent(AddProjectActivity.this, MainActivity.class);
-//                    startActivity(intent1);
-//                } else {
-//                    Toast.makeText(this, "Lỗi " + name, Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-
         Button buttonAddTime = findViewById(R.id.buttonaddTime);
         buttonAddTime.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -37,6 +37,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="horizontal">
 
             <TextView
@@ -55,12 +56,12 @@
                 android:text="Tên task" />
 
 
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="horizontal">
 
             <TextView
@@ -119,6 +120,7 @@
                 android:layout_marginStart="9dp"
                 android:text="Tên" />
         </LinearLayout>
+
     </LinearLayout>
     <TextView
         android:id="@+id/options"
@@ -145,6 +147,7 @@
         android:textSize="10dp"
         android:text="vài giây trước" />
 </LinearLayout>
+
 
     </LinearLayout>
 

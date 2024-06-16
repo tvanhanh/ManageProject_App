@@ -22,6 +22,7 @@ import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
 import com.example.do_an_cs3.Model.Deparments;
 import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.R;
+
 import com.example.do_an_cs3.View.Departments.AddDeparmentsActivity;
 
 import com.google.firebase.database.DataSnapshot;
@@ -32,6 +33,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
+
+
 
 public class ListDeparmentFragment extends Fragment {
     private Button add;
@@ -47,6 +52,7 @@ public class ListDeparmentFragment extends Fragment {
     private RecyclerView recyclerView;
     private DepartmentAdapter departmentAdapter;
     // private List<Deparments> departmentList;
+
     private List<Deparments> departmentList = new ArrayList<>();
     private TextView option;
 
@@ -87,7 +93,6 @@ public class ListDeparmentFragment extends Fragment {
         }
 
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -98,6 +103,7 @@ public class ListDeparmentFragment extends Fragment {
         recyclerView = view.findViewById(R.id.department_reycleView);
 
         departmentList = new ArrayList<>();
+
         departmentAdapter = new DepartmentAdapter(departmentList,requireContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false));
         recyclerView.setAdapter(departmentAdapter);

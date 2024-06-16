@@ -39,6 +39,7 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.De
     @NonNull
     @Override
     public DeparmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_department_list, parent, false);
         return new DeparmentViewHolder(view);
     }
@@ -77,11 +78,14 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.De
 
     private void showPopupMenu(View view, String departmentId, String nameDepartment) {
         PopupMenu popupMenu = new PopupMenu(mContext, view);
+
         popupMenu.inflate(R.menu.popupdepartment);
+
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 int itemId = item.getItemId();
+
                 if (itemId == R.id.update) {
                     showUpdateDialog(departmentId);
                     //  Toast.makeText(mContext, "Sửa: " + departmentId, Toast.LENGTH_SHORT).show();
@@ -131,7 +135,9 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.De
 
     public void updateDepartment(String id, String newDepartmentName) {
         DatabaseReference departmentRef = FirebaseDatabase.getInstance().getReference("departments").child(id);
+
         departmentRef.child("deparment_name").setValue(newDepartmentName).addOnCompleteListener(task -> {
+
             if (task.isSuccessful()) {
                 // Cập nhật thành công, thông báo và cập nhật danh sách
                 Toast.makeText(mContext, "Cập nhật phòng ban thành công", Toast.LENGTH_SHORT).show();

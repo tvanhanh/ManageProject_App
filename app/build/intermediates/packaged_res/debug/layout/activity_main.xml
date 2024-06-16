@@ -79,7 +79,9 @@
                      android:layout_height="29dp"
                      android:layout_gravity="center"
                      android:layout_marginTop="4dp"
-                     android:text="Thống kê công việc" />
+                     android:text="Thống kê công việc"
+                     android:fontFamily="@font/spartan_bold"
+                     />
 
                  <TextView
                      android:id="@+id/text"
@@ -90,14 +92,16 @@
                      android:text="." />
 
                  <TextView
-                     android:id="@+id/textView2"
+                     android:id="@+id/tvTotalProject"
                      android:layout_width="223dp"
                      android:layout_height="match_parent"
                      android:layout_centerVertical="true"
                      android:layout_gravity="center"
                      android:layout_marginLeft="4dp"
                      android:gravity="center"
-                     android:text="3 Nhân sự,hoàn thành 40.00%"
+                     android:text="Tổng số dự án: "
+                     android:fontFamily="@font/spartan_bold"
+                     android:textColor="@color/buttonXanhDam"
 
                      />
              </LinearLayout>

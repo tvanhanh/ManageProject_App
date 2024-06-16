@@ -30,6 +30,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import org.checkerframework.checker.units.qual.A;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -46,6 +51,7 @@ public class EditAccountActivity extends AppCompatActivity {
     private EditText editTextRole;
     private EditText editTextDepartment;
     private EditText editTextReferralCode;
+
 
     private Button update;
     private String encodedEmail;
@@ -71,6 +77,7 @@ public class EditAccountActivity extends AppCompatActivity {
         update = findViewById(R.id.buttonUpdate);
         dbFBManager = new DatabaseFirebaseManager();
 
+
         buttonHome.setOnClickListener(v -> {
             Intent intent = new Intent(EditAccountActivity.this, MainActivity.class);
             startActivity(intent);
@@ -81,6 +88,7 @@ public class EditAccountActivity extends AppCompatActivity {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String name = editTextName.getText().toString();
                 String phone = editTextPhone.getText().toString();
                 String address = editTextAddress.getText().toString();
@@ -151,6 +159,7 @@ public class EditAccountActivity extends AppCompatActivity {
         }
     }
 
+
     void openImageChooser() {
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -172,6 +181,7 @@ public class EditAccountActivity extends AppCompatActivity {
             }
         }
     }
+
 
 
     private String getCurrentUserEmail() {

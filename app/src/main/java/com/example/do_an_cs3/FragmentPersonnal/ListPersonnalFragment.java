@@ -21,6 +21,7 @@ import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.View.Project.AddProjectActivity;
+import com.example.do_an_cs3.View.Project.DetailProjectActivity;
 import com.example.do_an_cs3.View.Users.AddPersonnalActivity;
 import com.example.do_an_cs3.View.Users.PersonnalActivity;
 
@@ -48,6 +49,7 @@ public class ListPersonnalFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private String idProject;
+    private String nameProject;
     private DatabaseFirebaseManager dbManager;
 
     public ListPersonnalFragment() {
@@ -99,6 +101,7 @@ public class ListPersonnalFragment extends Fragment {
         rcv_user.setAdapter(user_adapter);
         Intent intent = getActivity().getIntent();
         idProject = intent.getStringExtra("idProject");
+        nameProject = intent.getStringExtra("nameProject");
 
         // Set up OnClickListener for the Add button
         buttonAdd.setOnClickListener(new View.OnClickListener() {
@@ -174,7 +177,6 @@ public class ListPersonnalFragment extends Fragment {
     }
 
 
-
     private void updateRecyclerView(List<User> userList) {
         if (userList != null && !userList.isEmpty()) {
             users.clear();
@@ -186,8 +188,12 @@ public class ListPersonnalFragment extends Fragment {
         dbManager.saveProjectJoin( emailWork, idProject, getActivity(), new DatabaseFirebaseManager.SaveProjectJoinListener() {
             @Override
             public void onSaveProjectJoinSuccess() {
+                Intent intent = new Intent(getActivity(), DetailProjectActivity.class);
+                intent.putExtra("idProject", idProject);
+                intent.putExtra("projectName", nameProject);
+                startActivity(intent);
+                getActivity().finish();
             }
-
             @Override
             public void onSaveProjectJoinFailure(String errorMessage) {
 

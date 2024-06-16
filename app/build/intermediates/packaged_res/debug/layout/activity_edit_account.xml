@@ -116,8 +116,9 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="12dp"
                     android:ems="10"
+                    android:hint="Tên"
                     android:inputType="text"
-                    android:text="Name" />
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -142,8 +143,9 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="12dp"
                     android:ems="10"
+                    android:hint="Số điện thoại"
                     android:inputType="phone"
-                    android:text="phone" />
+                   />
             </LinearLayout>
 
 
@@ -170,6 +172,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="12dp"
                     android:ems="10"
+                    android:hint="Địa chỉ"
                     android:inputType="textPostalAddress" />
             </LinearLayout>
 
@@ -195,8 +198,10 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="12dp"
                     android:ems="10"
+                    android:hint="Chức vụ"
                     android:inputType="text" />
             </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -220,6 +225,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="12dp"
                     android:ems="10"
+                    android:hint="Bộ Phận"
                     android:inputType="text" />
 
             </LinearLayout>
@@ -247,6 +253,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="12dp"
                     android:ems="10"
+                    android:hint="Mã giới thiệu"
                     android:inputType="text" />
             </LinearLayout>
         </LinearLayout>

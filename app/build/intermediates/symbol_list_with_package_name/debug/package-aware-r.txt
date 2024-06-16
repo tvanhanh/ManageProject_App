@@ -3151,6 +3151,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_search
 drawable ic_search_black_24
 drawable icon_home
 drawable icon_jod
@@ -3261,6 +3262,7 @@ drawable round_xanhlachuoi
 drawable roundgreen
 drawable save
 drawable search
+drawable search_edit_text_bg
 drawable selection_band_overlay
 drawable share
 drawable sharej
@@ -3424,6 +3426,7 @@ id btnSave
 id btnShareTask
 id btnViewMore
 id btn_add_staff_work
+id btn_search
 id btnback
 id butonThenext
 id button
@@ -3802,7 +3805,9 @@ id rcv_user
 id rcv_userFollow
 id recent_activity
 id rectangles
+id recycler_search
 id report_drawn
+id resultSearch
 id reverseSawtooth
 id reycleViewTask
 id right
@@ -3827,6 +3832,7 @@ id search_bar
 id search_button
 id search_close_btn
 id search_edit_frame
+id search_edit_text
 id search_go_btn
 id search_mag_icon
 id search_plate
@@ -3915,7 +3921,6 @@ id textView14
 id textView15
 id textView16
 id textView18
-id textView2
 id textView20
 id textView21
 id textView22
@@ -4150,6 +4155,7 @@ layout activity_plash
 layout activity_project
 layout activity_register
 layout activity_report
+layout activity_search_project
 layout activity_setting
 layout activity_warning
 layout activy_changepass
@@ -4187,6 +4193,7 @@ layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_department
 layout item_department_list
+layout item_listdepartment
 layout item_notifi
 layout item_project
 layout item_staff_work

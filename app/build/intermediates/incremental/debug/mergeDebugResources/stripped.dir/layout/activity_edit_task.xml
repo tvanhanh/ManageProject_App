@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Task.AddTaskActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnback"
+            android:layout_width="53dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Cập Nhật Công việc"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/buttondatejob"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/clock"
+                android:text="." />
+            <Button
+                android:id="@+id/buttonHome"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/icon_home"
+                android:text="." />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/editNameJob"
+        android:layout_width="369dp"
+        android:layout_height="45dp"
+        android:layout_margin="20dp"
+        android:background="@color/white"
+        android:drawablePadding="@dimen/size10dp"
+        android:hint="Tên công việc "
+        android:padding="@dimen/size10dp"
+        android:singleLine="true"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toTopOf="@+id/textInputEditTextDescription"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="21dp" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="152dp"
+        android:text="Nội dung công viêc"
+        android:textColor="@color/print"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditTextDescription"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="12dp"
+        android:background="@color/yelo"
+        android:gravity="top"
+        android:layout_margin="25dp"
+        android:hint="Nhập nội dung ..."
+        app:layout_constraintBottom_toTopOf="@+id/butonThenext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.326">
+
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <Button
+        android:id="@+id/buttonaddTime"
+        android:layout_width="153dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="272dp"
+        android:backgroundTint="@color/buttonXanhDam"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text=" Thêm Thời Hạn"
+        android:textColor="@color/xanhlaChụoi"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ExtraText" />
+
+    <Button
+        android:id="@+id/butonThenext"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:text="CẬP NHẬT"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="141dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="108dp"
+        android:text="Hạn:"
+        app:layout_constraintBottom_toTopOf="@+id/butonThenext"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

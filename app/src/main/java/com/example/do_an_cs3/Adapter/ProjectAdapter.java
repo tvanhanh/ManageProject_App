@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
 import com.example.do_an_cs3.Model.Project;
+import com.example.do_an_cs3.View.Project.SearchProjectActivity;
 import com.example.do_an_cs3.View.back_end.View_fragment.FragmentHome.UpdateNewFragment;
 import com.example.do_an_cs3.View.back_end.View_fragment.FragmentJob.NewjobFragment;
 import com.example.do_an_cs3.ViewHolder.ProjectViewHolder;
@@ -35,15 +37,29 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
     private View view;
     private DatabaseFirebaseManager dbFBManager;
     private UpdateNewFragment activity;
+    private SearchProjectActivity activitySearch;
+
+
 
     public ProjectAdapter(List<Project> projectList, Context mContext, UpdateNewFragment activity) {
         this.projectList = projectList;
         this.mContext = mContext;
         this.activity =  activity;
     }
+    public ProjectAdapter(List<Project> projectList, Context mContext, SearchProjectActivity activity) {
+        this.projectList = projectList;
+        this.mContext = mContext;
+        this.activitySearch =  activity;
+    }
 
     public ProjectAdapter() {
 
+    }
+
+
+    // lấy id project
+    public interface OnItemClickListener {
+        void onItemClick(Project project);
     }
 
     public ProjectAdapter(List<Project> projectList) {
@@ -63,6 +79,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
     }
 
 
+
     @NonNull
     @Override
     public ProjectViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -77,7 +94,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
         currentViewHolder = holder;
         if(project != null){
             holder.tvProjectCreationTime.setText(project.getCreationTime());
-            displayUserInfo(holder.tvNamePersonCreation,holder.circleImageView);
+            displayUserInfo(holder.tvNamePersonCreation,holder.circleImageView, project.getEmail());
             holder.tvProjectName.setText(project.getName());
             holder.tvProjectDeadline.setText(project.getDeadline());
             holder.tvProjectStatus.setText(project.getStatus());
@@ -126,8 +143,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
             currentViewHolder.timeUpdateTask.setText(time);
         }
     }
-    public void displayUserInfo(TextView tvUserName, CircleImageView circleImageView) {
-        String userEmail = getCurrentUserEmail();
+    public void displayUserInfo(TextView tvUserName, CircleImageView circleImageView, String userEmail) {
         String encodedEmail = userEmail.replace(".", ",");
         DatabaseReference userRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("users").child(encodedEmail);
 
@@ -140,7 +156,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder> {
                     // Lấy dữ liệu từ DataSnapshot và hiển thị nó trong TextView
                     String userName = dataSnapshot.child("username").getValue(String.class);
                     String position = dataSnapshot.child("position").getValue(String.class);
-                    dbFBManager.loadImageFromFirebase(encodedEmail, activity.getActivity(), circleImageView);
+                    dbFBManager.loadImageFromFirebase(encodedEmail, (Activity) mContext, circleImageView);
                     // Hiển thị dữ liệu trong TextView
                     tvUserName.setText(userName);
                 } else {

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Project.ProjectActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/buttonComback"
+            android:layout_width="58dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/baseline_arrow_back_24"
+            android:text="." />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="29dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="3"
+            android:text="Danh Sách Dự Án"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginLeft="30dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonSeacrh"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/search"
+                android:text="." />
+
+            <Button
+                android:id="@+id/buttonDate"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/clock"
+                android:text="." />
+
+            <Button
+                android:id="@+id/buttonWarning"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/date"
+                android:text="." />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="141dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DỰ ÁN MỚI" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ĐANG THỰC HIỆN" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHỜ DUYỆT" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HOÀN THÀNH" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TẠM DỪNG"
+            tools:layout_editor_absoluteX="341dp"
+            tools:layout_editor_absoluteY="108dp" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="560dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomnavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        android:layout_marginTop="100dp">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="UnknownIdInLayout" />
+    </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/butomnavication"
+        app:itemIconTint="@color/costom_color_navigation"
+        app:itemTextColor="@color/costom_color_navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/mune_buttom_navigation"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

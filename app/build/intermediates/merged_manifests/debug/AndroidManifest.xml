@@ -46,6 +46,9 @@
             android:name="com.example.do_an_cs3.Task.EditTaskActivity"
             android:exported="false" />
         <activity
+            android:name="com.example.do_an_cs3.View.Project.SearchProjectActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.do_an_cs3.Invite.DetailInviteActivity"
             android:exported="false" />
         <activity

@@ -56,6 +56,7 @@ public class AddTaskActivity extends AppCompatActivity {
         descriptionTask = findViewById(R.id.textInputEditTextDescription);
         deadlineTime = findViewById(R.id.textViewDate);
         nextButton = findViewById(R.id.butonThenext);
+
         dbManager = new DatabaseFirebaseManager();
 
         Intent intent = getIntent();
@@ -77,11 +78,13 @@ public class AddTaskActivity extends AppCompatActivity {
         Log.d(TAG, "participantId: " + participantEmail);
 
         nextButton.setOnClickListener(v -> {
+
             String name = nameTask.getText().toString();
             String description = descriptionTask.getText().toString();
             String deadline = deadlineTime.getText().toString();
             String status = "Đang thực hiện";
             String email = getCurrentUserEmail();
+
 
             if (name.isEmpty() || description.isEmpty() || deadline.isEmpty()) {
                 Toast.makeText(this, "Vui lòng kiểm tra lại thông tin", Toast.LENGTH_SHORT).show();
@@ -89,6 +92,7 @@ public class AddTaskActivity extends AppCompatActivity {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 loadingDialog = LoadingDialogFragment.newInstance();
                 loadingDialog.show(fragmentManager, "loading");
+
 
                 DatabaseReference databaseTasks = FirebaseDatabase.getInstance().getReference("tasks");
                 String taskId = databaseTasks.push().getKey();
@@ -98,11 +102,13 @@ public class AddTaskActivity extends AppCompatActivity {
 
                 Log.d(TAG, "Saving task: " + task.toString());
 
+
                 databaseTasks.child(taskId).setValue(task).addOnCompleteListener(taskCompletion -> {
                     loadingDialog.dismiss();
                     if (taskCompletion.isSuccessful()) {
                         Toast.makeText(AddTaskActivity.this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
                         Intent detailIntent = new Intent(AddTaskActivity.this, DetailProjectActivity.class);
+
                         detailIntent.putExtra("projectId", idProject);
                         detailIntent.putExtra("participantEmail", participantEmail);
                         startActivity(detailIntent);
@@ -111,6 +117,7 @@ public class AddTaskActivity extends AppCompatActivity {
                         Toast.makeText(AddTaskActivity.this, "Lỗi " + name, Toast.LENGTH_SHORT).show();
                     }
                 });
+
             }
         });
 
