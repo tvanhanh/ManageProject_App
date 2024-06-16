@@ -53,57 +53,44 @@ public class UpdateNewFragment extends Fragment {
         projectAdapter = new ProjectAdapter(projectList, requireContext(), this);
         rcv_project.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false));
         rcv_project.setAdapter(projectAdapter);
-
+        dbFBManager = new DatabaseFirebaseManager(requireContext());
         String email = getCurrentUserEmail();
         if (email != null) {
-            dbFBManager = new DatabaseFirebaseManager(requireContext());
-            dbFBManager.getProjectsByEmail(email, new DatabaseFirebaseManager.GetProjectsByEmailListener() {
-                @Override
-                public void onGetProjectsByEmailSuccess(List<String> projectIds) {
-                    dbFBManager.getProjectsByIds(projectIds, new DatabaseFirebaseManager.GetProjectsByIdsListener() {
-                        @Override
-                        public void onGetProjectsByIdsSuccess(List<Project> projects) {
-                            projectList.clear();
-                            projectList.addAll(projects);
-                            projectAdapter.notifyDataSetChanged();
-                        }
-
-                        @Override
-                        public void onGetProjectsByIdsFailure(String errorMessage) {
-                            Log.e("UpdateNewFragment", "Error: " + errorMessage);
-                        }
-                    });
-                }
-
-                @Override
-                public void onGetProjectsByEmailFailure(String errorMessage) {
-                    Log.e("UpdateNewFragment", "Error: " + errorMessage);
-                }
-            });
+            getAllProjectHasJoin(email);
         }
 
         return view;
     }
+
+
+    public void getAllProjectHasJoin(String email){
+        dbFBManager.getProjectsByEmail(email, new DatabaseFirebaseManager.GetProjectsByEmailListener() {
+            @Override
+            public void onGetProjectsByEmailSuccess(List<String> projectIds) {
+                dbFBManager.getProjectsByIds(projectIds, new DatabaseFirebaseManager.GetProjectsByIdsListener() {
+                    @Override
+                    public void onGetProjectsByIdsSuccess(List<Project> projects) {
+                        projectList.clear();
+                        projectList.addAll(projects);
+                        projectAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onGetProjectsByIdsFailure(String errorMessage) {
+                        Log.e("UpdateNewFragment", "Error: " + errorMessage);
+                    }
+                });
+            }
+
+            @Override
+            public void onGetProjectsByEmailFailure(String errorMessage) {
+                Log.e("UpdateNewFragment", "Error: " + errorMessage);
+            }
+        });
+    }
 }
 
-//    public void onItemClick(Project project) {
-//        // Kiểm tra xem danh sách công việc của dự án có rỗng hay không
-//        if (projectList.isEmpty()) {
-//            // Nếu danh sách công việc rỗng, chuyển hướng đến AddTaskActivity
-//            Intent intent = new Intent(getActivity(), AddProjectActivity.class);
-//            intent.putExtra("idProject", project.getId());
-//            startActivity(intent);
-//        } else {
-//            // Nếu không rỗng, chuyển hướng đến DetailProjectActivity
-//            Intent intent = new Intent(getActivity(), DetailProjectActivity.class);
-//            intent.putExtra("idProject", project.getId());
-//            intent.putExtra("projectCreationTime", project.getCreationTime());
-//            intent.putExtra("projectEmail", project.getEmail());
-//            intent.putExtra("projectName", project.getName());
-//            intent.putExtra("projectDeadline", project.getDeadline());
-//            intent.putExtra("projectStatus", project.getStatus());
-//            startActivity(intent);
-//
+
 
 
 

@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.example.do_an_cs3.Adapter.ProjectAdapter;
 import com.example.do_an_cs3.Adapter.TaskAdapter;
 
+import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
 import com.example.do_an_cs3.LoadingDialogFragment;
 import com.example.do_an_cs3.Model.Project;
 import com.example.do_an_cs3.R;
@@ -31,6 +32,7 @@ import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.example.do_an_cs3.View.SettingActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DatabaseReference;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -44,7 +46,9 @@ public class EditProjectActivity extends AppCompatActivity {
     private TextInputEditText descriptionProject;
     private TextView deadlineTime;
     private LoadingDialogFragment loadingDialog;
-    private int idProject;
+    private String idProject;
+    private DatabaseFirebaseManager dbManager;
+    private Project project;
 
 
 
@@ -56,10 +60,10 @@ public class EditProjectActivity extends AppCompatActivity {
 
         // Nhận idProject từ Intent
         Intent intent = getIntent();
-        idProject = intent.getIntExtra("idProject", -1);
+        idProject = intent.getStringExtra("idProject");
 
         // Kiểm tra idProject
-        if (idProject == -1) {
+        if (idProject == null) {
             Toast.makeText(this, "Không thể nhận diện dự án", Toast.LENGTH_SHORT).show();
             finish();
             return;  // Ngăn chặn mã tiếp tục thực thi nếu không có idProject
@@ -72,36 +76,34 @@ public class EditProjectActivity extends AppCompatActivity {
         deadlineTime = findViewById(R.id.textViewDate);
         Date currentCreation = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy, HH:mm");
-        //Project project = dbManager.getInfoProject(idProject);
-        Project project = new Project();
-        nameProject.setText(project.getName());
-        descriptionProject.setText(project.getDescription());
-        deadlineTime.setText(project.getDeadline());
+        dbManager = new DatabaseFirebaseManager();
+        dbManager.getProjectById(idProject, new DatabaseFirebaseManager.ProjectCallback() {
+            @Override
+            public void onSuccess(Project project) {
+                nameProject.setText(project.getName());
+                descriptionProject.setText(project.getDescription());
+                deadlineTime.setText(project.getDeadline());
+
+            }
+            @Override
+            public void onFailure(String errorMessage) {
+
+            }
+        });
 
         nextButton = findViewById(R.id.buttonThenext);
         nextButton.setOnClickListener(v -> {
             String name = nameProject.getText().toString();
             String description = descriptionProject.getText().toString();
             String deadline = deadlineTime.getText().toString();
-            String creationTime = dateFormat.format(currentCreation);
-            String status = "Dự án mới";
-            int views = project.getViews();  // Lấy số lượt xem hiện tại từ đối tượng Project
+//            String creationTime = dateFormat.format(currentCreation);
+//            String status = "Dự án mới";
+//           // int views = project.getViews();  // Lấy số lượt xem hiện tại từ đối tượng Project
 
             if (name.isEmpty() || description.isEmpty() || deadline.isEmpty()) {
                 Toast.makeText(this, "Vui lòng kiểm tra lại thông tin", Toast.LENGTH_SHORT).show();
             } else {
-//                FragmentManager fragmentManager = getSupportFragmentManager();
-//                loadingDialog = LoadingDialogFragment.newInstance();
-//                loadingDialog.show(fragmentManager, "loading");
-//                boolean updated = dbManager.updateProject(name, description, deadline, creationTime, status, views, idProject);
-//                loadingDialog.dismiss();
-//                if (updated) {
-//                    Toast.makeText(this, "Cập nhật thành công dự án " + name, Toast.LENGTH_SHORT).show();
-//                    Intent intent1 = new Intent(EditProjectActivity.this, MainActivity.class);
-//                    startActivity(intent1);
-//                } else {
-//                    Toast.makeText(this, "Cập nhật " + name+"thất bại", Toast.LENGTH_SHORT).show();
-//                }
+                 updateProjectData(idProject,name,description,deadline);
             }
         });
 
@@ -155,4 +157,22 @@ public class EditProjectActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
         return sharedPreferences.getString("user_email", null);
     }
+    private void updateProjectData(String projectId, String name, String description, String deadline) {
+
+        DatabaseReference projectRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("projects").child(projectId);
+        projectRef.child("name").setValue(name);
+        projectRef.child("description").setValue(description);
+        projectRef.child("deadline").setValue(deadline)
+                .addOnSuccessListener(aVoid -> {
+                    Toast.makeText(EditProjectActivity.this, "Cập nhật dự án thành công", Toast.LENGTH_SHORT).show();
+                    // Quay lại màn hình chính hoặc làm điều gì đó khác
+                    Intent intent = new Intent(EditProjectActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(EditProjectActivity.this, "Cập nhật dự án thất bại: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+    }
+
 }

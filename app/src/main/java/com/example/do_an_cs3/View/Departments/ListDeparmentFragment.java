@@ -89,9 +89,7 @@ public class ListDeparmentFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,

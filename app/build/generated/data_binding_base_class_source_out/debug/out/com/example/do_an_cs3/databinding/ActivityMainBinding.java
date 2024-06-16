@@ -68,7 +68,7 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView textView;
 
   @NonNull
-  public final TextView textView2;
+  public final TextView tvTotalProject;
 
   @NonNull
   public final TextView userName;
@@ -85,7 +85,7 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull CircleImageView circleImageViewMain, @NonNull LinearLayout linearLayout,
       @NonNull TextView logo, @NonNull TextView position, @NonNull RecyclerView rcvDeparment,
       @NonNull TabLayout tabLayout, @NonNull TextView text, @NonNull TextView textView,
-      @NonNull TextView textView2, @NonNull TextView userName, @NonNull ViewPager viewpager,
+      @NonNull TextView tvTotalProject, @NonNull TextView userName, @NonNull ViewPager viewpager,
       @NonNull WrapContentViewPager viewpager2) {
     this.rootView = rootView;
     this.anyChartView = anyChartView;
@@ -101,7 +101,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.tabLayout = tabLayout;
     this.text = text;
     this.textView = textView;
-    this.textView2 = textView2;
+    this.tvTotalProject = tvTotalProject;
     this.userName = userName;
     this.viewpager = viewpager;
     this.viewpager2 = viewpager2;
@@ -212,9 +212,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView2;
-      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
-      if (textView2 == null) {
+      id = R.id.tvTotalProject;
+      TextView tvTotalProject = ViewBindings.findChildViewById(rootView, id);
+      if (tvTotalProject == null) {
         break missingId;
       }
 
@@ -238,7 +238,7 @@ public final class ActivityMainBinding implements ViewBinding {
 
       return new ActivityMainBinding((RelativeLayout) rootView, anyChartView, bottomnavigation,
           buttonDate, buttonSeacrh, buttonWarning, circleImageViewMain, linearLayout, logo,
-          position, rcvDeparment, tabLayout, text, textView, textView2, userName, viewpager,
+          position, rcvDeparment, tabLayout, text, textView, tvTotalProject, userName, viewpager,
           viewpager2);
     }
     String missingId = rootView.getResources().getResourceName(id);

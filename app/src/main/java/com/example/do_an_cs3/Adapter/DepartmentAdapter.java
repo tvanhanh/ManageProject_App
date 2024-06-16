@@ -131,7 +131,7 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.De
 
     public void updateDepartment(String id, String newDepartmentName) {
         DatabaseReference departmentRef = FirebaseDatabase.getInstance().getReference("departments").child(id);
-        departmentRef.child("deparment_name").setValue(newDepartmentName).addOnCompleteListener(task -> {
+        departmentRef.child("department_name").setValue(newDepartmentName).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 // Cập nhật thành công, thông báo và cập nhật danh sách
                 Toast.makeText(mContext, "Cập nhật phòng ban thành công", Toast.LENGTH_SHORT).show();

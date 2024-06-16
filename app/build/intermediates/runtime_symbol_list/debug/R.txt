@@ -3150,6 +3150,7 @@ int drawable ic_mtrl_checked_circle 0x7f0700cc
 int drawable ic_mtrl_chip_checked_black 0x7f0700cd
 int drawable ic_mtrl_chip_checked_circle 0x7f0700ce
 int drawable ic_mtrl_chip_close_circle 0x7f0700cf
+int drawable ic_search 0x7f07014a
 int drawable ic_search_black_24 0x7f0700d0
 int drawable icon_home 0x7f0700d1
 int drawable icon_jod 0x7f0700d2
@@ -3260,6 +3261,7 @@ int drawable round_xanhlachuoi 0x7f07013a
 int drawable roundgreen 0x7f07013b
 int drawable save 0x7f07013c
 int drawable search 0x7f07013d
+int drawable search_edit_text_bg 0x7f07014b
 int drawable selection_band_overlay 0x7f07013e
 int drawable share 0x7f07013f
 int drawable sharej 0x7f070140
@@ -3420,6 +3422,7 @@ int id btnSave 0x7f090086
 int id btnShareTask 0x7f090087
 int id btnViewMore 0x7f090088
 int id btn_add_staff_work 0x7f090089
+int id btn_search 0x7f0902d4
 int id btnback 0x7f09008a
 int id butonAdd 0x7f09008b
 int id butonThenext 0x7f09008c
@@ -3796,7 +3799,9 @@ int id rcv_user 0x7f0901fe
 int id rcv_userFollow 0x7f0901ff
 int id recent_activity 0x7f090200
 int id rectangles 0x7f090201
+int id recycler_search 0x7f0902d5
 int id report_drawn 0x7f090202
+int id resultSearch 0x7f0902d7
 int id reverseSawtooth 0x7f090203
 int id right 0x7f090204
 int id rightToLeft 0x7f090205
@@ -3820,6 +3825,7 @@ int id search_bar 0x7f090216
 int id search_button 0x7f090217
 int id search_close_btn 0x7f090218
 int id search_edit_frame 0x7f090219
+int id search_edit_text 0x7f0902d6
 int id search_go_btn 0x7f09021a
 int id search_mag_icon 0x7f09021b
 int id search_plate 0x7f09021c
@@ -3909,7 +3915,6 @@ int id textView14 0x7f09026f
 int id textView15 0x7f090270
 int id textView16 0x7f090271
 int id textView18 0x7f090272
-int id textView2 0x7f090273
 int id textView20 0x7f090274
 int id textView21 0x7f090275
 int id textView22 0x7f090276
@@ -4139,6 +4144,7 @@ int layout activity_plash 0x7f0c002a
 int layout activity_project 0x7f0c002b
 int layout activity_register 0x7f0c002c
 int layout activity_report 0x7f0c002d
+int layout activity_search_project 0x7f0c0097
 int layout activity_setting 0x7f0c002e
 int layout activity_warning 0x7f0c002f
 int layout activy_changepass 0x7f0c0030

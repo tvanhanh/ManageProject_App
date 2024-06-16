@@ -123,9 +123,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
                 activity.addUserWork(user.getEmail());
 
                 // Chuyển sang DetailProjectActivity
-                Intent intent = new Intent(mContext, DetailProjectActivity.class);
-                intent.putExtra("userName", user.getUserName());
-                mContext.startActivity(intent);
+
             }
         });
 

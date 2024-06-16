@@ -144,12 +144,6 @@ public class DetailProjectActivity extends AppCompatActivity {
         tvUserNameDetailWord = findViewById(R.id.userNameWork);
 
         idProject = intent.getStringExtra("idProject");
-        if (idProject == null) {
-            // Nếu idProject bị null, hiển thị thông báo hoặc thực hiện xử lý phù hợp
-            Toast.makeText(this, "Không có ID dự án được truyền", Toast.LENGTH_SHORT).show();
-            finish(); // Kết thúc Activity
-            return; // Kết thúc phương thức onCreate để tránh tiếp tục thực hiện mã bị lỗi
-        }
         databaseTasks = FirebaseDatabase.getInstance().getReference("tasks");
 
         btnAddTask = findViewById(R.id.addTask);
@@ -160,7 +154,7 @@ public class DetailProjectActivity extends AppCompatActivity {
         emailDetail = findViewById(R.id.tvEmailDetail);
         timeCreationProjectDetail = findViewById(R.id.TimeCreationProjectDetail);
         rcv_userFollow = findViewById(R.id.rcv_userFollow);
-circleImageView = findViewById(R.id.circleImageView);
+        circleImageView = findViewById(R.id.circleImageView);
 
 
         emailDetail.setText(getCurrentUserEmail());
@@ -227,6 +221,7 @@ circleImageView = findViewById(R.id.circleImageView);
             public void onClick(View v) {
                 Intent intent = new Intent(DetailProjectActivity.this, PersonnalActivity.class);
                 intent.putExtra("idProject", idProject);
+                intent.putExtra("nameProject", nameProject);
                 startActivity(intent);
             }
         });
@@ -315,15 +310,22 @@ circleImageView = findViewById(R.id.circleImageView);
                 builder.setMessage("Bạn có chắc chắn muốn xóa dự án này không?")
                         .setPositiveButton("Xóa", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                String email = getCurrentUserEmail();
                                 // Xử lý khi người dùng chọn xóa
-                                if (true) {
-                                    // updateNewFragment.updateRecyclerView();
-                                    Intent intent = new Intent(DetailProjectActivity.this, MainActivity.class);
-                                    startActivity(intent);
-                                    Toast.makeText(DetailProjectActivity.this, "Xóa dự án " + nameProject + " thành công", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(DetailProjectActivity.this, "Xóa dự án " + nameProject + " không thành công", Toast.LENGTH_SHORT).show();
-                                }
+                                    dbFBManager.deleteProject(idProject, email, new DatabaseFirebaseManager.ProjectDeleteCallback() {
+                                        @Override
+                                        public void onProjectSuccess() {
+                                            //updateNewFragment.getAllProjectHasJoin(email);
+                                            Intent intent = new Intent(DetailProjectActivity.this, MainActivity.class);
+                                            startActivity(intent);
+                                            Toast.makeText(DetailProjectActivity.this, "Xóa dự án " + nameProject + " thành công", Toast.LENGTH_SHORT).show();
+                                        }
+
+                                        @Override
+                                        public void onProjectFailure(String errorMessage) {
+                                            Toast.makeText(DetailProjectActivity.this, "Xóa dự án " + nameProject + " không thành công", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
                             }
                         })
                         .setNegativeButton("Không xóa", new DialogInterface.OnClickListener() {
