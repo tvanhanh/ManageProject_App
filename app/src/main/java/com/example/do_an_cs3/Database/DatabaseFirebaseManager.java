@@ -2,8 +2,11 @@ package com.example.do_an_cs3.Database;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.util.Base64;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -11,19 +14,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentManager;
 
 import com.bumptech.glide.Glide;
-import com.example.do_an_cs3.Invite.DetailInviteActivity;
 import com.example.do_an_cs3.LoadingDialogFragment;
 import com.example.do_an_cs3.Model.Company;
 import com.example.do_an_cs3.Model.Deparments;
 import com.example.do_an_cs3.Model.Invite;
 import com.example.do_an_cs3.Model.Project;
+import com.example.do_an_cs3.Model.Task;
 import com.example.do_an_cs3.Model.User;
-import com.example.do_an_cs3.View.AddInfoCompanyActivity;
-import com.example.do_an_cs3.View.MainActivity;
-import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,7 +30,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -130,7 +134,7 @@ public class DatabaseFirebaseManager {
         void onError(String errorMessage);
     }
 
-//    public void getAllProjects(String emailProject, ProjectsCallback callback) {
+    //    public void getAllProjects(String emailProject, ProjectsCallback callback) {
 //        DatabaseReference projectsRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("projects");
 //
 //        projectsRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -195,70 +199,73 @@ public class DatabaseFirebaseManager {
         });
     }
 
-        // Hàm lấy thông tin các dự án dựa trên mảng projectId
-        public void getProjectsByIds(List<String> projectIds, GetProjectsByIdsListener listener) {
-            DatabaseReference projectsRef = FirebaseDatabase.getInstance().getReference().child("projects");
-            List<Project> projects = new ArrayList<>();
+    // Hàm lấy thông tin các dự án dựa trên mảng projectId
+    public void getProjectsByIds(List<String> projectIds, GetProjectsByIdsListener listener) {
+        DatabaseReference projectsRef = FirebaseDatabase.getInstance().getReference().child("projects");
+        List<Project> projects = new ArrayList<>();
 
-            for (String projectId : projectIds) {
-                projectsRef.child(projectId).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Project project = dataSnapshot.getValue(Project.class);
-                        if (project != null) {
-                            projects.add(project);
-                        }
-
-                        // Kiểm tra nếu đã lấy đủ các dự án
-                        if (projects.size() == projectIds.size()) {
-                            listener.onGetProjectsByIdsSuccess(projects);
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        listener.onGetProjectsByIdsFailure(databaseError.getMessage());
-                    }
-                });
-            }
-        }
-
-        public interface GetProjectsByEmailListener {
-            void onGetProjectsByEmailSuccess(List<String> projectIds);
-            void onGetProjectsByEmailFailure(String errorMessage);
-        }
-
-        public interface GetProjectsByIdsListener {
-            void onGetProjectsByIdsSuccess(List<Project> projects);
-            void onGetProjectsByIdsFailure(String errorMessage);
-        }
-        //chức năng hiển thị recycle view người thực hiện'
-
-        public void getUsersByProjectId(String projectId, GetUsersByProjectIdListener listener) {
-            DatabaseReference joinProjectsRef = databaseReference.child("joinProjects");
-            List<String> userIds = new ArrayList<>();
-
-            joinProjectsRef.orderByChild("projectId").equalTo(projectId).addListenerForSingleValueEvent(new ValueEventListener() {
+        for (String projectId : projectIds) {
+            projectsRef.child(projectId).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        String userId = snapshot.child("email").getValue(String.class);
-                        if (userId != null) {
-                            userIds.add(userId);
-                        }
+                    Project project = dataSnapshot.getValue(Project.class);
+                    if (project != null) {
+                        projects.add(project);
                     }
 
-                    // Gọi listener để thông báo kết quả
-                    listener.onGetUsersByProjectIdSuccess(userIds);
+                    // Kiểm tra nếu đã lấy đủ các dự án
+                    if (projects.size() == projectIds.size()) {
+                        listener.onGetProjectsByIdsSuccess(projects);
+                    }
                 }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
-                    listener.onGetUsersByProjectIdFailure(databaseError.getMessage());
+                    listener.onGetProjectsByIdsFailure(databaseError.getMessage());
                 }
             });
         }
-            //Hàm get các user chhung dự án
+    }
+
+    public interface GetProjectsByEmailListener {
+        void onGetProjectsByEmailSuccess(List<String> projectIds);
+
+        void onGetProjectsByEmailFailure(String errorMessage);
+    }
+
+    public interface GetProjectsByIdsListener {
+        void onGetProjectsByIdsSuccess(List<Project> projects);
+
+        void onGetProjectsByIdsFailure(String errorMessage);
+    }
+    //chức năng hiển thị recycle view người thực hiện'
+
+    public void getUsersByProjectId(String projectId, GetUsersByProjectIdListener listener) {
+        DatabaseReference joinProjectsRef = databaseReference.child("joinProjects");
+        List<String> userIds = new ArrayList<>();
+
+        joinProjectsRef.orderByChild("projectId").equalTo(projectId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    String userId = snapshot.child("email").getValue(String.class);
+                    if (userId != null) {
+                        userIds.add(userId);
+                    }
+                }
+
+                // Gọi listener để thông báo kết quả
+                listener.onGetUsersByProjectIdSuccess(userIds);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                listener.onGetUsersByProjectIdFailure(databaseError.getMessage());
+            }
+        });
+    }
+
+    //Hàm get các user chhung dự án
     public void getUsers(List<String> userIds, GetUsersListener listener) {
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("users");
         List<User> userList = new ArrayList<>();
@@ -292,12 +299,14 @@ public class DatabaseFirebaseManager {
     // Interface listener để xử lý kết quả lấy danh sách người dùng dựa trên projectId
     public interface GetUsersByProjectIdListener {
         void onGetUsersByProjectIdSuccess(List<String> userIds);
+
         void onGetUsersByProjectIdFailure(String errorMessage);
     }
 
     // Interface listener để xử lý kết quả lấy thông tin người dùng từ userIds
     public interface GetUsersListener {
         void onGetUsersSuccess(List<User> users);
+
         void onGetUsersFailure(String errorMessage);
     }
 
@@ -314,24 +323,63 @@ public class DatabaseFirebaseManager {
                         .load(imageUrl)
                         .into(circleImageView);
             }
+
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 // Xử lý khi có lỗi xảy ra
                 Toast.makeText(activity, "Lỗi khi tải ảnh từ Firebase: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
-            public void loadImageCompany(String idCompany, Activity activity, ImageView ImageView) {
-                // Lấy URL của ảnh từ cơ sở dữ liệu Firebase Realtime Database hoặc Cloud Firestore
-                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("companys").child(idCompany).child("logoImg");
-                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String imageUrl = dataSnapshot.getValue(String.class);
-                        // Sử dụng URL này để tải ảnh về và hiển thị nó
-                        Glide.with(activity)
-                                .load(imageUrl)
-                                .into(ImageView);
-                    }
+    public interface AvatarLoadCallback {
+        void onSuccess(String avatarBase64);
+        void onFailure();
+    }
+    // chuyển đổi hình ảnh
+    public byte[] getBytesFromImage(Uri imageUri) {
+        try {
+            InputStream inputStream = mContext.getContentResolver().openInputStream(imageUri);
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
+            return outputStream.toByteArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public void loadAvatarBase64(String email, AvatarLoadCallback callback) {
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("avatars/" + email + ".jpg");
+        storageRef.getBytes(Long.MAX_VALUE).addOnSuccessListener(bytes -> {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+            String avatarBase64 = encodeImageToBase64(bitmap);
+            callback.onSuccess(avatarBase64);
+        }).addOnFailureListener(exception -> {
+            callback.onFailure();
+        });
+    }
+    private String encodeImageToBase64(Bitmap bitmap) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        return Base64.encodeToString(byteArray, Base64.DEFAULT);
+    }
+
+
+    public void loadImageCompany(String idCompany, Activity activity, ImageView ImageView) {
+        // Lấy URL của ảnh từ cơ sở dữ liệu Firebase Realtime Database hoặc Cloud Firestore
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("companys").child(idCompany).child("logoImg");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String imageUrl = dataSnapshot.getValue(String.class);
+                // Sử dụng URL này để tải ảnh về và hiển thị nó
+                Glide.with(activity)
+                        .load(imageUrl)
+                        .into(ImageView);
+            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -353,6 +401,7 @@ public class DatabaseFirebaseManager {
 
         void onError(String errorMessage);
     }
+
     public void getUserByEmail(String userEmail, UserCallback callback) {
         // Thực hiện truy vấn để lấy người dùng với email tương ứng
         DatabaseReference usersRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("users");
@@ -420,10 +469,11 @@ public class DatabaseFirebaseManager {
     }
 
     public interface InvitesCallback {
-    void onInvitesReceivedFound(List<Invite> invites);
+        void onInvitesReceivedFound(List<Invite> invites);
 
-    void onError(String errorMessage);
-}
+        void onError(String errorMessage);
+    }
+
     public void getAllInvites(String userEmail, InvitesCallback callback) {
         DatabaseReference invitesRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("invites");
         Query query = invitesRef.orderByChild("emailReceive").equalTo(userEmail);
@@ -463,10 +513,13 @@ public class DatabaseFirebaseManager {
             }
         });
     }
+
     public interface SaveJoinListener {
         void onSaveJoinSuccess(); // Được gọi khi việc lưu dữ liệu thành công
+
         void onSaveJoinFailure(String errorMessage); // Được gọi khi có lỗi xảy ra trong quá trình lưu dữ liệu
     }
+
     public void saveJoin(String emailReceive, String companyId, Activity activity, SaveJoinListener listener) {
         DatabaseReference joinCompanyRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("joinCompanys");
 
@@ -505,13 +558,16 @@ public class DatabaseFirebaseManager {
             }
         });
     }
+
     public interface SaveProjectJoinListener {
         void onSaveProjectJoinSuccess(); // Được gọi khi việc lưu dữ liệu thành công
+
         void onSaveProjectJoinFailure(String errorMessage); // Được gọi khi có lỗi xảy ra trong quá trình lưu dữ liệu
     }
+
     public void saveProjectJoin(String emailJoin, String projectId, Activity activity, SaveProjectJoinListener listener) {
         DatabaseReference joinProjectRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("joinProjects");
-        String emailEncode = emailJoin.replace("," , ".");
+        String emailEncode = emailJoin.replace(",", ".");
         // Sắp xếp dữ liệu theo cả hai trường companyId và emailReceive
         Query query = joinProjectRef.orderByChild("projectId").equalTo(projectId);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -526,7 +582,7 @@ public class DatabaseFirebaseManager {
                     }
                 }
                 if (projectExists) {
-                    Toast.makeText(activity, "Nhân sự "+ emailEncode +" đã tham gia dự án", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Nhân sự " + emailEncode + " đã tham gia dự án", Toast.LENGTH_SHORT).show();
                     // Gọi callback để thông báo rằng saveJoin đã hoàn thành
                     listener.onSaveProjectJoinSuccess();
                 } else {
@@ -547,6 +603,46 @@ public class DatabaseFirebaseManager {
             }
         });
     }
+
+    public void saveTaskJoin(String emailJoin, String taskId, Activity activity, SaveProjectJoinListener listener) {
+        DatabaseReference joinTaskRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("tasks");
+        String emailEncode = emailJoin.replace(",", ".");
+        // Sắp xếp dữ liệu theo cả hai trường companyId và emailReceive
+        Query query = joinTaskRef.orderByChild("taskId").equalTo(taskId);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                boolean taskExists = false;
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    // Kiểm tra xem có bất kỳ nút nào có cả hai trường companyId và emailReceive không
+                    if (dataSnapshot.child("email").getValue(String.class).equals(emailEncode)) {
+                        taskExists = true;
+                        break;
+                    }
+                }
+                if (taskExists) {
+                    Toast.makeText(activity, "Nhân sự " + emailEncode + " đã tham gia dự án", Toast.LENGTH_SHORT).show();
+                    // Gọi callback để thông báo rằng saveJoin đã hoàn thành
+                    listener.onSaveProjectJoinSuccess();
+                } else {
+                    // Tạo một đối tượng JoinCompany mới và thêm vào Firebase
+                    DatabaseReference newJoinCompanyRef = joinTaskRef.push();
+                    newJoinCompanyRef.child("taskId").setValue(taskId);
+                    newJoinCompanyRef.child("email").setValue(emailEncode);
+                    Toast.makeText(activity, "Thêm thành công việc cho" + emailEncode + " vào dự án", Toast.LENGTH_SHORT).show();
+                    // Gọi callback để thông báo rằng saveJoin đã hoàn thành
+                    listener.onSaveProjectJoinSuccess();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Xử lý lỗi nếu có
+                listener.onSaveProjectJoinFailure(error.getMessage());
+            }
+        });
+    }
+
     public interface UsersCallback {
         void onInvitesReceivedFound(List<User> users);
 
@@ -555,9 +651,12 @@ public class DatabaseFirebaseManager {
 
     public interface JoinCompanyCallback {
         void onCompanyIdFound(String companyId); // Được gọi khi tìm thấy companyId
+
         void onCompanyIdNotFound(); // Được gọi khi không tìm thấy companyId
+
         void onError(String errorMessage); // Được gọi khi có lỗi xảy ra
     }
+
     public void getCompanyIdByEmailJoin(String emailReceive, DatabaseFirebaseManager.JoinCompanyCallback callback) {
         DatabaseReference joinCompanyRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("joinCompanys");
 
@@ -590,11 +689,15 @@ public class DatabaseFirebaseManager {
             }
         });
     }
+
     public interface EmailsCallback {
         void onEmailsFound(List<String> emails); // Được gọi khi tìm thấy các email
+
         void onEmailsNotFound(); // Được gọi khi không tìm thấy email nào
+
         void onError(String errorMessage); // Được gọi khi có lỗi xảy ra
     }
+
     public void getEmailsByCompanyId(String companyId, DatabaseFirebaseManager.EmailsCallback callback) {
         DatabaseReference joinCompanyRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("joinCompanys");
 
@@ -629,9 +732,12 @@ public class DatabaseFirebaseManager {
             }
         });
     }
+
     public interface UsersSameCallback {
         void onUsersFound(List<User> userList); // Được gọi khi tìm thấy các người dùng
+
         void onUsersNotFound(); // Được gọi khi không tìm thấy người dùng nào
+
         void onError(String errorMessage); // Được gọi khi có lỗi xảy ra
     }
 
@@ -677,10 +783,9 @@ public class DatabaseFirebaseManager {
     }
 
 
-
     // Hàm để log thông tin của một dự án
 
-//    public List<Task> getAll(int idProject) {
+    //    public List<Task> getAll(int idProject) {
 //        List<Task> taskList = new ArrayList<>();
 //        try {
 //            db = this.dbhelper.getReadableDatabase();
@@ -715,39 +820,78 @@ public class DatabaseFirebaseManager {
 //        }
 //        return taskList;
 //    }
-public interface DepartmentCallback {
-    void onDepartmentReceived(List<Deparments> deparments);
-    void onError(String errorMessage);
+    public interface DepartmentCallback {
+        void onDepartmentReceived(List<Deparments> deparments);
 
-}
-public void getDeparment(String email, DepartmentCallback callback) {
-    DatabaseReference departmentsRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("departments");
-    departmentsRef.addListenerForSingleValueEvent(new ValueEventListener() {
-        @Override
-        public void onDataChange(@NonNull DataSnapshot snapshot) {
-            List<Deparments> departmentList = new ArrayList<>();
-            for (DataSnapshot departmentSnapshot : snapshot.getChildren()) {
-                Deparments deparments = departmentSnapshot.getValue(Deparments.class);
-                if (deparments != null && deparments.getEmail().equals(email)) {
-                    String departmentId = departmentSnapshot.child("id").getValue(String.class);
-                    String departmentName = departmentSnapshot.child("department_name").getValue(String.class);
-                    String completeJob = departmentSnapshot.child("completeJob").getValue(String.class);
-                    String email = departmentSnapshot.child("email").getValue(String.class);
+        void onError(String errorMessage);
 
-                    // Tạo đối tượng Deparments từ dữ liệu và thêm vào danh sách
-                    Deparments department = new Deparments(departmentId, departmentName,completeJob,email);
-                    departmentList.add(department);
+    }
+
+    public void getDeparment(String email, DepartmentCallback callback) {
+        DatabaseReference departmentsRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("departments");
+        departmentsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Deparments> departmentList = new ArrayList<>();
+                for (DataSnapshot departmentSnapshot : snapshot.getChildren()) {
+                    Deparments deparments = departmentSnapshot.getValue(Deparments.class);
+                    if (deparments != null && deparments.getEmail().equals(email)) {
+                        String departmentId = departmentSnapshot.child("id").getValue(String.class);
+                        String departmentName = departmentSnapshot.child("department_name").getValue(String.class);
+                        String completeJob = departmentSnapshot.child("completeJob").getValue(String.class);
+                        String email = departmentSnapshot.child("email").getValue(String.class);
+
+                        // Tạo đối tượng Deparments từ dữ liệu và thêm vào danh sách
+                        Deparments department = new Deparments(departmentId, departmentName, completeJob, email);
+                        departmentList.add(department);
+                    }
                 }
+                // Gọi phương thức callback để trả về danh sách phòng ban
+                callback.onDepartmentReceived(departmentList);
             }
-            // Gọi phương thức callback để trả về danh sách phòng ban
-            callback.onDepartmentReceived(departmentList);
-        }
 
-        @Override
-        public void onCancelled(@NonNull DatabaseError error) {
-            // Xử lý khi có lỗi xảy ra
-            callback.onError(error.getMessage());
-        }
-    });
-        }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Xử lý khi có lỗi xảy ra
+                callback.onError(error.getMessage());
+            }
+        });
+    }
+
+    public interface TaskCallback {
+        void onTaskReceived(List<Task> tasks);
+
+        void onError(String errorMessage);
+
+    }
+
+    public void getTask(String projectId, TaskCallback callBack) {
+        DatabaseReference tasksRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("tasks");
+
+        // Sử dụng Query để chỉ lấy các task có idProject trùng với projectId được truyền vào
+        Query query = tasksRef.orderByChild("idProject").equalTo(projectId);
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Task> taskList = new ArrayList<>();
+                for (DataSnapshot taskSnapshot : snapshot.getChildren()) {
+                    Task task = taskSnapshot.getValue(Task.class);
+                    if (task != null) {
+                        // Đưa thêm task vào danh sách
+                        taskList.add(task);
+                    }
+                }
+                // Gọi callback để trả về danh sách các task có projectId tương ứng
+                callBack.onTaskReceived(taskList);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Xử lý khi có lỗi xảy ra
+                callBack.onError(error.getMessage());
+            }
+        });
+    }
+
 }

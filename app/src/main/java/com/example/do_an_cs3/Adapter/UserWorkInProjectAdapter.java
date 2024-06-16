@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
 import com.example.do_an_cs3.Task.AddTaskActivity;
-import com.example.do_an_cs3.Task.ListTaskActivity;
+
 import com.example.do_an_cs3.View.Project.DetailProjectActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -61,11 +61,11 @@ public class UserWorkInProjectAdapter extends RecyclerView.Adapter<UserWorkInPro
 
         Picasso.get().load(user.getAvatar()).placeholder(R.drawable.useravatar).into(holder.circleImageViewWork);
 
-        holder.addTaskButton.setOnClickListener(v -> showPopupMenu(holder.itemView, user.getEmail()));
+        holder.addTaskButton.setOnClickListener(v -> showPopupMenu(holder, user.getEmail(), position));
     }
 
-    private void showPopupMenu(View view, String userEmail) {
-        PopupMenu popupMenu = new PopupMenu(mContext, view);
+    private void showPopupMenu(UserViewHolder holder, String userEmail, int position) {
+        PopupMenu popupMenu = new PopupMenu(mContext, holder.itemView);
         popupMenu.inflate(R.menu.popup_menu);
         popupMenu.setOnMenuItemClickListener(item -> {
             int itemId = item.getItemId();
@@ -77,46 +77,19 @@ public class UserWorkInProjectAdapter extends RecyclerView.Adapter<UserWorkInPro
                 return false;
             }
 
-            DatabaseReference joinProjectRef = FirebaseDatabase.getInstance().getReference("joinProjects");
-            joinProjectRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    boolean participantExists = false;
-                    for (DataSnapshot joinSnapshot : snapshot.getChildren()) {
-                        String email = joinSnapshot.child("email").getValue(String.class);
-                        String participantProjectId = joinSnapshot.child("projectId").getValue(String.class);
-
-                        if (email != null && email.equals(userEmail) && participantProjectId.equals(projectId)) {
-                            participantExists = true;
-
-                            if (itemId == R.id.addJob) {
-                                Intent intent = new Intent(mContext, AddTaskActivity.class);
-                                intent.putExtra("projectId", projectId);
-                                intent.putExtra("participantEmail", email);
-                                mContext.startActivity(intent);
-                            } else if (itemId == R.id.listJob) {
-                                Intent intent = new Intent(mContext, ListTaskActivity.class);
-                                intent.putExtra("projectId", projectId);
-                                intent.putExtra("participantEmail", email);
-                                mContext.startActivity(intent);
-                            } else if (itemId == R.id.delete) {
-                                // Handle delete action
-                            }
-                            break;
-                        }
-                    }
-                    if (!participantExists) {
-                        Log.e(TAG, "Participant not found in project");
-                        Toast.makeText(mContext, "Người tham gia không có trong dự án", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    Log.e(TAG, "Database error: " + error.getMessage());
-                    Toast.makeText(mContext, "Lỗi cơ sở dữ liệu", Toast.LENGTH_SHORT).show();
-                }
-            });
+            if (itemId == R.id.addJob) {
+                Intent intent = new Intent(mContext, AddTaskActivity.class);
+                intent.putExtra("projectId", projectId);
+                intent.putExtra("participantEmail", userEmail); // Gửi email
+                mContext.startActivity(intent);
+            } else if (itemId == R.id.listJob) {
+                Intent intent = new Intent(mContext, AddTaskActivity.class);
+                intent.putExtra("projectId", projectId);
+                intent.putExtra("participantEmail", userEmail); // Gửi email
+                mContext.startActivity(intent);
+            } else if (itemId == R.id.delete) {
+                removeParticipant(userEmail, projectId, position);
+            }
             return true;
         });
         popupMenu.show();
@@ -140,5 +113,44 @@ public class UserWorkInProjectAdapter extends RecyclerView.Adapter<UserWorkInPro
             positionAndEmailTextView = itemView.findViewById(R.id.PossitonAndEmail);
             addTaskButton = itemView.findViewById(R.id.addTask);
         }
+    }
+
+    private void removeParticipant(String userEmail, String projectId, int position) {
+        DatabaseReference joinProjectRef = FirebaseDatabase.getInstance().getReference("joinProjects");
+        joinProjectRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                boolean participantExists = false;
+                for (DataSnapshot projectSnapshot : snapshot.getChildren()) {
+                    String email = projectSnapshot.child("email").getValue(String.class);
+                    String projId = projectSnapshot.child("projectId").getValue(String.class);
+                    if (email != null && projId != null && email.equals(userEmail) && projId.equals(projectId)) {
+                        participantExists = true;
+                        projectSnapshot.getRef().removeValue().addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(mContext, "Xóa người tham gia thành công", Toast.LENGTH_SHORT).show();
+                                userList.remove(position);
+                                notifyItemRemoved(position);
+                                notifyItemRangeChanged(position, userList.size());
+                            } else {
+                                Log.e(TAG, "Error deleting participant: " + task.getException().getMessage());
+                                Toast.makeText(mContext, "Lỗi khi xóa người tham gia", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        break;
+                    }
+                }
+                if (!participantExists) {
+                    Log.e(TAG, "Participant not found in project");
+                    Toast.makeText(mContext, "Người tham gia không có trong dự án", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e(TAG, "Database error: " + error.getMessage());
+                Toast.makeText(mContext, "Lỗi cơ sở dữ liệu", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

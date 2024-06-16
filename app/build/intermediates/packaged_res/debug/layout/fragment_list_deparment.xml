@@ -10,12 +10,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/listDepartment"/>
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/department_reycleView"
         android:layout_width="match_parent"
-        android:layout_height="650dp"
+        android:layout_height="559dp"
          />
 
     <Button
@@ -23,9 +23,9 @@
         android:layout_width="146dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="100dp"
         android:drawableLeft="@drawable/folder"
         android:text="Thêm bộ phận"
+        android:layout_marginTop="5dp"
         android:textSize="14dp" />
 </LinearLayout>

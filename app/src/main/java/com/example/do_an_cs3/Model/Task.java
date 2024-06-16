@@ -2,67 +2,48 @@ package com.example.do_an_cs3.Model;
 
 public class Task {
 
-    private int id;
-    private String  taskName;
-    private String  taskDescription;
-    private String  taskDeadline;
-    private String  taskStatus;
-    private String  taskEmail;
+    private String id;
+    private String taskName;
+    private String taskDescription;
+    private String taskDeadline;
+    private String taskStatus;
+    private String taskEmail;
 
     private String username;
+
+    private String idProject;
     private String timeComplete;
+    private String emailParticipant;
+    public Task(){
 
-    public Task(String taskId, String name, String description, String deadline, String status, String email, String idProject, String timeComeplete, String participantId) {
     }
 
-    public String getTimeComplete() {
-        return timeComplete;
+    public Task(String taskId, String name, String description, String deadline, String status, String email, String idProject, String timeComeplete, String participantEmail) {
+        this.id = taskId;
+        this.taskName = name;
+        this.taskDescription = description;
+        this.taskDeadline = deadline;
+        this.taskStatus = status;
+        this.taskEmail = email;
+        this.idProject = idProject;
+        this.timeComplete = timeComeplete;
+        this.emailParticipant = participantEmail;
     }
 
-    public void setTimeComplete(String timeComplete) {
-        this.timeComplete = timeComplete;
-    }
-
-    public int getParticipantId() {
-        return participantId;
-    }
-
-    public void setParticipantId(int participantId) {
-        this.participantId = participantId;
-    }
-
-    public Task(String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, String username, int projectId, int participantId) {
+    public Task(String id, String taskName, String taskDescription, String taskDeadline, String taskStatus) {
         this.id = id;
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskDeadline = taskDeadline;
         this.taskStatus = taskStatus;
-        this.taskEmail = taskEmail;
-        this.username = username;
-        this.projectId = projectId;
-        this.participantId = participantId;
-
     }
 
-    private int  projectId;
-    private int participantId;
-
-    public Task() {
-
+    public String getId() {
+        return id;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Task(String taskName, String taskDescription, String taskDeadline) {
-        this.taskName = taskName;
-        this.taskDescription = taskDescription;
-        this.taskDeadline = taskDeadline;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTaskName() {
@@ -105,34 +86,35 @@ public class Task {
         this.taskEmail = taskEmail;
     }
 
-    public int getProjectId() {
-        return projectId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public Task(int id,String taskName, String taskDescription, String taskDeadline, String taskStatus, String taskEmail, int projectId, String timeComplete) {
-        this.id = id;
-        this.taskName = taskName;
-        this.taskDescription = taskDescription;
-        this.taskDeadline = taskDeadline;
-        this.taskStatus = taskStatus;
-        this.taskEmail = taskEmail;
-        this.projectId = projectId;
-        this.timeComplete =timeComplete;
+    public String getIdProject() {
+        return idProject;
     }
 
-    public int getId() {
-        return id;
+    public void setIdProject(String idProject) {
+        this.idProject = idProject;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getTimeComplete() {
+        return timeComplete;
     }
 
-    public Task(String taskName) {
-        this.taskName = taskName;
+    public void setTimeComplete(String timeComplete) {
+        this.timeComplete = timeComplete;
+    }
+
+    public String getEmailParticipant() {
+        return emailParticipant;
+    }
+
+    public void setEmailParticipant(String emailParticipant) {
+        this.emailParticipant = emailParticipant;
     }
 }

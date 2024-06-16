@@ -25,6 +25,7 @@ import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
 import com.example.do_an_cs3.LoadingDialogFragment;
 import com.example.do_an_cs3.Model.Task;
 import com.example.do_an_cs3.R;
+import com.example.do_an_cs3.View.Project.DetailProjectActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -42,6 +43,9 @@ public class AddTaskActivity extends AppCompatActivity {
     private DatabaseFirebaseManager dbManager;
     private LoadingDialogFragment loadingDialog;
     private TaskAdapter taskAdapter;
+    private DetailProjectActivity activity;
+    private String idProject;
+    private String participantEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +59,8 @@ public class AddTaskActivity extends AppCompatActivity {
         dbManager = new DatabaseFirebaseManager();
 
         Intent intent = getIntent();
-        String idProject = intent.getStringExtra("projectId");
-        String participantId = intent.getStringExtra("participantemail");
+        idProject = intent.getStringExtra("projectId");
+        participantEmail = intent.getStringExtra("participantEmail");
 
         if (idProject == null || idProject.isEmpty()) {
             Toast.makeText(this, "Lỗi: ID dự án không hợp lệ", Toast.LENGTH_SHORT).show();
@@ -65,12 +69,12 @@ public class AddTaskActivity extends AppCompatActivity {
         }
         Log.d(TAG, "idProject: " + idProject);
 
-        if (participantId == null || participantId.isEmpty()) {
+        if (participantEmail == null || participantEmail.isEmpty()) {
             Toast.makeText(this, "Lỗi: ID người tham gia không hợp lệ", Toast.LENGTH_SHORT).show();
             Log.e(TAG, "participantId is null or empty");
             return;
         }
-        Log.d(TAG, "participantId: " + participantId);
+        Log.d(TAG, "participantId: " + participantEmail);
 
         nextButton.setOnClickListener(v -> {
             String name = nameTask.getText().toString();
@@ -88,9 +92,9 @@ public class AddTaskActivity extends AppCompatActivity {
 
                 DatabaseReference databaseTasks = FirebaseDatabase.getInstance().getReference("tasks");
                 String taskId = databaseTasks.push().getKey();
-                String timeComeplete = null;
+                String timeComeplete = "";
 
-                Task task = new Task(taskId, name, description, deadline, status, email, idProject, timeComeplete, participantId);
+                Task task = new Task(taskId, name, description, deadline, status, email, idProject, timeComeplete, participantEmail);
 
                 Log.d(TAG, "Saving task: " + task.toString());
 
@@ -98,9 +102,9 @@ public class AddTaskActivity extends AppCompatActivity {
                     loadingDialog.dismiss();
                     if (taskCompletion.isSuccessful()) {
                         Toast.makeText(AddTaskActivity.this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
-                        Intent detailIntent = new Intent(AddTaskActivity.this, ListTaskActivity.class);
-                        detailIntent.putExtra("idProject", idProject);
-                        detailIntent.putExtra("participantId", participantId);
+                        Intent detailIntent = new Intent(AddTaskActivity.this, DetailProjectActivity.class);
+                        detailIntent.putExtra("projectId", idProject);
+                        detailIntent.putExtra("participantEmail", participantEmail);
                         startActivity(detailIntent);
                         finish();
                     } else {

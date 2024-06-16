@@ -80,7 +80,7 @@
 44-->C:\Users\nhutl\AndroidStudioProjects\ManageProject_App\app\src\main\AndroidManifest.xml:19:9-47
 45        <activity
 45-->C:\Users\nhutl\AndroidStudioProjects\ManageProject_App\app\src\main\AndroidManifest.xml:21:9-23:40
-46            android:name="com.example.do_an_cs3.Task.ListTaskActivity"
+46            android:name="com.example.do_an_cs3.Task.EditTaskActivity"
 46-->C:\Users\nhutl\AndroidStudioProjects\ManageProject_App\app\src\main\AndroidManifest.xml:22:13-50
 47            android:exported="false" />
 47-->C:\Users\nhutl\AndroidStudioProjects\ManageProject_App\app\src\main\AndroidManifest.xml:23:13-37

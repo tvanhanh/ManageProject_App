@@ -120,16 +120,16 @@
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activity_edit_account.xml"
     },
     {
-        "merged": "com.example.do_an_cs3.app-mergeDebugResources-53:/layout/activity_listtask.xml",
-        "source": "com.example.do_an_cs3.app-main-56:/layout/activity_listtask.xml"
-    },
-    {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\fragment_updatenew.xml",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\fragment_updatenew.xml"
     },
     {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\fragment_list_personnal.xml",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\fragment_list_personnal.xml"
+    },
+    {
+        "merged": "com.example.do_an_cs3.app-mergeDebugResources-53:/layout/activity_detail_project.xml",
+        "source": "com.example.do_an_cs3.app-main-56:/layout/activity_detail_project.xml"
     },
     {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\activity_add_infor.xml",
@@ -142,6 +142,10 @@
     {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\item_task.xml",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\item_task.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\activity_edit_task.xml",
+        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activity_edit_task.xml"
     },
     {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-mergeDebugResources-53:\\layout\\fragment_pause.xml",

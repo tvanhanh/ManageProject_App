@@ -77,16 +77,16 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.De
 
     private void showPopupMenu(View view, String departmentId, String nameDepartment) {
         PopupMenu popupMenu = new PopupMenu(mContext, view);
-        popupMenu.inflate(R.menu.popup_menu);
+        popupMenu.inflate(R.menu.popupdepartment);
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 int itemId = item.getItemId();
-                if (itemId == R.id.addJob) {
+                if (itemId == R.id.update) {
                     showUpdateDialog(departmentId);
                     //  Toast.makeText(mContext, "Sửa: " + departmentId, Toast.LENGTH_SHORT).show();
                     return true;
-                } else if (itemId == R.id.listJob) {
+                } else if (itemId == R.id.delete) {
                     // Gọi hàm xóa phòng ban khi người dùng chọn tuỳ chọn "Xóa" từ menu popup
                     deleteDepartment(departmentId, nameDepartment);
                     return true;

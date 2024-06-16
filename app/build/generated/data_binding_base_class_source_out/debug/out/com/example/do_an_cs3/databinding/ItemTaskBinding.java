@@ -4,7 +4,6 @@ package com.example.do_an_cs3.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +11,7 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.do_an_cs3.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -24,13 +24,16 @@ public final class ItemTaskBinding implements ViewBinding {
   public final TextView NamePersonOfTaskUpdate;
 
   @NonNull
-  public final TextView NameTaskNewUpdate;
+  public final TextView NameTaskNewUpdate1;
 
   @NonNull
   public final TextView contentTask;
 
   @NonNull
-  public final CheckBox statusTask;
+  public final CircleImageView imgUserProject;
+
+  @NonNull
+  public final TextView options;
 
   @NonNull
   public final TextView timeUpdateTask;
@@ -38,16 +41,27 @@ public final class ItemTaskBinding implements ViewBinding {
   @NonNull
   public final TextView tvDealine;
 
+  @NonNull
+  public final TextView userDO;
+
+  @NonNull
+  public final TextView userNameDo;
+
   private ItemTaskBinding(@NonNull CardView rootView, @NonNull TextView NamePersonOfTaskUpdate,
-      @NonNull TextView NameTaskNewUpdate, @NonNull TextView contentTask,
-      @NonNull CheckBox statusTask, @NonNull TextView timeUpdateTask, @NonNull TextView tvDealine) {
+      @NonNull TextView NameTaskNewUpdate1, @NonNull TextView contentTask,
+      @NonNull CircleImageView imgUserProject, @NonNull TextView options,
+      @NonNull TextView timeUpdateTask, @NonNull TextView tvDealine, @NonNull TextView userDO,
+      @NonNull TextView userNameDo) {
     this.rootView = rootView;
     this.NamePersonOfTaskUpdate = NamePersonOfTaskUpdate;
-    this.NameTaskNewUpdate = NameTaskNewUpdate;
+    this.NameTaskNewUpdate1 = NameTaskNewUpdate1;
     this.contentTask = contentTask;
-    this.statusTask = statusTask;
+    this.imgUserProject = imgUserProject;
+    this.options = options;
     this.timeUpdateTask = timeUpdateTask;
     this.tvDealine = tvDealine;
+    this.userDO = userDO;
+    this.userNameDo = userNameDo;
   }
 
   @Override
@@ -83,9 +97,9 @@ public final class ItemTaskBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.NameTaskNewUpdate;
-      TextView NameTaskNewUpdate = ViewBindings.findChildViewById(rootView, id);
-      if (NameTaskNewUpdate == null) {
+      id = R.id.NameTaskNewUpdate1;
+      TextView NameTaskNewUpdate1 = ViewBindings.findChildViewById(rootView, id);
+      if (NameTaskNewUpdate1 == null) {
         break missingId;
       }
 
@@ -95,9 +109,15 @@ public final class ItemTaskBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.statusTask;
-      CheckBox statusTask = ViewBindings.findChildViewById(rootView, id);
-      if (statusTask == null) {
+      id = R.id.img_userProject;
+      CircleImageView imgUserProject = ViewBindings.findChildViewById(rootView, id);
+      if (imgUserProject == null) {
+        break missingId;
+      }
+
+      id = R.id.options;
+      TextView options = ViewBindings.findChildViewById(rootView, id);
+      if (options == null) {
         break missingId;
       }
 
@@ -113,8 +133,20 @@ public final class ItemTaskBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemTaskBinding((CardView) rootView, NamePersonOfTaskUpdate, NameTaskNewUpdate,
-          contentTask, statusTask, timeUpdateTask, tvDealine);
+      id = R.id.userDO;
+      TextView userDO = ViewBindings.findChildViewById(rootView, id);
+      if (userDO == null) {
+        break missingId;
+      }
+
+      id = R.id.userNameDo;
+      TextView userNameDo = ViewBindings.findChildViewById(rootView, id);
+      if (userNameDo == null) {
+        break missingId;
+      }
+
+      return new ItemTaskBinding((CardView) rootView, NamePersonOfTaskUpdate, NameTaskNewUpdate1,
+          contentTask, imgUserProject, options, timeUpdateTask, tvDealine, userDO, userNameDo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

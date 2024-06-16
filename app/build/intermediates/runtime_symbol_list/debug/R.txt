@@ -3293,6 +3293,7 @@ int id NO_DEBUG 0x7f090007
 int id NamePersonOfTaskUpdate 0x7f090008
 int id NameProrjectDetail 0x7f090009
 int id NameTaskNewUpdate 0x7f09000a
+int id NameTaskNewUpdate1 0x7f0902d6
 int id PossitonAndEmail 0x7f09000b
 int id SHIFT 0x7f09000c
 int id SHOW_ALL 0x7f09000d
@@ -3354,7 +3355,9 @@ int id action_bar_subtitle 0x7f090044
 int id action_bar_title 0x7f090045
 int id action_container 0x7f090046
 int id action_context_bar 0x7f090047
+int id action_delete 0x7f0902cb
 int id action_divider 0x7f090048
+int id action_edit 0x7f0902cc
 int id action_image 0x7f090049
 int id action_menu_divider 0x7f09004a
 int id action_menu_presenter 0x7f09004b
@@ -3468,6 +3471,7 @@ int id clockwise 0x7f0900b4
 int id closest 0x7f0900b5
 int id collapseActionView 0x7f0900b6
 int id comeback 0x7f0900b7
+int id comeplete 0x7f0902cd
 int id companyAddress 0x7f0900b8
 int id companyField 0x7f0900b9
 int id companyLogo 0x7f0900ba
@@ -3533,6 +3537,7 @@ int id east 0x7f0900f3
 int id edge 0x7f0900f4
 int id editAddNameJob 0x7f0900f5
 int id editAddNameProject 0x7f0900f6
+int id editNameJob 0x7f0902db
 int id editTextAddress 0x7f0900f7
 int id editTextAddressAdd 0x7f0900f8
 int id editTextConfirmpass 0x7f0900f9
@@ -3761,6 +3766,7 @@ int id open_search_view_search_prefix 0x7f0901d6
 int id open_search_view_status_bar_spacer 0x7f0901d7
 int id open_search_view_toolbar 0x7f0901d8
 int id open_search_view_toolbar_container 0x7f0901d9
+int id options 0x7f0902d9
 int id outline 0x7f0901da
 int id outward 0x7f0901db
 int id overshoot 0x7f0901dc
@@ -3866,7 +3872,6 @@ int id startVertical 0x7f09023e
 int id staticLayout 0x7f09023f
 int id staticPostLayout 0x7f090240
 int id statistic 0x7f090241
-int id statusTask 0x7f090242
 int id statusTextView 0x7f090243
 int id stop 0x7f090244
 int id stretch 0x7f090245
@@ -3978,8 +3983,11 @@ int id uniform 0x7f0902ac
 int id unitInformation 0x7f0902ad
 int id unlabeled 0x7f0902ae
 int id up 0x7f0902af
+int id update 0x7f0902dc
 int id useLogo 0x7f0902b0
+int id userDO 0x7f0902d7
 int id userName 0x7f0902b1
+int id userNameDo 0x7f0902d8
 int id userNameFollow 0x7f0902b2
 int id userNameSend 0x7f0902b3
 int id userNameWork 0x7f0902b4
@@ -4132,6 +4140,7 @@ int layout activity_detail_invite 0x7f0c0023
 int layout activity_detail_project 0x7f0c0024
 int layout activity_edit_account 0x7f0c0025
 int layout activity_edit_project 0x7f0c0026
+int layout activity_edit_task 0x7f0c0098
 int layout activity_listtask 0x7f0c0097
 int layout activity_login 0x7f0c0027
 int layout activity_main 0x7f0c0028
@@ -4247,6 +4256,8 @@ int layout support_simple_spinner_dropdown_item 0x7f0c0094
 int layout view_anychart 0x7f0c0095
 int menu mune_buttom_navigation 0x7f0e0000
 int menu popup_menu 0x7f0e0001
+int menu popup_menutask 0x7f0e0002
+int menu popupdepartment 0x7f0e0003
 int mipmap ic_launcher 0x7f0f0000
 int mipmap ic_launcher_round 0x7f0f0001
 int mipmap logo 0x7f0f0002

@@ -1,40 +1,45 @@
 package com.example.do_an_cs3.Adapter;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
+import com.example.do_an_cs3.Database.DatabaseFirebaseManager;
 import com.example.do_an_cs3.Model.Task;
-import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
-import com.example.do_an_cs3.Task.AddTaskActivity;
-import com.example.do_an_cs3.View.MainActivity;
+import com.example.do_an_cs3.Task.EditTaskActivity;
 import com.example.do_an_cs3.View.Project.DetailProjectActivity;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
 
     private List<Task> tasks;
     private Context mContext;
-
-    private User currentUser;
-    private ProjectAdapter projectAdapter;
+    private DatabaseFirebaseManager dbFBManager;
     private int selectedPosition = -1;
+    private DetailProjectActivity activityDetail;
 
     // Phương thức để đặt vị trí của mục được chọn từ ProjectAdapter
     public void setSelectedPosition(int position) {
@@ -45,13 +50,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     public TaskAdapter(List<Task> tasks, Context mContext) {
         this.tasks = tasks;
         this.mContext = mContext;
-//        this.dbManager = new DatabaseManager(mContext);
-//        this.currentUser = dbManager.getUserInfo(getCurrentUserEmail());
-        this.projectAdapter = new ProjectAdapter();
     }
 
     public TaskAdapter() {
-
     }
 
     @NonNull
@@ -65,61 +66,17 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     public void onBindViewHolder(@NonNull TaskAdapter.TaskViewHolder holder, int position) {
         Task task = tasks.get(position);
 
-        if (task != null && currentUser != null) {
+        if (task != null) {
             holder.taskName.setText(task.getTaskName());
             holder.content.setText(task.getTaskDescription());
-            holder.namePersonUpdate.setText(currentUser.getUserName());
             holder.deadline.setText(task.getTaskDeadline());
+            holder.timeUpdate.setText(task.getTaskStatus());
+            holder.userdo.setText(task.getEmailParticipant());
+            holder.options.setOnClickListener(v -> showPopupMenu(v, task.getId(), task.getTaskName(), position));
 
             // Log giá trị của task.getId() và task.getTaskStatus()
             Log.d("DEBUG", "Task ID: " + task.getId());
             Log.d("DEBUG", "Task Status: " + task.getTaskStatus());
-
-            // Gỡ bỏ sự kiện lắng nghe trước khi gắn kết sự kiện mới
-            holder.taskStatus.setOnCheckedChangeListener(null);
-
-            // Đặt trạng thái của CheckBox dựa trên task.getTaskStatus()
-            holder.taskStatus.setChecked("Hoàn thành".equals(task.getTaskStatus()));
-
-            // Hiển thị thời gian hoàn thành nếu task đã hoàn thành
-            if ("Hoàn thành".equals(task.getTaskStatus()) && task.getTimeComplete() != null) {
-                holder.timeUpdate.setText("Xong vào: " + task.getTimeComplete());
-            } else {
-                holder.timeUpdate.setText(null);
-            }
-
-            // Gắn kết sự kiện OnCheckedChangeListener với CheckBox
-            holder.taskStatus.setOnCheckedChangeListener((buttonView, isChecked) -> {
-                String status = isChecked ? "Hoàn thành" : "Chưa hoàn thành";
-                // Log thông tin trạng thái được cập nhật
-                Log.d("DEBUG", "Updating status to: " + status);
-                // Thực hiện cập nhật trạng thái trong cơ sở dữ liệu
-             boolean success = true;
-                     //dbManager.updateStatusTask(status, task.getId());
-
-                if (success) {
-                    // Cập nhật trạng thái của task nếu cập nhật trong cơ sở dữ liệu thành công
-                    Log.d("DEBUG", "Trạng thái success " + success);
-                    task.setTaskStatus(status);
-
-                    if ("Hoàn thành".equals(status)) {
-                        Date currentUpdate = new Date();
-                        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy, HH:mm");
-                        String formattedDate = dateFormat.format(currentUpdate);
-                        //dbManager.updateTimeCompleteTask(formattedDate, task.getId());
-                        task.setTimeComplete(formattedDate); // Cập nhật trong đối tượng Task
-                        holder.timeUpdate.setText("Xong vào: " + task.getTimeComplete());
-
-                            projectAdapter.setTaskNewComplete(selectedPosition,task.getTaskStatus(),task.getTaskName(),task.getUsername(),task.getTimeComplete());
-
-                    } else {
-                        task.setTimeComplete(null); // Xóa thời gian hoàn thành nếu chưa hoàn thành
-                        holder.timeUpdate.setText(null);
-                    }
-                } else {
-                    Log.e("ERROR", "Failed to update status");
-                }
-            });
         }
     }
 
@@ -133,28 +90,142 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         private TextView taskName;
         private TextView content;
         private TextView deadline;
-        private TextView namePersonUpdate;
-        private CheckBox taskStatus;
         private TextView timeUpdate;
         private Button addTassk;
+        private TextView userdo;
+        private TextView options;
 
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
-            taskName = itemView.findViewById(R.id.NameTaskNewUpdate);
+            taskName = itemView.findViewById(R.id.NameTaskNewUpdate1);
             content = itemView.findViewById(R.id.contentTask);
             deadline = itemView.findViewById(R.id.tvDealine);
-            namePersonUpdate = itemView.findViewById(R.id.NamePersonOfTaskUpdate);
             timeUpdate = itemView.findViewById(R.id.timeUpdateTask);
-            taskStatus = itemView.findViewById(R.id.statusTask);
             addTassk = itemView.findViewById(R.id.addTask);
+            userdo = itemView.findViewById(R.id.userDO);
+            options = itemView.findViewById(R.id.options);
         }
     }
+
     public Task getTask(int position) {
         if (position >= 0 && position < tasks.size()) {
             return tasks.get(position);
         }
         return null;
     }
+
+    private void showPopupMenu(View view, String taskId, String taskName, int position) {
+        PopupMenu popupMenu = new PopupMenu(mContext, view);
+        popupMenu.inflate(R.menu.popup_menutask);
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.action_edit) {
+                if (taskId != null) {
+                    editTask(taskId);
+                } else {
+                    Toast.makeText(mContext, "Không thể tìm thấy công việc để chỉnh sửa", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            } else if (itemId == R.id.action_delete) {
+                deleteTask(taskId, taskName);
+                return true;
+            } else if (itemId == R.id.comeplete) {
+                updateTaskStatus(mContext, taskId, position);
+                return true;
+            } else {
+                return false;
+            }
+        });
+        popupMenu.show();
+    }
+
+    private void deleteTask(String taskId, String taskName) {
+        DatabaseReference departmentRef = FirebaseDatabase.getInstance().getReference("tasks").child(taskId);
+        departmentRef.removeValue().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Toast.makeText(mContext, "Xóa công việc " + taskName + " thành công", Toast.LENGTH_SHORT).show();
+                updateTaskList(taskId);
+            } else {
+                Toast.makeText(mContext, "Xóa công việc thất bại: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void updateTaskList(String deletedDepartmentId) {
+        List<Task> updatedList = new ArrayList<>();
+        for (Task task : tasks) {
+            if (!task.getId().equals(deletedDepartmentId)) {
+                updatedList.add(task);
+            }
+        }
+        tasks = updatedList;
+        notifyDataSetChanged();
+    }
+
+    public void updateTaskStatus(Context context, String taskId, int position) {
+        DatabaseReference taskRef = FirebaseDatabase.getInstance().getReference("tasks").child(taskId);
+        taskRef.child("taskStatus").setValue("Đã hoàn thành").addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                saveTaskStatusToSharedPreferences(taskId, "Đã hoàn thành");
+                tasks.get(position).setTaskStatus("Đã hoàn thành");
+                notifyItemChanged(position);
+                Toast.makeText(context, "Cập nhật trạng thái công việc thành công.", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(context, "Cập nhật trạng thái công việc thất bại.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void saveTaskStatusToSharedPreferences(String taskId, String status) {
+        SharedPreferences sharedPreferences = mContext.getSharedPreferences("task_status_prefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(taskId, status);
+        editor.apply();
+    }
+    private void editTask(String taskId) {
+        Intent intent = new Intent(mContext, EditTaskActivity.class);
+        intent = intent.putExtra("taskId",taskId);// Truyền đối tượng Task thay vì chỉ truyền ID
+        mContext.startActivity(intent);
+    }
+
+    private Task getTaskById(String taskId) {
+        for (Task task : tasks) {
+            if (task.getId().equals(taskId)) {
+                return task;
+            }
+        }
+        return null;
+    }
+    public void displayUserInfo(TextView tvUserName, CircleImageView circleImageView) {
+        String userEmail = getCurrentUserEmail();
+        String encodedEmail = userEmail.replace(".", ",");
+        DatabaseReference userRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("users").child(encodedEmail);
+
+        // Sử dụng ValueEventListener để lấy dữ liệu từ Firebase
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // Kiểm tra xem dữ liệu có tồn tại hay không
+                if (dataSnapshot.exists()) {
+                    // Lấy dữ liệu từ DataSnapshot và hiển thị nó trong TextView
+                    String userName = dataSnapshot.child("username").getValue(String.class);
+                    String position = dataSnapshot.child("position").getValue(String.class);
+                    //dbFBManager.loadImageFromFirebase(encodedEmail, activity.getActivity(), circleImageView);
+                    // Hiển thị dữ liệu trong TextView
+                    tvUserName.setText(userName);
+                } else {
+                    // Xử lý trường hợp không có dữ liệu
+
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+    }
+
+
+
     public String getCurrentUserEmail() {
         SharedPreferences sharedPreferences = mContext.getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
         return sharedPreferences.getString("user_email", null); // Trả về null nếu không tìm thấy email

@@ -124,6 +124,7 @@ id FirstFragment
 id NamePersonOfTaskUpdate
 id NameProrjectDetail
 id NameTaskNewUpdate
+id NameTaskNewUpdate1
 id PossitonAndEmail
 id SecondFragment
 id SharForFF
@@ -132,6 +133,8 @@ id TimeUpdateTask
 id accountAvt
 id action_FirstFragment_to_SecondFragment
 id action_SecondFragment_to_FirstFragment
+id action_delete
+id action_edit
 id addDdepertment
 id addJob
 id addTag
@@ -182,6 +185,7 @@ id circleImageViewComment
 id circleImageViewMain
 id circleImageViewWork
 id comeback
+id comeplete
 id companyAddress
 id companyField
 id companyLogo
@@ -196,6 +200,7 @@ id department_reycleView
 id discussionContainer
 id editAddNameJob
 id editAddNameProject
+id editNameJob
 id editTextAddress
 id editTextAddressAdd
 id editTextConfirmpass
@@ -254,6 +259,7 @@ id nav_graph
 id nav_graph2
 id newAccount
 id number
+id options
 id ownone
 id owntwo
 id personnal
@@ -270,7 +276,6 @@ id reycleViewTask
 id service_price
 id setting
 id statistic
-id statusTask
 id statusTextView
 id tabLayout
 id tab_layout
@@ -328,7 +333,10 @@ id tvViews
 id tvprojectContext
 id typeJob
 id unitInformation
+id update
+id userDO
 id userName
+id userNameDo
 id userNameFollow
 id userNameSend
 id userNameWork
@@ -345,6 +353,7 @@ layout activity_detail_invite
 layout activity_detail_project
 layout activity_edit_account
 layout activity_edit_project
+layout activity_edit_task
 layout activity_listtask
 layout activity_login
 layout activity_main
@@ -380,6 +389,8 @@ layout item_user
 layout item_user_follow
 menu mune_buttom_navigation
 menu popup_menu
+menu popup_menutask
+menu popupdepartment
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap logo

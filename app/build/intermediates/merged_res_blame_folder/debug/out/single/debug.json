@@ -4,6 +4,10 @@
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\font\\poppins_regular.ttf"
     },
     {
+        "merged": "com.example.do_an_cs3.app-merged_res-54:/layout_activity_detail_project.xml.flat",
+        "source": "com.example.do_an_cs3.app-main-56:/layout/activity_detail_project.xml"
+    },
+    {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\drawable_deletej.png.flat",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\deletej.png"
     },
@@ -20,12 +24,12 @@
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activity_personnal.xml"
     },
     {
-        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_activy_changepass.xml.flat",
-        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activy_changepass.xml"
-    },
-    {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_fragment_list_personnal.xml.flat",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\fragment_list_personnal.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_activy_changepass.xml.flat",
+        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activy_changepass.xml"
     },
     {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_activity_listtask.xml.flat",
@@ -296,10 +300,6 @@
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\background.png"
     },
     {
-        "merged": "com.example.do_an_cs3.app-merged_res-54:/layout_activity_listtask.xml.flat",
-        "source": "com.example.do_an_cs3.app-main-56:/layout/activity_listtask.xml"
-    },
-    {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\drawable_icon_setting.png.flat",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\icon_setting.png"
     },
@@ -444,6 +444,10 @@
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\editingj.png"
     },
     {
+        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\layout_activity_edit_task.xml.flat",
+        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\activity_edit_task.xml"
+    },
+    {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\drawable_clock2.png.flat",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\clock2.png"
     },
@@ -548,6 +552,10 @@
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\layout\\item_staff_work.xml"
     },
     {
+        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\menu_popup_menutask.xml.flat",
+        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\menu\\popup_menutask.xml"
+    },
+    {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\drawable_clock1.png.flat",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\clock1.png"
     },
@@ -574,6 +582,10 @@
     {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\drawable_hanh.png.flat",
         "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\drawable\\hanh.png"
+    },
+    {
+        "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\menu_popupdepartment.xml.flat",
+        "source": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-main-56:\\menu\\popupdepartment.xml"
     },
     {
         "merged": "C:\\Users\\nhutl\\.gradle\\daemon\\8.2.1\\com.example.do_an_cs3.app-merged_res-54:\\navigation_nav_graph.xml.flat",

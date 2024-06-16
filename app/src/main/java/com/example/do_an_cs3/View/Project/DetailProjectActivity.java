@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -26,6 +27,7 @@ import com.example.do_an_cs3.Model.User;
 import com.example.do_an_cs3.R;
 
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -34,11 +36,15 @@ import android.widget.Toast;
 
 import com.example.do_an_cs3.Task.AddTaskActivity;
 import com.example.do_an_cs3.View.MainActivity;
+import com.example.do_an_cs3.View.Users.EditAccountActivity;
 import com.example.do_an_cs3.View.Users.PersonnalActivity;
 import com.example.do_an_cs3.View.back_end.View_fragment.FragmentHome.UpdateNewFragment;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +61,6 @@ public class DetailProjectActivity extends AppCompatActivity {
     private UserWorkInProjectAdapter userWorkInProjectAdapter;
 
     private UpdateNewFragment updateNewFragment;
-
     private Button btnAddTask;
     private Button btnBack;
     private Button btnAddStaff;
@@ -63,6 +68,7 @@ public class DetailProjectActivity extends AppCompatActivity {
     private List<Task> taskList;
     private List<User> userWorkList;
     private DatabaseFirebaseManager dbManager;
+    private DatabaseReference projectRef, userRef;
 
     private String idProject;
 
@@ -72,8 +78,6 @@ public class DetailProjectActivity extends AppCompatActivity {
     public String getIdProject() {
         return idProject;
     }
-
-
 
     private String nameProject;
     private TextView emailDetail;
@@ -100,7 +104,14 @@ public class DetailProjectActivity extends AppCompatActivity {
 
         rcv_user_work = findViewById(R.id.rcv_staff_work);
         rcv_userFollow = findViewById(R.id.rcv_userFollow);
+
         rcv_task = findViewById(R.id.rcv_task);
+        LinearLayoutManager leLinearLayoutManager = new LinearLayoutManager(this);
+        rcv_task.setLayoutManager(leLinearLayoutManager);
+        taskList = new ArrayList<>();
+        taskAdapter = new TaskAdapter(taskList, this);
+        rcv_task.setAdapter(taskAdapter);
+
         //Thông tin project
         tvNameProjet = findViewById(R.id.NameProrjectDetail);
         tvStatus = findViewById(R.id.tvStatusDetail);
@@ -108,10 +119,11 @@ public class DetailProjectActivity extends AppCompatActivity {
         tvTimeCreation = findViewById(R.id.TimeCreationProjectDetail);
         tvConText = findViewById(R.id.tvprojectContext);
         tvView = findViewById(R.id.tvViews);
+        dbManager = new DatabaseFirebaseManager();
 
         //thông tin user
-        circleImageView =findViewById(R.id.circleImageView);
-        circleImageViewWork =findViewById(R.id.circleImageViewWork);
+        circleImageView = findViewById(R.id.circleImageView);
+        circleImageViewWork = findViewById(R.id.circleImageViewWork);
         tvRole = findViewById(R.id.PossitonAndEmail);
         tvUserNameDetailWord = findViewById(R.id.userNameWork);
         emailDetail = findViewById(R.id.tvEmailDetail);
@@ -123,19 +135,34 @@ public class DetailProjectActivity extends AppCompatActivity {
         idProject = intent.getStringExtra("idProject");
         nameProject = intent.getStringExtra("projectName");
         User userdetail = null;
-                //dbManager.getUserInfo(getCurrentUserEmail());
+        //dbManager.getUserInfo(getCurrentUserEmail());
         if (userdetail != null) {
             userNameDetail.setText(userdetail.getUserName());
         }
+
         // Khởi tạo taskList và taskAdapter ngay cả khi chưa có task
         taskList = new ArrayList<>();
         taskAdapter = new TaskAdapter(taskList, this);
         rcv_task.setAdapter(taskAdapter);
         updateInfoProject();
         userWorkList = new ArrayList<>();
-        userWorkInProjectAdapter = new UserWorkInProjectAdapter(userWorkList,this,this);
+        userWorkInProjectAdapter = new UserWorkInProjectAdapter(userWorkList, this, this);
         rcv_user_work.setAdapter(userWorkInProjectAdapter);
         getUsersWorkInProject(idProject);
+        dbManager.getTask(idProject, new DatabaseFirebaseManager.TaskCallback() {
+
+            @Override
+            public void onTaskReceived(List<Task> tasks) {
+                taskList.clear();
+                taskList.addAll(tasks);
+                taskAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onError(String errorMessage) {
+
+            }
+        });
         btnViewMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,7 +180,6 @@ public class DetailProjectActivity extends AppCompatActivity {
 
         LinearLayoutManager linearLayoutManagerTask = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         rcv_task.setLayoutManager(linearLayoutManagerTask);
-
 
 
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -181,6 +207,7 @@ public class DetailProjectActivity extends AppCompatActivity {
 //            }
 //        });
         displayUserInfo();
+        displayProInf();
     }
 
     private List<User> createDummyData() {
@@ -257,7 +284,7 @@ public class DetailProjectActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int id) {
                                 // Xử lý khi người dùng chọn xóa
                                 if (true) {
-                                   // updateNewFragment.updateRecyclerView();
+                                    // updateNewFragment.updateRecyclerView();
                                     Intent intent = new Intent(DetailProjectActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     Toast.makeText(DetailProjectActivity.this, "Xóa dự án " + nameProject + " thành công", Toast.LENGTH_SHORT).show();
@@ -286,7 +313,7 @@ public class DetailProjectActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Sửa hoặc gia hạn công việc
-                Intent intent = new Intent(DetailProjectActivity.this,EditProjectActivity.class);
+                Intent intent = new Intent(DetailProjectActivity.this, EditProjectActivity.class);
                 intent.putExtra("idProject", idProject);
                 startActivity(intent);
                 bottomSheetDialog.dismiss();
@@ -311,27 +338,78 @@ public class DetailProjectActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         // Tải lại danh sách task khi Activity được hiển thị lại
-     //   loadTasks();
+        //   loadTasks();
     }
 
-//    private void loadTasks() {
+    //    private void loadTasks() {
 //        taskList.clear();
 //        taskList.addAll(dbManager.getAllTask(idProject));
 //        taskAdapter.notifyDataSetChanged();
 //    }
+    public void displayProInf() {
+        List<Project> infProject = new ArrayList<>();
+        String projectId = getIdProject();
+        if (projectId != null) {
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+            projectRef = databaseReference.child("projects").child(projectId);
+            projectRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        Project project = snapshot.getValue(Project.class);
+                        if (project != null) {
+                            tvNameProjet.setText(project.getName());
+                            tvTimeCreation.setText(project.getCreationTime());
+                            tvConText.setText(project.getDescription());
+                        }
+                    } else {
+                        // Xử lý trường hợp không có dữ liệu
+                        Toast.makeText(DetailProjectActivity.this, "Không tìm thấy thông tin dự án dùng", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Log.e("FirebaseDatabase", "Failed to read user data", error.toException());
+                    Toast.makeText(DetailProjectActivity.this, "Đã xảy ra lỗi khi đọc dữ liệu từ Firebase", Toast.LENGTH_SHORT).show();
+
+                }
+            });
+        } else {
+            Toast.makeText(DetailProjectActivity.this, "Không tìm thấy ID người dùng", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
     public void displayUserInfo() {
-//        User user = dbManager.getUserInfo(getCurrentUserEmail());
-//        if (user != null) {
-//            tvUserNameDetailWord.setText(user.getUserName());
-//            emailDetail.setText(getCurrentUserEmail());
-//            tvRole.setText(user.getRole()+" - " + getCurrentUserEmail());
-//            if (user.getAvatar() != null) {
-//                byte[] avatarBytes = Base64.decode(user.getAvatar(), Base64.DEFAULT);
-//                Bitmap avatarBitmap = BitmapFactory.decodeByteArray(avatarBytes, 0, avatarBytes.length);
-//                circleImageView.setImageBitmap(avatarBitmap);
-//                circleImageViewWork.setImageBitmap(avatarBitmap);
-    //        }
-    //    }
+        String userEmail = getCurrentUserEmail();
+        String encodedEmail = userEmail.replace(".", ",");
+        DatabaseReference userRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("users").child(encodedEmail);
+
+        // Sử dụng ValueEventListener để lấy dữ liệu từ Firebase
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // Kiểm tra xem dữ liệu có tồn tại hay không
+                if (dataSnapshot.exists()) {
+                    // Lấy dữ liệu từ DataSnapshot và hiển thị nó trong TextView
+                    String userName = dataSnapshot.child("userName").getValue(String.class);
+                    dbManager.loadImageFromFirebase(encodedEmail, DetailProjectActivity.this, circleImageView);
+                    // Hiển thị dữ liệu trong TextView
+                    userNameDetail .setText(userName);
+                } else {
+                    // Xử lý trường hợp không có dữ liệu
+                    Toast.makeText(DetailProjectActivity.this, "Không tìm thấy thông tin người dùng", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Xử lý khi có lỗi xảy ra trong quá trình đọc dữ liệu từ Firebase
+                Log.e("FirebaseDatabase", "Failed to read user data", databaseError.toException());
+                Toast.makeText(DetailProjectActivity.this, "Đã xảy ra lỗi khi đọc dữ liệu từ Firebase", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     public  void updateInfoProject(){
  //       Project project =  dbManager.getInfoProject(idProject);
