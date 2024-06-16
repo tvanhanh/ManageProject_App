@@ -46,6 +46,7 @@ public class AddTaskActivity extends AppCompatActivity {
     private DetailProjectActivity activity;
     private String idProject;
     private String participantEmail;
+    private String idTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +59,13 @@ public class AddTaskActivity extends AppCompatActivity {
         nextButton = findViewById(R.id.butonThenext);
 
         dbManager = new DatabaseFirebaseManager();
+        taskAdapter = new TaskAdapter();
+
 
         Intent intent = getIntent();
         idProject = intent.getStringExtra("projectId");
         participantEmail = intent.getStringExtra("participantEmail");
+        idTask = intent.getStringExtra("taskId");
 
         if (idProject == null || idProject.isEmpty()) {
             Toast.makeText(this, "Lỗi: ID dự án không hợp lệ", Toast.LENGTH_SHORT).show();
@@ -107,8 +111,8 @@ public class AddTaskActivity extends AppCompatActivity {
                     loadingDialog.dismiss();
                     if (taskCompletion.isSuccessful()) {
                         Toast.makeText(AddTaskActivity.this, "Thêm thành công " + name, Toast.LENGTH_SHORT).show();
+                        taskAdapter.updateTaskList(idTask);
                         Intent detailIntent = new Intent(AddTaskActivity.this, DetailProjectActivity.class);
-
                         detailIntent.putExtra("projectId", idProject);
                         detailIntent.putExtra("participantEmail", participantEmail);
                         startActivity(detailIntent);

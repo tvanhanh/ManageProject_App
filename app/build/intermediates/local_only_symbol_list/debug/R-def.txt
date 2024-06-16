@@ -143,6 +143,7 @@ id addTag
 id addTask
 id add_job
 id anyChartView
+id avatarPartiTask
 id avatarSend
 id bottomnavigation
 id btnAddDiscussion

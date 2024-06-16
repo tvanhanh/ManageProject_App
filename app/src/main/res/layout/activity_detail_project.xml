@@ -102,7 +102,8 @@
 
                 <TextView
                     android:id="@+id/tvDeadlineDetail"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="Thời hạn: 17:00 T7, 11/5/24 Trễ!"
                     android:textColor="#FF0000"

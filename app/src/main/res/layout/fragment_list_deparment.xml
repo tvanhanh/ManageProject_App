@@ -16,7 +16,8 @@
         android:id="@+id/department_reycleView"
         android:layout_width="match_parent"
         android:layout_height="559dp"
-         />
+        android:layout_marginTop="3dp"
+        android:layout_weight="1"/>
 
     <Button
         android:id="@+id/buttonadd"
@@ -24,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="100dp"
+        android:layout_marginTop="5dp"
         android:drawableLeft="@drawable/folder"
         android:text="Thêm bộ phận"
-        android:layout_marginTop="5dp"
         android:textSize="14dp" />
 </LinearLayout>

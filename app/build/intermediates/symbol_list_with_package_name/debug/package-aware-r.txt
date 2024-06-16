@@ -3396,6 +3396,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id avatarPartiTask
 id avatarSend
 id barrier
 id baseline

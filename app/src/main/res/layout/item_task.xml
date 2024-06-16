@@ -22,7 +22,7 @@
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/img_userProject"
+            android:id="@+id/avatarPartiTask"
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:src="@drawable/useravatar" />

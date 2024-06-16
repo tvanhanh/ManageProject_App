@@ -47,9 +47,10 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         notifyDataSetChanged(); // Cập nhật lại RecyclerView
     }
 
-    public TaskAdapter(List<Task> tasks, Context mContext) {
+    public TaskAdapter(List<Task> tasks, Context mContext,DetailProjectActivity detailProjectActivity) {
         this.tasks = tasks;
         this.mContext = mContext;
+        activityDetail = detailProjectActivity;
     }
 
     public TaskAdapter() {
@@ -65,15 +66,17 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     @Override
     public void onBindViewHolder(@NonNull TaskAdapter.TaskViewHolder holder, int position) {
         Task task = tasks.get(position);
-
+        dbFBManager = new DatabaseFirebaseManager();
         if (task != null) {
             holder.taskName.setText(task.getTaskName());
             holder.content.setText(task.getTaskDescription());
             holder.deadline.setText(task.getTaskDeadline());
             holder.timeUpdate.setText(task.getTaskStatus());
-            holder.userdo.setText(task.getEmailParticipant());
+            String emailEncoded = task.getEmailParticipant();
+            emailEncoded = emailEncoded.replace(",", ".");
+            holder.userdo.setText(emailEncoded);
+            displayUserInfo(task.getEmailParticipant(),holder.userName,holder.circleImageView);
             holder.options.setOnClickListener(v -> showPopupMenu(v, task.getId(), task.getTaskName(), position));
-
             // Log giá trị của task.getId() và task.getTaskStatus()
             Log.d("DEBUG", "Task ID: " + task.getId());
             Log.d("DEBUG", "Task Status: " + task.getTaskStatus());
@@ -94,6 +97,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         private Button addTassk;
         private TextView userdo;
         private TextView options;
+        private CircleImageView circleImageView;
+        private TextView userName;
 
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -104,6 +109,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             addTassk = itemView.findViewById(R.id.addTask);
             userdo = itemView.findViewById(R.id.userDO);
             options = itemView.findViewById(R.id.options);
+            circleImageView = itemView.findViewById(R.id.avatarPartiTask);
+            userName = itemView.findViewById(R.id.userNameDo);
         }
     }
 
@@ -196,10 +203,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         }
         return null;
     }
-    public void displayUserInfo(TextView tvUserName, CircleImageView circleImageView) {
-        String userEmail = getCurrentUserEmail();
-        String encodedEmail = userEmail.replace(".", ",");
-        DatabaseReference userRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("users").child(encodedEmail);
+    public void displayUserInfo(String emailParti,TextView tvUserName, CircleImageView circleImageView) {
+        DatabaseReference userRef = DatabaseFirebaseManager.getInstance().getDatabaseReference().child("users").child(emailParti);
 
         // Sử dụng ValueEventListener để lấy dữ liệu từ Firebase
         userRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -208,9 +213,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                 // Kiểm tra xem dữ liệu có tồn tại hay không
                 if (dataSnapshot.exists()) {
                     // Lấy dữ liệu từ DataSnapshot và hiển thị nó trong TextView
-                    String userName = dataSnapshot.child("username").getValue(String.class);
+                    String userName = dataSnapshot.child("userName").getValue(String.class);
                     String position = dataSnapshot.child("position").getValue(String.class);
-                    //dbFBManager.loadImageFromFirebase(encodedEmail, activity.getActivity(), circleImageView);
+                    dbFBManager.loadImageFromFirebase(emailParti, activityDetail, circleImageView);
                     // Hiển thị dữ liệu trong TextView
                     tvUserName.setText(userName);
                 } else {

@@ -3395,6 +3395,7 @@ int id auto 0x7f09006b
 int id autoComplete 0x7f09006c
 int id autoCompleteToEnd 0x7f09006d
 int id autoCompleteToStart 0x7f09006e
+int id avatarPartiTask 0x7f0902de
 int id avatarSend 0x7f09006f
 int id barrier 0x7f090070
 int id baseline 0x7f090071

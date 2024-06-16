@@ -47,10 +47,13 @@ public class EditTaskActivity extends AppCompatActivity {
     private String idTask;
     private TaskAdapter taskAdapter;
     private Button btnBack;
+
+    private  DetailProjectActivity detailProjectActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_task);
+        detailProjectActivity = new DetailProjectActivity();
         taskAdapter = new TaskAdapter();
         Button buttonAddTime = findViewById(R.id.buttonaddTime);
         buttonAddTime.setOnClickListener(new View.OnClickListener() {
@@ -151,8 +154,10 @@ public class EditTaskActivity extends AppCompatActivity {
         taskRef.child("taskDeadline").setValue(newDeadline)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
+                        detailProjectActivity.getAllTask();
+                        detailProjectActivity.displayProInf();
+                        detailProjectActivity.displayUserInfo();
                         Toast.makeText(EditTaskActivity.this, "Cập nhật thông tin công việc thành công", Toast.LENGTH_SHORT).show();
-                        taskAdapter.updateTaskList(idTask);
                         Intent intent = new Intent(EditTaskActivity.this, DetailProjectActivity.class);
                         startActivity(intent);
                         finish(); // Đóng Activity sau khi cập nhật thành công

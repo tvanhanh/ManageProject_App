@@ -27,10 +27,10 @@ public final class ItemTaskBinding implements ViewBinding {
   public final TextView NameTaskNewUpdate1;
 
   @NonNull
-  public final TextView contentTask;
+  public final CircleImageView avatarPartiTask;
 
   @NonNull
-  public final CircleImageView imgUserProject;
+  public final TextView contentTask;
 
   @NonNull
   public final TextView options;
@@ -48,15 +48,14 @@ public final class ItemTaskBinding implements ViewBinding {
   public final TextView userNameDo;
 
   private ItemTaskBinding(@NonNull CardView rootView, @NonNull TextView NamePersonOfTaskUpdate,
-      @NonNull TextView NameTaskNewUpdate1, @NonNull TextView contentTask,
-      @NonNull CircleImageView imgUserProject, @NonNull TextView options,
-      @NonNull TextView timeUpdateTask, @NonNull TextView tvDealine, @NonNull TextView userDO,
-      @NonNull TextView userNameDo) {
+      @NonNull TextView NameTaskNewUpdate1, @NonNull CircleImageView avatarPartiTask,
+      @NonNull TextView contentTask, @NonNull TextView options, @NonNull TextView timeUpdateTask,
+      @NonNull TextView tvDealine, @NonNull TextView userDO, @NonNull TextView userNameDo) {
     this.rootView = rootView;
     this.NamePersonOfTaskUpdate = NamePersonOfTaskUpdate;
     this.NameTaskNewUpdate1 = NameTaskNewUpdate1;
+    this.avatarPartiTask = avatarPartiTask;
     this.contentTask = contentTask;
-    this.imgUserProject = imgUserProject;
     this.options = options;
     this.timeUpdateTask = timeUpdateTask;
     this.tvDealine = tvDealine;
@@ -103,15 +102,15 @@ public final class ItemTaskBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.contentTask;
-      TextView contentTask = ViewBindings.findChildViewById(rootView, id);
-      if (contentTask == null) {
+      id = R.id.avatarPartiTask;
+      CircleImageView avatarPartiTask = ViewBindings.findChildViewById(rootView, id);
+      if (avatarPartiTask == null) {
         break missingId;
       }
 
-      id = R.id.img_userProject;
-      CircleImageView imgUserProject = ViewBindings.findChildViewById(rootView, id);
-      if (imgUserProject == null) {
+      id = R.id.contentTask;
+      TextView contentTask = ViewBindings.findChildViewById(rootView, id);
+      if (contentTask == null) {
         break missingId;
       }
 
@@ -146,7 +145,7 @@ public final class ItemTaskBinding implements ViewBinding {
       }
 
       return new ItemTaskBinding((CardView) rootView, NamePersonOfTaskUpdate, NameTaskNewUpdate1,
-          contentTask, imgUserProject, options, timeUpdateTask, tvDealine, userDO, userNameDo);
+          avatarPartiTask, contentTask, options, timeUpdateTask, tvDealine, userDO, userNameDo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1127,5 +1127,21 @@ public class DatabaseFirebaseManager {
             }
         });
     }
+    public void updateProjectStatus( String newStatus, String projectId, final UpdateStatusListener listener) {
+        DatabaseReference projectRef = databaseReference.child("projects").child(projectId);
+        projectRef.child("status").setValue(newStatus)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        listener.onUpdateStatusSuccess();
+                    } else {
+                        listener.onUpdateStatusFailure(task.getException().getMessage());
+                    }
+                });
+    }
+
+    public interface UpdateStatusListener {
+        void onUpdateStatusSuccess();
+        void onUpdateStatusFailure(String errorMessage);
+    }
 
 }

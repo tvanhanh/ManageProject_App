@@ -122,7 +122,7 @@ public class AddProjectActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.child("projects").hasChild(projectId)
-                              //  && snapshot.child("projectsprojectsParticipant").hasChild(projectParticipantId)
+
                         ) {
                             Toast.makeText(AddProjectActivity.this, "Dự án đã tồn tại", Toast.LENGTH_SHORT).show();
                         } else {
@@ -149,8 +149,6 @@ public class AddProjectActivity extends AppCompatActivity {
                             newProjectRef.child("deadline").setValue(deadline);
                             newProjectRef.child("status").setValue(status);
                             newProjectRef.child("views").setValue(views);
-//                            newProjectParticipantRef.child("projet_id").setValue(projectId);
-//                            newProjectParticipantRef.child("email").setValue(email);
 
                             Toast.makeText(AddProjectActivity.this, "Thêm dự án "+ name + " thành công", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(AddProjectActivity.this, MainActivity.class);

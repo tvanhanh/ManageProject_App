@@ -136,7 +136,7 @@ public class DetailProjectActivity extends AppCompatActivity {
         LinearLayoutManager leLinearLayoutManager = new LinearLayoutManager(this);
         rcv_task.setLayoutManager(leLinearLayoutManager);
         taskList = new ArrayList<>();
-        taskAdapter = new TaskAdapter(taskList, this);
+        taskAdapter = new TaskAdapter(taskList, this,this);
         rcv_task.setAdapter(taskAdapter);
 
         //Thông tin project
@@ -180,7 +180,7 @@ public class DetailProjectActivity extends AppCompatActivity {
 
         // Khởi tạo taskList và taskAdapter ngay cả khi chưa có task
         taskList = new ArrayList<>();
-        taskAdapter = new TaskAdapter(taskList, this);
+        taskAdapter = new TaskAdapter(taskList, this,this);
         rcv_task.setAdapter(taskAdapter);
         updateInfoProject();
         userWorkList = new ArrayList<>();
@@ -188,27 +188,14 @@ public class DetailProjectActivity extends AppCompatActivity {
         rcv_user_work.setAdapter(userWorkInProjectAdapter);
         getUsersWorkInProject(idProject);
 
-        dbManager.getTask(idProject, new DatabaseFirebaseManager.TaskCallback() {
-
-            @Override
-            public void onTaskReceived(List<Task> tasks) {
-                taskList.clear();
-                taskList.addAll(tasks);
-                taskAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onError(String errorMessage) {
-
-            }
-        });
 
 
-        if (idProject != null && !idProject.isEmpty()) {
-            getListTask(idProject);
-        } else {
-            // Handle error
-        }
+
+//        if (idProject != null && !idProject.isEmpty()) {
+//            getListTask(idProject);
+//        } else {
+//            // Handle error
+//        }
 
 
         btnViewMore.setOnClickListener(new View.OnClickListener() {
@@ -255,10 +242,9 @@ public class DetailProjectActivity extends AppCompatActivity {
 //                startActivity(intent);
 //            }
 //        });
-        displayUserInfo();
-
+        getAllTask();
         displayProInf();
-
+        displayUserInfo();
     }
 
     private List<User> createDummyData() {
@@ -300,18 +286,37 @@ public class DetailProjectActivity extends AppCompatActivity {
         lnXacNhanHoanThanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //dbManager.updateStatusProject("Hoàn thành", idProject);
-                Toast.makeText(DetailProjectActivity.this, "Dự án đã hoàn thành", Toast.LENGTH_SHORT).show();
+                dbManager.updateProjectStatus("Hoàn thành", idProject, new DatabaseFirebaseManager.UpdateStatusListener() {
+                    @Override
+                    public void onUpdateStatusSuccess() {
+                        Toast.makeText(DetailProjectActivity.this, "Đã xác nhận hoàn thành dự án", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onUpdateStatusFailure(String errorMessage) {
+                    }
+                });
+
                 bottomSheetDialog.dismiss();
                 updateInfoProject();
+
             }
         });
 
         lnPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //dbManager.updateStatusProject("Tạm dừng", idProject);
-                Toast.makeText(DetailProjectActivity.this, "Đã tạm dừng dự án", Toast.LENGTH_SHORT).show();
+                dbManager.updateProjectStatus("Tạm dừng", idProject, new DatabaseFirebaseManager.UpdateStatusListener() {
+                    @Override
+                    public void onUpdateStatusSuccess() {
+                        Toast.makeText(DetailProjectActivity.this, "Đã tạm dừng dự án", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onUpdateStatusFailure(String errorMessage) {
+                    }
+                });
+
                 bottomSheetDialog.dismiss();
                 updateInfoProject();
 
@@ -399,10 +404,6 @@ public class DetailProjectActivity extends AppCompatActivity {
         //   loadTasks();
     }
 
-    //    private void loadTasks() {
-//        taskList.clear();
-//        taskList.addAll(dbManager.getAllTask(idProject));
-//        taskAdapter.notifyDataSetChanged();
 
 //    }
     public void displayProInf() {
@@ -417,9 +418,11 @@ public class DetailProjectActivity extends AppCompatActivity {
                     if (snapshot.exists()) {
                         Project project = snapshot.getValue(Project.class);
                         if (project != null) {
-                            tvNameProjet.setText(project.getName());
-                            tvTimeCreation.setText(project.getCreationTime());
+                            tvNameProjet.setText("Tên dự án: "+project.getName());
+                            tvTimeCreation.setText("Ngày tạo: "+project.getCreationTime());
                             tvConText.setText(project.getDescription());
+                            tvStatus.setText(project.getStatus());
+                            tvDeadline.setText(project.getDeadline());
                         }
                     } else {
                         // Xử lý trường hợp không có dữ liệu
@@ -435,7 +438,7 @@ public class DetailProjectActivity extends AppCompatActivity {
                 }
             });
         } else {
-            Toast.makeText(DetailProjectActivity.this, "Không tìm thấy ID người dùng", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(DetailProjectActivity.this, "Không tìm thấy ID người dùng", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -483,7 +486,21 @@ public class DetailProjectActivity extends AppCompatActivity {
 //            tvConText.setText(project.getDescription());
 //        }
     }
+    public void getAllTask(){
+        dbManager.getTask(idProject, new DatabaseFirebaseManager.TaskCallback() {
 
+            @Override
+            public void onTaskReceived(List<Task> tasks) {
+                taskList.clear();
+                taskList.addAll(tasks);
+                taskAdapter.notifyDataSetChanged();
+            }
+            @Override
+            public void onError(String errorMessage) {
+
+            }
+        });
+    }
     private void getListTask(String projectId) {
         DatabaseReference databaseTasks = FirebaseDatabase.getInstance().getReference("tasks");
         databaseTasks.orderByChild("projectId").equalTo(projectId).addValueEventListener(new ValueEventListener() {
@@ -498,7 +515,6 @@ public class DetailProjectActivity extends AppCompatActivity {
                 }
                 taskAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(DetailProjectActivity.this, "Lỗi khi tải danh sách task", Toast.LENGTH_SHORT).show();
