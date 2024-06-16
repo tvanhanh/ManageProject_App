@@ -1,0 +1,18 @@
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/addJob"
+        android:title="Thêm công việc"
+        android:icon="@drawable/editing"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/listJob"
+        android:title="Danh sách công việc thực hiện"
+        android:icon="@drawable/delete"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/delete"
+        android:title="Xóa"
+        app:showAsAction="always"
+        />
+</menu>
